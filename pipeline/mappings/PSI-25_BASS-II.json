@@ -1,0 +1,12 @@
+{
+  "psi_id": "PSI-25",
+  "table": "PSI-25_Experimental table_BASS-II.csv",
+  "columns": {
+    "Test #": "run_id",
+    "Fuel Sample Material": "fuel",
+    "Calibrated  initial O2 % by vol": {"to": "o2_pct", "unit": "pct"}
+  },
+  "constants": {"fuel_phase": "solid", "fuel_class": "cabin_material"},
+  "mapping_confidence": "hand",
+  "notes": "Solid-fuel flammability (PMMA films, SIBAL). O2 already % by vol. No pressure column -> blank (strict policy: ISS/MSG cabin pressure not tabulated, no fabrication). No metric key: this table records conditions + gas analysis (O2/CO2/CO) but NO spread-rate or burn metric (those are in the publications, not this CSV); metric_* left blank. Airflow not mapped: 'Fan display'/'Air display' are uncalibrated instrument readings, not cm/s -> blank. sample_size not mapped: dimensions are embedded in the free-text material string ('100 micron ... 2 cm wide') and mix thickness with width -> left blank to avoid wrong parse. outcome not in table -> blank."
+}

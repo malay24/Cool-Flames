@@ -1,0 +1,13 @@
+{
+  "psi_id": "PSI-101",
+  "table": "PSI-101_Experimental table_SAME-R.csv",
+  "columns": {
+    "SAME Test #": "run_id",
+    "Sample Type": "fuel",
+    "Inlet velocity (cm/s)": {"to": "airflow_cms", "unit": "cms"}
+  },
+  "constants": {"fuel_phase": "solid", "fuel_class": "cabin_material", "outcome": "unknown"},
+  "metric": {"source": "Rt/R0", "name": "particle_size_ratio", "unit": "ratio"},
+  "mapping_confidence": "hand",
+  "notes": "Smoke detection reflight. Overheated/smouldering cabin materials (Kapton wire insulation, Silicone, Lampwick) -> fuel_phase solid, fuel_class cabin_material. Detection study, not a burn test: no O2 or pressure columns -> blank (excluded from gap map, as intended); outcome set to 'unknown' (burned/extinguished do not apply). Airflow = inlet velocity (cm/s). Main metric Rt/R0 = smoke particle-size growth ratio (detection-relevant quantity)."
+}

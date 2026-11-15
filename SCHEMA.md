@@ -3,7 +3,7 @@
 Source of truth for the data contract. Mirrors CLAUDE.md section 6. Changing any
 column or enum here requires agreement from both owners (Malay and Ramneek).
 
-Status: **draft — not yet signed off (task K2).**
+Status: **signed**
 
 ## `data/clean/tests.csv` — one row per test run
 

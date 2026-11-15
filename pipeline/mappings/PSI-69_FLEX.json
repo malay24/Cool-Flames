@@ -1,0 +1,24 @@
+{
+  "psi_id": "PSI-69",
+  "table": "PSI-69_Experimental table_FLEX.csv",
+  "columns": {
+    "FLEX Identifier": "run_id",
+    "Fuel": "fuel",
+    "O initial ambient composition; mole fraction": {"to": "o2_pct", "unit": "fraction"},
+    "Ambient pressure; mmHg": {"to": "pressure_psi", "unit": "mmHg"},
+    "Droplet initial diameter; mm": {"to": "sample_size_mm", "unit": "mm"}
+  },
+  "constants": {"fuel_phase": "liquid", "fuel_class": "idealized"},
+  "metric": {"source": "Burning rate; mm", "name": "burning_rate", "unit": "mm2/s"},
+  "outcome_from": {
+    "source": "Test end",
+    "map": {"Extinction": "extinguished", "Completion": "burned", "Disruption": "unknown"}
+  },
+  "diluent_from": {
+    "N2": "N initial ambient composition; mole fraction",
+    "He": "He initial ambient composition; mole fraction",
+    "CO2": "CO initial ambient composition; mole fraction"
+  },
+  "mapping_confidence": "hand",
+  "notes": "Droplet-combustion suppression study (liquid, idealized fuels: methanol/heptane). O2 is a mole fraction -> x100. Pressure in mmHg (~760 -> ~14.7 psi). sample_size_mm uses the initial droplet diameter. Metric header reads 'Burning rate; mm' but droplet burning rate is an area rate (mm2/s); kept as burning_rate. diluent_from picks the dominant inert; note the 'CO initial ambient composition' header is treated as the CO2 diluent fraction (values up to 0.7 indicate a major diluent, i.e. CO2, not trace CO) - flagged for review. No airflow (quiescent droplet)."
+}
