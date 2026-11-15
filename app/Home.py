@@ -42,6 +42,8 @@ st.subheader("Pages")
 st.page_link("pages/1_Overview.py", label="Overview: every investigation, summarized", icon="🗂️")
 st.page_link("pages/2_Scenario.py", label="Scenario Explorer: ranked by fire phase", icon="🧭")
 st.page_link("pages/3_Gap_map.py", label="Gap map: tested conditions vs habitats", icon="🗺️")
+st.page_link("pages/4_Compare.py", label="Compare: 2 to 4 investigations side by side", icon="⚖️")
+st.page_link("pages/6_Earth_benefits.py", label="Earth benefits: what the records say", icon="🌍")
 
 if inv_demo or tests_demo:
     st.info("Some pages are showing demo data until the real data files are built.")
