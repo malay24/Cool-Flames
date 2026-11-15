@@ -7,7 +7,7 @@ file produced offline (no API key needed), or optionally from Gemini.
 
 `fuel_types` follows the signed contract: fuel PHASES (solid/liquid/gas), as
 used by core/ranking.py. `fuels` (material names, display only) is additive.
-Ranges stay null here: they are computed from data/clean/tests.csv (D8 / app).
+Ranges come from data/clean/ranges.csv (D8: python -m pipeline.build_ranges).
 
 Usage:
     python ai/tag_summarize.py                                  # facts only, AI fields empty
@@ -38,6 +38,7 @@ OUT = ROOT / "data" / "ai" / "investigations.json"
 CACHE = ROOT / "data" / "ai" / "cache"
 BATCH_IN = ROOT / "data" / "ai" / "batch_input.jsonl"
 PROMPT = ROOT / "ai" / "prompts" / "tag_summarize.md"
+RANGES = ROOT / "data" / "clean" / "ranges.csv"
 
 AREAS = ["prevention", "suppression", "detection", "basic", "modelling"]
 PHASES = ["solid", "liquid", "gas"]
@@ -124,12 +125,37 @@ def load_records() -> dict[str, dict]:
     return dict(sorted(recs.items(), key=lambda kv: int(kv[0][4:])))
 
 
+def load_ranges() -> dict[str, dict]:
+    """Ranges from data/clean/ranges.csv (D8): psi_id -> contract range fields."""
+    if not RANGES.exists():
+        return {}
+    out = {}
+    with RANGES.open(newline="", encoding="utf-8") as fh:
+        for r in csv.DictReader(fh):
+            def rng(key: str):
+                lo, hi = r.get(f"{key}_min", ""), r.get(f"{key}_max", "")
+                return [float(lo), float(hi)] if lo != "" and hi != "" else None
+            out[r["psi_id"]] = {
+                "o2_range": rng("o2"), "pressure_range": rng("pressure"),
+                "airflow_range": rng("airflow"), "sample_size_range": rng("sample_size"),
+                "n_standardized_runs": int(r["n_standardized_runs"]),
+            }
+    return out
+
+
+_RANGES: dict[str, dict] | None = None
+
+
 def facts(record: dict) -> dict:
     """Contract fields copied from the raw record and hand maps (no LLM)."""
+    global _RANGES
+    if _RANGES is None:
+        _RANGES = load_ranges()
     psi_id = record["accession"]
     pubs = record.get("publications") or []
     files = table_files(record)
     area = AREA.get(psi_id, "basic")
+    rng = _RANGES.get(psi_id, {})
     return {
         "psi_id": psi_id,
         "name": (record.get("investigationAcronym") or "").strip() or record.get("title", psi_id),
@@ -144,9 +170,11 @@ def facts(record: dict) -> dict:
         "key_findings": [],
         "n_runs": sum(max(len(read_table(p)) - 1, 0) for p in files),  # raw table rows
         "n_publications": len(pubs),
-        "o2_range": None,
-        "pressure_range": None,
-        "airflow_range": None,
+        "n_standardized_runs": rng.get("n_standardized_runs", 0),
+        "o2_range": rng.get("o2_range"),            # from ranges.csv (D8), never the LLM
+        "pressure_range": rng.get("pressure_range"),
+        "airflow_range": rng.get("airflow_range"),
+        "sample_size_range": rng.get("sample_size_range"),
         "test_scale": "large" if psi_id in LARGE_SCALE
         else "ground" if area == "modelling" else "orbital",
         "start_date": record.get("investigationStartDate", ""),

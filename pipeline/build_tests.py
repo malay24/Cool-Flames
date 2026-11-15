@@ -157,6 +157,10 @@ def build_rows(mapping: dict, flags: list[str]) -> list[dict]:
                         flags.append(f"{psi_id} row {n}: "
                                      f"non-positive pressure {raw!r} -> blank")
                         continue
+                    # Negative flow speed is unphysical (sensor offset); 0 is kept.
+                    if target == "airflow_cms" and val < 0:
+                        flags.append(f"{psi_id} row {n}: negative airflow {raw!r} -> blank")
+                        continue
                     r[target] = _round(target, val)
 
         if metric:
