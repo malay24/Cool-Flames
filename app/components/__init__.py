@@ -168,6 +168,18 @@ def chips(pairs: list[tuple[str, str]]) -> str:
     return "".join(f'<span class="cf-chip"><b>{k}</b>{v}</span>' for k, v in pairs)
 
 
+DOSSIER_PAGE = str(Path(__file__).resolve().parents[1] / "views" / "dossier.py")
+
+
+def dossier_link(psi_id: str, label: str = "Open dossier") -> None:
+    """Link to one investigation's dossier (keeps the session, so the habitat stays)."""
+    try:
+        st.page_link(DOSSIER_PAGE, label=label, icon=":material/description:",
+                     query_params={"id": psi_id})
+    except Exception:  # view run on its own, without the router: plain link
+        st.markdown(f"[{label}](dossier?id={psi_id})")
+
+
 # ---------------------------------------------------------------- cards
 
 def investigation_card(inv: dict) -> None:
@@ -205,6 +217,7 @@ def investigation_card(inv: dict) -> None:
             with st.expander("Key findings"):
                 for kf in inv["key_findings"]:
                     st.markdown(f"- {kf}")
+        dossier_link(inv["psi_id"])
 
 
 COMP_LABELS = {"area_match": "Area", "condition_overlap": "Conditions",
@@ -224,6 +237,7 @@ def result_card(r: dict) -> None:
             if not r["conditions_reported"]:
                 st.markdown(":gray-badge[conditions not reported]")
             st.markdown(doi_link(r["doi"]))
+            dossier_link(r["psi_id"])
 
 
 WARNING_ICONS = {

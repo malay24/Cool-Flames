@@ -1,10 +1,10 @@
-# TASKS.md: Cool Flames task board
+# TASKS.md: Freefall Fire Atlas task board
 
 Snapshot of the team task board for NASA Space Apps 2026 ("Flame in Freefall"). Project context is in `CLAUDE.md`; the data contract is in `SCHEMA.md`.
 
 Snapshot taken: Sun 15 Nov 2026, 00:45 Europe/Berlin. The live board (Claude Sheets) is the source of truth; if this file and the live board disagree, ask the human.
 
-Last updated by Claude Code: **Sun 15 Nov 2026, ~03:30 (Ramneek session 3)** — see Change log.
+Last updated by Claude Code: **Sun 15 Nov 2026, ~14:10 (Ramneek session 7)** — see Change log.
 
 ## Working agreement for Claude Code (READ FIRST, both sessions)
 
@@ -29,9 +29,32 @@ This repo is built by two people, each driving their own Claude Code, committing
 
 ## Progress
 
-**30 of 39 done**, plus **K4 and A5 cut**. Left: K3 (confirm deadline), S1 (deploy), S2 (test public link), S4/S6 (drafts in `docs/`, need a timing run and the final links), S5 (record video), S7 (submit). `data/clean/tests.csv`: **1,858 rows from 19 tables** (1,009 with O₂ and pressure); all 24 investigations have summaries; Ask index built. Nothing from these sessions is pushed yet.
+**30 of 39 done**, plus **K4 and A5 cut**. Left: K3 (confirm deadline), S1 (deploy), S2 (test public link), S4/S6 (drafts in `docs/`, need a timing run and the final links), S5 (record video), S7 (submit). `data/clean/tests.csv`: **1,858 rows from 19 tables** (1,009 with O₂ and pressure); all 24 investigations have summaries; Ask index built. Extra (session 7): Study dossier page; 129 tests pass. Everything up to `03be7c2` is on `origin/main`.
 
 ## Change log (approach changes & decisions — newest first)
+
+### Sun 15 Nov 2026, ~14:20 — Ramneek session 7: app renamed to "Freefall Fire Atlas" (Claude Code)
+
+- **Why:** "Cool Flames" collides with NASA's own *Cool Flames Investigation* (CFI, PSI-39) and CFI-G (PSI-159), both listed in the app, so it could read as that experiment or as an official NASA product; it also suggested the tool covers only the cool-flame effect. The new name echoes the challenge title ("Flame in Freefall"); "atlas" fits the gap map and the dossiers. Subtitle "Fire Scenario Explorer" unchanged.
+- **Changed (brand only):** logo text (`app/static/logo.svg`, widened to 430 px), browser tab title and docstring (`app/Home.py`), hero sentence (`app/components/interactive.py`), comment headers (`.streamlit/config.toml`, `app/static/js/interactive.css`), titles of README, CLAUDE.md, SCHEMA.md, TASKS.md, and `docs/SUBMISSION.md` (project name + first sentence). README notes the repo keeps its working name `Cool-Flames`.
+- **Deliberately not changed:** every use of the combustion term "cool flames" (warning title "Hidden hazard: cool flames", Flame Lab, Ask example, Q&A comment, tests), the CFI / CFI-G investigation names, the GitHub repo name and local folder, deploy settings (`app/Home.py`), internal `cf-` CSS class prefixes, `icon.svg`.
+
+### Sun 15 Nov 2026, ~14:10 — Ramneek session 7: Study dossier page (Claude Code)
+
+- **Why:** the brief asks, per investigation, for objectives, fuel, sample shape/size, conditions, what varied, sensors and measurements, and similarities/differences. The Investigations cards and Compare covered only part of this (review in the discussion log, idea 1). Chosen by Ramneek over the mission brief; built before the 15:30 feature freeze.
+- **New page `app/views/dossier.py`** (Explore → Study dossier, deep link `?id=PSI-99`, remembers the last study):
+  - identity: platform, hardware, dates, NASA center, topic, principal investigators (names and affiliations only, no contact details);
+  - AI summary and key findings, labelled as AI-written; objective, hypothesis, approach and research impacts **quoted verbatim** from the record;
+  - "What was tested": sample and fuel, conditions, measurements, each listing the raw table columns with example values and a *varied* badge; "varied between runs" uses sample + condition columns only;
+  - instruments named in the record (fixed vocabulary, shown with the sentence they come from); FLEX names none, and the page says so;
+  - closest tested run to the sidebar habitat (`core.ranking.condition_overlap`), partial-gravity "no data yet" note;
+  - runs chart (any two standardized fields with ≥ 5 values; colour + shape by fuel, categorical slots 1–4 validated light and dark; contrast WARN in light mode relieved by shapes and the table); blank fuel is labelled "fuel not reported" (Saffire-II runs 2-6 and 2-9 are blank in NASA's table);
+  - similar studies, publications, standardized runs + CSV download, raw NASA tables.
+- **`ai/dossier.py`** (pure, no generation): record sections, people, raw-table profile (columns sorted by ordered keyword rules into log / measured / sample / condition; footnote and flow-visualisation rows dropped with the mapping's `require`, like `build_tests`), instrument scan, similar studies = 0.6 × cosine of mean chunk embeddings (existing Ask index, no model load) + 0.4 × shared attributes (area 0.4, fuel phase 0.3, hardware 0.2, O₂ overlap 0.1). Families come out on top (Saffire I↔II↔III, BASS↔BASS-II, FLEX↔CFI↔FLEX-2, SAME↔SAME-R↔DAFT).
+- Display fix: Saffire-II headers `?-g Burn Length` / `?-g Spread Length` shown as `μg …` (a lost μ, paired with the `1-g` columns).
+- **Links:** "Open dossier" on every Investigations card and Scenario result card; one per study on Compare (`components.dossier_link`, `st.page_link` with `query_params`).
+- **Tests: 129 pass** (was 80): `tests/test_dossier.py` (column rules, μ fix, table prefixes, footnote rows, PI, instrument quotes verbatim in all 24 records, similar-study families, unknown IDs) and the dossier page plus deep link in `test_app_pages.py`. All 24 dossiers render through the router; checked in headless Chrome (dark 1440 px, light 1440 px, dark 390 px): no JS errors, no horizontal scroll.
+- Setup note: this machine's default `python3` is 3.9; the venv was made with Anaconda's 3.12.7 (`/opt/anaconda3/bin/python3.12 -m venv .venv`).
 
 ### Sun 15 Nov 2026, ~04:40 — Ramneek session 6: CLAUDE.md brought up to date (Claude Code)
 

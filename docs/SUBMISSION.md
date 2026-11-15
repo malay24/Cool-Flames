@@ -3,7 +3,7 @@
 Paste each section into the matching field of the project submission form. Replace the
 three `[...]` links before submitting.
 
-- **Project name:** Cool Flames: Fire Scenario Explorer
+- **Project name:** Freefall Fire Atlas: Fire Scenario Explorer
 - **Challenge:** Flame in Freefall: SI-Powered Fire Safety Insights from Microgravity Combustion Data
 - **Demo video:** [VIDEO URL]
 - **Live app:** [STREAMLIT APP URL]
@@ -13,7 +13,7 @@ three `[...]` links before submitting.
 
 Spacecraft fires behave differently from fires on Earth, and NASA's Moon base plans to run
 at 30% oxygen, the kind of oxygen-rich atmosphere involved in Apollo 1, Apollo 13 and Mir.
-Cool Flames turns NASA's 24 microgravity combustion investigations (Physical Sciences
+Freefall Fire Atlas turns NASA's 24 microgravity combustion investigations (Physical Sciences
 Informatics, about 2,000 test runs) into a Fire Scenario Explorer. A researcher picks a
 habitat and a fire scenario; the dashboard ranks the investigations that matter for each
 phase of the fire (smoke, ignition, spread, suppression), explains every score, shows how

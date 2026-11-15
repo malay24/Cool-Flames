@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 64" width="300" height="64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 64" width="430" height="64">
   <defs>
     <linearGradient id="g" x1="0" y1="1" x2="0" y2="0">
       <stop offset="0" stop-color="#d9541e"/>
@@ -7,5 +7,5 @@
   </defs>
   <path d="M32 4c4 10 14 16 14 30a14 14 0 0 1-28 0c0-7 3-11 7-15 0 6 3 9 6 9-2-9 1-17 1-24z" fill="url(#g)"/>
   <path d="M32 33c3 4 6 6 6 11a6 6 0 0 1-12 0c0-4 3-6 6-11z" fill="#6fb6ff" opacity="0.9"/>
-  <text x="58" y="42" font-family="Space Grotesk, Inter, system-ui, sans-serif" font-size="25" font-weight="700" letter-spacing="1.5" fill="#ef7436">COOL FLAMES</text>
+  <text x="58" y="42" font-family="Space Grotesk, Inter, system-ui, sans-serif" font-size="25" font-weight="700" letter-spacing="1.5" fill="#ef7436">FREEFALL FIRE ATLAS</text>
 </svg>

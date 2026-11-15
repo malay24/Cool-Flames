@@ -1,4 +1,4 @@
-# SCHEMA.md: Cool Flames data contract
+# SCHEMA.md: Freefall Fire Atlas data contract
 
 Source of truth for the data contract. Mirrors CLAUDE.md section 6. Changing any
 column or enum here requires agreement from both owners (Malay and Ramneek).

@@ -7,7 +7,8 @@ from streamlit.testing.v1 import AppTest
 
 APP = Path(__file__).resolve().parents[1] / "app"
 VIEWS = ["views/home.py", "views/overview.py", "views/scenario.py", "views/gap_map.py",
-         "views/compare.py", "views/ask.py", "views/earth_benefits.py", "views/flame_lab.py"]
+         "views/compare.py", "views/ask.py", "views/earth_benefits.py", "views/flame_lab.py",
+         "views/dossier.py"]
 
 
 def router() -> AppTest:
@@ -31,3 +32,13 @@ def test_habitat_persists_and_demo_ranking():
     assert order[0] == "1. SAME-R" and order[1] == "2. SAME"
     warnings = " ".join(e.value for e in at.tabs[0].error) + " ".join(w.value for w in at.tabs[0].warning)
     assert "Detector blind spot" in warnings and "No data yet" in warnings
+
+
+def test_dossier_deep_link_and_card_links():
+    at = router().run()
+    at.query_params["id"] = "PSI-69"
+    at.switch_page("views/dossier.py").run()
+    assert not at.exception, [e.value for e in at.exception]
+    assert at.selectbox(key="dossier_pick").value == "PSI-69"
+    at.switch_page("views/overview.py").run()
+    assert len(at.get("page_link")) >= 24  # one "Open dossier" per investigation card

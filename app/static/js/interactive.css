@@ -1,4 +1,4 @@
-/* Shared styles for Cool Flames interactive components (rendered in a shadow root). */
+/* Shared styles for Freefall Fire Atlas interactive components (rendered in a shadow root). */
 .cf-wrap { position: relative; width: 100%; }
 .cf-wrap canvas { display: block; border-radius: 0.6rem; touch-action: none; }
 .cf-fallback { font-family: Inter, system-ui, sans-serif; font-size: 0.9rem; opacity: 0.75;

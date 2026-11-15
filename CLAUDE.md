@@ -1,4 +1,4 @@
-# CLAUDE.md: Cool Flames, NASA Space Apps 2026
+# CLAUDE.md: Freefall Fire Atlas, NASA Space Apps 2026
 
 This file briefs Claude Code on the project. Read it fully before writing code. When something here conflicts with the code in the repo, ask the human before changing either.
 
@@ -12,7 +12,7 @@ This file briefs Claude Code on the project. Read it fully before writing code. 
 
 **Brief in one line:** a web dashboard, powered by AI, that summarizes, ranks and interprets NASA's microgravity combustion investigations to deliver fire-safety insights for crewed exploration (spacecraft, space stations, Moon and Mars bases, pressurized rovers).
 
-**Our product: the Fire Scenario Explorer** (app name "Cool Flames"). The user picks a **habitat** (ISS, Moon Base, exploration habitat, spacesuit, or an atmosphere they design by dragging a point) and a **fire scenario** (e.g. electrical overheat). The dashboard:
+**Our product: the Fire Scenario Explorer** (app name "Freefall Fire Atlas", formerly "Cool Flames"). The user picks a **habitat** (ISS, Moon Base, exploration habitat, spacesuit, or an atmosphere they design by dragging a point) and a **fire scenario** (e.g. electrical overheat). The dashboard:
 
 1. ranks the NASA investigations that matter for each phase of that fire (smoke, ignition, spread, suppression),
 2. shows how close their tested conditions come to that habitat's atmosphere,
@@ -159,6 +159,7 @@ cool-flames/
       gap_map.py          Plotly gap map + CSV download
       flame_lab.py        illustrative animated flame (p5.js) + "what NASA tested here"
       overview.py         "Investigations": cards, filters, Earth-vs-space cards
+      dossier.py          "Study dossier": one investigation in depth (?id=PSI-99), similar studies
       compare.py          2-4 investigations side by side
       ask.py              cited Q&A
       earth_benefits.py   quotes from the records' research-impacts text
@@ -187,13 +188,14 @@ cool-flames/
     build_index.py        chunks + embeddings + FAISS -> data/ai/index/
     qa.py                 hybrid retrieval, cited answers, fallbacks
     map_columns.py        stub (A5 cut)
+    dossier.py            dossier facts from data/raw/ (record text, table columns, instruments) + similar studies
   data/
     raw/                  24 records, 22 tables, columns.md
     clean/                tests.csv (1,858 rows), ranges.csv
     ai/                   investigations.json, ai_fields.json, batch_input.jsonl, index/
     manual/               earth_vs_space.csv (8 sourced rows)
     fake/                 stub data for app development
-  tests/                  pytest (80): units, schema, build_tests parsing, ranking, warnings, Q&A, every app page
+  tests/                  pytest (129): units, schema, build_tests parsing, ranking, warnings, Q&A, dossier, every app page
 ```
 
 `core/` must not import Streamlit. `app/` imports from `core/` and reads files from `data/`. The app never calls the PSI endpoint.
@@ -309,7 +311,8 @@ Five rules as specified (detector blind spot, hidden hazard, no data yet for par
 | Explore | Scenario Explorer (`views/scenario.py`) | **Habitat designer** (drag a point on O2-vs-pressure; on release Python re-ranks for a "Custom atmosphere"; presets clickable; Orbit/Moon/Mars; exact inputs), scenario pills, phase tabs, weight sliders (sidebar), stacked score chart, result cards, warning cards |
 | Explore | Gap map (`views/gap_map.py`) | 1,009 runs, x = psi, y = O2 %, colour + shape by area, habitat stars, iso-ppO2 curves (2.8/3.1/4.3), "runs near habitat" metric, table view, CSV download |
 | Explore | Flame Lab (`views/flame_lab.py`) | Illustrative p5.js flame: gravity, O2, airflow, solid/droplet, six "Try this" presets (incl. turn off the fans, FLEX cool flame); lists matching NASA studies, "no data yet" for Moon/Mars, Earth-vs-space for 1 g; rules + sources in "How this animation works" |
-| Explore | Investigations (`views/overview.py`) | 24 cards (summary, fuels, condition chips, runs, DOI, key findings), filters, Earth-vs-space flagged cards |
+| Explore | Investigations (`views/overview.py`) | 24 cards (summary, fuels, condition chips, runs, DOI, key findings, **Open dossier** link), filters, Earth-vs-space flagged cards |
+| Explore | Study dossier (`views/dossier.py`) | One investigation in depth, deep link `?id=PSI-99`: identity (platform, hardware, dates, PI), AI summary, objective/hypothesis/approach/impacts **quoted verbatim**, "what was tested" (sample, conditions, measurements from the raw table columns, sorted by keyword rules; what varied), instruments named in the record with the quoting sentence, closest run to the habitat, runs chart (fields with ≥5 values), similar studies (60% record-text embeddings + 40% shared area/fuel phase/hardware/O₂), publications, standardized + raw tables, CSV. Linked from Investigations cards, Scenario results and Compare |
 | Tools | Compare (`views/compare.py`) | 2–4 studies side by side + similarities/differences |
 | Tools | Ask (`views/ask.py`) | cited Q&A, example pills, works without a key |
 | About | Earth benefits (`views/earth_benefits.py`) | 3 items quoted from the records' research-impacts text with DOIs (no water-mist / firefighter-gear claims: not in PSI) |
@@ -320,7 +323,8 @@ Five rules as specified (detector blind spot, hidden hazard, no data yet for par
 
 1. **Summaries/tags:** `ai/tag_summarize.py` copies facts from `data/raw/` and hand maps; AI fields (`fuels`, `fuel_types`, `summary_3line`, `key_findings`) come from `data/ai/ai_fields.json`, written by Claude from record text only; validated (3 lines, 1–4 findings, banned wording). `--export-batch` writes prompts; `--llm` keeps an optional Gemini path. **A human should still read every summary once.**
 2. **Column mapping:** done by hand (A5 cut).
-3. **Q&A:** `ai/build_index.py` (44 chunks, ~500 tokens, overlap 50) → `data/ai/index/`; `ai/qa.py` hybrid retrieval, declines off-topic questions, Gemini answer with DOIs if a key exists, else passages with DOIs.
+3. **Dossiers (`ai/dossier.py`):** no generation. Record text and table columns are shown verbatim (footnote rows dropped with the mapping's `require`); instruments come from a fixed vocabulary scan with the source sentence; similar studies = 0.6 × cosine of mean chunk embeddings from `data/ai/index/` + 0.4 × shared attributes (area 0.4, fuel phase 0.3, hardware 0.2, O₂ overlap 0.1).
+4. **Q&A:** `ai/build_index.py` (44 chunks, ~500 tokens, overlap 50) → `data/ai/index/`; `ai/qa.py` hybrid retrieval, declines off-topic questions, Gemini answer with DOIs if a key exists, else passages with DOIs.
 
 ---
 
@@ -331,7 +335,7 @@ Five rules as specified (detector blind spot, hidden hazard, no data yet for par
 - Pure functions in `core/`; side effects only in `pipeline/`, `ai/` and `app/`.
 - Cache data loading in the app with `st.cache_data`.
 - Small commits to `main`, messages `area: what changed`, plus the Co-Authored-By line when Claude writes them.
-- `pytest` must pass (80 tests) before every commit.
+- `pytest` must pass (129 tests) before every commit.
 - **Restart `streamlit run app/Home.py` after changing `core/`, `pipeline/`, `.streamlit/config.toml` or `app/static/js/`.** Streamlit only hot-reloads files under `app/`; a stale server raises errors like `TypeError: unhashable type: 'dict'` in `rank()`.
 - Never commit `.env`, `.streamlit/secrets.toml` or API keys.
 - Do not add packages without need; keep the deploy small.
@@ -419,11 +423,11 @@ Links: PSI repository `https://psi.nasa.gov/physci/repo`; NTRS API `https://ntrs
 
 ## 16. Current status and what remains (Sun 15 Nov 2026, ~04:30)
 
-**Built and tested (80 tests pass; all pages load on real and fake data; animations checked in headless Chrome in dark/light, desktop/phone, reduced motion):**
+**Built and tested (129 tests pass; all pages load on real and fake data; animations checked in headless Chrome in dark/light, desktop/phone, reduced motion):**
 - Full data pipeline: 19 tables standardized, spot-checked, ranges built.
 - All 24 investigations summarized and tagged; Earth-vs-space table with verified sources.
 - Ranking, warnings, custom-atmosphere support in `core/`.
-- App: Home (animated hero), Scenario Explorer (+ habitat designer), Gap map, Flame Lab, Investigations, Compare, Ask, Earth benefits; theme and grouped navigation.
+- App: Home (animated hero), Scenario Explorer (+ habitat designer), Gap map, Flame Lab, Investigations, **Study dossier** (added Sun ~14:00, closes the brief's per-investigation detail: objectives, sample, conditions, what varied, sensors/measurements, similar studies), Compare, Ask, Earth benefits; theme and grouped navigation.
 - README, demo script draft, submission text draft.
 
 **Not yet done (in order):**

@@ -1,4 +1,6 @@
-# Cool Flames: Fire Scenario Explorer
+# Freefall Fire Atlas: Fire Scenario Explorer
+
+Repository: `Cool-Flames` (the project's working name).
 
 NASA Space Apps Challenge 2026: *Flame in Freefall: SI-Powered Fire Safety Insights from
 Microgravity Combustion Data*.
@@ -18,6 +20,7 @@ the habitat's atmosphere, and flags where **no data exists**.
 | Page | What it shows |
 |---|---|
 | **Investigations** | One card per investigation (24): AI summary, fire-safety area, fuels, O₂ / pressure / airflow ranges, runs, DOI. Filters and search. "Earth vs space" cards of sourced findings. |
+| **Study dossier** | Everything about one investigation (`?id=PSI-99`): objective, hypothesis, approach and research impacts quoted from the NASA record; samples, conditions and results from the NASA table, with what varied between runs; instruments the record names (with the sentence); how close its runs come to your habitat; a runs chart; **similar studies** (record-text embeddings + shared area, fuel phase, hardware, O₂); publications; standardized and raw tables with CSV download. Linked from every card. |
 | **Scenario Explorer** | Drag a point on an O₂-vs-pressure plane to **design your own atmosphere** (the page re-ranks for it), or pick a habitat; then habitat + scenario → phase tabs (smoke, ignition, spread, suppression) → ranked investigations with a score breakdown, weight sliders and warning cards (detector blind spot, cool-flame hidden hazard, no partial-gravity data, Earth tests not conservative, outside tested range). |
 | **Flame Lab** | An animated flame you control with gravity (μg / Moon / Mars / Earth), oxygen, airflow and fuel type, with guided "Try this" presets (turn off the fans, cool flame…). An **illustrative model, not a simulation**: every rule cites its source (Olson 2004, Link et al. 2018, Nayagam et al. 2014), and the page lists which NASA experiments tested that regime. |
 | **Gap map** | Every standardized run with O₂ and pressure on one chart, habitat atmospheres on top, curves of equal O₂ partial pressure, and a CSV download of the standardized test table. |

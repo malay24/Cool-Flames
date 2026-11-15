@@ -11,7 +11,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # app/, for `compo
 import pandas as pd  # noqa: E402
 import streamlit as st  # noqa: E402
 
-from components import demo_badge, doi_link, fmt_range, footer, page_header  # noqa: E402
+from components import (demo_badge, doi_link, dossier_link, fmt_range, footer,  # noqa: E402
+                        page_header)
 from components.data import load_investigations, load_tests  # noqa: E402
 
 page_header("Tools · Compare", "Compare investigations side by side",
@@ -96,4 +97,7 @@ for n in notes:
 
 st.markdown("**Cite:** " + " · ".join(f"{by_id[p]['name']} {doi_link(by_id[p]['doi'])}"
                                        for p in picked))
+for col, p in zip(st.columns(len(picked)), picked):
+    with col:
+        dossier_link(p, f"{by_id[p]['name']} dossier")
 footer()

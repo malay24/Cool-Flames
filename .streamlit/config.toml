@@ -1,4 +1,4 @@
-# Cool Flames theme: "mission control". Forced dark for everyone, independent of
+# Freefall Fire Atlas theme: "mission control". Forced dark for everyone, independent of
 # the viewer's OS setting (a single [theme] with no [theme.light]/[theme.dark]
 # split, so Streamlit does not OS-adapt). To restore OS-adaptive theming, move
 # these colours back under [theme.dark] and re-add the [theme.light] variant.

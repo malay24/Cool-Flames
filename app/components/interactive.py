@@ -21,7 +21,7 @@ HERO_HTML = """
   <div class="cf-h-text">
     <p class="cf-h-eyebrow">NASA Space Apps 2026 · Flame in Freefall</p>
     <h1>What NASA's microgravity fire tests can, and can't, tell a Moon base</h1>
-    <p class="cf-h-sub">Pick a habitat and a fire scenario. Cool Flames ranks NASA's 24 combustion
+    <p class="cf-h-sub">Pick a habitat and a fire scenario. Freefall Fire Atlas ranks NASA's 24 combustion
     investigations for each phase of the fire, explains every score, and shows where no test has
     been run.</p>
     <p class="cf-h-tag"></p>
@@ -42,7 +42,9 @@ HERO_CSS = """
   font-size: 2.45rem; line-height: 1.12; color: var(--fg, #e8eaf0); }
 .cf-h-sub { margin: 0; font-size: 1.06rem; line-height: 1.55; color: var(--muted, #9aa3b5); }
 .cf-h-tag { margin: .9rem 0 0; font-size: .82rem; color: var(--muted, #9aa3b5); }
-@media (max-width: 640px) { .cf-h-text { padding: 1.4rem 1.2rem; } .cf-h-text h1 { font-size: 1.7rem; } }
+@media (max-width: 640px) {  /* the hero is a fixed 300 px tall: keep all text inside it on phones */
+  .cf-h-text { padding: 1.1rem 1.1rem; } .cf-h-text h1 { font-size: 1.35rem; margin: .15rem 0 .45rem; }
+  .cf-h-sub { font-size: .92rem; line-height: 1.5; } .cf-h-tag { display: none; } }
 """
 
 _hero = st.components.v2.component("cool_flames.hero", html=HERO_HTML, css=HERO_CSS,

@@ -1,4 +1,4 @@
-"""Cool Flames entry point and router. Run from the repo root: streamlit run app/Home.py
+"""Freefall Fire Atlas entry point and router. Run from the repo root: streamlit run app/Home.py
 
 Sets the page config, logo, theme CSS and the sidebar habitat picker once,
 then hands over to the selected view in app/views/. Deploy main file stays
@@ -14,7 +14,7 @@ import streamlit as st  # noqa: E402
 
 from components import habitat_sidebar, inject_css  # noqa: E402
 
-st.set_page_config(page_title="Cool Flames · Fire Scenario Explorer",
+st.set_page_config(page_title="Freefall Fire Atlas · Fire Scenario Explorer",
                    page_icon=str(APP / "static" / "icon.svg"), layout="wide")
 st.logo(str(APP / "static" / "logo.svg"), icon_image=str(APP / "static" / "icon.svg"), size="large")
 inject_css()
@@ -31,6 +31,7 @@ PAGES = {
         view("gap_map.py", "Gap map", ":material/scatter_plot:", "gap-map"),
         view("flame_lab.py", "Flame Lab", ":material/local_fire_department:", "flame-lab"),
         view("overview.py", "Investigations", ":material/library_books:", "overview"),
+        view("dossier.py", "Study dossier", ":material/description:", "dossier"),
     ],
     "Tools": [
         view("compare.py", "Compare", ":material/compare_arrows:", "compare"),
