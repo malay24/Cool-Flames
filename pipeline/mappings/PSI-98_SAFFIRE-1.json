@@ -1,0 +1,34 @@
+{
+  "psi_id": "PSI-98",
+  "table": "PSI-98_Experimental table_SAFFIRE-1.csv",
+  "columns": {
+    "Sample Number": "run_id",
+    "Material": "fuel",
+    "Percent O2": {
+      "to": "o2_pct",
+      "unit": "pct"
+    },
+    "Air Flow (cm/s)": {
+      "to": "airflow_cms",
+      "unit": "cms"
+    },
+    "Sample Width (cm)": {
+      "to": "sample_size_mm",
+      "unit": "cm"
+    }
+  },
+  "constants": {
+    "fuel_phase": "solid",
+    "fuel_class": "cabin_material"
+  },
+  "outcome_from": {
+    "source": "Burn Time (s)",
+    "map": {},
+    "default": "burned"
+  },
+  "require": [
+    "Percent O2"
+  ],
+  "mapping_confidence": "hand",
+  "notes": "Large-scale SIBAL fabric fires on Cygnus. Two rows are pre-test flow-visualisation data, not burns -> skipped via require. sample_size from the width (94 cm, the largest dimension). O2 '21.5 - 21.7' parses as 21.5 (first number; D5 only takes midpoints for 'x to y'), '~ 21.5' -> 21.5. No pressure column -> blank (strict policy). Both samples have a burn time -> burned."
+}

@@ -1,0 +1,21 @@
+{
+  "psi_id": "PSI-107",
+  "table": "PSI-107_Experimental table_Spice.csv",
+  "columns": {
+    "Fuel": "fuel",
+    "Air Rate (cm/s)": {
+      "to": "airflow_cms",
+      "unit": "cms"
+    }
+  },
+  "constants": {
+    "fuel_phase": "gas",
+    "fuel_class": "idealized",
+    "outcome": "burned"
+  },
+  "require": [
+    "Fuel"
+  ],
+  "mapping_confidence": "hand",
+  "notes": "SPICE co-flow gas jet flames (ethylene, propane) in the MSG duct. Only coflow air velocity is tabulated; O2 and pressure are not in the table -> blank (strict policy, not assumed to be air at 14.7 psi). Every row has an ignition and flame-off time, so outcome=burned. run_id = row position (no unique id column; some rows repeat a test at a second fuel rate)."
+}

@@ -43,19 +43,33 @@ ENUMS = {
 # Tokens that mean "no value" in the source tables.
 _BLANKISH = {"", "n/a", "na", "nan", "none", "-", "--"}
 _NUM_RE = re.compile(r"-?\d+(?:\.\d+)?")
+# Digits that are not measurements: note references ("Note 4", "(note 2)") and
+# chemical formulas ("O2", "N2", "C2H4"). Removed before extracting numbers (D7).
+_NOTE_RE = re.compile(r"\(?\bnotes?\s*\d+\)?", re.IGNORECASE)
+_FORMULA_RE = re.compile(r"\b[A-Za-z]+\d[A-Za-z0-9]*\b")
+
+
+def is_list_value(raw: str | None) -> bool:
+    """True for cells listing several test conditions ('21; 26.5', '~30% and ~21%')."""
+    if not raw:
+        return False
+    s = _FORMULA_RE.sub(" ", _NOTE_RE.sub(" ", raw)).lower()
+    return len(_NUM_RE.findall(s)) >= 2 and (";" in s or " and " in s or " or " in s)
 
 
 def parse_number(raw: str | None) -> float | None:
     """Extract one number from a messy source value (see _FORMAT.md).
 
     'x to y' -> midpoint; 'x and y' -> max; strips '~' and inline units;
-    blank-ish or number-less strings -> None.
+    ignores note references and chemical formulas; blank-ish or number-less
+    strings -> None.
     """
     if raw is None:
         return None
     s = raw.strip()
     if s.lower() in _BLANKISH:
         return None
+    s = _FORMULA_RE.sub(" ", _NOTE_RE.sub(" ", s))
     nums = [float(m) for m in _NUM_RE.findall(s)]
     if not nums:
         return None
@@ -110,9 +124,13 @@ def build_rows(mapping: dict, flags: list[str]) -> list[dict]:
     outcome_from = mapping.get("outcome_from")
     diluent_from = mapping.get("diluent_from")
     conf = mapping["mapping_confidence"]
+    required = mapping.get("require", [])
 
     out_rows: list[dict] = []
     for n, row in enumerate(body):
+        # Skip rows that are not test runs (notes, continuation lines, flow-vis).
+        if any(not (cell(row, src) or "").strip() for src in required):
+            continue
         r = {c: "" for c in SCHEMA_COLS}
         r["psi_id"] = psi_id
         r["mapping_confidence"] = conf
@@ -125,6 +143,10 @@ def build_rows(mapping: dict, flags: list[str]) -> list[dict]:
             if target in STR_TARGETS:
                 r[target] = (raw or "").strip()
             elif target in NUM_TARGETS:
+                # A list of conditions in one cell is not one test point: blank it.
+                if target in {"o2_pct", "pressure_psi"} and is_list_value(raw):
+                    flags.append(f"{psi_id} row {n}: list-valued {target} {raw!r} -> blank")
+                    continue
                 num = parse_number(raw)
                 if num is not None:
                     val = convert(num, unit)

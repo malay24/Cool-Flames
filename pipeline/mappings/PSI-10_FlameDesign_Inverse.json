@@ -1,0 +1,27 @@
+{
+  "psi_id": "PSI-10",
+  "table": "PSI-10_Experimental table_Flame Design_Inverse Flame.csv",
+  "columns": {
+    "Test": "run_id",
+    "XO2": {
+      "to": "o2_pct",
+      "unit": "fraction"
+    },
+    "pmean (atm)": {
+      "to": "pressure_psi",
+      "unit": "atm"
+    }
+  },
+  "constants": {
+    "fuel": "C2H4",
+    "fuel_phase": "gas",
+    "fuel_class": "idealized",
+    "diluent": "N2",
+    "outcome": "unknown"
+  },
+  "require": [
+    "Test"
+  ],
+  "mapping_confidence": "hand",
+  "notes": "ACME Flame Design inverse (oxidizer-into-fuel) flames. Fuel is ethylene (the 'XC2H4' columns), diluted with N2. O2 from 'XO2' (mole fraction, x100, up to ~85%); pressure from 'pmean (atm)'. No per-run outcome or fire-safety metric. Rows where XO2 is 'RAMP' (O2 ramped during the test) have O2 left blank and are not plotted."
+}

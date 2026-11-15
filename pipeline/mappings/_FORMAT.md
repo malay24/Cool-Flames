@@ -45,3 +45,10 @@ One JSON file per experiment table. `build_tests.py` (D5) consumes these to emit
 - **`metric`:** one main metric per row (spread_rate > burning_rate > extinction_time
   > others). Omit the key entirely if the table has no fire-safety metric.
 - **Unmapped schema columns** are left blank, which means "not reported".
+- **`require`** (optional, added in D6): list of source headers that must be
+  non-blank for a row to count as a test run. Rows failing it are skipped (e.g.
+  E-FIELD continuation lines, Saffire-I flow-visualisation rows). Default run_id
+  stays the row's position in the raw table, so spot-checks can find it.
+- **Summary tables** (one row per test day or per fuel, with lists of O2 or
+  pressure values such as `21; 26.5; 40`): map only run_id, fuel and constants.
+  Do not map list-valued conditions; a single parsed number would be misleading.

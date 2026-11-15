@@ -1,0 +1,40 @@
+{
+  "psi_id": "PSI-159",
+  "table": "PSI-159_Experimental table_CFI-G_Normal Flames.csv",
+  "columns": {
+    "Test": "run_id",
+    "Fuel": "fuel",
+    "XO2 before test": {
+      "to": "o2_pct",
+      "unit": "fraction"
+    },
+    "approx p (bar)": {
+      "to": "pressure_psi",
+      "unit": "bar"
+    }
+  },
+  "constants": {
+    "fuel_phase": "gas",
+    "fuel_class": "idealized"
+  },
+  "metric": {
+    "source": "burn time (sec)",
+    "name": "burn_time",
+    "unit": "s"
+  },
+  "outcome_from": {
+    "source": "Hot ignition",
+    "map": {
+      "Yes": "burned",
+      "yes": "burned",
+      "No": "no_ignition",
+      "no": "no_ignition"
+    },
+    "default": "unknown"
+  },
+  "require": [
+    "Test"
+  ],
+  "mapping_confidence": "hand",
+  "notes": "ACME CFI-G normal flames (gaseous alkane fuels: ethane, propane, butane). O2 from 'XO2 before test' (mole fraction; header has a leading space in the raw file, trimmed by D5). Pressure 'approx p (bar)'. Metric: burn time in s (main per-run measurement; no spread or burning rate). Outcome from 'Hot ignition' Yes/No. Diluent not tabulated -> blank."
+}

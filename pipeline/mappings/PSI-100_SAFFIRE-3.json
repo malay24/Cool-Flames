@@ -1,0 +1,26 @@
+{
+  "psi_id": "PSI-100",
+  "table": "PSI-100_Experimental table_SAFFIRE-3.csv",
+  "columns": {
+    "Sample Number": "run_id",
+    "Material": "fuel",
+    "Air Flow": {
+      "to": "airflow_cms",
+      "unit": "cms"
+    },
+    "Sample Length": {
+      "to": "sample_size_mm",
+      "unit": "cm"
+    }
+  },
+  "constants": {
+    "fuel_phase": "solid",
+    "fuel_class": "cabin_material",
+    "outcome": "unknown"
+  },
+  "require": [
+    "Sample Number"
+  ],
+  "mapping_confidence": "hand",
+  "notes": "Large-scale SIBAL fabric on Cygnus. Values carry inline units ('30 cm/s', '94 cm') -> stripped. No O2, pressure or burn result in the table -> blank / outcome unknown."
+}

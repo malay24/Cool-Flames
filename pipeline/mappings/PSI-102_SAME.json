@@ -1,0 +1,22 @@
+{
+  "psi_id": "PSI-102",
+  "table": "PSI-102_Experimental table_SAME.csv",
+  "columns": {
+    "Sample #": "run_id",
+    "Sample Material": "fuel",
+    "Air Flow (cm/s)": {
+      "to": "airflow_cms",
+      "unit": "cms"
+    }
+  },
+  "constants": {
+    "fuel_phase": "solid",
+    "fuel_class": "cabin_material",
+    "outcome": "unknown"
+  },
+  "require": [
+    "Sample #"
+  ],
+  "mapping_confidence": "hand",
+  "notes": "SAME smoke from overheated (not burning) cabin materials: Teflon, Kapton, silicone rubber, lampwick. Rows 5-8 read 'Kapton: same conditions as 1-4' etc.; their airflow cell is blank in the raw table, so airflow stays blank (not copied from rows 1-4). Weight-loss rate is a heating setting, not a fire-safety metric -> no metric. outcome unknown (smoke tests, no flaming)."
+}

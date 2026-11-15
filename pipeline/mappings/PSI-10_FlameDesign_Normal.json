@@ -1,0 +1,27 @@
+{
+  "psi_id": "PSI-10",
+  "table": "PSI-10_Experimental table_Flame Design_Normal Flame.csv",
+  "columns": {
+    "Test": "run_id",
+    "Fuel": "fuel",
+    "XO2 (init)": {
+      "to": "o2_pct",
+      "unit": "fraction"
+    },
+    "pinit (atm)": {
+      "to": "pressure_psi",
+      "unit": "atm"
+    }
+  },
+  "constants": {
+    "fuel_phase": "gas",
+    "fuel_class": "idealized",
+    "diluent": "N2",
+    "outcome": "unknown"
+  },
+  "require": [
+    "Test"
+  ],
+  "mapping_confidence": "hand",
+  "notes": "ACME Flame Design normal (fuel-into-air) flames: C2H4, C3H8 and others, diluted with N2. O2 from 'XO2 (init)' (mole fraction, x100) paired with 'pinit (atm)' (initial pressure); pinit is used instead of pmean because pmean is blank on 20 rows while pinit is never blank. 'RAMPED' rows have no fixed fuel fraction; their O2/pressure are still measured and kept. No per-run outcome or fire-safety metric (Tad and Zst are design parameters), so outcome=unknown and no metric."
+}

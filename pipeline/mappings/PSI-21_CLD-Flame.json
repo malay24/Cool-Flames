@@ -1,0 +1,18 @@
+{
+  "psi_id": "PSI-21",
+  "table": "PSI-21_Experimental table_CLD Flame.csv",
+  "columns": {
+    "Test Day": "run_id",
+    "Fuel Bottle": "fuel"
+  },
+  "constants": {
+    "fuel_phase": "gas",
+    "fuel_class": "idealized",
+    "outcome": "burned"
+  },
+  "require": [
+    "Test Day"
+  ],
+  "mapping_confidence": "hand",
+  "notes": "ACME Coflow Laminar Diffusion flames, per-test-day summary. Fuel concentration ranges only; no O2 or pressure in the table -> blank. 'Fuel Bottle' has typos ('40% CH5', 'CH6'...) kept verbatim. outcome=burned (rows list flames ignited)."
+}

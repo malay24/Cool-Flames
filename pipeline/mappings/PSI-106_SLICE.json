@@ -1,0 +1,18 @@
+{
+  "psi_id": "PSI-106",
+  "table": "PSI-106_Experimental table_Slice.csv",
+  "columns": {
+    "Test Date": "run_id",
+    "Fuel Type": "fuel"
+  },
+  "constants": {
+    "fuel_phase": "gas",
+    "fuel_class": "idealized",
+    "outcome": "unknown"
+  },
+  "require": [
+    "Fuel Type"
+  ],
+  "mapping_confidence": "hand",
+  "notes": "SLICE lifted gas-jet flames, one row per test date with a free-text fuel description (e.g. '40% CH4 (balance N2) including 2 pyrometry calibration tests'). No conditions tabulated -> blank."
+}

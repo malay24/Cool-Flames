@@ -1,0 +1,29 @@
+{
+  "psi_id": "PSI-39",
+  "table": "PSI-39_Experimental table_CFI.csv",
+  "columns": {
+    "Flex Number": "run_id",
+    "Fuel": "fuel",
+    "Oxygen": {
+      "to": "o2_pct",
+      "unit": "fraction"
+    },
+    "Pressure": {
+      "to": "pressure_psi",
+      "unit": "atm"
+    }
+  },
+  "constants": {
+    "fuel_phase": "liquid",
+    "fuel_class": "idealized"
+  },
+  "diluent_from": {
+    "N2": "Nitrogen",
+    "He": "Helium"
+  },
+  "require": [
+    "Flex Number"
+  ],
+  "mapping_confidence": "hand",
+  "notes": "Cool Flames Investigation, droplets of n-dodecane (C12H26) and dodecane/iso-dodecane blends. Pressure values like '1 atm' -> unit stripped, atm -> psi. O2 and diluents are mole fractions. No outcome or metric columns in the table."
+}

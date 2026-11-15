@@ -1,0 +1,18 @@
+{
+  "psi_id": "PSI-22",
+  "table": "PSI-22_Experimental table_ACME E-FIELD Flames.csv",
+  "columns": {
+    "Test Day": "run_id",
+    "Fuel Bottle": "fuel"
+  },
+  "constants": {
+    "fuel_phase": "gas",
+    "fuel_class": "idealized",
+    "outcome": "burned"
+  },
+  "require": [
+    "Test Day"
+  ],
+  "mapping_confidence": "hand",
+  "notes": "ACME E-FIELD flames (electric field imitates buoyancy), per-test-day summary. Continuation rows (blank except 'Fuel Conc' and notes) are skipped via require. No O2 or pressure in the table -> blank. outcome=burned (rows list flames ignited)."
+}

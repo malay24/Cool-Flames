@@ -1,4 +1,6 @@
 psi_id,run_id,fuel,fuel_phase,fuel_class,o2_pct,pressure_psi,ppo2_psi,diluent,airflow_cms,sample_size_mm,outcome,metric_name,metric_value,metric_unit,mapping_confidence
+PSI-100,S1,SIBAL Fabric,solid,cabin_material,,,,,30.0,940.0,unknown,,,,hand
+PSI-100,S2,SIBAL Fabric,solid,cabin_material,,,,,30.0,940.0,unknown,,,,hand
 PSI-101,51,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.38,ratio,hand
 PSI-101,51a,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.38,ratio,hand
 PSI-101,61,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.38,ratio,hand
@@ -108,6 +110,1244 @@ PSI-101,97a,Pyrell,solid,cabin_material,,,,,0.0,,unknown,particle_size_ratio,1.2
 PSI-101,107,Pyrell,solid,cabin_material,,,,,1.0,,unknown,particle_size_ratio,1.23,ratio,hand
 PSI-101,107a,Pyrell,solid,cabin_material,,,,,1.0,,unknown,particle_size_ratio,1.23,ratio,hand
 PSI-101,113,Pyrell,solid,cabin_material,,,,,2.0,,unknown,particle_size_ratio,1.23,ratio,hand
+PSI-102,1,Teflon,solid,cabin_material,,,,,5.0,,unknown,,,,hand
+PSI-102,2,Teflon,solid,cabin_material,,,,,5.0,,unknown,,,,hand
+PSI-102,3,Teflon,solid,cabin_material,,,,,5.0,,unknown,,,,hand
+PSI-102,4,Teflon,solid,cabin_material,,,,,10.0,,unknown,,,,hand
+PSI-102,5,Kapton: same conditions as 1-4,solid,cabin_material,,,,,,,unknown,,,,hand
+PSI-102,6,Silicone Rubber: same conditions as 1-4,solid,cabin_material,,,,,,,unknown,,,,hand
+PSI-102,7,Lampwick: same conditions as 1-4,solid,cabin_material,,,,,,,unknown,,,,hand
+PSI-102,8,Dibutyl Phthalate: same conditions as 1-4,solid,cabin_material,,,,,,,unknown,,,,hand
+PSI-106,2012-FEB-09,100% CH4,gas,idealized,,,,,,,unknown,,,,hand
+PSI-106,2012-FEB-13 SLICE testing with,40% CH4 (balance N2) including 2 pyrometry calibration tests and 2 fan calibrations,gas,idealized,,,,,,,unknown,,,,hand
+PSI-106,2012-FEB-17,70% CH4 (balance N2) including 1 pyrometry calibration test,gas,idealized,,,,,,,unknown,,,,hand
+PSI-106,2012-FEB-20,20% C2H4 (balance N2),gas,idealized,,,,,,,unknown,,,,hand
+PSI-106,2012-FEB-27,100% CH4,gas,idealized,,,,,,,unknown,,,,hand
+PSI-106,2012-MAR-01,40% CH4 (balance N2),gas,idealized,,,,,,,unknown,,,,hand
+PSI-106,2012-MAR-05 SLICE testing with,70% CH4 (balance N2) where the fuel bottle was not emptied (in contrast to most days),gas,idealized,,,,,,,unknown,,,,hand
+PSI-106,2012-MAR-09,100% C2H6,gas,idealized,,,,,,,unknown,,,,hand
+PSI-106,2012-MAR-12,100% CH4,gas,idealized,,,,,,,unknown,,,,hand
+PSI-106,2012-MAR-15,20% C2H4 (balance N2),gas,idealized,,,,,,,unknown,,,,hand
+PSI-106,2012-MAR-19 SLICE testing with,70% CH4 (balance N2) including 1 pyrometry calibration test and 2 fan calibrations,gas,idealized,,,,,,,unknown,,,,hand
+PSI-106,2012-MAR-23 Last day of testing: SPICE testing with 100% C3H8 and then 100%,100% C2H4,gas,idealized,,,,,,,unknown,,,,hand
+PSI-107,0,Ethylene,gas,idealized,,,,,36.39,,burned,,,,hand
+PSI-107,1,Ethylene,gas,idealized,,,,,36.39,,burned,,,,hand
+PSI-107,2,Ethylene,gas,idealized,,,,,40.15,,burned,,,,hand
+PSI-107,3,Ethylene,gas,idealized,,,,,40.15,,burned,,,,hand
+PSI-107,4,Ethylene,gas,idealized,,,,,57.08,,burned,,,,hand
+PSI-107,5,Ethylene,gas,idealized,,,,,57.08,,burned,,,,hand
+PSI-107,6,Ethylene,gas,idealized,,,,,57.08,,burned,,,,hand
+PSI-107,7,Ethylene,gas,idealized,,,,,58.02,,burned,,,,hand
+PSI-107,8,Ethylene,gas,idealized,,,,,58.02,,burned,,,,hand
+PSI-107,9,Ethylene,gas,idealized,,,,,17.59,,burned,,,,hand
+PSI-107,10,Ethylene,gas,idealized,,,,,17.59,,burned,,,,hand
+PSI-107,11,Ethylene,gas,idealized,,,,,16.65,,burned,,,,hand
+PSI-107,12,Ethylene,gas,idealized,,,,,16.65,,burned,,,,hand
+PSI-107,13,Ethylene,gas,idealized,,,,,33.57,,burned,,,,hand
+PSI-107,14,Ethylene,gas,idealized,,,,,33.57,,burned,,,,hand
+PSI-107,15,Ethylene,gas,idealized,,,,,34.51,,burned,,,,hand
+PSI-107,16,Ethylene,gas,idealized,,,,,35.45,,burned,,,,hand
+PSI-107,17,Ethylene,gas,idealized,,,,,58.02,,burned,,,,hand
+PSI-107,18,Ethylene,gas,idealized,,,,,58.96,,burned,,,,hand
+PSI-107,19,Ethylene,gas,idealized,,,,,57.08,,burned,,,,hand
+PSI-107,20,Ethylene,gas,idealized,,,,,57.08,,burned,,,,hand
+PSI-107,21,Ethylene,gas,idealized,,,,,17.59,,burned,,,,hand
+PSI-107,22,Ethylene,gas,idealized,,,,,18.53,,burned,,,,hand
+PSI-107,23,Ethylene,gas,idealized,,,,,16.65,,burned,,,,hand
+PSI-107,24,Ethylene,gas,idealized,,,,,16.65,,burned,,,,hand
+PSI-107,25,Ethylene,gas,idealized,,,,,35.45,,burned,,,,hand
+PSI-107,26,Ethylene,gas,idealized,,,,,35.45,,burned,,,,hand
+PSI-107,27,Ethylene,gas,idealized,,,,,35.45,,burned,,,,hand
+PSI-107,28,Ethylene,gas,idealized,,,,,58.02,,burned,,,,hand
+PSI-107,29,Ethylene,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,30,Ethylene,gas,idealized,,,,,17.59,,burned,,,,hand
+PSI-107,31,Ethylene,gas,idealized,,,,,16.65,,burned,,,,hand
+PSI-107,32,Ethylene,gas,idealized,,,,,15.71,,burned,,,,hand
+PSI-107,33,Ethylene,gas,idealized,,,,,15.71,,burned,,,,hand
+PSI-107,34,Ethylene,gas,idealized,,,,,15.71,,burned,,,,hand
+PSI-107,35,Ethylene,gas,idealized,,,,,17.59,,burned,,,,hand
+PSI-107,36,Ethylene,gas,idealized,,,,,17.59,,burned,,,,hand
+PSI-107,37,Ethylene,gas,idealized,,,,,17.59,,burned,,,,hand
+PSI-107,38,Ethylene,gas,idealized,,,,,16.65,,burned,,,,hand
+PSI-107,39,Ethylene,gas,idealized,,,,,15.71,,burned,,,,hand
+PSI-107,40,Ethylene,gas,idealized,,,,,15.71,,burned,,,,hand
+PSI-107,41,Ethylene,gas,idealized,,,,,15.71,,burned,,,,hand
+PSI-107,42,Propane,gas,idealized,,,,,42.97,,burned,,,,hand
+PSI-107,43,Propane,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,44,Propane,gas,idealized,,,,,46.73,,burned,,,,hand
+PSI-107,45,Propane,gas,idealized,,,,,45.79,,burned,,,,hand
+PSI-107,46,Propane,gas,idealized,,,,,46.73,,burned,,,,hand
+PSI-107,47,Propane,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,48,Propane,gas,idealized,,,,,35.45,,burned,,,,hand
+PSI-107,49,Propane,gas,idealized,,,,,35.45,,burned,,,,hand
+PSI-107,50,Propane,gas,idealized,,,,,36.39,,burned,,,,hand
+PSI-107,51,Propane,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,52,Propane,gas,idealized,,,,,22.29,,burned,,,,hand
+PSI-107,53,Propane,gas,idealized,,,,,22.29,,burned,,,,hand
+PSI-107,54,Propane,gas,idealized,,,,,22.29,,burned,,,,hand
+PSI-107,55,Propane,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,56,Propane,gas,idealized,,,,,33.57,,burned,,,,hand
+PSI-107,57,Propane,gas,idealized,,,,,34.51,,burned,,,,hand
+PSI-107,58,Propane,gas,idealized,,,,,32.63,,burned,,,,hand
+PSI-107,59,Propane,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,60,Propane,gas,idealized,,,,,20.41,,burned,,,,hand
+PSI-107,61,Propane,gas,idealized,,,,,21.35,,burned,,,,hand
+PSI-107,62,Propane,gas,idealized,,,,,20.41,,burned,,,,hand
+PSI-107,63,Propane,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,64,Propane,gas,idealized,,,,,15.71,,burned,,,,hand
+PSI-107,65,Propane,gas,idealized,,,,,15.71,,burned,,,,hand
+PSI-107,66,Propane,gas,idealized,,,,,15.71,,burned,,,,hand
+PSI-107,67,Propane,gas,idealized,,,,,15.71,,burned,,,,hand
+PSI-107,68,Propane,gas,idealized,,,,,33.57,,burned,,,,hand
+PSI-107,69,Propane,gas,idealized,,,,,33.57,,burned,,,,hand
+PSI-107,70,Propane,gas,idealized,,,,,32.63,,burned,,,,hand
+PSI-107,71,Propane,gas,idealized,,,,,32.63,,burned,,,,hand
+PSI-107,72,Propane,gas,idealized,,,,,33.57,,burned,,,,hand
+PSI-107,73,Propane,gas,idealized,,,,,32.63,,burned,,,,hand
+PSI-107,74,Propane,gas,idealized,,,,,26.99,,burned,,,,hand
+PSI-107,75,Propane,gas,idealized,,,,,26.99,,burned,,,,hand
+PSI-107,76,Propane,gas,idealized,,,,,26.99,,burned,,,,hand
+PSI-107,77,Propane,gas,idealized,,,,,26.99,,burned,,,,hand
+PSI-107,78,Propane,gas,idealized,,,,,14.77,,burned,,,,hand
+PSI-107,79,Propane,gas,idealized,,,,,14.77,,burned,,,,hand
+PSI-107,80,Propane,gas,idealized,,,,,16.65,,burned,,,,hand
+PSI-107,81,Propane,gas,idealized,,,,,15.71,,burned,,,,hand
+PSI-107,82,Propane,gas,idealized,,,,,16.65,,burned,,,,hand
+PSI-107,83,Propane,gas,idealized,,,,,15.71,,burned,,,,hand
+PSI-107,84,Propane,gas,idealized,,,,,38.27,,burned,,,,hand
+PSI-107,85,Propane,gas,idealized,,,,,37.33,,burned,,,,hand
+PSI-107,86,Propane,gas,idealized,,,,,37.33,,burned,,,,hand
+PSI-107,87,Propane,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,88,Propane,gas,idealized,,,,,66.48,,burned,,,,hand
+PSI-107,89,Propane,gas,idealized,,,,,66.48,,burned,,,,hand
+PSI-107,90,Propane,gas,idealized,,,,,66.48,,burned,,,,hand
+PSI-107,91,Propane,gas,idealized,,,,,66.48,,burned,,,,hand
+PSI-107,92,75% Propylene,gas,idealized,,,,,12.89,,burned,,,,hand
+PSI-107,93,75 % Propylene,gas,idealized,,,,,12.89,,burned,,,,hand
+PSI-107,94,75 % Propylene,gas,idealized,,,,,12.89,,burned,,,,hand
+PSI-107,95,75 % Propylene,gas,idealized,,,,,64.6,,burned,,,,hand
+PSI-107,96,75 % Propylene,gas,idealized,,,,,65.54,,burned,,,,hand
+PSI-107,97,75 % Propylene,gas,idealized,,,,,29.81,,burned,,,,hand
+PSI-107,98,75 % Propylene,gas,idealized,,,,,28.87,,burned,,,,hand
+PSI-107,99,75 % Propylene,gas,idealized,,,,,29.81,,burned,,,,hand
+PSI-107,100,75 % Propylene,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,101,75 % Propylene,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,102,75 % Propylene,gas,idealized,,,,,50.49,,burned,,,,hand
+PSI-107,103,75% Propylene,gas,idealized,,,,,11.95,,burned,,,,hand
+PSI-107,104,75% Propylene,gas,idealized,,,,,11.95,,burned,,,,hand
+PSI-107,105,75 % Propylene,gas,idealized,,,,,11.95,,burned,,,,hand
+PSI-107,106,75 % Propylene,gas,idealized,,,,,11.95,,burned,,,,hand
+PSI-107,107,75% Propylene,gas,idealized,,,,,61.78,,burned,,,,hand
+PSI-107,108,75% Propylene,gas,idealized,,,,,60.84,,burned,,,,hand
+PSI-107,109,75% Propylene,gas,idealized,,,,,59.9,,burned,,,,hand
+PSI-107,110,75 % Propylene,gas,idealized,,,,,61.78,,burned,,,,hand
+PSI-107,111,75 % Propylene,gas,idealized,,,,,60.84,,burned,,,,hand
+PSI-107,112,75 % Propylene,gas,idealized,,,,,59.9,,burned,,,,hand
+PSI-107,113,75% Propylene,gas,idealized,,,,,37.33,,burned,,,,hand
+PSI-107,114,75% Propylene,gas,idealized,,,,,37.33,,burned,,,,hand
+PSI-107,115,75% Propylene,gas,idealized,,,,,37.33,,burned,,,,hand
+PSI-107,116,75 % Propylene,gas,idealized,,,,,38.27,,burned,,,,hand
+PSI-107,117,75 % Propylene,gas,idealized,,,,,37.33,,burned,,,,hand
+PSI-107,118,75 % Propylene,gas,idealized,,,,,37.33,,burned,,,,hand
+PSI-107,119,75% Propylene,gas,idealized,,,,,13.83,,burned,,,,hand
+PSI-107,120,75% Propylene,gas,idealized,,,,,13.83,,burned,,,,hand
+PSI-107,121,75 % Propylene,gas,idealized,,,,,13.83,,burned,,,,hand
+PSI-107,122,75 % Propylene,gas,idealized,,,,,13.83,,burned,,,,hand
+PSI-107,123,75 % Propylene,gas,idealized,,,,,13.83,,burned,,,,hand
+PSI-107,124,75% Propylene,gas,idealized,,,,,41.09,,burned,,,,hand
+PSI-107,125,75% Propylene,gas,idealized,,,,,41.09,,burned,,,,hand
+PSI-107,126,75 % Propylene,gas,idealized,,,,,41.09,,burned,,,,hand
+PSI-107,127,75 % Propylene,gas,idealized,,,,,41.09,,burned,,,,hand
+PSI-107,128,75 % Propylene,gas,idealized,,,,,41.09,,burned,,,,hand
+PSI-107,129,75 % Propylene,gas,idealized,,,,,41.09,,burned,,,,hand
+PSI-107,130,75 % Propylene,gas,idealized,,,,,41.09,,burned,,,,hand
+PSI-107,131,75% Propylene,gas,idealized,,,,,66.48,,burned,,,,hand
+PSI-107,132,75% Propylene,gas,idealized,,,,,66.48,,burned,,,,hand
+PSI-107,133,75% Propylene,gas,idealized,,,,,66.48,,burned,,,,hand
+PSI-107,134,75 % Propylene,gas,idealized,,,,,67.42,,burned,,,,hand
+PSI-107,135,75 % Propylene,gas,idealized,,,,,66.48,,burned,,,,hand
+PSI-107,136,75 % Propylene,gas,idealized,,,,,66.48,,burned,,,,hand
+PSI-107,137,75 % Propylene,gas,idealized,,,,,85.28,,burned,,,,hand
+PSI-107,138,75 % Propylene,gas,idealized,,,,,66.48,,burned,,,,hand
+PSI-107,139,75 % Propylene,gas,idealized,,,,,66.48,,burned,,,,hand
+PSI-107,140,50 % Propylene,gas,idealized,,,,,10.07,,burned,,,,hand
+PSI-107,141,50 % Propylene,gas,idealized,,,,,10.07,,burned,,,,hand
+PSI-107,142,50 % Propylene,gas,idealized,,,,,10.07,,burned,,,,hand
+PSI-107,143,50 % Propylene,gas,idealized,,,,,10.07,,burned,,,,hand
+PSI-107,144,50 % Propylene,gas,idealized,,,,,10.07,,burned,,,,hand
+PSI-107,145,50 % Propylene,gas,idealized,,,,,10.07,,burned,,,,hand
+PSI-107,146,50 % Propylene,gas,idealized,,,,,10.07,,burned,,,,hand
+PSI-107,147,50 % Propylene,gas,idealized,,,,,57.08,,burned,,,,hand
+PSI-107,148,50 % Propylene,gas,idealized,,,,,57.08,,burned,,,,hand
+PSI-107,149,50 % Propylene,gas,idealized,,,,,57.08,,burned,,,,hand
+PSI-107,150,50 % Propylene,gas,idealized,,,,,57.08,,burned,,,,hand
+PSI-107,151,50 % Propylene,gas,idealized,,,,,57.08,,burned,,,,hand
+PSI-107,152,50 % Propylene,gas,idealized,,,,,57.08,,burned,,,,hand
+PSI-107,153,50 % Propylene,gas,idealized,,,,,57.08,,burned,,,,hand
+PSI-107,154,50 % Propylene,gas,idealized,,,,,26.05,,burned,,,,hand
+PSI-107,155,50 % Propylene,gas,idealized,,,,,26.05,,burned,,,,hand
+PSI-107,156,50 % Propylene,gas,idealized,,,,,25.11,,burned,,,,hand
+PSI-107,157,50 % Propylene,gas,idealized,,,,,26.05,,burned,,,,hand
+PSI-107,158,50 % Propylene,gas,idealized,,,,,26.05,,burned,,,,hand
+PSI-107,159,50 % Propylene,gas,idealized,,,,,25.11,,burned,,,,hand
+PSI-107,160,50 % Propylene,gas,idealized,,,,,40.15,,burned,,,,hand
+PSI-107,161,50 % Propylene,gas,idealized,,,,,40.15,,burned,,,,hand
+PSI-107,162,50 % Propylene,gas,idealized,,,,,39.21,,burned,,,,hand
+PSI-107,163,50 % Propylene,gas,idealized,,,,,40.15,,burned,,,,hand
+PSI-107,164,50 % Propylene,gas,idealized,,,,,39.21,,burned,,,,hand
+PSI-107,165,50 % Propylene,gas,idealized,,,,,39.21,,burned,,,,hand
+PSI-107,166,50 % Propylene,gas,idealized,,,,,39.21,,burned,,,,hand
+PSI-107,167,50 % Propylene,gas,idealized,,,,,11.95,,burned,,,,hand
+PSI-107,168,50 % Propylene,gas,idealized,,,,,11.01,,burned,,,,hand
+PSI-107,169,50 % Propylene,gas,idealized,,,,,11.01,,burned,,,,hand
+PSI-107,170,50 % Propylene,gas,idealized,,,,,11.95,,burned,,,,hand
+PSI-107,171,50 % Propylene,gas,idealized,,,,,11.01,,burned,,,,hand
+PSI-107,172,50 % Propylene,gas,idealized,,,,,11.01,,burned,,,,hand
+PSI-107,173,50 % Propylene,gas,idealized,,,,,11.01,,burned,,,,hand
+PSI-107,174,50 % Propylene,gas,idealized,,,,,26.05,,burned,,,,hand
+PSI-107,175,50 % Propylene,gas,idealized,,,,,26.99,,burned,,,,hand
+PSI-107,176,50 % Propylene,gas,idealized,,,,,26.99,,burned,,,,hand
+PSI-107,177,50 % Propylene,gas,idealized,,,,,26.99,,burned,,,,hand
+PSI-107,178,50 % Propylene,gas,idealized,,,,,26.99,,burned,,,,hand
+PSI-107,179,50 % Propylene,gas,idealized,,,,,26.05,,burned,,,,hand
+PSI-107,180,50 % Propylene,gas,idealized,,,,,42.03,,burned,,,,hand
+PSI-107,181,50 % Propylene,gas,idealized,,,,,42.03,,burned,,,,hand
+PSI-107,182,50 % Propylene,gas,idealized,,,,,42.03,,burned,,,,hand
+PSI-107,183,50 % Propylene,gas,idealized,,,,,42.03,,burned,,,,hand
+PSI-107,184,50 % Propylene,gas,idealized,,,,,15.71,,burned,,,,hand
+PSI-107,185,50 % Propylene,gas,idealized,,,,,25.11,,burned,,,,hand
+PSI-107,186,50 % Propylene,gas,idealized,,,,,15.71,,burned,,,,hand
+PSI-107,187,50 % Propylene,gas,idealized,,,,,14.77,,burned,,,,hand
+PSI-107,188,50 % Propylene,gas,idealized,,,,,26.99,,burned,,,,hand
+PSI-107,189,50 % Propylene,gas,idealized,,,,,26.99,,burned,,,,hand
+PSI-107,190,50 % Propylene,gas,idealized,,,,,26.99,,burned,,,,hand
+PSI-107,191,50 % Propylene,gas,idealized,,,,,26.05,,burned,,,,hand
+PSI-107,192,50 % Propylene,gas,idealized,,,,,11.01,,burned,,,,hand
+PSI-107,193,50 % Propylene,gas,idealized,,,,,12.89,,burned,,,,hand
+PSI-107,194,50 % Propylene,gas,idealized,,,,,22.29,,burned,,,,hand
+PSI-107,195,50 % Propylene,gas,idealized,,,,,39.21,,burned,,,,hand
+PSI-107,196,50 % Propylene,gas,idealized,,,,,45.79,,burned,,,,hand
+PSI-107,197,50 % Propylene,gas,idealized,,,,,50.49,,burned,,,,hand
+PSI-107,198,50 % Propylene,gas,idealized,,,,,11.01,,burned,,,,hand
+PSI-107,199,50 % Propylene,gas,idealized,,,,,14.77,,burned,,,,hand
+PSI-107,200,50 % Propylene,gas,idealized,,,,,23.23,,burned,,,,hand
+PSI-107,201,50 % Propylene,gas,idealized,,,,,33.57,,burned,,,,hand
+PSI-107,202,50 % Propylene,gas,idealized,,,,,45.79,,burned,,,,hand
+PSI-107,203,50 % Propylene,gas,idealized,,,,,50.49,,burned,,,,hand
+PSI-107,204,50 % Propylene,gas,idealized,,,,,11.01,,burned,,,,hand
+PSI-107,205,50 % Propylene,gas,idealized,,,,,11.01,,burned,,,,hand
+PSI-107,206,50 % Propylene,gas,idealized,,,,,11.01,,burned,,,,hand
+PSI-107,207,50 % Propylene,gas,idealized,,,,,10.07,,burned,,,,hand
+PSI-107,208,50 % Propylene,gas,idealized,,,,,11.01,,burned,,,,hand
+PSI-107,209,50 % Propylene,gas,idealized,,,,,11.01,,burned,,,,hand
+PSI-107,210,50 % Propylene,gas,idealized,,,,,11.01,,burned,,,,hand
+PSI-107,211,50 % Propylene,gas,idealized,,,,,11.01,,burned,,,,hand
+PSI-107,212,50 % Propylene,gas,idealized,,,,,10.07,,burned,,,,hand
+PSI-107,213,Propylene,gas,idealized,,,,,9.13,,burned,,,,hand
+PSI-107,214,Propylene,gas,idealized,,,,,9.13,,burned,,,,hand
+PSI-107,215,Propylene,gas,idealized,,,,,9.13,,burned,,,,hand
+PSI-107,216,Propylene,gas,idealized,,,,,9.13,,burned,,,,hand
+PSI-107,217,Propylene,gas,idealized,,,,,21.35,,burned,,,,hand
+PSI-107,218,Propylene,gas,idealized,,,,,22.29,,burned,,,,hand
+PSI-107,219,Propylene,gas,idealized,,,,,22.29,,burned,,,,hand
+PSI-107,220,Propylene,gas,idealized,,,,,22.29,,burned,,,,hand
+PSI-107,221,Propylene,gas,idealized,,,,,22.29,,burned,,,,hand
+PSI-107,222,Propylene,gas,idealized,,,,,34.51,,burned,,,,hand
+PSI-107,223,Propylene,gas,idealized,,,,,33.57,,burned,,,,hand
+PSI-107,224,Propylene,gas,idealized,,,,,33.57,,burned,,,,hand
+PSI-107,225,Propylene,gas,idealized,,,,,33.57,,burned,,,,hand
+PSI-107,226,Propylene,gas,idealized,,,,,34.51,,burned,,,,hand
+PSI-107,227,Propylene,gas,idealized,,,,,50.49,,burned,,,,hand
+PSI-107,228,Propylene,gas,idealized,,,,,50.49,,burned,,,,hand
+PSI-107,229,Propylene,gas,idealized,,,,,50.49,,burned,,,,hand
+PSI-107,230,Propylene,gas,idealized,,,,,50.49,,burned,,,,hand
+PSI-107,231,Propylene,gas,idealized,,,,,50.49,,burned,,,,hand
+PSI-107,232,Propylene,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,233,Propylene,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,234,Propylene,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,235,Propylene,gas,idealized,,,,,7.24,,burned,,,,hand
+PSI-107,236,Propylene,gas,idealized,,,,,6.3,,burned,,,,hand
+PSI-107,237,Propylene,gas,idealized,,,,,6.3,,burned,,,,hand
+PSI-107,238,Propylene,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,239,Propylene,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,240,Propylene,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,241,Propylene,gas,idealized,,,,,27.93,,burned,,,,hand
+PSI-107,242,Propylene,gas,idealized,,,,,27.93,,burned,,,,hand
+PSI-107,243,Propylene,gas,idealized,,,,,26.99,,burned,,,,hand
+PSI-107,244,Propylene,gas,idealized,,,,,41.09,,burned,,,,hand
+PSI-107,245,Propylene,gas,idealized,,,,,40.15,,burned,,,,hand
+PSI-107,246,Propylene,gas,idealized,,,,,40.15,,burned,,,,hand
+PSI-107,247,Propylene,gas,idealized,,,,,4.42,,burned,,,,hand
+PSI-107,248,Propylene,gas,idealized,,,,,4.42,,burned,,,,hand
+PSI-107,249,Propylene,gas,idealized,,,,,14.77,,burned,,,,hand
+PSI-107,250,Propylene,gas,idealized,,,,,14.77,,burned,,,,hand
+PSI-107,251,Propylene,gas,idealized,,,,,14.77,,burned,,,,hand
+PSI-107,252,Propylene,gas,idealized,,,,,14.77,,burned,,,,hand
+PSI-107,253,Propylene,gas,idealized,,,,,26.99,,burned,,,,hand
+PSI-107,254,Propylene,gas,idealized,,,,,26.05,,burned,,,,hand
+PSI-107,255,Propylene,gas,idealized,,,,,39.21,,burned,,,,hand
+PSI-107,256,Propylene,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,257,Propylene,gas,idealized,,,,,40.15,,burned,,,,hand
+PSI-107,258,Propylene,gas,idealized,,,,,40.15,,burned,,,,hand
+PSI-107,259,Propylene,gas,idealized,,,,,41.09,,burned,,,,hand
+PSI-107,260,Propylene,gas,idealized,,,,,39.21,,burned,,,,hand
+PSI-107,261,Propylene,gas,idealized,,,,,41.09,,burned,,,,hand
+PSI-107,262,Propylene,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,263,Propylene,gas,idealized,,,,,41.09,,burned,,,,hand
+PSI-107,264,Propylene,gas,idealized,,,,,26.99,,burned,,,,hand
+PSI-107,265,Propylene,gas,idealized,,,,,26.99,,burned,,,,hand
+PSI-107,266,Propylene,gas,idealized,,,,,26.99,,burned,,,,hand
+PSI-107,267,Propylene,gas,idealized,,,,,26.99,,burned,,,,hand
+PSI-107,268,75 % Propylene,gas,idealized,,,,,13.83,,burned,,,,hand
+PSI-107,269,75 % Propylene,gas,idealized,,,,,12.89,,burned,,,,hand
+PSI-107,270,75 % Propylene,gas,idealized,,,,,12.89,,burned,,,,hand
+PSI-107,271,75 % Propylene,gas,idealized,,,,,12.89,,burned,,,,hand
+PSI-107,272,75 % Propylene,gas,idealized,,,,,26.99,,burned,,,,hand
+PSI-107,273,75 % Propylene,gas,idealized,,,,,26.99,,burned,,,,hand
+PSI-107,274,75 % Propylene,gas,idealized,,,,,26.05,,burned,,,,hand
+PSI-107,275,75 % Propylene,gas,idealized,,,,,25.11,,burned,,,,hand
+PSI-107,276,75 % Propylene,gas,idealized,,,,,24.17,,burned,,,,hand
+PSI-107,277,75 % Propylene,gas,idealized,,,,,23.23,,burned,,,,hand
+PSI-107,278,75 % Propylene,gas,idealized,,,,,23.23,,burned,,,,hand
+PSI-107,279,75 % Propylene,gas,idealized,,,,,17.59,,burned,,,,hand
+PSI-107,280,75 % Propylene,gas,idealized,,,,,16.65,,burned,,,,hand
+PSI-107,281,75 % Propylene,gas,idealized,,,,,16.65,,burned,,,,hand
+PSI-107,282,75 % Propylene,gas,idealized,,,,,16.65,,burned,,,,hand
+PSI-107,283,75 % Propylene,gas,idealized,,,,,16.65,,burned,,,,hand
+PSI-107,284,75 % Propylene,gas,idealized,,,,,20.41,,burned,,,,hand
+PSI-107,285,75 % Propylene,gas,idealized,,,,,15.71,,burned,,,,hand
+PSI-107,286,75 % Propylene,gas,idealized,,,,,15.71,,burned,,,,hand
+PSI-107,287,75 % Propylene,gas,idealized,,,,,15.71,,burned,,,,hand
+PSI-107,288,75 % Propylene,gas,idealized,,,,,15.71,,burned,,,,hand
+PSI-107,289,75 % Propylene,gas,idealized,,,,,22.29,,burned,,,,hand
+PSI-107,290,75 % Propylene,gas,idealized,,,,,21.35,,burned,,,,hand
+PSI-107,291,75 % Propylene,gas,idealized,,,,,22.29,,burned,,,,hand
+PSI-107,292,75 % Propylene,gas,idealized,,,,,22.29,,burned,,,,hand
+PSI-107,293,75 % Propylene,gas,idealized,,,,,21.35,,burned,,,,hand
+PSI-107,294,75 % Propylene,gas,idealized,,,,,-0.28,,burned,,,,hand
+PSI-107,295,75 % Propylene,gas,idealized,,,,,0.66,,burned,,,,hand
+PSI-107,296,75 % Propylene,gas,idealized,,,,,-0.28,,burned,,,,hand
+PSI-107,297,75 % Propylene,gas,idealized,,,,,-0.28,,burned,,,,hand
+PSI-107,298,75 % Propylene,gas,idealized,,,,,-0.28,,burned,,,,hand
+PSI-107,299,75 % Propylene,gas,idealized,,,,,-0.28,,burned,,,,hand
+PSI-107,300,75 % Propylene,gas,idealized,,,,,14.77,,burned,,,,hand
+PSI-107,301,75 % Propylene,gas,idealized,,,,,14.77,,burned,,,,hand
+PSI-107,302,75 % Propylene,gas,idealized,,,,,13.83,,burned,,,,hand
+PSI-107,303,75 % Propylene,gas,idealized,,,,,13.83,,burned,,,,hand
+PSI-107,304,50 % Propylene,gas,idealized,,,,,13.83,,burned,,,,hand
+PSI-107,305,50 % Propylene,gas,idealized,,,,,12.89,,burned,,,,hand
+PSI-107,306,50 % Propylene,gas,idealized,,,,,12.89,,burned,,,,hand
+PSI-107,307,50 % Propylene,gas,idealized,,,,,26.05,,burned,,,,hand
+PSI-107,308,50 % Propylene,gas,idealized,,,,,26.05,,burned,,,,hand
+PSI-107,309,50 % Propylene,gas,idealized,,,,,26.05,,burned,,,,hand
+PSI-107,310,50 % Propylene,gas,idealized,,,,,41.09,,burned,,,,hand
+PSI-107,311,50 % Propylene,gas,idealized,,,,,40.15,,burned,,,,hand
+PSI-107,312,50 % Propylene,gas,idealized,,,,,40.15,,burned,,,,hand
+PSI-107,313,50 % Propylene,gas,idealized,,,,,48.61,,burned,,,,hand
+PSI-107,314,50 % Propylene,gas,idealized,,,,,47.67,,burned,,,,hand
+PSI-107,315,50 % Propylene,gas,idealized,,,,,47.67,,burned,,,,hand
+PSI-107,316,50 % Propylene,gas,idealized,,,,,39.21,,burned,,,,hand
+PSI-107,317,50 % Propylene,gas,idealized,,,,,40.15,,burned,,,,hand
+PSI-107,318,50 % Propylene,gas,idealized,,,,,40.15,,burned,,,,hand
+PSI-107,319,50 % Propylene,gas,idealized,,,,,39.21,,burned,,,,hand
+PSI-107,320,50 % Propylene,gas,idealized,,,,,40.15,,burned,,,,hand
+PSI-107,321,50 % Propylene,gas,idealized,,,,,40.15,,burned,,,,hand
+PSI-107,322,50 % Propylene,gas,idealized,,,,,39.21,,burned,,,,hand
+PSI-107,323,50 % Propylene,gas,idealized,,,,,40.15,,burned,,,,hand
+PSI-107,324,50 % Propylene,gas,idealized,,,,,12.89,,burned,,,,hand
+PSI-107,325,50 % Propylene,gas,idealized,,,,,66.48,,burned,,,,hand
+PSI-107,326,50 % Propylene,gas,idealized,,,,,25.11,,burned,,,,hand
+PSI-107,327,50 % Propylene,gas,idealized,,,,,11.95,,burned,,,,hand
+PSI-107,328,50 % Propylene,gas,idealized,,,,,11.95,,burned,,,,hand
+PSI-107,329,50 % Propylene,gas,idealized,,,,,13.83,,burned,,,,hand
+PSI-107,330,50 % Propylene,gas,idealized,,,,,18.53,,burned,,,,hand
+PSI-107,331,50 % Propylene,gas,idealized,,,,,22.29,,burned,,,,hand
+PSI-107,332,50 % Propylene,gas,idealized,,,,,24.17,,burned,,,,hand
+PSI-107,333,50 % Propylene,gas,idealized,,,,,16.65,,burned,,,,hand
+PSI-107,334,50 % Propylene,gas,idealized,,,,,11.95,,burned,,,,hand
+PSI-107,335,50 % Propylene,gas,idealized,,,,,-5.92,,burned,,,,hand
+PSI-107,336,50 % Propylene,gas,idealized,,,,,-5.92,,burned,,,,hand
+PSI-107,337,50 % Propylene,gas,idealized,,,,,-5.92,,burned,,,,hand
+PSI-107,338,50 % Propylene,gas,idealized,,,,,11.01,,burned,,,,hand
+PSI-107,339,50 % Propylene,gas,idealized,,,,,11.01,,burned,,,,hand
+PSI-107,340,50 % Propylene,gas,idealized,,,,,10.07,,burned,,,,hand
+PSI-107,341,50 % Propylene,gas,idealized,,,,,37.33,,burned,,,,hand
+PSI-107,342,Ethylene,gas,idealized,,,,,36.39,,burned,,,,hand
+PSI-107,343,Ethylene,gas,idealized,,,,,36.39,,burned,,,,hand
+PSI-107,344,Ethylene,gas,idealized,,,,,35.45,,burned,,,,hand
+PSI-107,345,Ethylene,gas,idealized,,,,,38.27,,burned,,,,hand
+PSI-107,346,Ethylene,gas,idealized,,,,,55.2,,burned,,,,hand
+PSI-107,347,Methane,gas,idealized,,,,,27.93,,burned,,,,hand
+PSI-107,348,Methane,gas,idealized,,,,,32.63,,burned,,,,hand
+PSI-107,349,Methane,gas,idealized,,,,,50.49,,burned,,,,hand
+PSI-107,350,Methane,gas,idealized,,,,,55.2,,burned,,,,hand
+PSI-107,351,75 % Propylene,gas,idealized,,,,,61.78,,burned,,,,hand
+PSI-107,352,75 % Propylene,gas,idealized,,,,,58.96,,burned,,,,hand
+PSI-107,353,75 % Propylene,gas,idealized,,,,,51.43,,burned,,,,hand
+PSI-107,354,75 % Propylene,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,355,75 % Propylene,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,356,75 % Propylene,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,357,75 % Propylene,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,358,75 % Propylene,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,359,75 % Propylene,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,360,75 % Propylene,gas,idealized,,,,,,,burned,,,,hand
+PSI-107,361,75 % Propylene,gas,idealized,,,,,50.49,,burned,,,,hand
+PSI-107,362,75 % Propylene,gas,idealized,,,,,58.96,,burned,,,,hand
+PSI-107,363,75 % Propylene,gas,idealized,,,,,55.2,,burned,,,,hand
+PSI-107,364,75 % Propylene,gas,idealized,,,,,47.67,,burned,,,,hand
+PSI-107,365,75 % Propylene,gas,idealized,,,,,42.03,,burned,,,,hand
+PSI-107,366,75 % Propylene,gas,idealized,,,,,36.39,,burned,,,,hand
+PSI-107,367,75 % Propylene,gas,idealized,,,,,11.01,,burned,,,,hand
+PSI-107,368,75 % Propylene,gas,idealized,,,,,23.23,,burned,,,,hand
+PSI-107,369,75 % Propylene,gas,idealized,,,,,35.45,,burned,,,,hand
+PSI-107,370,75 % Propylene,gas,idealized,,,,,50.49,,burned,,,,hand
+PSI-107,371,75 % Propylene,gas,idealized,,,,,54.26,,burned,,,,hand
+PSI-107,372,75 % Propylene,gas,idealized,,,,,58.02,,burned,,,,hand
+PSI-107,373,75 % Propylene,gas,idealized,,,,,56.14,,burned,,,,hand
+PSI-107,374,75 % Propylene,gas,idealized,,,,,12.89,,burned,,,,hand
+PSI-107,375,75 % Propylene,gas,idealized,,,,,12.89,,burned,,,,hand
+PSI-107,376,75 % Propylene,gas,idealized,,,,,12.89,,burned,,,,hand
+PSI-107,377,75 % Propylene,gas,idealized,,,,,12.89,,burned,,,,hand
+PSI-107,378,75 % Propylene,gas,idealized,,,,,12.89,,burned,,,,hand
+PSI-107,379,75 % Propylene,gas,idealized,,,,,28.87,,burned,,,,hand
+PSI-107,380,75 % Propylene,gas,idealized,,,,,27.93,,burned,,,,hand
+PSI-107,381,75 % Propylene,gas,idealized,,,,,27.93,,burned,,,,hand
+PSI-107,382,75 % Propylene,gas,idealized,,,,,27.93,,burned,,,,hand
+PSI-107,383,75 % Propylene,gas,idealized,,,,,26.99,,burned,,,,hand
+PSI-107,384,75 % Propylene,gas,idealized,,,,,39.21,,burned,,,,hand
+PSI-107,385,75 % Propylene,gas,idealized,,,,,39.21,,burned,,,,hand
+PSI-107,386,75 % Propylene,gas,idealized,,,,,39.21,,burned,,,,hand
+PSI-107,387,75 % Propylene,gas,idealized,,,,,39.21,,burned,,,,hand
+PSI-107,388,75 % Propylene,gas,idealized,,,,,38.27,,burned,,,,hand
+PSI-107,389,75 % Propylene,gas,idealized,,,,,38.27,,burned,,,,hand
+PSI-107,390,75 % Propylene,gas,idealized,,,,,38.27,,burned,,,,hand
+PSI-107,391,75 % Propylene,gas,idealized,,,,,60.84,,burned,,,,hand
+PSI-107,392,75 % Propylene,gas,idealized,,,,,60.84,,burned,,,,hand
+PSI-107,393,75 % Propylene,gas,idealized,,,,,60.84,,burned,,,,hand
+PSI-107,394,75 % Propylene,gas,idealized,,,,,60.84,,burned,,,,hand
+PSI-107,395,75 % Propylene,gas,idealized,,,,,59.9,,burned,,,,hand
+PSI-107,396,75 % Propylene,gas,idealized,,,,,60.84,,burned,,,,hand
+PSI-107,397,75 % Propylene,gas,idealized,,,,,39.21,,burned,,,,hand
+PSI-107,398,75 % Propylene,gas,idealized,,,,,39.21,,burned,,,,hand
+PSI-107,399,75 % Propylene,gas,idealized,,,,,38.27,,burned,,,,hand
+PSI-107,400,75 % Propylene,gas,idealized,,,,,38.27,,burned,,,,hand
+PSI-107,401,75 % Propylene,gas,idealized,,,,,28.87,,burned,,,,hand
+PSI-107,402,Propylene,gas,idealized,,,,,20.41,,burned,,,,hand
+PSI-107,403,Propylene,gas,idealized,,,,,20.41,,burned,,,,hand
+PSI-107,404,Propylene,gas,idealized,,,,,20.41,,burned,,,,hand
+PSI-107,405,Propylene,gas,idealized,,,,,20.41,,burned,,,,hand
+PSI-107,406,Propylene,gas,idealized,,,,,20.41,,burned,,,,hand
+PSI-107,407,Propylene,gas,idealized,,,,,10.07,,burned,,,,hand
+PSI-107,408,Propylene,gas,idealized,,,,,10.07,,burned,,,,hand
+PSI-107,409,Propylene,gas,idealized,,,,,29.81,,burned,,,,hand
+PSI-107,410,Propylene,gas,idealized,,,,,29.81,,burned,,,,hand
+PSI-107,411,Propylene,gas,idealized,,,,,29.81,,burned,,,,hand
+PSI-107,412,Propylene,gas,idealized,,,,,58.02,,burned,,,,hand
+PSI-107,413,Propylene,gas,idealized,,,,,56.14,,burned,,,,hand
+PSI-107,414,Propylene,gas,idealized,,,,,56.14,,burned,,,,hand
+PSI-107,415,Propylene,gas,idealized,,,,,47.67,,burned,,,,hand
+PSI-107,416,Propylene,gas,idealized,,,,,47.67,,burned,,,,hand
+PSI-107,417,Propylene,gas,idealized,,,,,47.67,,burned,,,,hand
+PSI-107,418,Propylene,gas,idealized,,,,,46.73,,burned,,,,hand
+PSI-107,419,Propylene,gas,idealized,,,,,46.73,,burned,,,,hand
+PSI-107,420,Propylene,gas,idealized,,,,,46.73,,burned,,,,hand
+PSI-107,421,Propylene,gas,idealized,,,,,57.08,,burned,,,,hand
+PSI-107,422,Propylene,gas,idealized,,,,,53.32,,burned,,,,hand
+PSI-107,423,Propylene,gas,idealized,,,,,45.79,,burned,,,,hand
+PSI-107,424,Propylene,gas,idealized,,,,,34.51,,burned,,,,hand
+PSI-107,425,Propylene,gas,idealized,,,,,24.17,,burned,,,,hand
+PSI-107,426,Propylene,gas,idealized,,,,,23.23,,burned,,,,hand
+PSI-107,427,Propylene,gas,idealized,,,,,23.23,,burned,,,,hand
+PSI-107,428,Propylene,gas,idealized,,,,,23.23,,burned,,,,hand
+PSI-107,429,Propylene,gas,idealized,,,,,23.23,,burned,,,,hand
+PSI-107,430,Propylene,gas,idealized,,,,,12.89,,burned,,,,hand
+PSI-107,431,Propylene,gas,idealized,,,,,12.89,,burned,,,,hand
+PSI-107,432,Propylene,gas,idealized,,,,,11.95,,burned,,,,hand
+PSI-107,433,Propylene,gas,idealized,,,,,11.95,,burned,,,,hand
+PSI-107,434,Propylene,gas,idealized,,,,,11.01,,burned,,,,hand
+PSI-107,435,Propylene,gas,idealized,,,,,11.01,,burned,,,,hand
+PSI-107,436,Propylene,gas,idealized,,,,,11.01,,burned,,,,hand
+PSI-107,437,Propylene,gas,idealized,,,,,11.01,,burned,,,,hand
+PSI-107,438,Propylene,gas,idealized,,,,,10.07,,burned,,,,hand
+PSI-107,439,Propylene,gas,idealized,,,,,10.07,,burned,,,,hand
+PSI-107,440,Propylene,gas,idealized,,,,,10.07,,burned,,,,hand
+PSI-107,441,Propylene,gas,idealized,,,,,35.45,,burned,,,,hand
+PSI-107,442,Propylene,gas,idealized,,,,,34.51,,burned,,,,hand
+PSI-107,443,Propylene,gas,idealized,,,,,34.51,,burned,,,,hand
+PSI-107,444,Propylene,gas,idealized,,,,,35.45,,burned,,,,hand
+PSI-107,445,Propylene,gas,idealized,,,,,35.45,,burned,,,,hand
+PSI-107,446,Propylene,gas,idealized,,,,,35.45,,burned,,,,hand
+PSI-107,447,Propylene,gas,idealized,,,,,35.45,,burned,,,,hand
+PSI-107,448,Propylene,gas,idealized,,,,,35.45,,burned,,,,hand
+PSI-107,449,Propylene,gas,idealized,,,,,34.51,,burned,,,,hand
+PSI-107,450,Propylene,gas,idealized,,,,,34.51,,burned,,,,hand
+PSI-107,451,Propylene,gas,idealized,,,,,34.51,,burned,,,,hand
+PSI-107,452,Propylene,gas,idealized,,,,,46.73,,burned,,,,hand
+PSI-107,453,Propylene,gas,idealized,,,,,56.14,,burned,,,,hand
+PSI-107,454,Propylene,gas,idealized,,,,,24.17,,burned,,,,hand
+PSI-107,455,Propylene,gas,idealized,,,,,24.17,,burned,,,,hand
+PSI-107,456,Propylene,gas,idealized,,,,,24.17,,burned,,,,hand
+PSI-107,457,Propylene,gas,idealized,,,,,13.83,,burned,,,,hand
+PSI-107,458,Propylene,gas,idealized,,,,,12.89,,burned,,,,hand
+PSI-107,459,Propylene,gas,idealized,,,,,12.89,,burned,,,,hand
+PSI-107,460,Propylene,gas,idealized,,,,,51.43,,burned,,,,hand
+PSI-107,461,Propylene,gas,idealized,,,,,51.43,,burned,,,,hand
+PSI-107,462,Propylene,gas,idealized,,,,,50.49,,burned,,,,hand
+PSI-107,463,Propylene,gas,idealized,,,,,32.63,,burned,,,,hand
+PSI-107,464,Propylene,gas,idealized,,,,,32.63,,burned,,,,hand
+PSI-107,465,Propylene,gas,idealized,,,,,32.63,,burned,,,,hand
+PSI-107,466,Propylene,gas,idealized,,,,,32.63,,burned,,,,hand
+PSI-107,467,Propylene,gas,idealized,,,,,31.69,,burned,,,,hand
+PSI-107,468,Propylene,gas,idealized,,,,,31.69,,burned,,,,hand
+PSI-10,21328A1,C2H4,gas,idealized,37.08,14.76,5.47,N2,,,unknown,,,,hand
+PSI-10,21328A2,C2H4,gas,idealized,37.13,14.81,5.5,N2,,,unknown,,,,hand
+PSI-10,21328D1,C2H4,gas,idealized,21.23,15.41,3.27,N2,,,unknown,,,,hand
+PSI-10,21328N1,C2H4,gas,idealized,85.0,14.04,11.93,N2,,,unknown,,,,hand
+PSI-10,21328N2,C2H4,gas,idealized,85.0,14.04,11.93,N2,,,unknown,,,,hand
+PSI-10,21328N3,C2H4,gas,idealized,85.0,14.05,11.94,N2,,,unknown,,,,hand
+PSI-10,21328N4,C2H4,gas,idealized,85.0,14.05,11.94,N2,,,unknown,,,,hand
+PSI-10,21328N5,C2H4,gas,idealized,85.0,14.06,11.95,N2,,,unknown,,,,hand
+PSI-10,21328P1,C2H4,gas,idealized,40.19,14.06,5.65,N2,,,unknown,,,,hand
+PSI-10,21340A1,C2H4,gas,idealized,85.0,14.76,12.55,N2,,,unknown,,,,hand
+PSI-10,21340A2,C2H4,gas,idealized,85.0,14.79,12.57,N2,,,unknown,,,,hand
+PSI-10,21340B1,C2H4,gas,idealized,56.49,14.83,8.38,N2,,,unknown,,,,hand
+PSI-10,21340B2,C2H4,gas,idealized,56.53,14.86,8.4,N2,,,unknown,,,,hand
+PSI-10,21340C1,C2H4,gas,idealized,35.54,14.88,5.29,N2,,,unknown,,,,hand
+PSI-10,21340C2,C2H4,gas,idealized,35.59,14.89,5.3,N2,,,unknown,,,,hand
+PSI-10,21340C3,C2H4,gas,idealized,28.98,14.93,4.33,N2,,,unknown,,,,hand
+PSI-10,21340C4,C2H4,gas,idealized,29.14,14.94,4.35,N2,,,unknown,,,,hand
+PSI-10,21340C5,C2H4,gas,idealized,29.4,14.95,4.4,N2,,,unknown,,,,hand
+PSI-10,21340C6,C2H4,gas,idealized,29.12,14.98,4.36,N2,,,unknown,,,,hand
+PSI-10,21340C7,C2H4,gas,idealized,29.49,14.98,4.42,N2,,,unknown,,,,hand
+PSI-10,21340M1,C2H4,gas,idealized,85.0,14.83,12.61,N2,,,unknown,,,,hand
+PSI-10,21340M2,C2H4,gas,idealized,46.94,14.94,7.01,N2,,,unknown,,,,hand
+PSI-10,21349A1,C2H4,gas,idealized,85.0,6.26,5.32,N2,,,unknown,,,,hand
+PSI-10,21349B1,C2H4,gas,idealized,85.0,6.29,5.35,N2,,,unknown,,,,hand
+PSI-10,21349D2,C2H4,gas,idealized,21.23,6.3,1.34,N2,,,unknown,,,,hand
+PSI-10,21349D3,C2H4,gas,idealized,25.29,6.33,1.6,N2,,,unknown,,,,hand
+PSI-10,21349M1,C2H4,gas,idealized,34.54,14.78,5.11,N2,,,unknown,,,,hand
+PSI-10,21349M2,C2H4,gas,idealized,26.23,14.79,3.88,N2,,,unknown,,,,hand
+PSI-10,21349M3,C2H4,gas,idealized,21.25,14.91,3.17,N2,,,unknown,,,,hand
+PSI-10,21349M4,C2H4,gas,idealized,,15.05,,N2,,,unknown,,,,hand
+PSI-10,21349M5,C2H4,gas,idealized,,15.15,,N2,,,unknown,,,,hand
+PSI-10,21349M6,C2H4,gas,idealized,,15.28,,N2,,,unknown,,,,hand
+PSI-10,21349M7,C2H4,gas,idealized,50.05,15.35,7.68,N2,,,unknown,,,,hand
+PSI-10,21349N1,C2H4,gas,idealized,50.2,7.45,3.74,N2,,,unknown,,,,hand
+PSI-10,21349N2,C2H4,gas,idealized,31.97,7.48,2.39,N2,,,unknown,,,,hand
+PSI-10,21349N3,C2H4,gas,idealized,21.24,7.57,1.61,N2,,,unknown,,,,hand
+PSI-10,21349N4,C2H4,gas,idealized,21.2,7.65,1.62,N2,,,unknown,,,,hand
+PSI-10,21361A1,C2H4,gas,idealized,85.0,14.79,12.57,N2,,,unknown,,,,hand
+PSI-10,21361B1,C2H4,gas,idealized,85.0,14.83,12.61,N2,,,unknown,,,,hand
+PSI-10,21361C1,C2H4,gas,idealized,43.34,14.86,6.44,N2,,,unknown,,,,hand
+PSI-10,21361C2,C2H4,gas,idealized,43.38,14.91,6.47,N2,,,unknown,,,,hand
+PSI-10,21361D1,C2H4,gas,idealized,27.0,14.95,4.04,N2,,,unknown,,,,hand
+PSI-10,21361D2,C2H4,gas,idealized,27.04,14.98,4.05,N2,,,unknown,,,,hand
+PSI-10,21361F1,C2H4,gas,idealized,85.0,14.78,12.56,N2,,,unknown,,,,hand
+PSI-10,21361F2,C2H4,gas,idealized,85.0,14.79,12.57,N2,,,unknown,,,,hand
+PSI-10,21361F3,C2H4,gas,idealized,85.0,14.8,12.58,N2,,,unknown,,,,hand
+PSI-10,21361F4,C2H4,gas,idealized,85.0,14.79,12.57,N2,,,unknown,,,,hand
+PSI-10,21361F5,C2H4,gas,idealized,85.0,14.82,12.6,N2,,,unknown,,,,hand
+PSI-10,21361F6,C2H4,gas,idealized,85.0,14.8,12.58,N2,,,unknown,,,,hand
+PSI-10,21361G1,C2H4,gas,idealized,56.96,14.84,8.45,N2,,,unknown,,,,hand
+PSI-10,21361G2,C2H4,gas,idealized,57.2,14.85,8.49,N2,,,unknown,,,,hand
+PSI-10,21361G3,C2H4,gas,idealized,57.2,14.87,8.51,N2,,,unknown,,,,hand
+PSI-10,21361G4,C2H4,gas,idealized,36.42,14.89,5.42,N2,,,unknown,,,,hand
+PSI-10,21361G5,C2H4,gas,idealized,36.62,14.88,5.45,N2,,,unknown,,,,hand
+PSI-10,21361M1,C2H4,gas,idealized,43.47,14.78,6.42,N2,,,unknown,,,,hand
+PSI-10,21361M2,C2H4,gas,idealized,27.11,14.79,4.01,N2,,,unknown,,,,hand
+PSI-10,21361M3,C2H4,gas,idealized,85.0,14.89,12.66,N2,,,unknown,,,,hand
+PSI-10,22018A1,C2H4,gas,idealized,85.0,14.75,12.54,N2,,,unknown,,,,hand
+PSI-10,22018B1,C2H4,gas,idealized,85.0,14.76,12.55,N2,,,unknown,,,,hand
+PSI-10,22018C1,C2H4,gas,idealized,56.87,14.78,8.41,N2,,,unknown,,,,hand
+PSI-10,22018D1,C2H4,gas,idealized,45.57,14.79,6.74,N2,,,unknown,,,,hand
+PSI-10,22018F1,C2H4,gas,idealized,36.54,14.8,5.41,N2,,,unknown,,,,hand
+PSI-10,22018G1,C2H4,gas,idealized,85.0,14.77,12.55,N2,,,unknown,,,,hand
+PSI-10,22018G2,C2H4,gas,idealized,85.0,14.8,12.58,N2,,,unknown,,,,hand
+PSI-10,22018G3,C2H4,gas,idealized,85.0,14.81,12.59,N2,,,unknown,,,,hand
+PSI-10,22018H2,C2H4,gas,idealized,49.71,14.83,7.37,N2,,,unknown,,,,hand
+PSI-10,22018J1,C2H4,gas,idealized,31.82,14.9,4.74,N2,,,unknown,,,,hand
+PSI-10,22018J2,C2H4,gas,idealized,85.0,14.93,12.69,N2,,,unknown,,,,hand
+PSI-10,22018J4,C2H4,gas,idealized,46.1,15.05,6.94,N2,,,unknown,,,,hand
+PSI-10,22024A1,C2H4,gas,idealized,85.0,14.78,12.56,N2,,,unknown,,,,hand
+PSI-10,22024A2,C2H4,gas,idealized,85.0,14.81,12.59,N2,,,unknown,,,,hand
+PSI-10,22024B1,C2H4,gas,idealized,85.0,14.82,12.6,N2,,,unknown,,,,hand
+PSI-10,22024C1,C2H4,gas,idealized,64.45,14.85,9.57,N2,,,unknown,,,,hand
+PSI-10,22024D1,C2H4,gas,idealized,41.2,14.85,6.12,N2,,,unknown,,,,hand
+PSI-10,22024F1,C2H4,gas,idealized,25.63,14.88,3.81,N2,,,unknown,,,,hand
+PSI-10,22024B2,C2H4,gas,idealized,,14.96,,N2,,,unknown,,,,hand
+PSI-10,22024B3,C2H4,gas,idealized,,15.02,,N2,,,unknown,,,,hand
+PSI-10,22024G1,C2H4,gas,idealized,85.0,7.39,6.28,N2,,,unknown,,,,hand
+PSI-10,22024H1,C2H4,gas,idealized,85.0,7.41,6.3,N2,,,unknown,,,,hand
+PSI-10,22024J1,C2H4,gas,idealized,64.39,7.41,4.77,N2,,,unknown,,,,hand
+PSI-10,22024K1,C2H4,gas,idealized,41.16,7.43,3.06,N2,,,unknown,,,,hand
+PSI-10,22024L1,C2H4,gas,idealized,25.61,7.46,1.91,N2,,,unknown,,,,hand
+PSI-10,22024L2,C2H4,gas,idealized,32.74,7.47,2.45,N2,,,unknown,,,,hand
+PSI-10,22024L3,C2H4,gas,idealized,41.33,7.49,3.1,N2,,,unknown,,,,hand
+PSI-10,22024H2,C2H4,gas,idealized,85.0,7.51,6.38,N2,,,unknown,,,,hand
+PSI-10,22042M1,C2H4,gas,idealized,,7.54,,N2,,,unknown,,,,hand
+PSI-10,22024M2,C2H4,gas,idealized,,7.59,,N2,,,unknown,,,,hand
+PSI-10,22024K2,C2H4,gas,idealized,,7.63,,N2,,,unknown,,,,hand
+PSI-10,22024K3,C2H4,gas,idealized,,7.72,,N2,,,unknown,,,,hand
+PSI-10,22027B1,C2H4,gas,idealized,85.0,44.16,37.54,N2,,,unknown,,,,hand
+PSI-10,22027B2,C2H4,gas,idealized,85.0,44.18,37.55,N2,,,unknown,,,,hand
+PSI-10,22027B3,C2H4,gas,idealized,85.0,44.2,37.57,N2,,,unknown,,,,hand
+PSI-10,22027B4,C2H4,gas,idealized,,44.16,,N2,,,unknown,,,,hand
+PSI-10,22027B5,C2H4,gas,idealized,85.0,44.21,37.58,N2,,,unknown,,,,hand
+PSI-10,22027B6,C2H4,gas,idealized,85.0,44.23,37.6,N2,,,unknown,,,,hand
+PSI-10,22027B7,C2H4,gas,idealized,85.0,44.24,37.6,N2,,,unknown,,,,hand
+PSI-10,22027D1,C2H4,gas,idealized,49.13,44.31,21.77,N2,,,unknown,,,,hand
+PSI-10,22027D2,C2H4,gas,idealized,85.0,44.36,37.71,N2,,,unknown,,,,hand
+PSI-10,22027D3,C2H4,gas,idealized,85.0,44.18,37.55,N2,,,unknown,,,,hand
+PSI-10,22027D4,C2H4,gas,idealized,85.0,44.18,37.55,N2,,,unknown,,,,hand
+PSI-10,22027D5,C2H4,gas,idealized,85.0,44.18,37.55,N2,,,unknown,,,,hand
+PSI-10,22027D6,C2H4,gas,idealized,85.0,44.19,37.56,N2,,,unknown,,,,hand
+PSI-10,22027B8,C2H4,gas,idealized,,44.17,,N2,,,unknown,,,,hand
+PSI-10,22027C1,C2H4,gas,idealized,49.81,44.21,22.02,N2,,,unknown,,,,hand
+PSI-10,22027C2,C2H4,gas,idealized,31.86,44.21,14.09,N2,,,unknown,,,,hand
+PSI-10,22035A1,C2H4,gas,idealized,85.0,29.06,24.7,N2,,,unknown,,,,hand
+PSI-10,22035B1,C2H4,gas,idealized,85.0,29.09,24.73,N2,,,unknown,,,,hand
+PSI-10,22035C1,C2H4,gas,idealized,56.91,29.1,16.56,N2,,,unknown,,,,hand
+PSI-10,22035D1,C2H4,gas,idealized,45.59,29.11,13.27,N2,,,unknown,,,,hand
+PSI-10,22035D3,C2H4,gas,idealized,45.53,29.1,13.25,N2,,,unknown,,,,hand
+PSI-10,22035F1,C2H4,gas,idealized,36.48,29.14,10.63,N2,,,unknown,,,,hand
+PSI-10,22035G1,C2H4,gas,idealized,29.06,29.15,8.47,N2,,,unknown,,,,hand
+PSI-10,22035G2,C2H4,gas,idealized,85.0,29.38,24.97,N2,,,unknown,,,,hand
+PSI-10,22035J1,C2H4,gas,idealized,85.0,7.42,6.31,N2,,,unknown,,,,hand
+PSI-10,22035J2,C2H4,gas,idealized,85.0,7.47,6.35,N2,,,unknown,,,,hand
+PSI-10,22035J3,C2H4,gas,idealized,85.0,7.5,6.38,N2,,,unknown,,,,hand
+PSI-10,22035J4,C2H4,gas,idealized,85.0,7.52,6.39,N2,,,unknown,,,,hand
+PSI-10,22035J5,C2H4,gas,idealized,85.0,7.54,6.41,N2,,,unknown,,,,hand
+PSI-10,22035J6,C2H4,gas,idealized,85.0,7.57,6.43,N2,,,unknown,,,,hand
+PSI-10,22035J7,C2H4,gas,idealized,85.0,7.57,6.43,N2,,,unknown,,,,hand
+PSI-10,19115A1,C2H4,gas,idealized,20.71,14.87,3.08,N2,,,unknown,,,,hand
+PSI-10,19115D2,C2H4,gas,idealized,20.62,14.89,3.07,N2,,,unknown,,,,hand
+PSI-10,19115B1,C2H4,gas,idealized,20.57,14.9,3.06,N2,,,unknown,,,,hand
+PSI-10,19115B2,C2H4,gas,idealized,20.49,14.89,3.05,N2,,,unknown,,,,hand
+PSI-10,19115F1,C2H4,gas,idealized,20.43,14.9,3.04,N2,,,unknown,,,,hand
+PSI-10,19115G1,C2H4,gas,idealized,20.39,14.9,3.04,N2,,,unknown,,,,hand
+PSI-10,19115K1,C2H4,gas,idealized,20.35,14.91,3.03,N2,,,unknown,,,,hand
+PSI-10,19115L1,C2H4,gas,idealized,20.28,14.93,3.03,N2,,,unknown,,,,hand
+PSI-10,19115N1,C2H4,gas,idealized,20.19,14.92,3.01,N2,,,unknown,,,,hand
+PSI-10,19115M4,C2H4,gas,idealized,20.14,14.93,3.01,N2,,,unknown,,,,hand
+PSI-10,19115Q1,C2H4,gas,idealized,20.09,14.94,3.0,N2,,,unknown,,,,hand
+PSI-10,19123A1,C2H4,gas,idealized,20.98,14.74,3.09,N2,,,unknown,,,,hand
+PSI-10,19123A2,C2H4,gas,idealized,20.92,14.81,3.1,N2,,,unknown,,,,hand
+PSI-10,19123A3,C2H4,gas,idealized,20.86,14.82,3.09,N2,,,unknown,,,,hand
+PSI-10,19123A4,C2H4,gas,idealized,20.8,14.89,3.1,N2,,,unknown,,,,hand
+PSI-10,19123C1,C2H4,gas,idealized,20.74,14.83,3.08,N2,,,unknown,,,,hand
+PSI-10,19123F1,C2H4,gas,idealized,20.67,14.87,3.07,N2,,,unknown,,,,hand
+PSI-10,19123F2,C2H4,gas,idealized,20.61,14.88,3.07,N2,,,unknown,,,,hand
+PSI-10,19123F3,C2H4,gas,idealized,20.55,14.9,3.06,N2,,,unknown,,,,hand
+PSI-10,19123K1,C2H4,gas,idealized,20.49,14.91,3.06,N2,,,unknown,,,,hand
+PSI-10,19123B1,C2H4,gas,idealized,20.44,14.93,3.05,N2,,,unknown,,,,hand
+PSI-10,19123D1,C2H4,gas,idealized,20.38,14.94,3.04,N2,,,unknown,,,,hand
+PSI-10,19123J1,C2H4,gas,idealized,20.32,14.95,3.04,N2,,,unknown,,,,hand
+PSI-10,19123L1,C2H4,gas,idealized,20.26,14.97,3.03,N2,,,unknown,,,,hand
+PSI-10,19123L2,C2H4,gas,idealized,20.18,14.98,3.02,N2,,,unknown,,,,hand
+PSI-10,19123L3,C2H4,gas,idealized,20.11,14.98,3.01,N2,,,unknown,,,,hand
+PSI-10,19123L4,C2H4,gas,idealized,20.05,14.99,3.01,N2,,,unknown,,,,hand
+PSI-10,19123L5,C2H4,gas,idealized,20.01,14.99,3.0,N2,,,unknown,,,,hand
+PSI-10,19123L6,C2H4,gas,idealized,19.98,14.99,3.0,N2,,,unknown,,,,hand
+PSI-10,19123L7,C2H4,gas,idealized,19.94,14.98,2.99,N2,,,unknown,,,,hand
+PSI-10,19137A1,C2H4,gas,idealized,21.02,14.75,3.1,N2,,,unknown,,,,hand
+PSI-10,19137B1,C2H4,gas,idealized,20.95,14.75,3.09,N2,,,unknown,,,,hand
+PSI-10,19137C1,C2H4,gas,idealized,20.87,14.77,3.08,N2,,,unknown,,,,hand
+PSI-10,19137D1,C2H4,gas,idealized,20.8,14.78,3.07,N2,,,unknown,,,,hand
+PSI-10,19137F1,C2H4,gas,idealized,20.73,14.8,3.07,N2,,,unknown,,,,hand
+PSI-10,19137F2,C2H4,gas,idealized,20.66,14.81,3.06,N2,,,unknown,,,,hand
+PSI-10,19137F3,C2H4,gas,idealized,20.59,14.83,3.05,N2,,,unknown,,,,hand
+PSI-10,19137G1,C2H4,gas,idealized,20.54,14.84,3.05,N2,,,unknown,,,,hand
+PSI-10,19137H1,C2H4,gas,idealized,20.49,14.86,3.04,N2,,,unknown,,,,hand
+PSI-10,19137J1,C2H4,gas,idealized,20.44,14.86,3.04,N2,,,unknown,,,,hand
+PSI-10,19137K1,C2H4,gas,idealized,20.4,14.85,3.03,N2,,,unknown,,,,hand
+PSI-10,19137K2,C2H4,gas,idealized,20.36,14.86,3.03,N2,,,unknown,,,,hand
+PSI-10,19137L1,C2H4,gas,idealized,20.32,14.86,3.02,N2,,,unknown,,,,hand
+PSI-10,19137L2,C2H4,gas,idealized,20.28,14.86,3.01,N2,,,unknown,,,,hand
+PSI-10,19137L3,C2H4,gas,idealized,20.24,14.88,3.01,N2,,,unknown,,,,hand
+PSI-10,19137L4,C2H4,gas,idealized,20.2,14.89,3.01,N2,,,unknown,,,,hand
+PSI-10,19137L5,C2H4,gas,idealized,20.16,14.88,3.0,N2,,,unknown,,,,hand
+PSI-10,19137L6,C2H4,gas,idealized,20.13,14.88,3.0,N2,,,unknown,,,,hand
+PSI-10,19137L7,C2H4,gas,idealized,20.09,14.89,2.99,N2,,,unknown,,,,hand
+PSI-10,19137L8,C2H4,gas,idealized,20.05,14.9,2.99,N2,,,unknown,,,,hand
+PSI-10,19142G1,C2H4,gas,idealized,39.69,14.81,5.88,N2,,,unknown,,,,hand
+PSI-10,19142G2,C2H4,gas,idealized,39.0,14.88,5.8,N2,,,unknown,,,,hand
+PSI-10,19142G3,C2H4,gas,idealized,38.38,14.94,5.73,N2,,,unknown,,,,hand
+PSI-10,19142F1,C2H4,gas,idealized,37.88,14.99,5.68,N2,,,unknown,,,,hand
+PSI-10,19142J2,C2H4,gas,idealized,37.32,15.07,5.62,N2,,,unknown,,,,hand
+PSI-10,19142G4,C2H4,gas,idealized,37.87,14.53,5.5,N2,,,unknown,,,,hand
+PSI-10,19142G5,C2H4,gas,idealized,37.56,14.57,5.47,N2,,,unknown,,,,hand
+PSI-10,19142J3,C2H4,gas,idealized,37.34,14.57,5.44,N2,,,unknown,,,,hand
+PSI-10,19150A1,C2H4,gas,idealized,39.82,14.76,5.88,N2,,,unknown,,,,hand
+PSI-10,19150A3,C2H4,gas,idealized,39.71,14.8,5.88,N2,,,unknown,,,,hand
+PSI-10,19150A4,C2H4,gas,idealized,39.55,14.85,5.87,N2,,,unknown,,,,hand
+PSI-10,19150A5,C2H4,gas,idealized,39.26,14.92,5.86,N2,,,unknown,,,,hand
+PSI-10,19150B2,C2H4,gas,idealized,38.89,15.01,5.84,N2,,,unknown,,,,hand
+PSI-10,19150C1,C2H4,gas,idealized,38.63,15.06,5.82,N2,,,unknown,,,,hand
+PSI-10,19150B3,C2H4,gas,idealized,38.28,15.13,5.79,N2,,,unknown,,,,hand
+PSI-10,19150D2,C2H4,gas,idealized,38.01,15.18,5.77,N2,,,unknown,,,,hand
+PSI-10,19150F1,C2H4,gas,idealized,37.11,15.32,5.69,N2,,,unknown,,,,hand
+PSI-10,19150G2,C2H4,gas,idealized,37.04,15.32,5.67,N2,,,unknown,,,,hand
+PSI-10,19150H1,C2H4,gas,idealized,36.56,15.32,5.6,N2,,,unknown,,,,hand
+PSI-10,19150J1,C2H4,gas,idealized,36.17,15.39,5.57,N2,,,unknown,,,,hand
+PSI-10,19150G3,C2H4,gas,idealized,35.83,15.39,5.51,N2,,,unknown,,,,hand
+PSI-10,19150N1,C2H4,gas,idealized,30.03,14.73,4.42,N2,,,unknown,,,,hand
+PSI-10,19150S1,C2H4,gas,idealized,29.4,14.83,4.36,N2,,,unknown,,,,hand
+PSI-10,19156B2,C2H4,gas,idealized,38.9,14.89,5.79,N2,,,unknown,,,,hand
+PSI-10,19156B4,C2H4,gas,idealized,38.79,14.92,5.79,N2,,,unknown,,,,hand
+PSI-10,19156K1,C2H4,gas,idealized,37.97,15.12,5.74,N2,,,unknown,,,,hand
+PSI-10,19156C1,C2H4,gas,idealized,37.69,15.16,5.71,N2,,,unknown,,,,hand
+PSI-10,19156C2,C2H4,gas,idealized,37.5,15.15,5.68,N2,,,unknown,,,,hand
+PSI-10,19156C3,C2H4,gas,idealized,37.07,15.15,5.62,N2,,,unknown,,,,hand
+PSI-10,19156J1,C2H4,gas,idealized,37.34,15.08,5.63,N2,,,unknown,,,,hand
+PSI-10,19156J2,C2H4,gas,idealized,37.04,15.08,5.59,N2,,,unknown,,,,hand
+PSI-10,19156J3,C2H4,gas,idealized,36.85,15.08,5.56,N2,,,unknown,,,,hand
+PSI-10,19156J4,C2H4,gas,idealized,36.59,15.08,5.52,N2,,,unknown,,,,hand
+PSI-10,19156J5,C2H4,gas,idealized,36.45,15.07,5.49,N2,,,unknown,,,,hand
+PSI-10,19156J6,C2H4,gas,idealized,36.27,15.06,5.46,N2,,,unknown,,,,hand
+PSI-10,19156J7,C2H4,gas,idealized,36.09,15.06,5.44,N2,,,unknown,,,,hand
+PSI-10,19171D1,C2H4,gas,idealized,39.43,14.74,5.81,N2,,,unknown,,,,hand
+PSI-10,19171D2,C2H4,gas,idealized,38.66,14.74,5.7,N2,,,unknown,,,,hand
+PSI-10,19171D3,C2H4,gas,idealized,38.13,14.75,5.62,N2,,,unknown,,,,hand
+PSI-10,19171D4,C2H4,gas,idealized,37.86,14.74,5.58,N2,,,unknown,,,,hand
+PSI-10,19171D5,C2H4,gas,idealized,37.39,14.74,5.51,N2,,,unknown,,,,hand
+PSI-10,19171S1,C2H4,gas,idealized,36.95,14.75,5.45,N2,,,unknown,,,,hand
+PSI-10,19171B1,C2H4,gas,idealized,37.89,14.81,5.61,N2,,,unknown,,,,hand
+PSI-10,19171B3,C2H4,gas,idealized,37.21,14.96,5.57,N2,,,unknown,,,,hand
+PSI-10,19171J1,C2H4,gas,idealized,36.54,15.12,5.52,N2,,,unknown,,,,hand
+PSI-10,19171J2,C2H4,gas,idealized,36.26,15.15,5.49,N2,,,unknown,,,,hand
+PSI-10,19171J3,C2H4,gas,idealized,36.14,15.15,5.48,N2,,,unknown,,,,hand
+PSI-10,19171J4,C2H4,gas,idealized,35.96,15.16,5.45,N2,,,unknown,,,,hand
+PSI-10,19175A2,C2H4,gas,idealized,39.84,18.49,7.37,N2,,,unknown,,,,hand
+PSI-10,19175A3,C2H4,gas,idealized,39.72,18.52,7.36,N2,,,unknown,,,,hand
+PSI-10,19175A4,C2H4,gas,idealized,39.1,18.52,7.24,N2,,,unknown,,,,hand
+PSI-10,19175B1,C2H4,gas,idealized,38.87,18.53,7.2,N2,,,unknown,,,,hand
+PSI-10,19175B4,C2H4,gas,idealized,38.76,18.55,7.19,N2,,,unknown,,,,hand
+PSI-10,19175B5,C2H4,gas,idealized,38.49,18.58,7.15,N2,,,unknown,,,,hand
+PSI-10,19175B6,C2H4,gas,idealized,38.94,18.36,7.15,N2,,,unknown,,,,hand
+PSI-10,19175B7,C2H4,gas,idealized,38.78,18.48,7.17,N2,,,unknown,,,,hand
+PSI-10,19175B8,C2H4,gas,idealized,38.6,18.42,7.11,N2,,,unknown,,,,hand
+PSI-10,19175B9,C2H4,gas,idealized,38.4,18.46,7.09,N2,,,unknown,,,,hand
+PSI-10,19175N1,C2H4,gas,idealized,38.25,18.48,7.07,N2,,,unknown,,,,hand
+PSI-10,19175N2,C2H4,gas,idealized,37.94,18.52,7.03,N2,,,unknown,,,,hand
+PSI-10,19175N3,C2H4,gas,idealized,37.74,18.52,6.99,N2,,,unknown,,,,hand
+PSI-10,19182G1,C2H4,gas,idealized,39.85,18.48,7.36,N2,,,unknown,,,,hand
+PSI-10,19182G2,C2H4,gas,idealized,39.68,18.52,7.35,N2,,,unknown,,,,hand
+PSI-10,19182G3,C2H4,gas,idealized,39.52,18.56,7.33,N2,,,unknown,,,,hand
+PSI-10,19182G6,C2H4,gas,idealized,39.36,18.61,7.32,N2,,,unknown,,,,hand
+PSI-10,19182G7,C2H4,gas,idealized,39.23,18.65,7.32,N2,,,unknown,,,,hand
+PSI-10,19182G8,C2H4,gas,idealized,39.02,18.69,7.29,N2,,,unknown,,,,hand
+PSI-10,19182G9,C2H4,gas,idealized,38.82,18.73,7.27,N2,,,unknown,,,,hand
+PSI-10,19182N1,C2H4,gas,idealized,38.63,18.76,7.25,N2,,,unknown,,,,hand
+PSI-10,19182N2,C2H4,gas,idealized,38.9,18.71,7.28,N2,,,unknown,,,,hand
+PSI-10,19182N3,C2H4,gas,idealized,38.76,18.74,7.26,N2,,,unknown,,,,hand
+PSI-10,19182A1,C2H4,gas,idealized,38.57,18.76,7.24,N2,,,unknown,,,,hand
+PSI-10,19182C1,C2H4,gas,idealized,38.48,18.8,7.23,N2,,,unknown,,,,hand
+PSI-10,19182C2,C2H4,gas,idealized,38.26,18.87,7.22,N2,,,unknown,,,,hand
+PSI-10,19182N4,C2H4,gas,idealized,38.03,18.94,7.2,N2,,,unknown,,,,hand
+PSI-10,19182F1,C2H4,gas,idealized,37.84,18.96,7.17,N2,,,unknown,,,,hand
+PSI-10,19189A1,C2H4,gas,idealized,39.86,18.45,7.35,N2,,,unknown,,,,hand
+PSI-10,19189A2,C2H4,gas,idealized,39.58,18.69,7.4,N2,,,unknown,,,,hand
+PSI-10,19189A3,C2H4,gas,idealized,39.49,18.64,7.36,N2,,,unknown,,,,hand
+PSI-10,19189D1,C2H4,gas,idealized,39.4,18.7,7.37,N2,,,unknown,,,,hand
+PSI-10,19189A4,C2H4,gas,idealized,39.15,18.81,7.36,N2,,,unknown,,,,hand
+PSI-10,19189D2,C2H4,gas,idealized,39.09,18.84,7.36,N2,,,unknown,,,,hand
+PSI-10,19189D3,C2H4,gas,idealized,39.01,18.87,7.36,N2,,,unknown,,,,hand
+PSI-10,19189H1,C2H4,gas,idealized,38.77,18.96,7.35,N2,,,unknown,,,,hand
+PSI-10,19189J1,C2H4,gas,idealized,38.72,18.97,7.35,N2,,,unknown,,,,hand
+PSI-10,19189J2,C2H4,gas,idealized,38.32,19.0,7.28,N2,,,unknown,,,,hand
+PSI-10,19189J3,C2H4,gas,idealized,37.97,19.02,7.22,N2,,,unknown,,,,hand
+PSI-10,19189K1,C2H4,gas,idealized,37.6,19.03,7.16,N2,,,unknown,,,,hand
+PSI-10,19189K2,C2H4,gas,idealized,37.25,19.04,7.09,N2,,,unknown,,,,hand
+PSI-10,19189K3,C2H4,gas,idealized,36.93,19.05,7.04,N2,,,unknown,,,,hand
+PSI-10,19189P1,C2H4,gas,idealized,36.55,19.06,6.97,N2,,,unknown,,,,hand
+PSI-10,19196A1,C2H4,gas,idealized,39.56,18.44,7.29,N2,,,unknown,,,,hand
+PSI-10,19196A2,C2H4,gas,idealized,39.45,18.46,7.28,N2,,,unknown,,,,hand
+PSI-10,19196A3,C2H4,gas,idealized,39.22,18.5,7.26,N2,,,unknown,,,,hand
+PSI-10,19196B1,C2H4,gas,idealized,39.08,18.53,7.24,N2,,,unknown,,,,hand
+PSI-10,19196B2,C2H4,gas,idealized,38.98,18.54,7.23,N2,,,unknown,,,,hand
+PSI-10,19196B3,C2H4,gas,idealized,38.83,18.55,7.2,N2,,,unknown,,,,hand
+PSI-10,19196B4,C2H4,gas,idealized,38.66,18.56,7.18,N2,,,unknown,,,,hand
+PSI-10,19196C1,C2H4,gas,idealized,38.46,18.58,7.15,N2,,,unknown,,,,hand
+PSI-10,19196C2,C2H4,gas,idealized,38.31,18.59,7.12,N2,,,unknown,,,,hand
+PSI-10,19196D1,C2H4,gas,idealized,38.61,18.56,7.17,N2,,,unknown,,,,hand
+PSI-10,19196D2,C2H4,gas,idealized,38.43,18.56,7.13,N2,,,unknown,,,,hand
+PSI-10,19196F1,C2H4,gas,idealized,38.22,18.55,7.09,N2,,,unknown,,,,hand
+PSI-10,19196N1,C2H4,gas,idealized,38.16,18.57,7.09,N2,,,unknown,,,,hand
+PSI-10,19200A1,C2H4,gas,idealized,39.47,14.73,5.81,N2,,,unknown,,,,hand
+PSI-10,19200A2,C2H4,gas,idealized,39.25,14.76,5.79,N2,,,unknown,,,,hand
+PSI-10,19200A3,C2H4,gas,idealized,39.2,14.76,5.79,N2,,,unknown,,,,hand
+PSI-10,19200A4,C2H4,gas,idealized,39.06,14.78,5.77,N2,,,unknown,,,,hand
+PSI-10,19200A5,C2H4,gas,idealized,38.9,14.79,5.75,N2,,,unknown,,,,hand
+PSI-10,19200A6,C2H4,gas,idealized,38.7,14.81,5.73,N2,,,unknown,,,,hand
+PSI-10,19200A7,C2H4,gas,idealized,38.45,14.86,5.71,N2,,,unknown,,,,hand
+PSI-10,19200A8,C2H4,gas,idealized,38.26,14.88,5.69,N2,,,unknown,,,,hand
+PSI-10,19200K1,C2H4,gas,idealized,29.94,14.72,4.41,N2,,,unknown,,,,hand
+PSI-10,19200H1,C2H4,gas,idealized,29.74,14.74,4.38,N2,,,unknown,,,,hand
+PSI-10,19200H2,C2H4,gas,idealized,29.4,14.77,4.34,N2,,,unknown,,,,hand
+PSI-10,19200H3,C2H4,gas,idealized,28.94,14.88,4.31,N2,,,unknown,,,,hand
+PSI-10,19206A1,C2H4,gas,idealized,20.99,14.74,3.09,N2,,,unknown,,,,hand
+PSI-10,19206A5,C2H4,gas,idealized,20.9,14.79,3.09,N2,,,unknown,,,,hand
+PSI-10,19206G1,C2H4,gas,idealized,20.82,14.81,3.08,N2,,,unknown,,,,hand
+PSI-10,19206G2,C2H4,gas,idealized,20.74,14.82,3.07,N2,,,unknown,,,,hand
+PSI-10,19206G3,C2H4,gas,idealized,20.68,14.82,3.06,N2,,,unknown,,,,hand
+PSI-10,19206G4,C2H4,gas,idealized,20.62,14.82,3.06,N2,,,unknown,,,,hand
+PSI-10,19206G5,C2H4,gas,idealized,20.55,14.82,3.05,N2,,,unknown,,,,hand
+PSI-10,19206L2,C2H4,gas,idealized,20.45,14.83,3.03,N2,,,unknown,,,,hand
+PSI-10,19206L3,C2H4,gas,idealized,20.39,14.84,3.03,N2,,,unknown,,,,hand
+PSI-10,19206L4,C2H4,gas,idealized,20.34,14.85,3.02,N2,,,unknown,,,,hand
+PSI-10,19206L6,C2H4,gas,idealized,20.29,14.85,3.01,N2,,,unknown,,,,hand
+PSI-10,19206G7,C2H4,gas,idealized,20.22,14.86,3.0,N2,,,unknown,,,,hand
+PSI-10,19206K1,C2H4,gas,idealized,20.15,14.86,2.99,N2,,,unknown,,,,hand
+PSI-10,19206K2,C2H4,gas,idealized,20.1,14.87,2.99,N2,,,unknown,,,,hand
+PSI-10,19206G8,C2H4,gas,idealized,20.06,14.87,2.98,N2,,,unknown,,,,hand
+PSI-10,19206G9,C2H4,gas,idealized,20.05,14.86,2.98,N2,,,unknown,,,,hand
+PSI-10,19206N1,C2H4,gas,idealized,19.99,14.87,2.97,N2,,,unknown,,,,hand
+PSI-10,19206H1,C2H4,gas,idealized,19.97,14.86,2.97,N2,,,unknown,,,,hand
+PSI-10,19206H2,C2H4,gas,idealized,19.92,14.86,2.96,N2,,,unknown,,,,hand
+PSI-10,19206H3,C2H4,gas,idealized,19.86,14.87,2.95,N2,,,unknown,,,,hand
+PSI-10,19206H4,C2H4,gas,idealized,19.8,14.87,2.94,N2,,,unknown,,,,hand
+PSI-10,21301A1,C3H8,gas,idealized,40.0,13.7,5.48,N2,,,unknown,,,,hand
+PSI-10,21301A2,C3H8,gas,idealized,40.0,13.7,5.48,N2,,,unknown,,,,hand
+PSI-10,21301A3,C3H8,gas,idealized,40.0,13.7,5.48,N2,,,unknown,,,,hand
+PSI-10,21301A4,C3H8,gas,idealized,40.0,13.7,5.48,N2,,,unknown,,,,hand
+PSI-10,21301A5,C3H8,gas,idealized,40.0,13.7,5.48,N2,,,unknown,,,,hand
+PSI-10,21301A6,C3H8,gas,idealized,40.0,13.7,5.48,N2,,,unknown,,,,hand
+PSI-10,21301C1,C3H8,gas,idealized,40.0,13.7,5.48,N2,,,unknown,,,,hand
+PSI-10,21301C2,C3H8,gas,idealized,40.0,13.7,5.48,N2,,,unknown,,,,hand
+PSI-10,21301D1,C3H8,gas,idealized,40.0,13.7,5.48,N2,,,unknown,,,,hand
+PSI-10,21301D2,C3H8,gas,idealized,40.0,13.7,5.48,N2,,,unknown,,,,hand
+PSI-10,21301A7,C3H8,gas,idealized,40.0,13.7,5.48,N2,,,unknown,,,,hand
+PSI-10,21301A8,C3H8,gas,idealized,40.0,13.7,5.48,N2,,,unknown,,,,hand
+PSI-10,21301A9,C3H8,gas,idealized,40.0,13.7,5.48,N2,,,unknown,,,,hand
+PSI-10,21301H1,C3H8,gas,idealized,40.0,13.7,5.48,N2,,,unknown,,,,hand
+PSI-10,21301H2,C3H8,gas,idealized,40.0,13.7,5.48,N2,,,unknown,,,,hand
+PSI-10,21301H3,C3H8,gas,idealized,40.0,13.7,5.48,N2,,,unknown,,,,hand
+PSI-10,21301J1,C3H8,gas,idealized,40.0,13.7,5.48,N2,,,unknown,,,,hand
+PSI-10,21301J2,C3H8,gas,idealized,40.0,13.7,5.48,N2,,,unknown,,,,hand
+PSI-10,21301J3,C3H8,gas,idealized,40.0,13.7,5.48,N2,,,unknown,,,,hand
+PSI-10,21301J4,C3H8,gas,idealized,40.0,13.7,5.48,N2,,,unknown,,,,hand
+PSI-159,21196 A1,ethane,gas,idealized,21.0,15.95,3.35,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21196 A2,ethane,gas,idealized,21.0,15.95,3.35,,,,burned,burn_time,35.0,s,hand
+PSI-159,21196 F1,ethane,gas,idealized,15.0,16.0,2.4,,,,burned,burn_time,36.0,s,hand
+PSI-159,21196 H1,ethane,gas,idealized,12.0,16.0,1.92,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21196 J1,ethane,gas,idealized,13.5,16.0,2.16,,,,unknown,burn_time,1.0,s,hand
+PSI-159,21196 F2,ethane,gas,idealized,15.0,16.0,2.4,,,,burned,burn_time,66.0,s,hand
+PSI-159,21196 F3,ethane,gas,idealized,15.0,16.0,2.4,,,,unknown,burn_time,1.0,s,hand
+PSI-159,21196 F4,ethane,gas,idealized,15.0,16.0,2.4,,,,unknown,burn_time,1.0,s,hand
+PSI-159,21196 F5,ethane,gas,idealized,15.0,16.0,2.4,,,,unknown,burn_time,1.0,s,hand
+PSI-159,21196 F6,ethane,gas,idealized,15.0,16.0,2.4,,,,burned,burn_time,66.0,s,hand
+PSI-159,21196 K1,ethane,gas,idealized,15.0,7.19,1.08,,,,unknown,burn_time,1.0,s,hand
+PSI-159,21196 L1,ethane,gas,idealized,21.0,7.19,1.51,,,,unknown,burn_time,1.0,s,hand
+PSI-159,21196 L2,ethane,gas,idealized,21.0,7.19,1.51,,,,burned,burn_time,63.0,s,hand
+PSI-159,21196 M1,ethane,gas,idealized,30.0,7.19,2.16,,,,unknown,burn_time,1.0,s,hand
+PSI-159,21196 M2,ethane,gas,idealized,30.0,7.19,2.16,,,,burned,burn_time,66.0,s,hand
+PSI-159,21196 M2_1,ethane,gas,idealized,30.0,7.19,2.16,,,,burned,burn_time,64.0,s,hand
+PSI-159,21202 A1,ethane,gas,idealized,85.0,32.0,27.2,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21202 A2,ethane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,2.0,s,hand
+PSI-159,21202 A3,ethane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,3.5,s,hand
+PSI-159,21202 A4,ethane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,5.0,s,hand
+PSI-159,21202 H1,ethane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,28.0,s,hand
+PSI-159,21202 H2,ethane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,16.0,s,hand
+PSI-159,21202 H3,ethane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,66.0,s,hand
+PSI-159,21202 H4,ethane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,41.0,s,hand
+PSI-159,21202 J1,ethane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,53.0,s,hand
+PSI-159,21202 K1,ethane,gas,idealized,85.0,16.0,13.6,,,,burned,burn_time,55.0,s,hand
+PSI-159,21202 K2,ethane,gas,idealized,85.0,16.0,13.6,,,,burned,burn_time,21.0,s,hand
+PSI-159,21202 L1,ethane,gas,idealized,85.0,16.0,13.6,,,,burned,burn_time,50.0,s,hand
+PSI-159,21209 A1,ethane,gas,idealized,85.0,8.0,6.8,,,,burned,burn_time,26.0,s,hand
+PSI-159,21209 A2,ethane,gas,idealized,85.0,8.0,6.8,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21209 A3,ethane,gas,idealized,85.0,8.0,6.8,,,,burned,burn_time,67.0,s,hand
+PSI-159,21209 B1,ethane,gas,idealized,85.0,8.0,6.8,,,,burned,burn_time,136.0,s,hand
+PSI-159,21209 A4,ethane,gas,idealized,85.0,8.0,6.8,,,,burned,burn_time,66.0,s,hand
+PSI-159,21209 H1,ethane,gas,idealized,50.0,8.0,4.0,,,,burned,burn_time,66.0,s,hand
+PSI-159,21209 J1,ethane,gas,idealized,30.0,8.0,2.4,,,,burned,burn_time,66.0,s,hand
+PSI-159,21209 F1,ethane,gas,idealized,21.0,8.0,1.68,,,,burned,burn_time,66.0,s,hand
+PSI-159,21209 F2,ethane,gas,idealized,21.0,8.0,1.68,,,,burned,burn_time,66.0,s,hand
+PSI-159,21209 F3,ethane,gas,idealized,21.0,8.0,1.68,,,,burned,burn_time,66.0,s,hand
+PSI-159,21209 B2,ethane,gas,idealized,85.0,8.0,6.8,,,,burned,burn_time,48.0,s,hand
+PSI-159,21209 K1,ethane,gas,idealized,18.0,8.0,1.44,,,,burned,burn_time,26.0,s,hand
+PSI-159,21216 A1,ethane,gas,idealized,85.0,48.01,40.81,,,,burned,burn_time,17.0,s,hand
+PSI-159,21216 A2,ethane,gas,idealized,85.0,48.01,40.81,,,,burned,burn_time,15.0,s,hand
+PSI-159,21216 A3,ethane,gas,idealized,85.0,48.01,40.81,,,,burned,burn_time,15.0,s,hand
+PSI-159,21216 A4,ethane,gas,idealized,85.0,48.01,40.81,,,,burned,burn_time,36.0,s,hand
+PSI-159,21216 A5,ethane,gas,idealized,85.0,48.01,40.81,,,,unknown,burn_time,1.0,s,hand
+PSI-159,21216 A6,ethane,gas,idealized,85.0,48.01,40.81,,,,burned,burn_time,66.0,s,hand
+PSI-159,21216 B1,ethane,gas,idealized,85.0,48.01,40.81,,,,burned,burn_time,25.0,s,hand
+PSI-159,21216 C1,ethane,gas,idealized,50.0,48.01,24.0,,,,burned,burn_time,12.0,s,hand
+PSI-159,21216 F1,ethane,gas,idealized,21.0,48.01,10.08,,,,burned,burn_time,68.0,s,hand
+PSI-159,21216 H1,ethane,gas,idealized,85.0,16.0,13.6,,,,burned,burn_time,20.0,s,hand
+PSI-159,21216 H2,ethane,gas,idealized,85.0,16.0,13.6,,,,burned,burn_time,18.0,s,hand
+PSI-159,21216 J1,ethane,gas,idealized,50.0,16.0,8.0,,,,burned,burn_time,19.0,s,hand
+PSI-159,21216 K1,ethane,gas,idealized,21.0,16.0,3.36,,,,burned,burn_time,66.0,s,hand
+PSI-159,21222 A1,propane,gas,idealized,85.0,48.01,40.81,,,,burned,burn_time,10.0,s,hand
+PSI-159,21222 A2,propane,gas,idealized,85.0,48.01,40.81,,,,burned,burn_time,16.0,s,hand
+PSI-159,21222 A3,propane,gas,idealized,85.0,48.01,40.81,,,,burned,burn_time,18.0,s,hand
+PSI-159,21222 A4,propane,gas,idealized,85.0,48.01,40.81,,,,burned,burn_time,13.0,s,hand
+PSI-159,21222 A5,propane,gas,idealized,85.0,48.01,40.81,,,,burned,burn_time,3.0,s,hand
+PSI-159,21222 B1,propane,gas,idealized,85.0,48.01,40.81,,,,burned,burn_time,17.0,s,hand
+PSI-159,21222 C1,propane,gas,idealized,50.0,48.01,24.0,,,,burned,burn_time,6.0,s,hand
+PSI-159,21222 C2,propane,gas,idealized,50.0,48.01,24.0,,,,burned,burn_time,8.0,s,hand
+PSI-159,21222 F1,propane,gas,idealized,21.0,48.01,10.08,,,,burned,burn_time,1.0,s,hand
+PSI-159,21222 F2,propane,gas,idealized,21.0,48.01,10.08,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21228 A1,propane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,8.0,s,hand
+PSI-159,21228 A2,propane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,11.0,s,hand
+PSI-159,21228 A3,propane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,12.0,s,hand
+PSI-159,21228 A4,propane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,12.0,s,hand
+PSI-159,21228 B1,propane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,16.0,s,hand
+PSI-159,21228 C1,propane,gas,idealized,50.0,32.0,16.0,,,,burned,burn_time,8.0,s,hand
+PSI-159,21228 C2,propane,gas,idealized,50.0,32.0,16.0,,,,burned,burn_time,66.0,s,hand
+PSI-159,21228 C3,propane,gas,idealized,50.0,32.0,16.0,,,,burned,burn_time,7.0,s,hand
+PSI-159,21228 C4,propane,gas,idealized,50.0,32.0,16.0,,,,burned,burn_time,9.0,s,hand
+PSI-159,21228 F1,propane,gas,idealized,21.0,32.0,6.72,,,,burned,burn_time,65.0,s,hand
+PSI-159,21228 H1,propane,gas,idealized,85.0,16.0,13.6,,,,burned,burn_time,8.0,s,hand
+PSI-159,21228 H2,propane,gas,idealized,85.0,16.0,13.6,,,,burned,burn_time,15.0,s,hand
+PSI-159,21228 J1,propane,gas,idealized,85.0,16.0,13.6,,,,burned,burn_time,18.0,s,hand
+PSI-159,21228 K1,propane,gas,idealized,50.0,16.0,8.0,,,,burned,burn_time,9.0,s,hand
+PSI-159,21228 K2,propane,gas,idealized,50.0,16.0,8.0,,,,burned,burn_time,12.0,s,hand
+PSI-159,21228 L1,propane,gas,idealized,21.0,16.0,3.36,,,,burned,burn_time,3.0,s,hand
+PSI-159,21228 L2,propane,gas,idealized,21.0,16.0,3.36,,,,burned,burn_time,16.0,s,hand
+PSI-159,21235 A1,propane,gas,idealized,85.0,16.0,13.6,,,,burned,burn_time,66.0,s,hand
+PSI-159,21235 A2,propane,gas,idealized,85.0,16.0,13.6,,,,burned,burn_time,66.0,s,hand
+PSI-159,21235 C1,propane,gas,idealized,50.0,16.0,8.0,,,,burned,burn_time,66.0,s,hand
+PSI-159,21235 F1,propane,gas,idealized,21.0,16.0,3.36,,,,burned,burn_time,66.0,s,hand
+PSI-159,21235 F2,propane,gas,idealized,21.0,16.0,3.36,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21235 H1,propane,gas,idealized,18.0,16.0,2.88,,,,burned,burn_time,4.0,s,hand
+PSI-159,21235 J1,propane,gas,idealized,19.0,16.0,3.04,,,,burned,burn_time,66.0,s,hand
+PSI-159,21235 B1,propane,gas,idealized,85.0,16.0,13.6,,,,burned,burn_time,152.0,s,hand
+PSI-159,21235 K1,propane,gas,idealized,85.0,8.0,6.8,,,,burned,burn_time,66.0,s,hand
+PSI-159,21235 L1,propane,gas,idealized,85.0,8.0,6.8,,,,burned,burn_time,127.0,s,hand
+PSI-159,21242 A1,propane,gas,idealized,85.0,8.0,6.8,,,,burned,burn_time,12.0,s,hand
+PSI-159,21242 P1,propane,gas,idealized,30.0,8.0,2.4,,,,burned,burn_time,21.0,s,hand
+PSI-159,21242 F2,propane,gas,idealized,21.0,8.0,1.68,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21242 F3,propane,gas,idealized,21.0,8.0,1.68,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21242 F4,propane,gas,idealized,21.0,8.0,1.68,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21242 P2,propane,gas,idealized,30.0,8.0,2.4,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21256 A1,butane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,9.0,s,hand
+PSI-159,21256 A2,butane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,11.0,s,hand
+PSI-159,21256 A3,butane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,11.0,s,hand
+PSI-159,21256 A4,butane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,5.0,s,hand
+PSI-159,21256 A5,butane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,9.0,s,hand
+PSI-159,21256 C1,butane,gas,idealized,50.0,32.0,16.0,,,,burned,burn_time,9.0,s,hand
+PSI-159,21256 F1,butane,gas,idealized,21.0,32.0,6.72,,,,burned,burn_time,66.0,s,hand
+PSI-159,21256 B1,butane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,13.0,s,hand
+PSI-159,21256 C2,butane,gas,idealized,50.0,32.0,16.0,,,,burned,burn_time,9.0,s,hand
+PSI-159,21256 H1,butane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,7.0,s,hand
+PSI-159,21256 H2,butane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,7.0,s,hand
+PSI-159,21256 H3,butane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,5.0,s,hand
+PSI-159,21256 H4,butane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,3.0,s,hand
+PSI-159,21256 H5,butane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,7.0,s,hand
+PSI-159,21256 K1,butane,gas,idealized,50.0,32.0,16.0,,,,burned,burn_time,4.0,s,hand
+PSI-159,21256 M1,butane,gas,idealized,21.0,32.0,6.72,,,,burned,burn_time,1.0,s,hand
+PSI-159,21256 J1,butane,gas,idealized,85.0,32.0,27.2,,,,burned,burn_time,7.0,s,hand
+PSI-159,21265 A1,butane,gas,idealized,85.0,48.01,40.81,,,,burned,burn_time,6.0,s,hand
+PSI-159,21265 A2,butane,gas,idealized,85.0,48.01,40.81,,,,burned,burn_time,5.0,s,hand
+PSI-159,21265 A3,butane,gas,idealized,85.0,48.01,40.81,,,,burned,burn_time,1.0,s,hand
+PSI-159,21265 A4,butane,gas,idealized,85.0,48.01,40.81,,,,burned,burn_time,5.0,s,hand
+PSI-159,21265 A5,butane,gas,idealized,85.0,48.01,40.81,,,,burned,burn_time,8.0,s,hand
+PSI-159,21265 C1,butane,gas,idealized,50.0,48.01,24.0,,,,burned,burn_time,3.0,s,hand
+PSI-159,21265 C2,butane,gas,idealized,50.0,48.01,24.0,,,,burned,burn_time,5.0,s,hand
+PSI-159,21265 C3,butane,gas,idealized,50.0,48.01,24.0,,,,burned,burn_time,2.0,s,hand
+PSI-159,21265 F1,butane,gas,idealized,21.0,48.01,10.08,,,,burned,burn_time,0.5,s,hand
+PSI-159,21265 F2,butane,gas,idealized,21.0,48.01,10.08,,,,burned,burn_time,66.0,s,hand
+PSI-159,21265 F3,butane,gas,idealized,21.0,48.01,10.08,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21265 F4,butane,gas,idealized,21.0,48.01,10.08,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21265 H1,butane,gas,idealized,40.0,48.01,19.2,,,,burned,burn_time,1.0,s,hand
+PSI-159,21265 H2,butane,gas,idealized,40.0,48.01,19.2,,,,burned,burn_time,66.0,s,hand
+PSI-159,21265 J1,butane,gas,idealized,70.0,48.01,33.61,,,,burned,burn_time,6.0,s,hand
+PSI-159,21265 K1,butane,gas,idealized,45.0,48.01,21.6,,,,burned,burn_time,5.0,s,hand
+PSI-159,21265 H3,butane,gas,idealized,40.0,48.01,19.2,,,,burned,burn_time,107.0,s,hand
+PSI-159,21270 A1,butane,gas,idealized,85.0,16.0,13.6,,,,burned,burn_time,60.0,s,hand
+PSI-159,21270 A2,butane,gas,idealized,85.0,16.0,13.6,,,,burned,burn_time,90.0,s,hand
+PSI-159,21270 A3,butane,gas,idealized,85.0,16.0,13.6,,,,burned,burn_time,35.0,s,hand
+PSI-159,21270 A4,butane,gas,idealized,85.0,16.0,13.6,,,,burned,burn_time,90.0,s,hand
+PSI-159,21270 C1,butane,gas,idealized,50.0,16.0,8.0,,,,burned,burn_time,70.0,s,hand
+PSI-159,21270 H1,butane,gas,idealized,85.0,16.0,13.6,,,,burned,burn_time,51.0,s,hand
+PSI-159,21270 H2,butane,gas,idealized,85.0,16.0,13.6,,,,burned,burn_time,43.0,s,hand
+PSI-159,21270 H3,butane,gas,idealized,85.0,16.0,13.6,,,,burned,burn_time,43.0,s,hand
+PSI-159,21270 H4,butane,gas,idealized,85.0,16.0,13.6,,,,burned,burn_time,83.0,s,hand
+PSI-159,21270 H5,butane,gas,idealized,85.0,16.0,13.6,,,,burned,burn_time,46.0,s,hand
+PSI-159,21277 A1,butane,gas,idealized,85.0,8.0,6.8,,,,burned,burn_time,12.0,s,hand
+PSI-159,21277 H1,butane,gas,idealized,50.0,8.0,4.0,,,,burned,burn_time,17.0,s,hand
+PSI-159,21277 J1,butane,gas,idealized,21.0,8.0,1.68,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21277 K1,butane,gas,idealized,30.0,8.0,2.4,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21277 K2,butane,gas,idealized,30.0,8.0,2.4,,,,burned,burn_time,20.0,s,hand
+PSI-159,21277 J2,butane,gas,idealized,21.0,8.0,1.68,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21277 C1,butane,gas,idealized,85.0,8.0,6.8,,,,burned,burn_time,20.0,s,hand
+PSI-159,21277 C2,butane,gas,idealized,85.0,8.0,6.8,,,,burned,burn_time,36.0,s,hand
+PSI-159,21277 L1,butane,gas,idealized,50.0,8.0,4.0,,,,burned,burn_time,66.0,s,hand
+PSI-159,21277 F1,butane,gas,idealized,85.0,8.0,6.8,,,,burned,burn_time,66.0,s,hand
+PSI-159,21277 F2,butane,gas,idealized,85.0,8.0,6.8,,,,burned,burn_time,66.0,s,hand
+PSI-159,21277 M1,butane,gas,idealized,85.0,8.0,6.8,,,,burned,burn_time,66.0,s,hand
+PSI-159,21277 N1,butane,gas,idealized,50.0,8.0,4.0,,,,burned,burn_time,55.0,s,hand
+PSI-159,21277 P1,butane,gas,idealized,30.0,8.0,2.4,,,,burned,burn_time,40.0,s,hand
+PSI-159,21088A1,ethane,gas,idealized,39.39,13.7,5.4,,,,burned,burn_time,50.0,s,hand
+PSI-159,21088 B1,ethane,gas,idealized,38.98,13.7,5.34,,,,burned,burn_time,43.0,s,hand
+PSI-159,21088 C1,ethane,gas,idealized,38.63,13.7,5.29,,,,burned,burn_time,42.0,s,hand
+PSI-159,21088 D1,ethane,gas,idealized,38.29,13.7,5.25,,,,burned,burn_time,61.0,s,hand
+PSI-159,21088 F1,ethane,gas,idealized,38.04,13.7,5.21,,,,burned,burn_time,28.0,s,hand
+PSI-159,21088 G1,ethane,gas,idealized,37.99,13.7,5.2,,,,burned,burn_time,42.0,s,hand
+PSI-159,21088 H1,ethane,gas,idealized,37.61,13.7,5.15,,,,burned,burn_time,62.0,s,hand
+PSI-159,21088 J1,ethane,gas,idealized,37.34,13.7,5.12,,,,burned,burn_time,37.0,s,hand
+PSI-159,21088 K1,ethane,gas,idealized,36.96,13.7,5.06,,,,burned,burn_time,98.0,s,hand
+PSI-159,21088 H2,ethane,gas,idealized,36.45,13.7,4.99,,,,burned,burn_time,127.0,s,hand
+PSI-159,21088 M4,ethane,gas,idealized,21.01,14.7,3.09,,,,burned,burn_time,13.0,s,hand
+PSI-159,21088 L1,ethane,gas,idealized,20.96,14.7,3.08,,,,burned,burn_time,9.0,s,hand
+PSI-159,21088 N1,ethane,gas,idealized,18.02,14.7,2.65,,,,burned,burn_time,7.0,s,hand
+PSI-159,21088 P1,ethane,gas,idealized,17.97,14.7,2.64,,,,burned,burn_time,8.0,s,hand
+PSI-159,21102A1,50% butane,gas,idealized,39.57,14.7,5.82,,,,burned,burn_time,40.0,s,hand
+PSI-159,21102 C1,50% butane,gas,idealized,39.3,14.7,5.78,,,,burned,burn_time,41.0,s,hand
+PSI-159,21102 B1,50% butane,gas,idealized,39.05,14.7,5.74,,,,burned,burn_time,38.0,s,hand
+PSI-159,21102 C2,50% butane,gas,idealized,38.81,14.7,5.71,,,,burned,burn_time,63.0,s,hand
+PSI-159,21102 C3,50% butane,gas,idealized,38.62,14.7,5.68,,,,burned,burn_time,82.0,s,hand
+PSI-159,21102 C4,50% butane,gas,idealized,38.25,14.7,5.62,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21102 C5,50% butane,gas,idealized,38.25,14.7,5.62,,,,burned,burn_time,43.0,s,hand
+PSI-159,21102 C6,50% butane,gas,idealized,38.12,14.7,5.6,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21102 C7,50% butane,gas,idealized,38.12,14.7,5.6,,,,burned,burn_time,18.0,s,hand
+PSI-159,21102 C8,50% butane,gas,idealized,38.07,14.7,5.6,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21102 M1,50% butane,gas,idealized,23.41,14.7,3.44,,,,burned,burn_time,8.0,s,hand
+PSI-159,21102 M2,50% butane,gas,idealized,23.36,14.7,3.43,,,,burned,burn_time,14.0,s,hand
+PSI-159,21102 M3,50% butane,gas,idealized,23.33,14.7,3.43,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21102 M4,50% butane,gas,idealized,23.33,14.7,3.43,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21102 M5,50% butane,gas,idealized,23.33,14.7,3.43,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21102 M6,50% butane,gas,idealized,23.33,14.7,3.43,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21106A4,50% butane,gas,idealized,39.26,7.35,2.89,,,,burned,burn_time,60.0,s,hand
+PSI-159,21106 B1,50% butane,gas,idealized,38.46,7.35,2.83,,,,burned,burn_time,62.0,s,hand
+PSI-159,21106 C1,50% butane,gas,idealized,37.72,7.35,2.77,,,,burned,burn_time,63.0,s,hand
+PSI-159,21106 D1,50% butane,gas,idealized,36.93,7.35,2.71,,,,burned,burn_time,120.0,s,hand
+PSI-159,21106 F1,50% butane,gas,idealized,35.85,7.35,2.63,,,,burned,burn_time,72.0,s,hand
+PSI-159,21106 F2,50% butane,gas,idealized,35.42,7.35,2.6,,,,no_ignition,,,,hand
+PSI-159,21106 F3,50% butane,gas,idealized,35.42,7.35,2.6,,,,burned,burn_time,13.0,s,hand
+PSI-159,21106 F4,50% butane,gas,idealized,35.38,7.35,2.6,,,,no_ignition,burn_time,22.0,s,hand
+PSI-159,21106 F5,50% butane,gas,idealized,35.29,7.35,2.59,,,,no_ignition,,,,hand
+PSI-159,21106 G6,50% butane,gas,idealized,20.97,7.35,1.54,,,,burned,burn_time,20.0,s,hand
+PSI-159,21106 G7,50% butane,gas,idealized,20.86,7.35,1.53,,,,burned,burn_time,20.0,s,hand
+PSI-159,21106 G9,50% butane,gas,idealized,20.75,7.35,1.53,,,,burned,burn_time,14.0,s,hand
+PSI-159,21106 H1,50% butane,gas,idealized,20.67,7.35,1.52,,,,no_ignition,,,,hand
+PSI-159,21106 H2,50% butane,gas,idealized,20.67,7.35,1.52,,,,no_ignition,,,,hand
+PSI-159,21112A1,propane,gas,idealized,39.54,13.7,5.42,,,,burned,burn_time,43.0,s,hand
+PSI-159,21112 A2,propane,gas,idealized,39.4,13.7,5.4,,,,burned,burn_time,44.0,s,hand
+PSI-159,21112 A3,propane,gas,idealized,39.13,13.7,5.36,,,,burned,burn_time,95.0,s,hand
+PSI-159,21112 A4,propane,gas,idealized,38.68,13.7,5.3,,,,burned,burn_time,185.0,s,hand
+PSI-159,21112 A5,propane,gas,idealized,37.95,13.7,5.2,,,,burned,burn_time,24.0,s,hand
+PSI-159,21112 C1,propane,gas,idealized,37.77,13.7,5.17,,,,burned,burn_time,29.0,s,hand
+PSI-159,21112 C2,propane,gas,idealized,37.71,13.7,5.17,,,,burned,burn_time,29.0,s,hand
+PSI-159,21112 A6,propane,gas,idealized,37.65,13.7,5.16,,,,burned,burn_time,259.0,s,hand
+PSI-159,21112 C3,propane,gas,idealized,36.64,13.7,5.02,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21112 C4,propane,gas,idealized,36.64,13.7,5.02,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21112 C5,propane,gas,idealized,36.64,13.7,5.02,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21112 C6,propane,gas,idealized,36.64,13.7,5.02,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21112 F1,propane,gas,idealized,21.25,14.7,3.12,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21112 F2,propane,gas,idealized,21.25,14.7,3.12,,,,burned,burn_time,8.0,s,hand
+PSI-159,21112 F3,propane,gas,idealized,21.22,14.7,3.12,,,,burned,burn_time,8.0,s,hand
+PSI-159,21112 F4,propane,gas,idealized,21.2,14.7,3.12,,,,burned,burn_time,10.0,s,hand
+PSI-159,21112 F5,propane,gas,idealized,21.18,14.7,3.11,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21112 H1,propane,gas,idealized,21.18,14.7,3.11,,,,burned,burn_time,12.0,s,hand
+PSI-159,21112 H2,propane,gas,idealized,21.16,14.7,3.11,,,,burned,burn_time,11.0,s,hand
+PSI-159,21112 H3,propane,gas,idealized,21.14,14.7,3.11,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21125A1,30% butane,gas,idealized,39.45,14.7,5.8,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21125 A2,30% butane,gas,idealized,39.45,14.7,5.8,,,,burned,burn_time,8.0,s,hand
+PSI-159,21125 A3,30% butane,gas,idealized,39.41,14.7,5.79,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21125 A4,30% butane,gas,idealized,39.41,14.7,5.79,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21125 A5,30% butane,gas,idealized,39.41,14.7,5.79,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21125 A6,30% butane,gas,idealized,39.41,14.7,5.79,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21125 A7,30% butane,gas,idealized,39.41,14.7,5.79,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21125 A8,30% butane,gas,idealized,39.41,14.7,5.79,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21125 A9,30% butane,gas,idealized,39.41,14.7,5.79,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21125 H1,30% butane,gas,idealized,39.41,14.7,5.79,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21125 H2,30% butane,gas,idealized,39.41,14.7,5.79,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21125 H3,30% butane,gas,idealized,39.41,14.7,5.79,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21125 H4,30% butane,gas,idealized,39.41,14.7,5.79,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21125 J1,30% butane,gas,idealized,39.41,14.7,5.79,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21125 H5,30% butane,gas,idealized,39.41,14.7,5.79,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21125 K1,30% butane,gas,idealized,39.41,14.7,5.79,,,,burned,burn_time,35.0,s,hand
+PSI-159,21125 K2,30% butane,gas,idealized,38.92,14.7,5.72,,,,burned,burn_time,17.0,s,hand
+PSI-159,21125 K3,30% butane,gas,idealized,38.44,14.7,5.65,,,,burned,burn_time,125.0,s,hand
+PSI-159,21125 D1,30% butane,gas,idealized,21.11,14.7,3.1,,,,burned,burn_time,1.0,s,hand
+PSI-159,21125 D2,30% butane,gas,idealized,21.11,14.7,3.1,,,,burned,burn_time,1.0,s,hand
+PSI-159,21125 D3,30% butane,gas,idealized,21.1,14.7,3.1,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21125 D4,30% butane,gas,idealized,21.1,14.7,3.1,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21125 D5,30% butane,gas,idealized,21.1,14.7,3.1,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21125 D6,30% butane,gas,idealized,21.1,14.7,3.1,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21130A1,30% propane,gas,idealized,21.07,29.39,6.19,,,,burned,burn_time,1.0,s,hand
+PSI-159,21130 A2,30% propane,gas,idealized,21.07,29.39,6.19,,,,burned,burn_time,1.0,s,hand
+PSI-159,21130 A3,30% propane,gas,idealized,21.07,29.39,6.19,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21130 A4,30% propane,gas,idealized,21.07,29.39,6.19,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21130 A5,30% propane,gas,idealized,21.07,29.39,6.19,,,,burned,burn_time,1.0,s,hand
+PSI-159,21130 A6,30% propane,gas,idealized,21.06,29.39,6.19,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21130 A7,30% propane,gas,idealized,21.06,29.39,6.19,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21130 A8,30% propane,gas,idealized,21.06,29.39,6.19,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21130 A9,30% propane,gas,idealized,21.06,29.39,6.19,,,,burned,burn_time,1.0,s,hand
+PSI-159,21130 M1,30% propane,gas,idealized,21.06,29.39,6.19,,,,burned,burn_time,6.0,s,hand
+PSI-159,21130 M2,30% propane,gas,idealized,21.05,29.39,6.19,,,,burned,burn_time,7.0,s,hand
+PSI-159,21130 M3,30% propane,gas,idealized,21.02,29.39,6.18,,,,burned,burn_time,5.0,s,hand
+PSI-159,21130 G1,30% propane,gas,idealized,21.67,44.09,9.55,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21130 G2,30% propane,gas,idealized,21.67,44.09,9.55,,,,burned,burn_time,1.0,s,hand
+PSI-159,21130 G3,30% propane,gas,idealized,21.67,44.09,9.55,,,,burned,burn_time,1.0,s,hand
+PSI-159,21130 G4,30% propane,gas,idealized,21.67,44.09,9.55,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21130 G5,30% propane,gas,idealized,21.67,44.09,9.55,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21130 G6,30% propane,gas,idealized,21.67,44.09,9.55,,,,burned,burn_time,1.0,s,hand
+PSI-159,21130 G7,30% propane,gas,idealized,21.67,44.09,9.55,,,,burned,burn_time,1.0,s,hand
+PSI-159,21130 N1,30% propane,gas,idealized,21.67,44.09,9.55,,,,burned,burn_time,6.0,s,hand
+PSI-159,21130 N2,30% propane,gas,idealized,21.66,44.09,9.55,,,,burned,burn_time,6.0,s,hand
+PSI-159,21130 N3,30% propane,gas,idealized,21.64,44.09,9.54,,,,burned,burn_time,5.0,s,hand
+PSI-159,21130 N4,30% propane,gas,idealized,21.64,44.09,9.54,,,,burned,burn_time,5.0,s,hand
+PSI-159,21130 N5,30% propane,gas,idealized,21.64,44.09,9.54,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21137A1,30% propane,gas,idealized,39.96,14.7,5.87,,,,burned,burn_time,19.0,s,hand
+PSI-159,21137 A2,30% propane,gas,idealized,39.73,14.7,5.84,,,,burned,burn_time,39.0,s,hand
+PSI-159,21137 A3,30% propane,gas,idealized,39.48,14.7,5.8,,,,burned,burn_time,124.0,s,hand
+PSI-159,21137 B1,30% propane,gas,idealized,38.95,14.7,5.73,,,,burned,burn_time,127.0,s,hand
+PSI-159,21137 B2,30% propane,gas,idealized,37.12,14.7,5.46,,,,burned,burn_time,147.0,s,hand
+PSI-159,21137 A4,30% propane,gas,idealized,35.75,14.7,5.26,,,,burned,burn_time,35.0,s,hand
+PSI-159,21137 A5,30% propane,gas,idealized,35.57,14.7,5.23,,,,burned,burn_time,44.0,s,hand
+PSI-159,21137 A6,30% propane,gas,idealized,35.37,14.7,5.2,,,,burned,burn_time,22.0,s,hand
+PSI-159,21137 A7,30% propane,gas,idealized,35.24,14.7,5.18,,,,burned,burn_time,33.0,s,hand
+PSI-159,21137 D1,30% propane,gas,idealized,21.0,14.7,3.09,,,,burned,burn_time,8.0,s,hand
+PSI-159,21137 D2,30% propane,gas,idealized,20.91,14.7,3.07,,,,burned,burn_time,11.0,s,hand
+PSI-159,21137 C1,30% propane,gas,idealized,20.89,14.7,3.07,,,,burned,burn_time,8.0,s,hand
+PSI-159,21153A1,30% ethane,gas,idealized,38.87,7.35,2.86,,,,burned,burn_time,59.0,s,hand
+PSI-159,21153 A2,30% ethane,gas,idealized,37.59,7.35,2.76,,,,burned,burn_time,88.0,s,hand
+PSI-159,21153 A3,30% ethane,gas,idealized,36.39,7.35,2.67,,,,burned,burn_time,258.0,s,hand
+PSI-159,21153 F1,30% ethane,gas,idealized,34.08,7.35,2.5,,,,burned,burn_time,44.0,s,hand
+PSI-159,21153 A4,30% ethane,gas,idealized,33.49,7.35,2.46,,,,burned,burn_time,56.0,s,hand
+PSI-159,21153 A5,30% ethane,gas,idealized,33.24,7.35,2.44,,,,burned,burn_time,274.0,s,hand
+PSI-159,21153 C1,30% ethane,gas,idealized,39.85,29.39,11.71,,,,burned,burn_time,34.0,s,hand
+PSI-159,21153 C2,30% ethane,gas,idealized,39.66,29.39,11.66,,,,burned,burn_time,51.0,s,hand
+PSI-159,21153 C3,30% ethane,gas,idealized,39.48,29.39,11.6,,,,burned,burn_time,123.0,s,hand
+PSI-159,21153 G1,30% ethane,gas,idealized,39.2,29.39,11.52,,,,burned,burn_time,131.0,s,hand
+PSI-159,21153 C4,30% ethane,gas,idealized,38.89,29.39,11.43,,,,burned,burn_time,276.0,s,hand
+PSI-159,21153 C5,30% ethane,gas,idealized,38.42,29.39,11.29,,,,burned,burn_time,49.0,s,hand
+PSI-159,21153 C6,30% ethane,gas,idealized,38.36,29.39,11.27,,,,burned,burn_time,44.0,s,hand
+PSI-159,21153 C7,30% ethane,gas,idealized,38.21,29.39,11.23,,,,burned,burn_time,61.0,s,hand
+PSI-159,21162A1,30% ethane,gas,idealized,39.97,14.7,5.88,,,,burned,burn_time,43.0,s,hand
+PSI-159,21162 A2,30% ethane,gas,idealized,39.5,14.7,5.81,,,,burned,burn_time,71.0,s,hand
+PSI-159,21162 A3,30% ethane,gas,idealized,39.0,14.7,5.73,,,,burned,burn_time,232.0,s,hand
+PSI-159,21162 B1,30% ethane,gas,idealized,37.93,14.7,5.58,,,,burned,burn_time,158.0,s,hand
+PSI-159,21162 A4,30% ethane,gas,idealized,37.21,14.7,5.47,,,,burned,burn_time,304.0,s,hand
+PSI-159,21162 C1,30% ethane,gas,idealized,21.0,14.7,3.09,,,,burned,burn_time,19.0,s,hand
+PSI-159,21162 C2,30% ethane,gas,idealized,20.96,14.7,3.08,,,,burned,burn_time,11.0,s,hand
+PSI-159,21162 C3,30% ethane,gas,idealized,20.93,14.7,3.08,,,,burned,burn_time,9.0,s,hand
+PSI-159,21162 C4,30% ethane,gas,idealized,20.89,14.7,3.07,,,,burned,burn_time,9.0,s,hand
+PSI-159,21162 C5,30% ethane,gas,idealized,20.84,14.7,3.06,,,,burned,burn_time,9.0,s,hand
+PSI-159,21162 D1,30% ethane,gas,idealized,20.75,14.7,3.05,,,,burned,burn_time,16.0,s,hand
+PSI-159,21162 F1,30% ethane,gas,idealized,20.72,14.7,3.05,,,,no_ignition,burn_time,0.0,s,hand
+PSI-159,21162 F2,30% ethane,gas,idealized,20.72,14.7,3.05,,,,burned,burn_time,10.0,s,hand
+PSI-159,21174 A1,30% butane,gas,idealized,38.86,7.35,2.86,,,,burned,burn_time,21.0,s,hand
+PSI-159,21174 A2,30% butane,gas,idealized,38.32,7.35,2.82,,,,burned,burn_time,29.0,s,hand
+PSI-159,21174 A3,30% butane,gas,idealized,37.85,7.35,2.78,,,,burned,burn_time,54.0,s,hand
+PSI-159,21174 A4,30% butane,gas,idealized,37.21,7.35,2.73,,,,burned,burn_time,210.0,s,hand
+PSI-159,21174 B1,30% butane,gas,idealized,35.54,7.35,2.61,,,,burned,burn_time,109.0,s,hand
+PSI-159,21174 C1,30% butane,gas,idealized,39.85,29.39,11.71,,,,burned,burn_time,30.0,s,hand
+PSI-159,21174 C2,30% butane,gas,idealized,39.65,29.39,11.65,,,,burned,burn_time,29.0,s,hand
+PSI-159,21174 C3,30% butane,gas,idealized,39.54,29.39,11.62,,,,burned,burn_time,35.0,s,hand
+PSI-159,21174 C4,30% butane,gas,idealized,39.43,29.39,11.59,,,,burned,burn_time,90.0,s,hand
+PSI-159,21174 D1,30% butane,gas,idealized,39.25,29.39,11.54,,,,burned,burn_time,83.0,s,hand
+PSI-159,21174 F1,30% butane,gas,idealized,39.08,29.39,11.49,,,,burned,burn_time,40.0,s,hand
+PSI-159,21174 C5,30% butane,gas,idealized,38.96,29.39,11.45,,,,burned,burn_time,34.0,s,hand
+PSI-159,21174 C6,30% butane,gas,idealized,38.93,29.39,11.44,,,,burned,burn_time,251.0,s,hand
+PSI-159,21174 F2,30% butane,gas,idealized,38.55,29.39,11.33,,,,burned,burn_time,24.0,s,hand
+PSI-159,21174 F3,30% butane,gas,idealized,38.48,29.39,11.31,,,,burned,burn_time,23.0,s,hand
+PSI-159,21174 F4,30% butane,gas,idealized,38.41,29.39,11.29,,,,burned,burn_time,35.0,s,hand
+PSI-159,21291 A1,30% butane,gas,idealized,39.93,29.39,11.74,,,,burned,burn_time,167.0,s,hand
+PSI-159,21291 C1,30% butane,gas,idealized,39.42,29.39,11.59,,,,burned,burn_time,246.0,s,hand
+PSI-159,21291 C2,30% butane,gas,idealized,38.93,29.39,11.44,,,,burned,burn_time,27.0,s,hand
+PSI-159,21291 B1,30% butane,gas,idealized,38.83,29.39,11.41,,,,burned,burn_time,32.0,s,hand
+PSI-159,21291 H1,30% butane,gas,idealized,38.72,29.39,11.38,,,,burned,burn_time,35.0,s,hand
+PSI-159,21291 H2,30% butane,gas,idealized,38.62,29.39,11.35,,,,burned,burn_time,158.0,s,hand
+PSI-159,21291 D1,30% butane,gas,idealized,39.78,14.7,5.85,,,,burned,burn_time,47.0,s,hand
+PSI-159,21291 G1,30% butane,gas,idealized,39.49,14.7,5.81,,,,burned,burn_time,161.0,s,hand
+PSI-159,21291 G2,30% butane,gas,idealized,38.85,14.7,5.71,,,,burned,burn_time,60.0,s,hand
+PSI-159,21291 J1,30% butane,gas,idealized,38.54,14.7,5.67,,,,burned,burn_time,80.0,s,hand
+PSI-159,21291 J2,30% butane,gas,idealized,38.27,14.7,5.63,,,,burned,burn_time,27.0,s,hand
+PSI-159,21291 J3,30% butane,gas,idealized,38.08,14.7,5.6,,,,burned,burn_time,83.0,s,hand
+PSI-20,0,100% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-20,1,100% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-20,2,50% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-20,3,50% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-20,4,50% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-20,5,50% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-20,6,100%C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-20,7,100%C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-20,8,100%C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-20,9,100% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-20,10,100% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-20,11,100% CH4,gas,idealized,,,,,,,burned,,,,hand
+PSI-20,12,100% CH4,gas,idealized,,,,,,,burned,,,,hand
+PSI-20,13,50% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-20,14,100% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-20,15,100% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-20,16,100% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-20,17,100% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,17319,40% CH4,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,17324,40% CH5,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,17342,40% CH6,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,17356,40% CH7,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,18003,40% CH8,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,18005,40% CH9,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,18008,40% CH10,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,18011,40% CH11,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,18022,40% CH12,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,18026,40% CH13,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,18032,40% CH14,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,18039,100% CH4,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,18043,100% CH5,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,18053,100% CH6,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,18145,100% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,18151,100% C2H5,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,18177,100% C2H6,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,18186,100% C2H7,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,18192,100% C2H8,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,18199,100% C2H9,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,18214,100% C2H10,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,18218,100% C2H11,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,18235,50% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,18239,50% C2H5,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,18241,50% C2H6,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,18249,50% C2H7,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,18253,50% C2H8,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,18257,50% C2H9,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,21041,30% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,21046,30% C2H5,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,21050,40% CH4,gas,idealized,,,,,,,burned,,,,hand
+PSI-21,21062,40% CH5,gas,idealized,,,,,,,burned,,,,hand
+PSI-22,18073,100% CH4,gas,idealized,,,,,,,burned,,,,hand
+PSI-22,18078,100% CH4,gas,idealized,,,,,,,burned,,,,hand
+PSI-22,18080,40% CH4,gas,idealized,,,,,,,burned,,,,hand
+PSI-22,18087,100% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-22,18092,30% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-22,18095,30% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-22,18102,40% CH4,gas,idealized,,,,,,,burned,,,,hand
+PSI-22,18106,40% CH4,gas,idealized,,,,,,,burned,,,,hand
+PSI-22,18113,100% CH4,gas,idealized,,,,,,,burned,,,,hand
+PSI-22,18130,100% CH4,gas,idealized,,,,,,,burned,,,,hand
+PSI-22,18137,100% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-22,18269,40% CH4,gas,idealized,,,,,,,burned,,,,hand
+PSI-22,18274,30% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-22,18282,100% CH4,gas,idealized,,,,,,,burned,,,,hand
+PSI-22,18285,100% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-22,18290,100% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-22,18298,40% CH4,gas,idealized,,,,,,,burned,,,,hand
+PSI-22,18302,30% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-22,18312,100% CH4,gas,idealized,,,,,,,burned,,,,hand
+PSI-22,18319,100% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-22,18319,100% C2H4,gas,idealized,,,,,,,burned,,,,hand
+PSI-23,19254,50% C2H4 with N2,gas,idealized,21.0,,,,,,burned,,,,hand
+PSI-23,19256,50% C2H4 with N3,gas,idealized,21.0,,,,,,burned,,,,hand
+PSI-23,19304,45% CH4 with N2,gas,idealized,21.0,,,,,,burned,,,,hand
+PSI-23,19308,45% CH4 with N3,gas,idealized,30.0,,,,,,burned,,,,hand
+PSI-23,19352,100% H2,gas,idealized,21.0,,,,,,burned,,,,hand
+PSI-23,20006,44.4% H2 with CH4,gas,idealized,21.0,,,,,,burned,,,,hand
+PSI-23,20013,66.7% H2 with CH4,gas,idealized,21.0,,,,,,burned,,,,hand
+PSI-23,20024,100% H2,gas,idealized,21.0,,,,,,burned,,,,hand
+PSI-23,20029,50% C2H4 with N2,gas,idealized,21.0,,,,,,burned,,,,hand
+PSI-23,20132,"25% H2, 20% CH4, with He",gas,idealized,21.0,,,,,,burned,,,,hand
+PSI-23,20136,"20% H2, 25% CH4, with He",gas,idealized,21.0,,,,,,burned,,,,hand
+PSI-23,20142,"30% H2, 15% CH4, with He",gas,idealized,30.0,,,,,,burned,,,,hand
+PSI-23,20155,45% H2 with He,gas,idealized,,,,,,,burned,,,,hand
+PSI-23,20160,45% CH4 with He,gas,idealized,,,,,,,burned,,,,hand
+PSI-23,20164,20% C2H4 with He,gas,idealized,30.0,,,,,,burned,,,,hand
+PSI-23,20170,25% C2H4 with He,gas,idealized,,,,,,,burned,,,,hand
+PSI-23,20176,30% C2H4 with He,gas,idealized,,,,,,,burned,,,,hand
+PSI-23,20190,35% H2 with He,gas,idealized,,,,,,,burned,,,,hand
 PSI-25,B1,100 micron PMMA film   2 cm wide,solid,cabin_material,22.2,,,,,,,,,,hand
 PSI-25,B2,200 micron PMMA film   2 cm wide,solid,cabin_material,22.2,,,,,,,,,,hand
 PSI-25,B3,100 micron film   2 cm wide,solid,cabin_material,22.2,,,,,,,,,,hand
@@ -237,6 +1477,101 @@ PSI-25,T27,1 cm SIBAL,solid,cabin_material,20.7,,,,,,,,,,hand
 PSI-25,T28a,1 cm SIBAL,solid,cabin_material,20.7,,,,,,,,,,hand
 PSI-25,T28b,1 cm SIBAL,solid,cabin_material,20.7,,,,,,,,,,hand
 PSI-25,T29,1 cm SIBAL,solid,cabin_material,20.7,,,,,,,,,,hand
+PSI-39,1206,C12H26,liquid,idealized,21.0,14.7,3.09,N2,,,,,,,hand
+PSI-39,1207,C12H26,liquid,idealized,21.0,14.7,3.09,N2,,,,,,,hand
+PSI-39,1208,C12H26,liquid,idealized,21.0,14.7,3.09,N2,,,,,,,hand
+PSI-39,1209,C12H26,liquid,idealized,21.0,14.7,3.09,N2,,,,,,,hand
+PSI-39,1210,C12H26,liquid,idealized,21.0,14.7,3.09,N2,,,,,,,hand
+PSI-39,1211,C12H26,liquid,idealized,21.0,14.7,3.09,N2,,,,,,,hand
+PSI-39,1213,C12H26,liquid,idealized,17.0,14.7,2.5,N2,,,,,,,hand
+PSI-39,1215,C12H26,liquid,idealized,17.0,14.7,2.5,N2,,,,,,,hand
+PSI-39,1216,C12H26,liquid,idealized,17.0,14.7,2.5,N2,,,,,,,hand
+PSI-39,1217,C12H26,liquid,idealized,17.0,14.7,2.5,N2,,,,,,,hand
+PSI-39,1218,C12H26,liquid,idealized,21.0,14.7,3.09,N2,,,,,,,hand
+PSI-39,1219,C12H26,liquid,idealized,21.0,14.7,3.09,N2,,,,,,,hand
+PSI-39,1220,C12H26,liquid,idealized,21.0,14.7,3.09,N2,,,,,,,hand
+PSI-39,1221,C12H26,liquid,idealized,21.0,14.7,3.09,N2,,,,,,,hand
+PSI-39,1222,C12H26,liquid,idealized,21.0,14.7,3.09,N2,,,,,,,hand
+PSI-39,1223,C12H26,liquid,idealized,21.0,18.37,3.86,N2,,,,,,,hand
+PSI-39,1224,C12H26,liquid,idealized,21.0,18.37,3.86,N2,,,,,,,hand
+PSI-39,1225,C12H26,liquid,idealized,21.0,18.37,3.86,N2,,,,,,,hand
+PSI-39,1226,C12H26,liquid,idealized,21.0,18.37,3.86,N2,,,,,,,hand
+PSI-39,1227,C12H26,liquid,idealized,21.0,29.39,6.17,N2,,,,,,,hand
+PSI-39,1228,C12H26,liquid,idealized,21.0,29.39,6.17,N2,,,,,,,hand
+PSI-39,1229,C12H26,liquid,idealized,21.0,29.39,6.17,N2,,,,,,,hand
+PSI-39,1285,[.75]/[.25] C12H26/iso-dodecane,liquid,idealized,17.0,14.7,2.5,N2,,,,,,,hand
+PSI-39,1286,[.75]/[.25] C12H26/iso-dodecane,liquid,idealized,17.0,14.7,2.5,N2,,,,,,,hand
+PSI-39,1287,[.75]/[.25] C12H26/iso-dodecane,liquid,idealized,17.0,14.7,2.5,N2,,,,,,,hand
+PSI-39,1288,[.75]/[.25] C12H26/iso-dodecane,liquid,idealized,17.0,14.7,2.5,N2,,,,,,,hand
+PSI-39,1289,[.75]/[.25] C12H26/iso-dodecane,liquid,idealized,17.0,14.7,2.5,N2,,,,,,,hand
+PSI-39,1295,[.75]/[.25] C12H26/iso-dodecane,liquid,idealized,21.0,14.7,3.09,N2,,,,,,,hand
+PSI-39,1296,[.75]/[.25] C12H26/iso-dodecane,liquid,idealized,21.0,14.7,3.09,N2,,,,,,,hand
+PSI-39,1297,[.75]/[.25] C12H26/iso-dodecane,liquid,idealized,21.0,14.7,3.09,N2,,,,,,,hand
+PSI-39,1290,[.75]/[.25] C12H26/iso-dodecane,liquid,idealized,17.0,14.7,2.5,N2,,,,,,,hand
+PSI-39,1291,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,17.0,14.7,2.5,N2,,,,,,,hand
+PSI-39,1292,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,17.0,14.7,2.5,N2,,,,,,,hand
+PSI-39,1293,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,17.0,14.7,2.5,N2,,,,,,,hand
+PSI-39,1294,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,17.0,14.7,2.5,N2,,,,,,,hand
+PSI-39,1300,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,14.7,3.09,N2,,,,,,,hand
+PSI-39,1301,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,14.7,3.09,N2,,,,,,,hand
+PSI-39,1310,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,18.37,3.86,N2,,,,,,,hand
+PSI-39,1311,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,18.37,3.86,N2,,,,,,,hand
+PSI-39,1312,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,18.37,3.86,N2,,,,,,,hand
+PSI-39,1313,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,18.37,3.86,N2,,,,,,,hand
+PSI-39,1314,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,18.37,3.86,N2,,,,,,,hand
+PSI-39,1320,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,29.39,6.17,N2,,,,,,,hand
+PSI-39,1321,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,29.39,6.17,N2,,,,,,,hand
+PSI-39,1322,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,29.39,6.17,N2,,,,,,,hand
+PSI-39,1323,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,29.39,6.17,N2,,,,,,,hand
+PSI-39,1328,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,17.0,44.09,7.5,N2,,,,,,,hand
+PSI-39,1329,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,17.0,44.09,7.5,N2,,,,,,,hand
+PSI-39,1330,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,17.0,44.09,7.5,N2,,,,,,,hand
+PSI-39,1331,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,17.0,44.09,7.5,N2,,,,,,,hand
+PSI-39,1332,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,17.0,44.09,7.5,N2,,,,,,,hand
+PSI-39,1335,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,44.09,9.26,N2,,,,,,,hand
+PSI-39,1336,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,44.09,9.26,N2,,,,,,,hand
+PSI-39,1337,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,44.09,9.26,N2,,,,,,,hand
+PSI-39,1338,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,44.09,9.26,N2,,,,,,,hand
+PSI-39,1340,[.75]/[.25] C12H26/iso-dodecane,liquid,idealized,21.0,73.48,15.43,N2,,,,,,,hand
+PSI-39,1341,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,73.48,15.43,N2,,,,,,,hand
+PSI-39,1342,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,73.48,15.43,N2,,,,,,,hand
+PSI-39,1346,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,11.02,2.31,N2,,,,,,,hand
+PSI-39,1347,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,11.02,2.31,N2,,,,,,,hand
+PSI-39,1348,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,11.02,2.31,N2,,,,,,,hand
+PSI-39,1349,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,11.02,2.31,N2,,,,,,,hand
+PSI-39,1356,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,7.35,1.54,N2,,,,,,,hand
+PSI-39,1357,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,7.35,1.54,N2,,,,,,,hand
+PSI-39,1358,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,7.35,1.54,N2,,,,,,,hand
+PSI-39,1362,[.75]/[.25] C12H26/iso-dodecane,liquid,idealized,21.0,14.7,3.09,N2,,,,,,,hand
+PSI-39,1363,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,14.7,3.09,N2,,,,,,,hand
+PSI-39,1364,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,14.7,3.09,N2,,,,,,,hand
+PSI-39,1365,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,14.7,3.09,N2,,,,,,,hand
+PSI-39,1366,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,14.7,3.09,N2,,,,,,,hand
+PSI-39,1367,[.75]/[.25] C12H26/iso-dodecane,liquid,idealized,21.0,44.09,9.26,N2,,,,,,,hand
+PSI-39,1368,[.75]/[.25] C12H26/iso-dodecane,liquid,idealized,21.0,44.09,9.26,N2,,,,,,,hand
+PSI-39,1369,[.75]/[.25] C12H26/iso-dodecane,liquid,idealized,21.0,44.09,9.26,N2,,,,,,,hand
+PSI-39,1373,[.75]/[.25] C12H26/iso-dodecane,liquid,idealized,21.0,44.09,9.26,He,,,,,,,hand
+PSI-39,1374,[.75]/[.25] C12H26/iso-dodecane,liquid,idealized,21.0,44.09,9.26,He,,,,,,,hand
+PSI-39,1383,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,14.7,3.09,He,,,,,,,hand
+PSI-39,1384,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,14.7,3.09,He,,,,,,,hand
+PSI-39,1386,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,14.7,3.09,He,,,,,,,hand
+PSI-39,1387,[.60]/[.40] C12H26/iso-dodecane,liquid,idealized,21.0,14.7,3.09,He,,,,,,,hand
+PSI-39,1285,[.75]/[.25] C12H26/iso-dodecane,liquid,idealized,17.0,14.7,2.5,N2,,,,,,,hand
+PSI-39,1286,[.75]/[.25] C12H26/iso-dodecane,liquid,idealized,17.0,14.7,2.5,N2,,,,,,,hand
+PSI-39,1287,[.75]/[.25] C12H26/iso-dodecane,liquid,idealized,17.0,14.7,2.5,N2,,,,,,,hand
+PSI-39,1288,[.75]/[.25] C12H26/iso-dodecane,liquid,idealized,17.0,14.7,2.5,N2,,,,,,,hand
+PSI-39,1289,[.75]/[.25] C12H26/iso-dodecane,liquid,idealized,17.0,14.7,2.5,N2,,,,,,,hand
+PSI-39,1295,[.75]/[.25] C12H26/iso-dodecane,liquid,idealized,21.0,14.7,3.09,N2,,,,,,,hand
+PSI-39,1296,[.75]/[.25] C12H26/iso-dodecane,liquid,idealized,21.0,14.7,3.09,N2,,,,,,,hand
+PSI-39,1297,[.75]/[.25] C12H26/iso-dodecane,liquid,idealized,21.0,14.7,3.09,N2,,,,,,,hand
+PSI-68,0,IsoOctane (pure),liquid,idealized,,,,,,,unknown,,,,hand
+PSI-68,1,n-Octane (pure),liquid,idealized,,,,,,,unknown,,,,hand
+PSI-68,2,Heptane (pure),liquid,idealized,,,,,,,unknown,,,,hand
+PSI-68,3,Decane (pure),liquid,idealized,,,,,,,unknown,,,,hand
+PSI-68,4,Ethanol (pure),liquid,idealized,,,,,,,unknown,,,,hand
+PSI-68,5,Propanol (95%) Glycerol (5%) (mixture),liquid,idealized,,,,,,,unknown,,,,hand
+PSI-68,6,Heptane (50%) IsoOctane (50%) (mixture),liquid,idealized,,,,,,,unknown,,,,hand
+PSI-68,7,Propanol (80%) Glycerol (20%) (mixture),liquid,idealized,,,,,,,unknown,,,,hand
 PSI-69,20CAL08,Methanol,liquid,idealized,21.0,14.65,3.08,N2,,1.69,unknown,burning_rate,0.52,mm2/s,hand
 PSI-69,20CAL10,Methanol,liquid,idealized,21.0,14.73,3.09,N2,,1.86,extinguished,burning_rate,0.6,mm2/s,hand
 PSI-69,20CAL12,Methanol,liquid,idealized,21.0,14.78,3.1,N2,,1.61,extinguished,burning_rate,0.58,mm2/s,hand
@@ -511,6 +1846,8 @@ PSI-69,H15M102,Methanol,liquid,idealized,17.0,10.26,1.74,He,,2.79,extinguished,b
 PSI-69,H15M201,Methanol,liquid,idealized,17.0,10.28,1.75,He,,2.68,extinguished,burning_rate,0.66,mm2/s,hand
 PSI-69,H19H101,Heptane,liquid,idealized,21.0,14.79,3.11,N2,,3.54,extinguished,burning_rate,0.55,mm2/s,hand
 PSI-69,H19H201,Heptane,liquid,idealized,21.0,14.82,3.11,N2,,2.82,extinguished,burning_rate,0.65,mm2/s,hand
+PSI-98,S1,SIBAL Fabric,solid,cabin_material,21.5,,,,20.0,940.0,burned,,,,hand
+PSI-98,S2,SIBAL Fabric,solid,cabin_material,21.5,,,,20.0,940.0,burned,,,,hand
 PSI-99,2-1,Silicone,solid,cabin_material,21.5,,,,20.0,290.0,no_ignition,,,,hand
 PSI-99,2-2,Silicone,solid,cabin_material,22.1,,,,20.0,290.0,no_ignition,,,,hand
 PSI-99,2-3,Silicone,solid,cabin_material,22.1,,,,20.0,290.0,no_ignition,,,,hand
@@ -518,8 +1855,8 @@ PSI-99,2-4,Silicone,solid,cabin_material,22.1,,,,20.0,290.0,no_ignition,,,,hand
 PSI-99,2-5,Cotton-Fiberglass (SIBAL),solid,cabin_material,22.1,,,,20.0,290.0,burned,spread_rate,2.1,mm/s,hand
 PSI-99,2-6,,solid,cabin_material,22.1,,,,20.0,290.0,burned,spread_rate,2.6,mm/s,hand
 PSI-99,2-7,PMMA & Nomex,solid,cabin_material,22.1,,,,20.0,240.0,burned,,,,hand
-PSI-99,2-8,PMMA,solid,cabin_material,22.05,,,,20.0,290.0,burned,spread_rate,4.0,mm/s,hand
-PSI-99,2-9,,solid,cabin_material,21.95,,,,20.0,290.0,burned,spread_rate,4.0,mm/s,hand
+PSI-99,2-8,PMMA,solid,cabin_material,22.05,,,,20.0,290.0,burned,,,,hand
+PSI-99,2-9,,solid,cabin_material,21.95,,,,20.0,290.0,burned,,,,hand
 PSI-99,F1C1/F1C2,Pre-test flow visulation data for sample 2-1,solid,cabin_material,,,,,,,,,,,hand
 PSI-99,F2C1/F2C2,Pre-test flow visulation data for sample 2-2,solid,cabin_material,,,,,,,,,,,hand
 PSI-99,Note 1 Derived from measured CO2 production and referenced to initial O2 concentration reported by ISS.,,solid,cabin_material,,,,,,,,,,,hand

@@ -1,0 +1,22 @@
+{
+  "psi_id": "PSI-23",
+  "table": "PSI-23_Experimental table_ACME s-Flame.csv",
+  "columns": {
+    "Test Day*": "run_id",
+    "Fuel Bottle": "fuel",
+    "Atmosphere*": {
+      "to": "o2_pct",
+      "unit": "pct"
+    }
+  },
+  "constants": {
+    "fuel_phase": "gas",
+    "fuel_class": "idealized",
+    "outcome": "burned"
+  },
+  "require": [
+    "Test Day*"
+  ],
+  "mapping_confidence": "hand",
+  "notes": "Per-test-day summary (one row per day, 'Flames Ignited*' flames that day), not per flame. O2 from 'Atmosphere*' like '~21% O2 with N2' -> 21. Pressure blank: the record only says '~1 atm, increasing with vitiation' (strict policy). Diluent blank: the 'N3'/'N4' entries are typos and some rounds used helium. outcome=burned because each row lists flames that ignited."
+}

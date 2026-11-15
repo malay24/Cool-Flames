@@ -1,0 +1,17 @@
+{
+  "psi_id": "PSI-20",
+  "table": "PSI-20_Experimental table_ACME BRE.csv",
+  "columns": {
+    "Fuel Bottle": "fuel"
+  },
+  "constants": {
+    "fuel_phase": "gas",
+    "fuel_class": "idealized",
+    "outcome": "burned"
+  },
+  "require": [
+    "Fuel Bottle"
+  ],
+  "mapping_confidence": "hand",
+  "notes": "Burning Rate Emulator, per-test-day summary. 'Oxygen Conc (percent)' lists several values per day ('21; 26.5; 40') and pressures were varied but not tabulated, so O2 and pressure are left blank rather than collapsed to one misleading value. run_id = row position. outcome=burned (rows list flames ignited)."
+}

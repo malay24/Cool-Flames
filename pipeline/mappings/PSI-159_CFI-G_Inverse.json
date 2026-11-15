@@ -1,0 +1,41 @@
+{
+  "psi_id": "PSI-159",
+  "table": "PSI-159_Experimental table_CFI-G_Inverse Flames.csv",
+  "columns": {
+    "Test": "run_id",
+    "Fuel": "fuel",
+    "XO2": {
+      "to": "o2_pct",
+      "unit": "fraction"
+    },
+    "approx p (bar)": {
+      "to": "pressure_psi",
+      "unit": "bar"
+    }
+  },
+  "constants": {
+    "fuel_phase": "gas",
+    "fuel_class": "idealized"
+  },
+  "metric": {
+    "source": "burn time (sec)",
+    "name": "burn_time",
+    "unit": "s"
+  },
+  "outcome_from": {
+    "source": "Hot ignition",
+    "map": {
+      "Yes": "burned",
+      "yes": "burned",
+      "No": "no_ignition",
+      "no": "no_ignition",
+      "flash": "unknown"
+    },
+    "default": "unknown"
+  },
+  "require": [
+    "Test"
+  ],
+  "mapping_confidence": "hand",
+  "notes": "ACME CFI-G inverse flames. The raw file pads ~860 blank rows (skipped). O2 'XO2' (mole fraction), pressure 'approx p (bar)'. Metric burn time (s); 0 s on failed ignitions is a real value. Outcome from 'Hot ignition': Yes/yes -> burned, No/no -> no_ignition, 'flash' -> unknown (brief flash, not sustained)."
+}
