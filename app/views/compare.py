@@ -11,11 +11,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # app/, for `compo
 import pandas as pd  # noqa: E402
 import streamlit as st  # noqa: E402
 
-from components import demo_badge, doi_link, fmt_range, footer, setup_page  # noqa: E402
+from components import demo_badge, doi_link, fmt_range, footer, page_header  # noqa: E402
 from components.data import load_investigations, load_tests  # noqa: E402
 
-setup_page("Compare")
-st.title("Compare investigations")
+page_header("Tools · Compare", "Compare investigations side by side",
+            "Pick 2 to 4 studies to compare fuels, tested conditions, what varied between runs and "
+            "what was measured.")
 invs, inv_demo = load_investigations()
 tests, tests_demo = load_tests()
 demo_badge(inv_demo or tests_demo)

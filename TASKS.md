@@ -33,7 +33,21 @@ This repo is built by two people, each driving their own Claude Code, committing
 
 ## Change log (approach changes & decisions — newest first)
 
-### Sun 15 Nov 2026, ~03:30 — Ramneek session 3 (Claude Code)
+### Sun 15 Nov 2026, ~03:45 — Ramneek session 4: UI polish (Claude Code)
+
+- **Theme:** new `.streamlit/config.toml`, "mission control" look. Dark-first navy background with a flame-orange accent, plus a matching light theme (follows the OS setting). Fonts are Space Grotesk headings, Inter body and JetBrains Mono code, loaded from Google Fonts (they fall back to the system font offline). `toolbarMode = "minimal"`.
+- **Navigation (deviates from CLAUDE.md §5 layout):** `app/Home.py` is now the **router** (`st.navigation`). Pages moved from `app/pages/N_*.py` to `app/views/*.py` (`home`, `overview`, `scenario`, `gap_map`, `compare`, `ask`, `earth_benefits`), grouped as Explore / Tools / About with icons and clean URLs (`/scenario`, `/gap-map`, `/overview`…). "Overview" is now labelled **Investigations**. The deploy main file is unchanged: `app/Home.py`.
+- **Shell:** logo (`app/static/logo.svg`, `icon.svg`), and a habitat picker plus atmosphere card (O₂, psi, ppO₂, partial-gravity note) rendered once by the router for every page. Views read it with `current_habitat()`.
+- **Components (`app/components/__init__.py`):** `page_header`, `stat_row` (bordered metrics), restyled `investigation_card` (condition chips; "table not standardized" instead of "0 standardized"), `result_card` (rank, score bar, component chips), warning cards with icons, styled footer.
+- **Pages:**
+  - Home: hero band, stat tiles, "Start here" cards, habitat insight and oxygen history.
+  - Scenario: scenario pills (`short`/`icon` added to `core/scenarios.py`), phase tabs with icons, weights in a sidebar panel, 2-column result cards.
+  - Investigations: Earth-vs-space shown as flagged cards.
+  - Ask: example pills (ask once per click).
+  - Charts use the theme surfaces.
+- **Tests:** new `tests/test_app_pages.py` loads every page through the router and checks the Moon smoke demo path. 76 pass. Checked in real headless-Chrome screenshots: dark and light at 1440 px, and phone width at 390 px.
+- **After pulling:** restart `streamlit run app/Home.py`. A running server keeps the old modules and theme.
+
 
 **A1/A2 — Done (no external batch run needed).** Summaries, `fuels`, `fuel_types` and key findings for all 24 investigations were written by Claude from each record's own text and publication titles (`data/ai/ai_fields.json`), then merged with `python ai/tag_summarize.py --import data/ai/ai_fields.json`. Validated: 3 lines each, 1–4 findings, no "safe/approved/will not burn" wording. **Someone on the team should still read every summary once** (plan requirement).
 

@@ -11,14 +11,15 @@ import pandas as pd  # noqa: E402
 import plotly.graph_objects as go  # noqa: E402
 import streamlit as st  # noqa: E402
 
-from components import demo_badge, footer, habitat_label, setup_page  # noqa: E402
+from components import (current_habitat, demo_badge, footer, is_dark, page_header,  # noqa: E402
+                        stat_row, tokens)
 from components.data import habitats, load_investigations, load_tests  # noqa: E402
 from core import loaders  # noqa: E402
 
-habitat_key = setup_page("Gap map")
-st.title("Gap map")
-st.caption("Every standardized test run plotted by total pressure and oxygen fraction, "
-           "with the habitat atmospheres on top. Empty space is where no data exists.")
+habitat_key = current_habitat()
+page_header("Explore · Gap map", "Where has NASA actually tested?",
+            "Every standardized test run by total pressure and oxygen fraction, with the habitat "
+            "atmospheres on top. Empty space is where no data exists.")
 
 tests, tests_demo = load_tests()
 invs, inv_demo = load_investigations()
@@ -27,14 +28,10 @@ inv_by_id = {i["psi_id"]: i for i in invs}
 HABS = habitats()
 
 # ---- palette (dataviz reference palette; validated light + dark) ----
-theme = getattr(st.context, "theme", None)
-DARK = bool(theme and getattr(theme, "type", None) == "dark")
-INK = {"primary": "#f0efec" if DARK else "#0b0b0b",
-       "secondary": "#c3c2b7" if DARK else "#52514e",
-       "muted": "#898781",
-       "grid": "#2c2c2a" if DARK else "#e1e0d9",
-       "axis": "#383835" if DARK else "#c3c2b7",
-       "surface": "#1a1a19" if DARK else "#fcfcfb"}
+DARK = is_dark()
+T = tokens()  # page theme (see .streamlit/config.toml)
+INK = {"primary": T["text"], "secondary": T["muted"], "muted": "#8a93a6" if DARK else "#7b7f87",
+       "grid": T["grid"], "axis": T["axis"], "surface": T["bg"]}
 # Fixed area -> style, so a colour always means the same area (never by rank).
 AREA_STYLE = {
     "suppression": ("#3987e5" if DARK else "#2a78d6", "circle"),
@@ -63,11 +60,12 @@ dist = (((plot["o2_pct"] - h["o2_pct"]) / 100) ** 2
         + ((plot["pressure_psi"] - h["pressure_psi"]) / 14.7) ** 2) ** 0.5
 near = plot[dist <= 0.1]
 
-c1, c2, c3 = st.columns(3)
-c1.metric("Runs plotted", f"{len(plot):,} of {len(df):,}")
-c2.metric("Investigations plotted", plot["psi_id"].nunique())
-c3.metric(f"Runs near {h['label']}", len(near),
-          help="Within 0.1 in normalized distance: about 10 O₂ points or 1.5 psi.")
+stat_row([
+    ("Runs plotted", f"{len(plot):,} of {len(df):,}", "Runs with both O₂ and pressure reported."),
+    ("Investigations plotted", plot["psi_id"].nunique()),
+    (f"Runs near {h['label'].split(' /')[0]}", len(near),
+     "Within 0.1 in normalized distance: about 10 O₂ points or 1.5 psi."),
+])
 
 # ---- figure ----
 fig = go.Figure()
@@ -122,12 +120,12 @@ axis = dict(gridcolor=INK["grid"], linecolor=INK["axis"], zeroline=False, automa
 fig.update_layout(
     height=600, margin=dict(l=70, r=20, t=50, b=60),
     paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
-    font=dict(family="system-ui, -apple-system, Segoe UI, sans-serif", color=INK["primary"]),
+    font=dict(family="Inter, system-ui, -apple-system, Segoe UI, sans-serif", color=INK["primary"]),
     xaxis=dict(title="Total pressure (psi)", range=[0, 76], **axis),
     yaxis=dict(title="O₂ (% by volume)", range=[0, 105], **axis),
     legend=dict(orientation="h", yanchor="bottom", y=1.01, x=0, title_text="",
                 font=dict(color=INK["secondary"])),
-    hoverlabel=dict(bgcolor=INK["surface"], font_color=INK["primary"]),
+    hoverlabel=dict(bgcolor=T["panel"], font_color=INK["primary"]),
 )
 st.plotly_chart(fig, width="stretch", theme=None)
 
@@ -151,21 +149,22 @@ if habitat_key != "iss":
         f"**{h['label']}** has an O₂ partial pressure of {h['ppo2_psi']:.2f} psi versus "
         f"{iss['ppo2_psi']:.2f} psi on the ISS, but an O₂ fraction of {h['o2_pct']:g}% versus "
         f"{iss['o2_pct']:g}%. Less inert gas absorbs heat, so materials can ignite and spread "
-        f"more easily. {len(near)} standardized runs sit near this atmosphere."
+        f"more easily. {len(near)} standardized runs sit near this atmosphere.",
+        icon=":material/lightbulb:",
     )
 
-with st.expander("Table view of plotted runs"):
+with st.expander("Table view of plotted runs", icon=":material/table_view:"):
     cols = ["name", "psi_id", "run_id", "fuel", "o2_pct", "pressure_psi", "ppo2_psi",
             "diluent", "outcome", "doi"]
     st.dataframe(plot.sort_values(["psi_id", "run_id"])[cols], hide_index=True,
                  width="stretch")
 
 # ---- P6: CSV download ----
-st.subheader("Download the standardized test table")
+st.subheader("Download the standardized test table", anchor=False)
 src = loaders.FAKE_TESTS if tests_demo else loaders.REAL_TESTS
 st.download_button(
     "Download tests.csv", data=src.read_bytes(), file_name="cool_flames_tests.csv",
-    mime="text/csv", icon="⬇️",
+    mime="text/csv", icon=":material/download:", type="primary",
     help="One row per test run, all investigations, in the schema of SCHEMA.md. "
          "Blank means not reported.",
 )

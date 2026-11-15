@@ -17,7 +17,7 @@ the habitat's atmosphere, and flags where **no data exists**.
 
 | Page | What it shows |
 |---|---|
-| **Overview** | One card per investigation (24): AI summary, fire-safety area, fuels, O₂ / pressure / airflow ranges, runs, DOI. Filters and search. "Earth vs space" table of sourced findings. |
+| **Investigations** | One card per investigation (24): AI summary, fire-safety area, fuels, O₂ / pressure / airflow ranges, runs, DOI. Filters and search. "Earth vs space" cards of sourced findings. |
 | **Scenario Explorer** | Habitat + scenario → phase tabs (smoke, ignition, spread, suppression) → ranked investigations with a score breakdown, weight sliders and warning cards (detector blind spot, cool-flame hidden hazard, no partial-gravity data, Earth tests not conservative, outside tested range). |
 | **Gap map** | Every standardized run with O₂ and pressure on one chart, habitat atmospheres on top, curves of equal O₂ partial pressure, and a CSV download of the standardized test table. |
 | **Compare** | 2 to 4 investigations side by side: conditions, fuels, what varied, outcomes, main measurement. |
@@ -70,7 +70,7 @@ Data rules (see `SCHEMA.md`, `pipeline/mappings/_FORMAT.md` and the change log i
 
 ## Layout
 
-- `app/`: Streamlit pages and shared UI (`app/components/`).
+- `app/`: `Home.py` (entry point and navigation), `views/` (one file per page), `components/` (shared UI), `static/` (logo). Theme: `.streamlit/config.toml`.
 - `core/`: pure logic, no Streamlit: habitats and scenarios, ranking, warnings, loaders.
 - `pipeline/`: offline data build from `data/raw/` to `data/clean/`.
 - `ai/`: offline summaries, Q&A index and Q&A.

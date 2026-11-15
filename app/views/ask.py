@@ -12,12 +12,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # app/, for `compo
 
 import streamlit as st  # noqa: E402
 
-from components import doi_link, footer, setup_page  # noqa: E402
+from components import doi_link, footer, page_header  # noqa: E402
 
-setup_page("Ask")
-st.title("Ask the investigations")
-st.caption("Answers come only from the text of the 24 NASA PSI combustion records, and every "
-           "answer links the DOIs it used. Research tool, not an operational safety system.")
+page_header("Tools · Ask", "Ask the investigations",
+            "Answers come only from the text of the 24 NASA PSI combustion records, and every "
+            "answer links the DOIs it used. Research tool, not an operational safety system.")
 
 # Streamlit Cloud secrets -> environment, so ai/llm.py finds the key.
 for key in ("GEMINI_API_KEY", "GEMINI_MODEL"):
@@ -47,7 +46,7 @@ def _warm() -> bool:
 
 semantic = _warm()
 if not semantic:
-    st.info("Semantic search is unavailable here, so answers use keyword matching.")
+    st.info("Semantic search is unavailable here, so answers use keyword matching.", icon=":material/info:")
 
 EXAMPLES = ["Which materials did the ISS smoke detector struggle with?",
             "What are cool flames and where were they seen?",
@@ -55,11 +54,16 @@ EXAMPLES = ["Which materials did the ISS smoke detector struggle with?",
             "Which experiments tested oxygen-enriched atmospheres?"]
 st.session_state.setdefault("ask_history", [])
 
-cols = st.columns(len(EXAMPLES))
-picked = None
-for col, ex in zip(cols, EXAMPLES):
-    if col.button(ex, width="stretch"):
-        picked = ex
+
+
+def _pick_example() -> None:
+    st.session_state["ask_pending"] = st.session_state.get("ask_examples")
+    st.session_state["ask_examples"] = None  # clear so a rerun does not ask again
+
+
+st.pills("Try an example", EXAMPLES, key="ask_examples", selection_mode="single",
+         on_change=_pick_example)
+picked = st.session_state.pop("ask_pending", None)
 
 
 def show(result: dict) -> None:

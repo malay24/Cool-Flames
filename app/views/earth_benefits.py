@@ -10,17 +10,16 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # app/, for `compo
 
 import streamlit as st  # noqa: E402
 
-from components import doi_link, footer, setup_page  # noqa: E402
+from components import doi_link, footer, page_header  # noqa: E402
 
-setup_page("Earth benefits")
-st.title("Earth benefits")
-st.caption("What the investigations' own PSI records say their results mean on Earth. "
-           "Quotes are from each record's research-impacts text.")
+page_header("About · Earth benefits", "What this research means on Earth",
+            "What the investigations' own PSI records say their results mean on Earth. Quotes "
+            "are from each record's research-impacts text.")
 
 ITEMS = [
     {
         "title": "Fire suppression and fire safety in confined spaces",
-        "icon": "🧯",
+        "icon": ":material/fire_extinguisher:",
         "points": [
             ("FLEX", "10.60555/mbq8-0451",
              "Findings on the effectiveness of fire suppressants (CO₂, He, SF₆) \"can lead to "
@@ -35,7 +34,7 @@ ITEMS = [
     },
     {
         "title": "Smoke detectors for extreme environments",
-        "icon": "🚨",
+        "icon": ":material/sensors:",
         "points": [
             ("SAME", "10.60555/gd4k-8h62",
              "\"The smoke detectors developed from the results of SAME can also be useful in "
@@ -51,7 +50,7 @@ ITEMS = [
     },
     {
         "title": "Fire models for wildfires and building fires",
-        "icon": "🔥",
+        "icon": ":material/forest:",
         "points": [
             ("BASS-II", "10.60555/4qc4-de67",
              "Simpler flames in space let researchers test computer models of burning, which "
@@ -65,7 +64,7 @@ ITEMS = [
 
 for item in ITEMS:
     with st.container(border=True):
-        st.subheader(f"{item['icon']} {item['title']}")
+        st.subheader(f"{item['icon']} {item['title']}", anchor=False)
         for name, doi, text in item["points"]:
             st.markdown(f"**{name}:** {text}  \n{doi_link(doi)}")
 

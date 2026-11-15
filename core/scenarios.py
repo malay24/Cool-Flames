@@ -41,35 +41,44 @@ BASIC_AREA_CREDIT = 0.5  # investigations with area "basic" get partial credit
 SCENARIOS: dict[str, dict] = {
     "electrical_overheat": {
         "label": "Electrical overheat (wiring, avionics)",
+        "short": "Electrical overheat", "icon": ":material/electric_bolt:",
         "phases": ["smoke", "ignition", "spread", "suppression"],
         "fuel_phases": ["solid"],
     },
     "cabin_material_fire": {
         "label": "Cabin material fire (fabric, plastics)",
+        "short": "Cabin material fire", "icon": ":material/chair:",
         "phases": ["ignition", "spread", "suppression"],
         "fuel_phases": ["solid"],
     },
     "liquid_leak": {
         "label": "Liquid leak (lubricant, cleaning fluid)",
+        "short": "Liquid leak", "icon": ":material/water_drop:",
         "phases": ["ignition", "spread", "suppression"],
         "fuel_phases": ["liquid"],
     },
     "gas_leak": {
         "label": "Gas leak (O2 or fuel line)",
+        "short": "Gas leak", "icon": ":material/gas_meter:",
         "phases": ["ignition", "spread", "suppression"],
         "fuel_phases": ["gas"],
     },
     "oxygen_rich_cabin": {
         "label": "Oxygen-rich cabin (Apollo 1 type)",
+        "short": "Oxygen-rich cabin", "icon": ":material/air:",
         "phases": ["ignition", "spread", "suppression"],
         "fuel_phases": ["solid", "gas"],
     },
     "lunar_dust": {
         "label": "Lunar dust and detectors",
+        "short": "Lunar dust", "icon": ":material/dark_mode:",
         "phases": ["smoke"],
         "fuel_phases": [],  # detection only
     },
 }
+
+PHASE_ICONS = {"smoke": ":material/cloud:", "ignition": ":material/local_fire_department:",
+               "spread": ":material/trending_up:", "suppression": ":material/fire_extinguisher:"}
 
 PHASE_LABELS = {
     "smoke": "Smoke (detection)",

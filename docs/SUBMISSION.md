@@ -26,7 +26,7 @@ safety system.
 
 **What it does**
 
-- **Overview:** one card per investigation with an AI summary, fire-safety area, fuels,
+- **Investigations:** one card per investigation with an AI summary, fire-safety area, fuels,
   tested O₂ / pressure / airflow ranges and DOI, plus an "Earth vs space" table of sourced
   findings showing where normal-gravity tests understate (and in one case overstate) burning
   in microgravity.
