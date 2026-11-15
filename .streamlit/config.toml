@@ -1,18 +1,19 @@
-# Cool Flames theme: "mission control". Dark-first with a matching light theme;
-# Streamlit follows the viewer's OS setting (switchable in the app menu).
+# Cool Flames theme: "mission control". Forced dark for everyone, independent of
+# the viewer's OS setting (a single [theme] with no [theme.light]/[theme.dark]
+# split, so Streamlit does not OS-adapt). To restore OS-adaptive theming, move
+# these colours back under [theme.dark] and re-add the [theme.light] variant.
 
 [client]
 toolbarMode = "minimal"
 
 [theme]
+base = "dark"
 font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
 headingFont = "Space Grotesk:https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap"
 codeFont = "JetBrains Mono:https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
 baseRadius = "0.6rem"
 headingFontWeights = [700, 600, 600, 600, 600, 600]
 headingFontSizes = ["2.35rem", "1.6rem", "1.3rem", "1.1rem", "1rem", "0.9rem"]
-
-[theme.dark]
 primaryColor = "#f07a3a"
 backgroundColor = "#0d1220"
 secondaryBackgroundColor = "#161d2e"
@@ -20,20 +21,7 @@ textColor = "#e8eaf0"
 borderColor = "#24304a"
 linkColor = "#f59e5b"
 
-[theme.dark.sidebar]
+[theme.sidebar]
 backgroundColor = "#0a0f1a"
 secondaryBackgroundColor = "#141b2b"
 borderColor = "#1f2940"
-
-[theme.light]
-primaryColor = "#d9541e"
-backgroundColor = "#fbfaf8"
-secondaryBackgroundColor = "#f2efe9"
-textColor = "#1d1f24"
-borderColor = "#e3ded4"
-linkColor = "#b8461a"
-
-[theme.light.sidebar]
-backgroundColor = "#f5f2ec"
-secondaryBackgroundColor = "#ebe6dd"
-borderColor = "#e0d9cc"

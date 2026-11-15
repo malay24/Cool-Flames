@@ -37,8 +37,10 @@ THEMES = {
 
 
 def is_dark() -> bool:
+    # Theme is forced dark in .streamlit/config.toml; default to dark unless the
+    # viewer explicitly switches to light, so custom CSS/charts stay in step.
     theme = getattr(st.context, "theme", None)
-    return bool(theme and getattr(theme, "type", None) == "dark")
+    return getattr(theme, "type", "dark") != "light"
 
 
 def tokens() -> dict:

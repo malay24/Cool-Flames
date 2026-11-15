@@ -173,6 +173,11 @@ This repo is built by two people, each driving their own Claude Code, committing
 - Decision: a non-positive pressure is treated as **not reported (blank)**, not 0 — 0 mmHg is unphysical (one FLEX row had `0`), unlike 0 airflow which is a real condition. Row kept, excluded from gap map, flagged.
 - **Gap-map reality:** only **273 of 527 rows have both O2 and pressure** (all FLEX). BASS-II/Saffire/SAME-R carry no pressure (strict policy). The other 7 pressure-bearing tables come via D6. → Ramneek/P4: expect a sparse gap map until D6 lands.
 
+**App theme — forced dark (touches Ramneek's lane, done at Malay's request)**
+- Changed `.streamlit/config.toml` to a single `[theme]` (`base = "dark"`) with no `[theme.light]`/`[theme.dark]` split, so the app no longer OS-adapts — **everyone gets the dark theme regardless of their OS setting**. (The dark palette is unchanged; the light palette was removed.)
+- Hardened `app/components/__init__.py` `is_dark()` to default to dark unless the viewer explicitly switches to light, so the custom hero/chips/charts stay in step with the forced-dark chrome.
+- To restore OS-adaptive theming: move the colours back under `[theme.dark]` and re-add `[theme.light]` (+ its sidebar), and revert `is_dark()`. → Ramneek: flagging since this is your `app/` + `.streamlit/` lane.
+
 **D4 — core-table mappings (Done) — key decisions**
 - **Dropped BASS (PSI-26)** from the core tables: its experiment table is only a run log (fuel + IDs, **no conditions or metrics**). BASS-II (PSI-25) represents the BASS family instead. So the core set is **4 tables (FLEX, BASS-II, Saffire-II, SAME-R), not 5**. (Deviates from CLAUDE.md §7; the other 17 tables still come via D6.)
 - **Pressure policy = STRICT, leave blank (affects the gap map).** Only **8 of 22 tables have a pressure column**. The other 14 — including BASS-II, all Saffire, SAME/SAME-R, SPICE, SLICE and the ACME experiments — ran at cabin pressure that was never tabulated. Per CLAUDE.md §11 (no fabrication) we **leave `pressure_psi` blank** rather than assume 14.7 psi. Consequence: those runs are **excluded from the gap map (P4)** but kept in `tests.csv`.
