@@ -10,7 +10,7 @@ Last updated by Claude Code: **Sun 15 Nov 2026, ~03:30 (Ramneek session 3)** —
 
 This repo is built by two people, each driving their own Claude Code, committing to `main` and pulling each other's work. To stay coherent across sessions:
 
-1. **At the start of a session:** read `CLAUDE.md`, `SCHEMA.md`, then this file's **Change log** below. The Change log is the authoritative record of where the build has deviated from the original `CLAUDE.md` brief.
+1. **At the start of a session:** read `CLAUDE.md` (now describes the project as built, with a status section 16), `SCHEMA.md`, then this file's **Change log** below. The Change log is the dated record of every decision and why; keep `CLAUDE.md` section 16 in step with it.
 2. **Confirm the task ID** with the human and stay inside that owner's folders (CLAUDE.md §5: Malay owns `pipeline/`, `core/`, `data/clean/`, `data/manual/`, README; Ramneek owns `ai/`, `data/ai/`, `app/`, deploy).
 3. **When you finish a task:** set its Status to `Done` here, tick its checkbox, update the **Progress** count and the **Ready now** list, and append a dated bullet to the **Change log** describing what changed — *especially any decision that deviates from `CLAUDE.md` or the schema*.
 4. **Keep the app working at every commit** (the team may deploy at any moment) and commit in small steps with `area: what changed` messages.
@@ -33,7 +33,18 @@ This repo is built by two people, each driving their own Claude Code, committing
 
 ## Change log (approach changes & decisions — newest first)
 
-### Sun 15 Nov 2026, ~04:30 — Ramneek session 5: interactive animations (Claude Code)
+### Sun 15 Nov 2026, ~04:40 — Ramneek session 6: CLAUDE.md brought up to date (Claude Code)
+
+- `CLAUDE.md` rewritten from "original brief, kept verbatim" to **current state**:
+  - stack, layout and data contract as built;
+  - verified sources;
+  - real counts (about 2,000 runs, 1,858 standardized, 1,009 plotted);
+  - app pages and navigation;
+  - conventions, including restarting Streamlit after `core/` or JS changes;
+  - task statuses (30 done, 2 cut, 7 open);
+  - a new **section 16** listing what remains, in order.
+- Original intent (goals, domain background, scoring formula, demo story) is kept.
+
 
 - **Mechanism:** Streamlit Custom Components v2 (`st.components.v2.component`), registered in `app/components/interactive.py`, with the JS in `app/static/js/`. p5.js 1.11.1 and three.js 0.170.0 load from cdn.jsdelivr.net; each component shows a static fallback offline and honours `prefers-reduced-motion`. Gotcha: p5 hides new canvases and un-hides them via `document`, which can't see inside the component's shadow root, so each sketch sets `visibility: visible` itself.
 - **Habitat designer (Scenario page, two-way):** drag a point on the O₂-vs-pressure plane (real runs as dots, ppO₂ curves, presets as stars). The live readout counts runs nearby. On release, the value is sent to Python (`setStateValue('point')`), which stores `st.session_state["custom_habitat"]` and switches the habitat to `"custom"`, so ranking, warnings, sidebar and Gap map all use it. Other controls: "Where is it?" (Orbit / Moon / Mars → gravity), exact-value inputs, Back to ISS.
