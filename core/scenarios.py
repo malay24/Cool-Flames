@@ -9,23 +9,48 @@ from __future__ import annotations
 HABITATS: dict[str, dict] = {
     "iss": {
         "label": "ISS", "o2_pct": 21.0, "pressure_psi": 14.7, "ppo2_psi": 3.09,
-        "partial_gravity": False, "source": "challenge brief",
+        "partial_gravity": False, "gravity_g": 0.0, "source": "challenge brief",
     },
     "moon_brief": {
         "label": "Moon Base / pressurized rover", "o2_pct": 30.0, "pressure_psi": 10.2,
-        "ppo2_psi": 3.06, "partial_gravity": True,
+        "ppo2_psi": 3.06, "partial_gravity": True, "gravity_g": 0.166,
         "source": "challenge brief (30%+ O2 at 10.2 psi or less)",
     },
     "exploration": {
         "label": "Exploration habitat (NASA)", "o2_pct": 34.0, "pressure_psi": 8.2,
-        "ppo2_psi": 2.79, "partial_gravity": True,
+        "ppo2_psi": 2.79, "partial_gravity": True, "gravity_g": 0.166,
         "source": "NASA exploration atmosphere, revised in 2012",
     },
     "suit": {
         "label": "Spacesuit", "o2_pct": 100.0, "pressure_psi": 4.3, "ppo2_psi": 4.30,
-        "partial_gravity": False, "source": "challenge brief",
+        "partial_gravity": False, "gravity_g": 0.0, "source": "challenge brief",
     },
 }
+
+# gravity_g (Earth = 1) drives the illustrative Flame Lab and hero animation only:
+# ISS and the ISS spacewalk suit are in microgravity; the Moon base and NASA's
+# exploration habitat are taken as lunar-surface habitats (1/6 g).
+
+
+def resolve_habitat(habitat: str | dict) -> dict:
+    """Return a habitat dict for a preset key or a custom atmosphere dict.
+
+    A custom dict needs o2_pct and pressure_psi; label, ppo2_psi,
+    partial_gravity and gravity_g are filled in when missing.
+    """
+    if isinstance(habitat, str):
+        return HABITATS[habitat]
+    if not isinstance(habitat, dict) or "o2_pct" not in habitat or "pressure_psi" not in habitat:
+        raise ValueError("custom habitat needs o2_pct and pressure_psi")
+    o2, p = float(habitat["o2_pct"]), float(habitat["pressure_psi"])
+    if not (0 < o2 <= 100 and p > 0):
+        raise ValueError(f"unphysical habitat: {o2}% O2 at {p} psi")
+    g = float(habitat.get("gravity_g", 0.0))
+    return {"label": habitat.get("label", "Custom atmosphere"), "o2_pct": o2, "pressure_psi": p,
+            "ppo2_psi": round(o2 / 100 * p, 2), "gravity_g": g,
+            "partial_gravity": bool(habitat.get("partial_gravity", 0 < g < 1)),
+            "source": habitat.get("source", "designed in the app")}
+
 
 PHASES = ["smoke", "ignition", "spread", "suppression"]
 

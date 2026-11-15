@@ -13,9 +13,10 @@ import streamlit as st  # noqa: E402
 
 from components import (current_habitat, demo_badge, footer, habitat_label,  # noqa: E402
                         is_dark, page_header, result_card, tokens, warning_card)
-from components.data import load_investigations, load_tests, scenarios  # noqa: E402
+from components.data import habitats, load_investigations, load_tests, scenarios  # noqa: E402
+from components.interactive import habitat_designer  # noqa: E402
 from core.ranking import COMPONENTS, DEFAULT_WEIGHTS, area_match, rank  # noqa: E402
-from core.scenarios import (HISTORY, HISTORY_NOTE, PHASE_AREA, PHASE_ICONS,  # noqa: E402
+from core.scenarios import (HABITATS, HISTORY, HISTORY_NOTE, PHASE_AREA, PHASE_ICONS,  # noqa: E402
                             PHASE_LABELS)
 from core.warnings import get_warnings  # noqa: E402
 
@@ -62,6 +63,74 @@ page_header("Explore · Scenario Explorer", "Which NASA studies matter for this 
 invs, inv_demo = load_investigations()
 tests, tests_demo = load_tests()
 demo_badge(inv_demo or tests_demo)
+
+# ---- habitat designer (two-way p5.js component) ----
+WHERE = {"Orbit": 0.0, "Moon": 0.166, "Mars": 0.38}
+SHORT = {"iss": "ISS", "moon_brief": "Moon base", "exploration": "Exploration", "suit": "Suit"}
+
+
+def _where_from(g: float) -> str:
+    return min(WHERE, key=lambda k: abs(WHERE[k] - (g or 0.0)))
+
+
+def _set_custom(o2: float, p: float) -> None:
+    g = WHERE[st.session_state.get("design_where") or "Orbit"]
+    st.session_state["custom_habitat"] = {"label": "Custom atmosphere", "o2_pct": float(o2),
+                                          "pressure_psi": float(p), "gravity_g": g}
+    st.session_state["habitat"] = "custom"
+
+
+def _on_design() -> None:
+    val = st.session_state.get("cf_designer") or {}
+    pt = val.get("point") if isinstance(val, dict) else getattr(val, "point", None)
+    if not pt:
+        return
+    if pt.get("preset"):
+        st.session_state["habitat"] = pt["preset"]
+        st.session_state["design_where"] = _where_from(HABITATS[pt["preset"]].get("gravity_g", 0.0))
+    else:
+        _set_custom(pt["o2"], pt["p"])
+
+
+def _on_where() -> None:
+    custom = st.session_state.get("custom_habitat")
+    if custom and st.session_state.get("habitat") == "custom":
+        _set_custom(custom["o2_pct"], custom["pressure_psi"])
+
+
+def _on_exact() -> None:
+    _set_custom(st.session_state["exact_o2"], st.session_state["exact_p"])
+
+
+hab_now = habitats()[habitat_key]
+st.session_state.setdefault("design_where", _where_from(hab_now.get("gravity_g", 0.0)))
+plot_runs = tests.dropna(subset=["o2_pct", "pressure_psi"])
+area_of = {i["psi_id"]: i["area"] for i in invs}
+runs_payload = [[round(float(r.pressure_psi), 2), round(float(r.o2_pct), 2), area_of.get(r.psi_id, "basic")]
+                for r in plot_runs.itertuples()]
+presets_payload = [{"key": k, "label": SHORT.get(k, h["label"]), "p": h["pressure_psi"], "o2": h["o2_pct"]}
+                   for k, h in HABITATS.items()]
+
+with st.container(border=True):
+    st.markdown("#### :material/tune: Design your own atmosphere")
+    left, right = st.columns([3, 1], gap="medium")
+    with left:
+        habitat_designer(runs_payload, presets_payload,
+                         {"p": hab_now["pressure_psi"], "o2": hab_now["o2_pct"]}, on_change=_on_design)
+    with right:
+        st.caption("Drag the orange point to any oxygen level and cabin pressure. When you let go, "
+                   "every ranking, warning and the sidebar switch to that atmosphere. Faint dots are "
+                   "real NASA test runs; the halo counts the runs nearby.")
+        st.segmented_control("Where is it?", list(WHERE), key="design_where", on_change=_on_where,
+                             help="Orbit = microgravity. Moon (1/6 g) and Mars (3/8 g) are partial gravity, "
+                                  "where PSI has no test data.")
+        with st.popover("Type exact values", icon=":material/keyboard:", width="stretch"):
+            st.number_input("O₂ (% by volume)", 5.0, 100.0, float(hab_now["o2_pct"]), 0.5, key="exact_o2")
+            st.number_input("Total pressure (psi)", 0.5, 30.0, float(hab_now["pressure_psi"]), 0.1, key="exact_p")
+            st.button("Use these values", on_click=_on_exact, type="primary", width="stretch")
+        if habitat_key == "custom":
+            st.button("Back to ISS", icon=":material/restart_alt:", width="stretch",
+                      on_click=lambda: st.session_state.update(habitat="iss"))
 
 keys = list(SCEN)
 st.session_state.setdefault("scenario", "electrical_overheat" if "electrical_overheat" in keys
@@ -112,8 +181,8 @@ for phase, tab in zip(scenario["phases"], tabs):
     with tab:
         # Rank only the studies shown, so rank numbers and explanations agree.
         pool = invs if show_all else [i for i in invs if area_match(i, scenario, phase) > 0]
-        shown = rank(pool, tests, habitat_key, scenario_key, phase, weights)
-        for card in get_warnings(habitat_key, scenario_key, phase, shown):
+        shown = rank(pool, tests, hab_now, scenario_key, phase, weights)
+        for card in get_warnings(hab_now, scenario_key, phase, shown):
             warning_card(card)
         st.caption(f"Studies in the **{PHASE_AREA[phase]}** area rank highest in this phase · "
                    f"{len(shown)} of {len(invs)} investigations ranked.")

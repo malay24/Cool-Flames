@@ -18,7 +18,8 @@ the habitat's atmosphere, and flags where **no data exists**.
 | Page | What it shows |
 |---|---|
 | **Investigations** | One card per investigation (24): AI summary, fire-safety area, fuels, O₂ / pressure / airflow ranges, runs, DOI. Filters and search. "Earth vs space" cards of sourced findings. |
-| **Scenario Explorer** | Habitat + scenario → phase tabs (smoke, ignition, spread, suppression) → ranked investigations with a score breakdown, weight sliders and warning cards (detector blind spot, cool-flame hidden hazard, no partial-gravity data, Earth tests not conservative, outside tested range). |
+| **Scenario Explorer** | Drag a point on an O₂-vs-pressure plane to **design your own atmosphere** (the page re-ranks for it), or pick a habitat; then habitat + scenario → phase tabs (smoke, ignition, spread, suppression) → ranked investigations with a score breakdown, weight sliders and warning cards (detector blind spot, cool-flame hidden hazard, no partial-gravity data, Earth tests not conservative, outside tested range). |
+| **Flame Lab** | An animated flame you control with gravity (μg / Moon / Mars / Earth), oxygen, airflow and fuel type, with guided "Try this" presets (turn off the fans, cool flame…). An **illustrative model, not a simulation**: every rule cites its source (Olson 2004, Link et al. 2018, Nayagam et al. 2014), and the page lists which NASA experiments tested that regime. |
 | **Gap map** | Every standardized run with O₂ and pressure on one chart, habitat atmospheres on top, curves of equal O₂ partial pressure, and a CSV download of the standardized test table. |
 | **Compare** | 2 to 4 investigations side by side: conditions, fuels, what varied, outcomes, main measurement. |
 | **Ask** | Questions answered only from the PSI record texts, citing DOIs. Works without an API key (shows the source passages). |
@@ -70,7 +71,7 @@ Data rules (see `SCHEMA.md`, `pipeline/mappings/_FORMAT.md` and the change log i
 
 ## Layout
 
-- `app/`: `Home.py` (entry point and navigation), `views/` (one file per page), `components/` (shared UI), `static/` (logo). Theme: `.streamlit/config.toml`.
+- `app/`: `Home.py` (entry point and navigation), `views/` (one file per page), `components/` (shared UI; `interactive.py` registers the p5.js/three.js components), `static/` (logo, `js/` sketches). Theme: `.streamlit/config.toml`. The animations load p5.js 1.11.1 and three.js 0.170.0 from cdn.jsdelivr.net and fall back to static content offline.
 - `core/`: pure logic, no Streamlit: habitats and scenarios, ranking, warnings, loaders.
 - `pipeline/`: offline data build from `data/raw/` to `data/clean/`.
 - `ai/`: offline summaries, Q&A index and Q&A.

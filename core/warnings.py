@@ -6,7 +6,7 @@ them. Wording follows the positioning rule: "tests show", "no data", never
 """
 from __future__ import annotations
 
-from core.scenarios import HABITATS, SCENARIOS
+from core.scenarios import SCENARIOS, resolve_habitat
 
 # Citations from CLAUDE.md section 14.
 SRC_FM2 = "Ferkul, Kralik, Liao 2026, Material flammability at lunar and Martian gravity (LPSC)"
@@ -103,10 +103,10 @@ def _outside_tested_range(habitat: dict, ranked: list[dict]) -> dict | None:
     }
 
 
-def get_warnings(habitat_key: str, scenario_key: str, phase: str,
+def get_warnings(habitat_key: str | dict, scenario_key: str, phase: str,
                  ranked: list[dict] | None = None) -> list[dict]:
     """Warning cards for one habitat, scenario and phase (most severe first)."""
-    habitat = HABITATS[habitat_key]
+    habitat = resolve_habitat(habitat_key)
     scenario = SCENARIOS[scenario_key]
     fuels = set(scenario["fuel_phases"])
     cards: list[dict] = []

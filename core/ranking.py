@@ -12,7 +12,7 @@ import math
 
 import pandas as pd
 
-from core.scenarios import BASIC_AREA_CREDIT, HABITATS, PHASE_AREA, SCENARIOS
+from core.scenarios import BASIC_AREA_CREDIT, PHASE_AREA, SCENARIOS, resolve_habitat
 
 DEFAULT_WEIGHTS: dict[str, float] = {
     "area_match": 0.35,
@@ -102,10 +102,10 @@ def explain(rank: int, inv: dict, runs: pd.DataFrame, nearest: dict | None) -> s
     return f"Ranked {_ordinal(rank)}: {inv.get('area', '?')} study{_fuel_text(inv, runs)}; {cond}; {runs_txt}."
 
 
-def rank(investigations: list[dict], tests: pd.DataFrame, habitat_key: str,
+def rank(investigations: list[dict], tests: pd.DataFrame, habitat_key: str | dict,
          scenario_key: str, phase: str, weights: dict[str, float] | None = None) -> list[dict]:
     """Score every investigation for one habitat, scenario and phase; best first."""
-    habitat = HABITATS[habitat_key]
+    habitat = resolve_habitat(habitat_key)
     scenario = SCENARIOS[scenario_key]
     if phase not in scenario["phases"]:
         raise ValueError(f"phase {phase!r} is not part of scenario {scenario_key!r}")

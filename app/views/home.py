@@ -8,6 +8,7 @@ import streamlit as st  # noqa: E402
 
 from components import current_habitat, demo_badge, footer, stat_row  # noqa: E402
 from components.data import habitats, load_investigations, load_tests  # noqa: E402
+from components.interactive import hero  # noqa: E402
 from core.scenarios import HISTORY, HISTORY_NOTE  # noqa: E402
 
 habitat_key = current_habitat()
@@ -17,13 +18,7 @@ tests, tests_demo = load_tests()
 plotted = tests.dropna(subset=["o2_pct", "pressure_psi"])
 h = HABS[habitat_key]
 
-st.html("""
-<div class="cf-hero">
-  <p class="cf-eyebrow">NASA Space Apps 2026 · Flame in Freefall</p>
-  <h1>What NASA's microgravity fire tests can, and can't, tell a Moon base</h1>
-  <p>Pick a habitat and a fire scenario. Cool Flames ranks NASA's 24 combustion investigations
-  for each phase of the fire, explains every score, and shows where no test has been run.</p>
-</div>""")
+hero(h)
 demo_badge(inv_demo or tests_demo)
 
 dist = (((plotted["o2_pct"] - h["o2_pct"]) / 100) ** 2

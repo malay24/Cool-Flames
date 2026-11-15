@@ -5,10 +5,17 @@ import pandas as pd
 import streamlit as st
 
 from core import loaders
-from core.scenarios import HABITATS, SCENARIOS
+from core.scenarios import HABITATS, SCENARIOS, resolve_habitat
+
+
+CUSTOM_KEY = "custom"
 
 
 def habitats() -> dict[str, dict]:
+    """Preset habitats, plus the atmosphere designed on the Scenario page if any."""
+    custom = st.session_state.get("custom_habitat")
+    if custom:
+        return {**HABITATS, CUSTOM_KEY: resolve_habitat(custom)}
     return HABITATS
 
 

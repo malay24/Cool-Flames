@@ -97,11 +97,13 @@ def habitat_sidebar() -> str:
         )
         st.session_state["habitat"] = choice
         h = habs[choice]
-        gravity = ("<br>⚠️ partial gravity: no PSI data" if h.get("partial_gravity") else "")
+        g = h.get("gravity_g") or 0.0
+        gravity = "microgravity" if g == 0 else f"{g:.2g} g"
+        gravity += ("<br>⚠️ partial gravity: no PSI data" if h.get("partial_gravity") else "")
         st.html(f"""<div class="cf-atmo">O₂ <span class="v">{h['o2_pct']:g}%</span> ·
             total <span class="v">{h['pressure_psi']:g} psi</span><br>
             ppO₂ <span class="v">{h.get('ppo2_psi', h['o2_pct'] / 100 * h['pressure_psi']):.2f} psi</span>
-            {gravity}</div>""")
+            · {gravity}</div>""")
         st.caption(DISCLAIMER)
     return choice
 

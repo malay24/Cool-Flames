@@ -7,7 +7,7 @@ from streamlit.testing.v1 import AppTest
 
 APP = Path(__file__).resolve().parents[1] / "app"
 VIEWS = ["views/home.py", "views/overview.py", "views/scenario.py", "views/gap_map.py",
-         "views/compare.py", "views/ask.py", "views/earth_benefits.py"]
+         "views/compare.py", "views/ask.py", "views/earth_benefits.py", "views/flame_lab.py"]
 
 
 def router() -> AppTest:

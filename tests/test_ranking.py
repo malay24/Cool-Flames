@@ -72,3 +72,19 @@ def test_data_richness_large_bonus_capped():
     base = {"n_runs": 999, "n_publications": 10, "test_scale": "large"}
     assert data_richness(base) == 1.0
     assert data_richness({"n_runs": 0, "n_publications": 0}) == 0.0
+
+
+def test_custom_habitat_dict_matches_preset(data):
+    invs, tests = data
+    custom = {"o2_pct": 21.0, "pressure_psi": 14.7, "label": "Custom"}
+    a = [r["psi_id"] for r in rank(invs, tests, "iss", "liquid_leak", "suppression")]
+    b = [r["psi_id"] for r in rank(invs, tests, custom, "liquid_leak", "suppression")]
+    assert a == b
+
+
+def test_resolve_habitat_validates():
+    from core.scenarios import resolve_habitat
+    h = resolve_habitat({"o2_pct": 34, "pressure_psi": 8.2, "gravity_g": 0.166})
+    assert h["ppo2_psi"] == 2.79 and h["partial_gravity"] is True
+    with pytest.raises(ValueError):
+        resolve_habitat({"o2_pct": 0, "pressure_psi": 10})

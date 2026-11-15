@@ -49,3 +49,10 @@ def test_card_shape_and_wording(hab):
             assert set(c) == {"level", "title", "body", "sources"}
             assert c["level"] in {"error", "warning", "info"}
             assert not any(b in c["body"].lower() for b in BANNED)
+
+
+def test_custom_habitat_dict_partial_gravity():
+    custom = {"o2_pct": 30, "pressure_psi": 9, "gravity_g": 0.38, "label": "Custom atmosphere"}
+    assert "No data yet: partial gravity" in titles(get_warnings(custom, "gas_leak", "ignition"))
+    orbit = {"o2_pct": 30, "pressure_psi": 9, "gravity_g": 0.0}
+    assert "No data yet: partial gravity" not in titles(get_warnings(orbit, "gas_leak", "ignition"))

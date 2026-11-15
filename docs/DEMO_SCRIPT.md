@@ -16,6 +16,10 @@ sidebar habitat set to **ISS**, Scenario page weights at default.
 | 5 | 1:40–1:50 | **Scenario Explorer**, any tab, point at the **No data yet** card | "And no PSI test was run in partial gravity. Microgravity and Earth bound it; the FM2 and LUCI experiments will fill the gap." |
 | 6 | 1:50–2:00 | **Gap map**, click **Download tests.csv** | "The standardized table downloads for modellers, every claim links to a DOI, and this is a research tool, not an operational safety system." |
 
+Optional 10 s hook (Flame Lab, before step 2): click **Same fire on Earth**, then **Fabric fire on the ISS**: "On Earth a flame is a rising teardrop; in orbit there is no buoyancy, so it becomes a dim flame fed only by the fans. Turn the fans off and it starves." Point out the label: illustrative, not a simulation.
+
+Alternative for step 4: on the Scenario page, drag the orange point in *Design your own atmosphere* to about 9 psi and 40% O₂. The readout turns orange: **0 test runs nearby**, and the ranking updates for that atmosphere.
+
 Backup lines if time allows (Investigations, bottom): "Earth tests are not always conservative:
 PMMA flames kept spreading at 17% oxygen in microgravity but not at 18% on Earth. But it cuts
 both ways: one silicone sample burned on Earth and not in low gravity. We show both."

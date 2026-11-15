@@ -33,7 +33,25 @@ This repo is built by two people, each driving their own Claude Code, committing
 
 ## Change log (approach changes & decisions — newest first)
 
-### Sun 15 Nov 2026, ~03:45 — Ramneek session 4: UI polish (Claude Code)
+### Sun 15 Nov 2026, ~04:30 — Ramneek session 5: interactive animations (Claude Code)
+
+- **Mechanism:** Streamlit Custom Components v2 (`st.components.v2.component`), registered in `app/components/interactive.py`, with the JS in `app/static/js/`. p5.js 1.11.1 and three.js 0.170.0 load from cdn.jsdelivr.net; each component shows a static fallback offline and honours `prefers-reduced-motion`. Gotcha: p5 hides new canvases and un-hides them via `document`, which can't see inside the component's shadow root, so each sketch sets `visibility: visible` itself.
+- **Habitat designer (Scenario page, two-way):** drag a point on the O₂-vs-pressure plane (real runs as dots, ppO₂ curves, presets as stars). The live readout counts runs nearby. On release, the value is sent to Python (`setStateValue('point')`), which stores `st.session_state["custom_habitat"]` and switches the habitat to `"custom"`, so ranking, warnings, sidebar and Gap map all use it. Other controls: "Where is it?" (Orbit / Moon / Mars → gravity), exact-value inputs, Back to ISS.
+- **Core change (additive):** `core.scenarios.resolve_habitat()`; `rank()` and `get_warnings()` accept a preset key or a habitat dict. Each HABITAT now has `gravity_g` (ISS and suit 0; Moon base and exploration habitat 1/6 g).
+- **Flame Lab (new page, Explore):** an illustrative p5.js particle flame with sliders for gravity, O₂, airflow and fuel, plus six "Try this" presets.
+  - Rules cite Olson 2004 (buoyant flow ~50·√g cm/s; gentle-breeze effect; starving without flow), Link et al. 2018 (limiting O₂ 1 point lower in μg), and Nayagam et al. 2014 (droplet cool flame at 14–21 % O₂, not at 25 %).
+  - Droplet flames are not starved in still air (FLEX burned in a quiescent chamber).
+  - Below the canvas: the matching μg PSI studies with their tested O₂ range, "no data yet" for Moon/Mars, and Earth-vs-space findings for 1 g.
+- **Animated hero (Home, three.js):** a starfield plus a flame cloud that follows the selected habitat (a sphere in μg, a teardrop and rising embers under gravity, brighter with more O₂). Uses solid ember colours in light mode. Pauses off-screen.
+- **Verified** in headless Chrome over the DevTools protocol:
+  - dark and light themes, 1440 px and 390 px;
+  - designer drag round-trip: ISS → 9 psi / 40 % O₂ updates the ranking header, sidebar and Gap map;
+  - droplet cycle: hot → cool flame → evaporating;
+  - reduced motion: hero frames identical;
+  - no JS errors.
+  - 80 tests pass.
+- **Restart the dev server after pulling:** the JS files are read at startup.
+
 
 - **Theme:** new `.streamlit/config.toml`, "mission control" look. Dark-first navy background with a flame-orange accent, plus a matching light theme (follows the OS setting). Fonts are Space Grotesk headings, Inter body and JetBrains Mono code, loaded from Google Fonts (they fall back to the system font offline). `toolbarMode = "minimal"`.
 - **Navigation (deviates from CLAUDE.md §5 layout):** `app/Home.py` is now the **router** (`st.navigation`). Pages moved from `app/pages/N_*.py` to `app/views/*.py` (`home`, `overview`, `scenario`, `gap_map`, `compare`, `ask`, `earth_benefits`), grouped as Explore / Tools / About with icons and clean URLs (`/scenario`, `/gap-map`, `/overview`…). "Overview" is now labelled **Investigations**. The deploy main file is unchanged: `app/Home.py`.

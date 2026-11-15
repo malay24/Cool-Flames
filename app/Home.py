@@ -29,6 +29,7 @@ PAGES = {
     "Explore": [
         view("scenario.py", "Scenario Explorer", ":material/explore:", "scenario"),
         view("gap_map.py", "Gap map", ":material/scatter_plot:", "gap-map"),
+        view("flame_lab.py", "Flame Lab", ":material/local_fire_department:", "flame-lab"),
         view("overview.py", "Investigations", ":material/library_books:", "overview"),
     ],
     "Tools": [
