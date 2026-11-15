@@ -4,7 +4,7 @@ Snapshot of the team task board for NASA Space Apps 2026 ("Flame in Freefall"). 
 
 Snapshot taken: Sun 15 Nov 2026, 00:45 Europe/Berlin. The live board (Claude Sheets) is the source of truth; if this file and the live board disagree, ask the human.
 
-Last updated by Claude Code: **Sun 15 Nov 2026 (Malay session)** — see Change log.
+Last updated by Claude Code: **Sun 15 Nov 2026 (Ramneek session)** — see Change log.
 
 ## Working agreement for Claude Code (READ FIRST, both sessions)
 
@@ -29,9 +29,29 @@ This repo is built by two people, each driving their own Claude Code, committing
 
 ## Progress
 
-**8 of 39 done** (K1, K2, K5, D1, D2, D3, D4, D5). Real `data/clean/tests.csv` now exists (527 rows from the 4 core tables).
+**10 of 39 done** (K1, K2, K5, D1, D2, D3, D4, D5, P1, P2), plus **K4 and A5 cut** (see Change log). Real `data/clean/tests.csv` exists (527 rows from the 4 core tables); `data/ai/investigations.json` exists (24 entries, facts only, summaries pending).
 
 ## Change log (approach changes & decisions — newest first)
+
+### Sun 15 Nov 2026 — Ramneek session (Claude Code)
+
+**K4 — Cut (no LLM offer).** The Space Apps Global Offers include no Gemini offer: Google and Azure give general cloud credit only (card + billing + model deployment), not worth it now. New AI plan:
+- **Batch AI work (tags, summaries, column mappings) is done externally** from the `data/raw/` upload, no key needed. Output is merged by `ai/tag_summarize.py --import`.
+- **Ask page only** (stretch) uses a free Google AI Studio key (no card): `GEMINI_API_KEY` + `GEMINI_MODEL` in `.env` (and Streamlit secrets). `.env.example` now uses these names instead of `LLM_*` (deviates from CLAUDE.md §5).
+- **A5 — Cut:** column mappings for D6 come from the same external batch work. D6 therefore no longer waits on K4/A5; mapping files must follow `pipeline/mappings/_FORMAT.md`.
+
+**A1 — In progress (prompt, schema and batch export ready).**
+- `ai/tag_summarize.py` builds `data/ai/investigations.json` (24 entries). **Facts come from `data/raw/`, never an LLM:** psi_id, name (acronym, else title), doi, hardware, platform, n_publications, publications, area (CLAUDE.md §3 table), test_scale (Saffire = large, modelling = ground, else orbital), n_runs.
+- **`fuel_types` = fuel PHASES** (solid/liquid/gas) per the signed contract and §8.2 ranking, from a hand map of CLAUDE.md §3 (modelling studies take the phase of the data they model; DAFT = `[]`, dust not fuel). **Additive field `fuels`** = material names (display only, from AI). Also additive: `title`, `start_date`, `end_date`, `publications`, `ai_source`. No contract column changed.
+- `n_runs` = non-empty rows of the raw tables (**2,009 total**, not ~2,900: several tables pad with blank rows, e.g. CFI-G Inverse has 1,015 lines but ~150 runs). → **S4/demo script: say "about 2,000 test runs"**.
+- Ranges stay `null` in the JSON (D8 / contract). The app fills them at load time from `tests.csv` (`app/components/data.py`), so cards show real ranges today.
+- `--export-batch` writes `data/ai/batch_input.jsonl` (24 prompts) for the external batch run; expected output format is in the script docstring (`data/ai/ai_fields.json`). `--llm` keeps an optional Gemini path.
+
+**P1 — Done.** `app/components/` (`setup_page`, sidebar habitat picker persisted in `st.session_state["habitat"]`, disclaimer + footer, DOI links, cards, `warning_card`) and `app/components/data.py` (cached loaders, fake-data fallback with demo badge). Habitat presets use `core.scenarios.HABITATS` when it exists, else the CLAUDE.md §2 table. Each page adds `app/` to `sys.path` so it also runs standalone. Venv: Python 3.12 (3.11 not installed here); all 25 tests pass.
+- **→ Malay / R1:** please expose `HABITATS = {key: {"label", "o2_pct", "pressure_psi", ...}}` with keys `iss`, `moon_brief`, `exploration`, `suit`; the app picks it up automatically.
+
+**P2 — Done.** Overview: 3-column card grid from `investigations.json`, filters by area and fuel phase, text search, DOI link on every card, "AI summary pending" until the batch output is merged. Verified with AppTest on real and fake data (24 and 3 cards, no exceptions).
+
 
 ### Sun 15 Nov 2026 — Malay session (Claude Code)
 
@@ -96,11 +116,13 @@ Cut order if behind: P9 Earth benefits, then P8 Ask, then P7 Compare.
 ## Ready now
 
 - **K3** Confirm deadline and team registration (Ramneek, 5 min)
-- **K4** Claim Gemini or Azure offer, API key in .env (Ramneek, 10 min)
 - **R1** scenarios.py (Malay, 30 min) — *next on critical path (unblocks R2 ranking)*
 - **R4** earth_vs_space.csv (Malay, 40 min)
 - **A3** Q&A index: chunks, embeddings, FAISS (Ramneek, 45 min) — *can build offline*
-- **P1** App skeleton: pages, sidebar habitat picker, disclaimer (Ramneek, 30 min)
+- **P4** Gap map (Ramneek, 90 min) — *data ready (273 FLEX runs plottable)*
+- **P6** CSV download (Ramneek, 10 min)
+- **D6** other 17 tables (Malay) — *no longer waits on K4/A5; mappings come from the external batch work*
+- **P9** Earth benefits (Malay, stretch)
 
 ## Summary table
 
@@ -109,7 +131,7 @@ Cut order if behind: P9 Earth benefits, then P8 Ask, then P7 Compare.
 | K1 | Create GitHub repo with folder layout, add Ramneek | Malay | Done | - | K5, D1, D3, R4, P1 | 10 | Kickoff |
 | K2 | Agree data schema, write SCHEMA.md | Both | Done | - | K5, D3, R1 | 15 | Kickoff |
 | K3 | Confirm deadline and team registration | Ramneek | To do | - | - | 5 | Kickoff |
-| K4 | Claim Gemini or Azure offer, API key in .env | Ramneek | To do | - | D6, A1, A4 | 10 | Kickoff |
+| K4 | Claim Gemini or Azure offer, API key in .env | Ramneek | Cut | - | D6, A1, A4 | 10 | Kickoff |
 | K5 | Commit fake tests.csv (10 rows) and investigations.json (3) | Malay | Done | K1, K2 | R2, P2 | 10 | Kickoff |
 | D1 | Run fetch_psi.py, commit data/raw/ | Malay | Done | K1 | D2, A1, A3 | 15 | Sat night |
 | D2 | Inventory column names and units per table | Malay | Done | D1 | D4 | 20 | Sat night |
@@ -124,13 +146,13 @@ Cut order if behind: P9 Earth benefits, then P8 Ask, then P7 Compare.
 | R3 | Sanity check: Moon Base + electrical overheat ranks SAME/SAME-R top | Malay | To do | R2, D5 | - | 20 | Sun morning |
 | R4 | earth_vs_space.csv: 5 to 10 hand rows with sources | Malay | To do | K1 | - | 40 | Sun morning |
 | R5 | Warning card rules (no data yet, hidden hazard, blind spot) | Malay | To do | R1 | P5 | 20 | Sun morning |
-| A1 | Prompt + JSON schema for tags and summaries, test on 3 | Ramneek | To do | D1, K4 | A2, A5 | 30 | Sat night |
+| A1 | Prompt + JSON schema for tags and summaries, test on 3 | Ramneek | In progress | D1, K4 | A2, A5 | 30 | Sat night |
 | A2 | Run on all 24, save investigations.json, read each | Ramneek | To do | A1 | S1 | 45 | Sat night |
 | A3 | Q&A index: chunks, embeddings, FAISS | Ramneek | To do | D1 | A4 | 45 | Sun midday |
 | A4 | Q&A function with DOI citations + keyword fallback | Ramneek | To do | A3, K4 | P8 | 45 | Sun midday |
-| A5 | Help with column-mapping prompt for D6 | Ramneek | To do | A1 | D6 | 20 | Sun morning |
-| P1 | App skeleton: pages, sidebar habitat picker, disclaimer | Ramneek | To do | K1 | P2, P3, P4, P6, P8, P9 | 30 | Sat night |
-| P2 | Overview page: cards, filters, DOI links | Ramneek | To do | P1, K5 | P7, S1 | 60 | Sat night |
+| A5 | Help with column-mapping prompt for D6 | Ramneek | Cut | A1 | D6 | 20 | Sun morning |
+| P1 | App skeleton: pages, sidebar habitat picker, disclaimer | Ramneek | Done | K1 | P2, P3, P4, P6, P8, P9 | 30 | Sat night |
+| P2 | Overview page: cards, filters, DOI links | Ramneek | Done | P1, K5 | P7, S1 | 60 | Sat night |
 | P3 | Scenario Explorer: pickers, phase tabs, ranked list, sliders | Ramneek | To do | P1, R2 | P5, S4 | 120 | Sun morning |
 | P4 | Gap map: O2 vs psi scatter, habitats, ppO2 lines | Ramneek | To do | P1, D5 | S4 | 90 | Sun morning |
 | P5 | Warning cards in Scenario Explorer | Ramneek | To do | P3, R5 | - | 30 | Sun midday |
@@ -166,11 +188,12 @@ Cut order if behind: P9 Earth benefits, then P8 Ask, then P7 Compare.
   - Depends on: nothing
   - Unlocks: nothing
   - Done when: Deadline written in the plan doc
-- [ ] **K4: Claim Gemini or Azure offer, API key in .env**
-  - Owner: Ramneek | Status: To do | Estimate: 10 min | Slot: Kickoff
+- [x] **K4: Claim Gemini or Azure offer, API key in .env**
+  - Owner: Ramneek | Status: Cut | Estimate: 10 min | Slot: Kickoff
   - Depends on: nothing
   - Unlocks: D6, A1, A4
   - Done when: Test call returns JSON
+  - Result: Cut — no Gemini offer exists; batch AI done externally, Ask uses a free AI Studio key (see Change log).
 - [x] **K5: Commit fake tests.csv (10 rows) and investigations.json (3)**
   - Owner: Malay | Status: Done | Estimate: 10 min | Slot: Kickoff
   - Depends on: K1, K2
@@ -257,7 +280,7 @@ Cut order if behind: P9 Earth benefits, then P8 Ask, then P7 Compare.
 ### AI layer (Ramneek)
 
 - [ ] **A1: Prompt + JSON schema for tags and summaries, test on 3**
-  - Owner: Ramneek | Status: To do | Estimate: 30 min | Slot: Sat night
+  - Owner: Ramneek | Status: In progress | Estimate: 30 min | Slot: Sat night
   - Depends on: D1, K4
   - Unlocks: A2, A5
   - Done when: 3 outputs look right
@@ -276,8 +299,8 @@ Cut order if behind: P9 Earth benefits, then P8 Ask, then P7 Compare.
   - Depends on: A3, K4
   - Unlocks: P8
   - Done when: Answers cite DOIs; works offline
-- [ ] **A5: Help with column-mapping prompt for D6**
-  - Owner: Ramneek | Status: To do | Estimate: 20 min | Slot: Sun morning
+- [x] **A5: Help with column-mapping prompt for D6**
+  - Owner: Ramneek | Status: Cut | Estimate: 20 min | Slot: Sun morning
   - Depends on: A1
   - Unlocks: D6
   - Done when: Prompt returns structured JSON
@@ -285,14 +308,14 @@ Cut order if behind: P9 Earth benefits, then P8 Ask, then P7 Compare.
 
 ### Streamlit app (mostly Ramneek)
 
-- [ ] **P1: App skeleton: pages, sidebar habitat picker, disclaimer**
-  - Owner: Ramneek | Status: To do | Estimate: 30 min | Slot: Sat night
+- [x] **P1: App skeleton: pages, sidebar habitat picker, disclaimer**
+  - Owner: Ramneek | Status: Done | Estimate: 30 min | Slot: Sat night
   - Depends on: K1
   - Unlocks: P2, P3, P4, P6, P8, P9
   - Done when: streamlit run shows all pages
   - Note: skeleton pages already stubbed in `app/` (Home.py + pages/1..6). Flesh out P1 from there.
-- [ ] **P2: Overview page: cards, filters, DOI links**
-  - Owner: Ramneek | Status: To do | Estimate: 60 min | Slot: Sat night
+- [x] **P2: Overview page: cards, filters, DOI links**
+  - Owner: Ramneek | Status: Done | Estimate: 60 min | Slot: Sat night
   - Depends on: P1, K5
   - Unlocks: P7, S1
   - Done when: Cards render from investigations.json
