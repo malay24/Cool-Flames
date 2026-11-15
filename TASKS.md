@@ -173,6 +173,9 @@ This repo is built by two people, each driving their own Claude Code, committing
 - Decision: a non-positive pressure is treated as **not reported (blank)**, not 0 — 0 mmHg is unphysical (one FLEX row had `0`), unlike 0 airflow which is a real condition. Row kept, excluded from gap map, flagged.
 - **Gap-map reality:** only **273 of 527 rows have both O2 and pressure** (all FLEX). BASS-II/Saffire/SAME-R carry no pressure (strict policy). The other 7 pressure-bearing tables come via D6. → Ramneek/P4: expect a sparse gap map until D6 lands.
 
+**requirements.txt — fixed deploy-breaking faiss pin (Malay's request)**
+- `faiss-cpu==1.16.0` **does not exist on PyPI** (max is 1.15.1) and would fail `pip install` on Streamlit Cloud. Changed to `faiss-cpu==1.15.1`. Sanity-checked: all 10 pins match the installed env, `pip check` clean, 76 tests pass (excluding `test_qa.py`, which crashes only on local macOS from a torch/faiss OpenMP clash — not a deploy issue). → Ramneek: safe to deploy now; put the Gemini key in `.streamlit/secrets.toml` to make the Ask page live (reviving cut K4 via the Google Cloud offer).
+
 **App theme — forced dark (touches Ramneek's lane, done at Malay's request)**
 - Changed `.streamlit/config.toml` to a single `[theme]` (`base = "dark"`) with no `[theme.light]`/`[theme.dark]` split, so the app no longer OS-adapts — **everyone gets the dark theme regardless of their OS setting**. (The dark palette is unchanged; the light palette was removed.)
 - Hardened `app/components/__init__.py` `is_dark()` to default to dark unless the viewer explicitly switches to light, so the custom hero/chips/charts stay in step with the forced-dark chrome.
