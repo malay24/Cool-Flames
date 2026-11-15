@@ -1,0 +1,9 @@
+# Pin exact versions before the first deploy (CLAUDE.md section 4).
+requests
+pandas
+plotly
+streamlit
+python-dotenv
+sentence-transformers
+faiss-cpu
+pytest
