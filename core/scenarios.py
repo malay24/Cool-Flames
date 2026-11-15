@@ -1,7 +1,88 @@
 """Habitat presets, fire scenarios and phases (CLAUDE.md sections 2 and 8.1).
 
-Task R1. Pure data/logic, no Streamlit imports.
+Task R1. Pure data, no Streamlit imports.
 """
+from __future__ import annotations
 
-# TODO (R1): 4 habitat presets (iss, moon_brief, exploration, suit),
-# 6 scenarios with ordered phases, and the phase -> area map.
+# Habitat atmospheres (CLAUDE.md section 2). ppo2_psi = o2_pct / 100 * pressure_psi.
+# partial_gravity marks Moon/Mars habitats, where PSI has no data.
+HABITATS: dict[str, dict] = {
+    "iss": {
+        "label": "ISS", "o2_pct": 21.0, "pressure_psi": 14.7, "ppo2_psi": 3.09,
+        "partial_gravity": False, "source": "challenge brief",
+    },
+    "moon_brief": {
+        "label": "Moon Base / pressurized rover", "o2_pct": 30.0, "pressure_psi": 10.2,
+        "ppo2_psi": 3.06, "partial_gravity": True,
+        "source": "challenge brief (30%+ O2 at 10.2 psi or less)",
+    },
+    "exploration": {
+        "label": "Exploration habitat (NASA)", "o2_pct": 34.0, "pressure_psi": 8.2,
+        "ppo2_psi": 2.79, "partial_gravity": True,
+        "source": "NASA exploration atmosphere, revised in 2012",
+    },
+    "suit": {
+        "label": "Spacesuit", "o2_pct": 100.0, "pressure_psi": 4.3, "ppo2_psi": 4.30,
+        "partial_gravity": False, "source": "challenge brief",
+    },
+}
+
+PHASES = ["smoke", "ignition", "spread", "suppression"]
+
+# Fire phase -> NASA fire-safety area (CLAUDE.md section 8.1).
+PHASE_AREA: dict[str, str] = {
+    "smoke": "detection",
+    "ignition": "prevention",
+    "spread": "prevention",
+    "suppression": "suppression",
+}
+BASIC_AREA_CREDIT = 0.5  # investigations with area "basic" get partial credit
+
+SCENARIOS: dict[str, dict] = {
+    "electrical_overheat": {
+        "label": "Electrical overheat (wiring, avionics)",
+        "phases": ["smoke", "ignition", "spread", "suppression"],
+        "fuel_phases": ["solid"],
+    },
+    "cabin_material_fire": {
+        "label": "Cabin material fire (fabric, plastics)",
+        "phases": ["ignition", "spread", "suppression"],
+        "fuel_phases": ["solid"],
+    },
+    "liquid_leak": {
+        "label": "Liquid leak (lubricant, cleaning fluid)",
+        "phases": ["ignition", "spread", "suppression"],
+        "fuel_phases": ["liquid"],
+    },
+    "gas_leak": {
+        "label": "Gas leak (O2 or fuel line)",
+        "phases": ["ignition", "spread", "suppression"],
+        "fuel_phases": ["gas"],
+    },
+    "oxygen_rich_cabin": {
+        "label": "Oxygen-rich cabin (Apollo 1 type)",
+        "phases": ["ignition", "spread", "suppression"],
+        "fuel_phases": ["solid", "gas"],
+    },
+    "lunar_dust": {
+        "label": "Lunar dust and detectors",
+        "phases": ["smoke"],
+        "fuel_phases": [],  # detection only
+    },
+}
+
+PHASE_LABELS = {
+    "smoke": "Smoke (detection)",
+    "ignition": "Ignition (prevention)",
+    "spread": "Spread (prevention)",
+    "suppression": "Suppression",
+}
+
+# Static historical context for the UI (CLAUDE.md section 8.1).
+HISTORY = [
+    ("Apollo 1 (1967)", "Fire in a pure-oxygen cabin during a pre-launch test; the crew was lost."),
+    ("Apollo 13 (1970)", "Oxygen tank failure; damaged insulation in pure oxygen."),
+    ("Mir (1997)", "Fire in an oxygen generator, which supplied its own oxygen."),
+]
+HISTORY_NOTE = ("All three involved extra oxygen, the condition planned for the Moon Base "
+                "(30%+ O2).")
