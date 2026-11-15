@@ -1857,9 +1857,3 @@ PSI-99,2-6,,solid,cabin_material,22.1,,,,20.0,290.0,burned,spread_rate,2.6,mm/s,
 PSI-99,2-7,PMMA & Nomex,solid,cabin_material,22.1,,,,20.0,240.0,burned,,,,hand
 PSI-99,2-8,PMMA,solid,cabin_material,22.05,,,,20.0,290.0,burned,,,,hand
 PSI-99,2-9,,solid,cabin_material,21.95,,,,20.0,290.0,burned,,,,hand
-PSI-99,F1C1/F1C2,Pre-test flow visulation data for sample 2-1,solid,cabin_material,,,,,,,,,,,hand
-PSI-99,F2C1/F2C2,Pre-test flow visulation data for sample 2-2,solid,cabin_material,,,,,,,,,,,hand
-PSI-99,Note 1 Derived from measured CO2 production and referenced to initial O2 concentration reported by ISS.,,solid,cabin_material,,,,,,,,,,,hand
-PSI-99,Note 2 The PMMA portion was completely consumed but the Nomex was not ignited.,,solid,cabin_material,,,,,,,,,,,hand
-PSI-99,Note 3 This is the length of fuel with significant visible damage.,,solid,cabin_material,,,,,,,,,,,hand
-PSI-99,Note 4 The flames remain anchored at the base of the sample which has a very slow regression rate (0.01 to 0.04 mm/s),,solid,cabin_material,,,,,,,,,,,hand

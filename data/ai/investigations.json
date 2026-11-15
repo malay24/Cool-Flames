@@ -469,7 +469,7 @@
       "The record states the work is not aimed at space applications but could aid future space combustion devices such as solid-waste processing.",
       "Electric-field control of flames may reduce pollutants and improve efficiency in combustion on Earth."
     ],
-    "n_runs": 32,
+    "n_runs": 21,
     "n_publications": 25,
     "n_standardized_runs": 21,
     "o2_range": null,
@@ -1888,7 +1888,7 @@
       "Publications argue that fire testing must go beyond small samples.",
       "The record states the results help validate NASA's material selection criteria."
     ],
-    "n_runs": 4,
+    "n_runs": 2,
     "n_publications": 6,
     "n_standardized_runs": 2,
     "o2_range": [
@@ -1964,9 +1964,9 @@
       "Publications study concurrent flame spread over thick PMMA slabs in microgravity.",
       "Publications evaluate gas and particle sensors for detecting spacecraft-relevant fire emissions."
     ],
-    "n_runs": 15,
+    "n_runs": 9,
     "n_publications": 7,
-    "n_standardized_runs": 15,
+    "n_standardized_runs": 9,
     "o2_range": [
       21.5,
       22.1
@@ -2551,7 +2551,7 @@
       "At elevated pressure, the flammable regions of warm and cool flames expand.",
       "A new flammability-limit diagram for diffusional cool flames was a stated objective."
     ],
-    "n_runs": 8,
+    "n_runs": 0,
     "n_publications": 12,
     "n_standardized_runs": 0,
     "o2_range": null,

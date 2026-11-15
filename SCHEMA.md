@@ -39,8 +39,10 @@ not the LLM. Never invent DOIs.
 
 ## `data/manual/earth_vs_space.csv` — hand-curated
 
-Columns: `material`, `measure`, `value_1g`, `value_ug`, `unit`, `finding`,
-`source`, `source_url`. Every row needs a source.
+Columns: `material`, `measure`, `flag`, `value_1g`, `value_ug`, `unit`, `finding`,
+`source`, `source_url`. Every row needs a source. `flag` (added in R4) is a short
+hand-written verdict shown in the app, e.g. "Burns at lower O2 in space" or
+"Burned less in space (this sample)"; findings in both directions are kept.
 
 ## Unit conversions
 

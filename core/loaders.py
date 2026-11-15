@@ -75,3 +75,14 @@ def load_investigations() -> tuple[list[dict], bool]:
             if inv.get(key) is None:
                 inv[key] = r.get(key)
     return invs, is_demo
+
+
+EARTH_VS_SPACE = ROOT / "data" / "manual" / "earth_vs_space.csv"
+
+
+def load_earth_vs_space() -> pd.DataFrame:
+    """Hand-curated Earth-vs-space findings (R4); every row carries a source."""
+    if not EARTH_VS_SPACE.exists():
+        return pd.DataFrame(columns=["material", "measure", "value_1g", "value_ug", "unit",
+                                     "finding", "source", "source_url"])
+    return pd.read_csv(EARTH_VS_SPACE, dtype=str).fillna("")

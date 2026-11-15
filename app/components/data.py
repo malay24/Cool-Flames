@@ -26,3 +26,8 @@ def load_tests() -> tuple[pd.DataFrame, bool]:
 def load_investigations() -> tuple[list[dict], bool]:
     """(investigations, is_demo), with ranges filled from ranges.csv / tests.csv."""
     return loaders.load_investigations()
+
+
+@st.cache_data
+def load_earth_vs_space() -> pd.DataFrame:
+    return loaders.load_earth_vs_space()

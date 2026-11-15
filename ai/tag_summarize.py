@@ -145,6 +145,19 @@ def load_ranges() -> dict[str, dict]:
 
 _RANGES: dict[str, dict] | None = None
 
+# Tables whose rows are not test runs (PSI-142 lists figures in its papers).
+NOT_RUN_TABLES = {"PSI-142"}
+
+
+def count_runs(psi_id: str, files: list[Path], rng: dict) -> int:
+    """Test runs: the standardized count when the table is mapped (notes and
+    non-test rows excluded), else non-empty raw table rows."""
+    if psi_id in NOT_RUN_TABLES:
+        return 0
+    if rng.get("n_standardized_runs"):
+        return rng["n_standardized_runs"]
+    return sum(max(len(read_table(p)) - 1, 0) for p in files)
+
 
 def facts(record: dict) -> dict:
     """Contract fields copied from the raw record and hand maps (no LLM)."""
@@ -168,7 +181,7 @@ def facts(record: dict) -> dict:
         "platform": record.get("flightProgram", ""),
         "summary_3line": "",
         "key_findings": [],
-        "n_runs": sum(max(len(read_table(p)) - 1, 0) for p in files),  # raw table rows
+        "n_runs": count_runs(psi_id, files, rng),
         "n_publications": len(pubs),
         "n_standardized_runs": rng.get("n_standardized_runs", 0),
         "o2_range": rng.get("o2_range"),            # from ranges.csv (D8), never the LLM

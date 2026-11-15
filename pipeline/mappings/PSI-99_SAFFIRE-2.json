@@ -4,17 +4,38 @@
   "columns": {
     "Sample Number": "run_id",
     "Material": "fuel",
-    "Percent O2 (Note 1)": {"to": "o2_pct", "unit": "pct"},
-    "Air Flow (cm/s)": {"to": "airflow_cms", "unit": "cms"},
-    "Sample Length": {"to": "sample_size_mm", "unit": "cm"}
+    "Percent O2 (Note 1)": {
+      "to": "o2_pct",
+      "unit": "pct"
+    },
+    "Air Flow (cm/s)": {
+      "to": "airflow_cms",
+      "unit": "cms"
+    },
+    "Sample Length": {
+      "to": "sample_size_mm",
+      "unit": "cm"
+    }
   },
-  "constants": {"fuel_phase": "solid", "fuel_class": "cabin_material"},
-  "metric": {"source": "?-g Spread Length", "name": "spread_rate", "unit": "mm/s"},
+  "constants": {
+    "fuel_phase": "solid",
+    "fuel_class": "cabin_material"
+  },
+  "metric": {
+    "source": "?-g Spread Length",
+    "name": "spread_rate",
+    "unit": "mm/s"
+  },
   "outcome_from": {
     "source": "Burn Time (s)",
-    "map": {"Insignificant": "no_ignition"},
+    "map": {
+      "Insignificant": "no_ignition"
+    },
     "default": "burned"
   },
   "mapping_confidence": "hand",
-  "notes": "Large-scale spacecraft fire (Cygnus). Solid cabin materials (Silicone, SIBAL, PMMA, Nomex). O2 column has fuzzy values '~ 21.5' and '22.1 to 22.0' -> strip '~', ranges to midpoint (team decision). No pressure column -> blank (strict policy; Cygnus cabin pressure not tabulated in the record). airflow values carry inline unit ('20 cm/s') -> strip. sample_size from 'Sample Length' in cm (->mm); messy entries like '5 and 24 cm' -> take the max number. Metric: the microgravity spread column is headed '?-g Spread Length' but its values are rates in mm/s (e.g. '2.6 mm/s'); mapped as spread_rate, 'n/a' -> blank. outcome: 'Insignificant' burn time -> no_ignition, otherwise burned."
+  "notes": "Large-scale spacecraft fire (Cygnus). Solid cabin materials (Silicone, SIBAL, PMMA, Nomex). O2 column has fuzzy values '~ 21.5' and '22.1 to 22.0' -> strip '~', ranges to midpoint (team decision). No pressure column -> blank (strict policy; Cygnus cabin pressure not tabulated in the record). airflow values carry inline unit ('20 cm/s') -> strip. sample_size from 'Sample Length' in cm (->mm); messy entries like '5 and 24 cm' -> take the max number. Metric: the microgravity spread column is headed '?-g Spread Length' but its values are rates in mm/s (e.g. '2.6 mm/s'); mapped as spread_rate, 'n/a' -> blank. outcome: 'Insignificant' burn time -> no_ignition, otherwise burned. D7 fix (Ramneek session): 'require' on the O2 column skips the 2 flow-visualisation rows and the 4 footnote rows ('Note 1 ...'), which had been counted as runs; 9 real samples remain. Samples 2-6 and 2-9 have a blank Material cell in the raw table (it continues the row above), so fuel stays blank.",
+  "require": [
+    "Percent O2 (Note 1)"
+  ]
 }

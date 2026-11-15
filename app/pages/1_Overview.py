@@ -7,7 +7,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # app/, for `compo
 import streamlit as st  # noqa: E402
 
 from components import demo_badge, footer, investigation_card, setup_page  # noqa: E402
-from components.data import load_investigations  # noqa: E402
+from components.data import load_earth_vs_space, load_investigations  # noqa: E402
 
 setup_page("Overview")
 st.title("Overview")
@@ -45,5 +45,27 @@ cols = st.columns(3)
 for n, inv in enumerate(shown):
     with cols[n % 3]:
         investigation_card(inv)
+
+# ---- Earth vs space flag (R4, data/manual/earth_vs_space.csv) ----
+st.divider()
+st.subheader("Earth vs space: do Earth tests tell the whole story?")
+st.caption("Hand-curated findings comparing normal gravity (1 g) with microgravity, each with "
+           "its source. NASA screens materials with a normal-gravity test (NASA-STD-6001 Test 1).")
+evs = load_earth_vs_space()
+if evs.empty:
+    st.info("No Earth-vs-space findings recorded yet.")
+else:
+    view = evs
+    st.dataframe(
+        view[["flag", "material", "measure", "value_1g", "value_ug", "unit", "finding",
+              "source", "source_url"]],
+        hide_index=True, width="stretch",
+        column_config={
+            "flag": st.column_config.TextColumn("Flag", width="medium"),
+            "value_1g": "1 g", "value_ug": "Microgravity",
+            "finding": st.column_config.TextColumn("Finding", width="large"),
+            "source_url": st.column_config.LinkColumn("Link", display_text="open"),
+        },
+    )
 
 footer()
