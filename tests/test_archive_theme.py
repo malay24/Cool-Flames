@@ -32,3 +32,16 @@ def test_stylesheet_exists_and_imports_first():
     assert css.lstrip().startswith("@import")  # @import must precede every other rule
     for hook in ("stTopNavLink", "st-key-cfcard_", ".cf-stamp", "stMetric"):
         assert hook in css
+
+
+def test_authors_card_ramneek_first():
+    assert c.AUTHORS == ["Ramneek Kaur", "Malay Sourav"]
+    card = c.authors_card()
+    assert card.index("Ramneek Kaur") < card.index("Malay Sourav")
+
+
+def test_dark_look_forced_for_every_visitor():
+    # light-mode browsers must get the same microfiche colours (no cream panels)
+    assert c.is_dark() is True
+    assert c.tokens()["bg"] == "#1c1a16" and c.series_colors() == c.SERIES["dark"]
+    assert "color-scheme: dark" in c.CSS_FILE.read_text()

@@ -7,6 +7,7 @@ core/ and ai/.
 """
 from __future__ import annotations
 
+import html
 import re
 import sys
 from pathlib import Path
@@ -22,6 +23,8 @@ from components.data import habitats  # noqa: E402
 DISCLAIMER = ("Research and reference tool, not an operational safety system. "
               "Data: NASA PSI (CC0).")
 DEFAULT_HABITAT = "iss"
+# Team credit shown in the sidebar on every page; list order is display order.
+AUTHORS = ["Ramneek Kaur", "Malay Sourav"]
 # Badge colours follow the chart series: suppression blue, prevention rust, basic verdigris,
 # detection ochre (see series_colors / gap map).
 AREA_COLORS = {"prevention": "orange", "suppression": "blue", "detection": "yellow",
@@ -34,10 +37,12 @@ AREA_ICONS = {"prevention": ":material/local_fire_department:", "suppression": "
 # "dark" is the mission-archive microfiche look every visitor gets; "light" is only a
 # fallback if someone switches theme in the app menu.
 THEMES = {
-    "dark": {"bg": "#1c1a16", "panel": "#26231e", "paper2": "#2e2a23", "border": "#4a4336",
+    "dark": {"bg": "#1c1a16", "panel": "#26231e", "paper2": "#2e2a23", "sidebar": "#171512",
+             "border": "#4a4336",
              "text": "#ece2cb", "muted": "#a99d85", "accent": "#d8673f", "link": "#8fb4dc",
              "grid": "#33302a", "axis": "#5a5244"},
-    "light": {"bg": "#efe6d2", "panel": "#e7dcc3", "paper2": "#e0d3b6", "border": "#b6a37f",
+    "light": {"bg": "#efe6d2", "panel": "#e7dcc3", "paper2": "#e0d3b6", "sidebar": "#dccaa2",
+              "border": "#b6a37f",
               "text": "#2a2723", "muted": "#665b47", "accent": "#a63d26", "link": "#1f4a73",
               "grid": "#d6c8a8", "axis": "#9c8b6a"},
 }
@@ -51,10 +56,14 @@ CSS_FILE = Path(__file__).resolve().parents[1] / "static" / "css" / "archive.css
 
 
 def is_dark() -> bool:
-    # Theme is forced dark in .streamlit/config.toml; default to dark unless the
-    # viewer explicitly switches to light, so custom CSS/charts stay in step.
-    theme = getattr(st.context, "theme", None)
-    return getattr(theme, "type", "dark") != "light"
+    """Always True: the microfiche look is forced dark for every visitor.
+
+    Do not read st.context.theme here: it reports the viewer's browser/OS preference
+    ("System" + a light OS gives "light"), not the dark theme that .streamlit/config.toml
+    actually renders. Following it turned cards, tiles and the hero cream on light-mode
+    machines while the page around them stayed dark.
+    """
+    return True
 
 
 def tokens() -> dict:
@@ -149,8 +158,16 @@ def habitat_sidebar() -> str:
             <div class="cf-atmo-row"><span>ppO₂</span><span class="v">{ppo2:.2f} psi</span></div>
             <div class="cf-atmo-row"><span>Gravity</span><span class="v">{gravity}</span></div>
             {mark}</div>""")
+        st.html(authors_card())
         st.caption(DISCLAIMER)
     return choice
+
+
+def authors_card() -> str:
+    """'Filed by' archive card with the team, in AUTHORS order."""
+    rows = "".join(f'<div class="cf-author"><div class="cf-author-name">{html.escape(n)}</div></div>'
+                   for n in AUTHORS)
+    return f'<div class="cf-atmo cf-authors"><div class="cf-atmo-h">Filed by</div>{rows}</div>'
 
 
 def current_habitat() -> str:

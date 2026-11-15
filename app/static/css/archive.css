@@ -5,6 +5,14 @@
    app/components/__init__.py), appended after this file by inject_css(). Only our own
    cf- classes, keyed containers (st-key-cf*) and Streamlit data-testid hooks are styled. */
 
+/* ---------------------------------------------------------------- forced dark frame
+   Same look for every visitor, whatever their browser/OS theme or the Streamlit menu choice. */
+:root { color-scheme: dark; }
+.stApp, [data-testid="stAppViewContainer"], [data-testid="stHeader"] {
+  background-color: var(--cf-bg) !important; color: var(--cf-text);
+}
+[data-testid="stSidebar"] > div:first-child { background-color: var(--cf-sidebar) !important; }
+
 /* ---------------------------------------------------------------- film */
 [data-testid="stAppViewContainer"]::after {
   content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 999990;
@@ -69,6 +77,10 @@ code { font-family: "Courier Prime", "Courier New", monospace !important; letter
 .cf-atmo-row span:first-child { flex: 1; display: flex; }
 .cf-atmo .v { font-weight: 700; }
 .cf-atmo .cf-stamp { margin-top: .5rem; font-size: .66rem; }
+.cf-authors { margin-top: .9rem; line-height: 1.35; }
+.cf-author { padding: .35rem 0; }
+.cf-author + .cf-author { border-top: 1px dotted var(--cf-border); }
+.cf-author-name { font-weight: 700; color: var(--cf-text); }
 
 /* ---------------------------------------------------------------- page header */
 .cf-eyebrow {

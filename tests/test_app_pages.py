@@ -42,3 +42,9 @@ def test_dossier_deep_link_and_card_links():
     assert at.selectbox(key="dossier_pick").value == "PSI-69"
     at.switch_page("views/overview.py").run()
     assert len(at.get("page_link")) >= 24  # one "Open dossier" per investigation card
+
+
+def test_authors_in_sidebar_on_every_page():
+    at = router().run()
+    html = " ".join(h.proto.body for h in at.sidebar.get("html"))
+    assert html.index("Ramneek Kaur") < html.index("Malay Sourav")
