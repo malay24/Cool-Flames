@@ -29,7 +29,7 @@ This repo is built by two people, each driving their own Claude Code, committing
 
 ## Progress
 
-**6 of 39 done** (K1, K2, D1, D2, D3, D4). Critical-path data spine is up to `tests.csv` (D5) next.
+**8 of 39 done** (K1, K2, K5, D1, D2, D3, D4, D5). Real `data/clean/tests.csv` now exists (527 rows from the 4 core tables).
 
 ## Change log (approach changes & decisions — newest first)
 
@@ -49,6 +49,15 @@ This repo is built by two people, each driving their own Claude Code, committing
 
 **K2 — schema (Done)**
 - `SCHEMA.md` signed by the human. No column changes from CLAUDE.md §6.
+
+**K5 — fake data (Done)**
+- `data/fake/tests.csv` (10 rows) + `data/fake/investigations.json` (3 entries: prevention/suppression/detection). Covers every enum, keeps real blanks (not zero-filled), ppo2 consistent; investigations use obviously-fake placeholder DOIs (`10.0000/demo-*`) so no demo entry is mistaken for a real citation. Unblocks R2 (ranking) and P2 (Overview) — both can be built before real data lands.
+
+**D5 — build_tests.py (Done)**
+- `python -m pipeline.build_tests` applies the 4 mappings → `data/clean/tests.csv` (**527 rows**: FLEX 274, BASS-II 129, SAME-R 109, Saffire-II 15). Consumes the `_FORMAT.md` rules (BOM strip, `~`/range→midpoint, unit conversion via `units.py`, `outcome_from`/`diluent_from`). **Run it as a module** (`python -m pipeline.build_tests`), not `python pipeline/build_tests.py`, or the `pipeline` import fails.
+- Added `tests/test_schema.py` (validates both fake and clean `tests.csv`: columns, enums, ppo2 consistency, blanks). Full suite: **25 pass**.
+- Decision: a non-positive pressure is treated as **not reported (blank)**, not 0 — 0 mmHg is unphysical (one FLEX row had `0`), unlike 0 airflow which is a real condition. Row kept, excluded from gap map, flagged.
+- **Gap-map reality:** only **273 of 527 rows have both O2 and pressure** (all FLEX). BASS-II/Saffire/SAME-R carry no pressure (strict policy). The other 7 pressure-bearing tables come via D6. → Ramneek/P4: expect a sparse gap map until D6 lands.
 
 **D4 — core-table mappings (Done) — key decisions**
 - **Dropped BASS (PSI-26)** from the core tables: its experiment table is only a run log (fuel + IDs, **no conditions or metrics**). BASS-II (PSI-25) represents the BASS family instead. So the core set is **4 tables (FLEX, BASS-II, Saffire-II, SAME-R), not 5**. (Deviates from CLAUDE.md §7; the other 17 tables still come via D6.)
@@ -80,7 +89,7 @@ This repo is built by two people, each driving their own Claude Code, committing
 
 K1 -> D1 -> D2 -> D4 -> D5 -> (P4 gap map, R3 ranking check, S1 deploy) -> S4 demo script -> S5 video -> S7 submit.
 
-**Current position:** K1, D1, D2, D4 done; **D5 is the next critical-path step** (D3 also done; K2 signed). D4 shipped with 4 core tables (BASS dropped — see Change log).
+**Current position:** K1, D1, D2, D3, D4, D5 done; `data/clean/tests.csv` exists (527 rows, 4 core tables). Next critical-path moves: **R1→R2** (ranking, so P3 unblocks) and **D6** (the other 17 tables, which also enriches the gap map). D6 needs K4 + A5 (Ramneek) first.
 
 Cut order if behind: P9 Earth benefits, then P8 Ask, then P7 Compare.
 
@@ -88,9 +97,7 @@ Cut order if behind: P9 Earth benefits, then P8 Ask, then P7 Compare.
 
 - **K3** Confirm deadline and team registration (Ramneek, 5 min)
 - **K4** Claim Gemini or Azure offer, API key in .env (Ramneek, 10 min)
-- **K5** Commit fake tests.csv (10 rows) and investigations.json (3) (Malay, 10 min)
-- **D5** build_tests.py -> tests.csv (Malay, 30 min) — *next on critical path*
-- **R1** scenarios.py (Malay, 30 min)
+- **R1** scenarios.py (Malay, 30 min) — *next on critical path (unblocks R2 ranking)*
 - **R4** earth_vs_space.csv (Malay, 40 min)
 - **A3** Q&A index: chunks, embeddings, FAISS (Ramneek, 45 min) — *can build offline*
 - **P1** App skeleton: pages, sidebar habitat picker, disclaimer (Ramneek, 30 min)
@@ -103,12 +110,12 @@ Cut order if behind: P9 Earth benefits, then P8 Ask, then P7 Compare.
 | K2 | Agree data schema, write SCHEMA.md | Both | Done | - | K5, D3, R1 | 15 | Kickoff |
 | K3 | Confirm deadline and team registration | Ramneek | To do | - | - | 5 | Kickoff |
 | K4 | Claim Gemini or Azure offer, API key in .env | Ramneek | To do | - | D6, A1, A4 | 10 | Kickoff |
-| K5 | Commit fake tests.csv (10 rows) and investigations.json (3) | Malay | To do | K1, K2 | R2, P2 | 10 | Kickoff |
+| K5 | Commit fake tests.csv (10 rows) and investigations.json (3) | Malay | Done | K1, K2 | R2, P2 | 10 | Kickoff |
 | D1 | Run fetch_psi.py, commit data/raw/ | Malay | Done | K1 | D2, A1, A3 | 15 | Sat night |
 | D2 | Inventory column names and units per table | Malay | Done | D1 | D4 | 20 | Sat night |
 | D3 | units.py: psi, % O2, ppO2 conversions + tests | Malay | Done | K1, K2 | D4 | 30 | Sat night |
 | D4 | Hand-map core tables (FLEX, BASS-II, Saffire-II, SAME-R; BASS dropped) | Malay | Done | D2, D3 | D5 | 90 | Sat night |
-| D5 | build_tests.py: merge into data/clean/tests.csv | Malay | To do | D4 | D6, R3, P4, P6, S1 | 30 | Sat night |
+| D5 | build_tests.py: merge into data/clean/tests.csv | Malay | Done | D4 | D6, R3, P4, P6, S1 | 30 | Sat night |
 | D6 | LLM proposes mappings for other 17 tables, review each | Malay | To do | D5, K4, A5 | D7 | 120 | Sun morning |
 | D7 | Spot-check 20 random rows against raw CSVs | Malay | To do | D6 | D8 | 30 | Sun morning |
 | D8 | Per-investigation ranges and run counts | Malay | To do | D7 | P7 | 20 | Sun morning |
@@ -164,11 +171,12 @@ Cut order if behind: P9 Earth benefits, then P8 Ask, then P7 Compare.
   - Depends on: nothing
   - Unlocks: D6, A1, A4
   - Done when: Test call returns JSON
-- [ ] **K5: Commit fake tests.csv (10 rows) and investigations.json (3)**
-  - Owner: Malay | Status: To do | Estimate: 10 min | Slot: Kickoff
+- [x] **K5: Commit fake tests.csv (10 rows) and investigations.json (3)**
+  - Owner: Malay | Status: Done | Estimate: 10 min | Slot: Kickoff
   - Depends on: K1, K2
   - Unlocks: R2, P2
   - Done when: Files in data/fake/ match schema
+  - Result: data/fake/tests.csv (10 rows, all enums + blanks) and data/fake/investigations.json (3 areas) validated against the schema. Placeholder DOIs (10.0000/demo-*).
 
 ### Data pipeline (Malay)
 
@@ -196,11 +204,12 @@ Cut order if behind: P9 Earth benefits, then P8 Ask, then P7 Compare.
   - Unlocks: D5
   - Done when: Mappings saved in pipeline/mappings/
   - Result: 4 mappings in pipeline/mappings/ (+ _FORMAT.md). BASS (PSI-26) dropped as it has no condition/metric columns; pressure left blank globally. See Change log for all decisions.
-- [ ] **D5: build_tests.py: merge into data/clean/tests.csv**
-  - Owner: Malay | Status: To do | Estimate: 30 min | Slot: Sat night
+- [x] **D5: build_tests.py: merge into data/clean/tests.csv**
+  - Owner: Malay | Status: Done | Estimate: 30 min | Slot: Sat night
   - Depends on: D4
   - Unlocks: D6, R3, P4, P6, S1
   - Done when: tests.csv loads with all schema columns
+  - Result: 527 rows from 4 core tables; tests/test_schema.py added (25 pass total). Run via `python -m pipeline.build_tests`. See Change log for the non-positive-pressure decision and gap-map sparsity note.
 - [ ] **D6: LLM proposes mappings for other 17 tables, review each**
   - Owner: Malay | Status: To do | Estimate: 120 min | Slot: Sun morning
   - Depends on: D5, K4, A5
@@ -368,7 +377,7 @@ Cut order if behind: P9 Earth benefits, then P8 Ask, then P7 Compare.
 
 ### Malay
 
-K1 (done), K2 (done), K5, D1 (done), D2 (done), D3 (done), D4 (done), D5, D6, D7, D8, R1, R2, R3, R4, R5, P7, P9, S2, S3
+K1 (done), K2 (done), K5 (done), D1 (done), D2 (done), D3 (done), D4 (done), D5 (done), D6, D7, D8, R1, R2, R3, R4, R5, P7, P9, S2, S3
 
 ### Ramneek
 

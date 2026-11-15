@@ -1,0 +1,62 @@
+[
+  {
+    "psi_id": "PSI-900",
+    "name": "Demo Prevention Study (fake)",
+    "doi": "10.0000/demo-prevention",
+    "area": "prevention",
+    "fuel_types": ["solid"],
+    "hardware": "Cygnus (demo)",
+    "platform": "Cygnus (post-ISS)",
+    "summary_3line": "Demo entry for app development only. Large-scale solid-fuel flammability under microgravity across a range of O2 and airflow. Replace with real data from data/ai/investigations.json (task A2).",
+    "key_findings": [
+      "Placeholder finding: materials spread faster at higher O2 fraction.",
+      "Placeholder finding: large samples behave differently from small-sample screening."
+    ],
+    "n_runs": 15,
+    "n_publications": 7,
+    "o2_range": [21.0, 34.0],
+    "pressure_range": [8.2, 14.7],
+    "airflow_range": [20.0, 25.0],
+    "test_scale": "large"
+  },
+  {
+    "psi_id": "PSI-901",
+    "name": "Demo Suppression Study (fake)",
+    "doi": "10.0000/demo-suppression",
+    "area": "suppression",
+    "fuel_types": ["liquid"],
+    "hardware": "CIR / MDCA (demo)",
+    "platform": "ISS",
+    "summary_3line": "Demo entry for app development only. Droplet-combustion extinction mapped across O2 and diluent. Replace with real data from data/ai/investigations.json (task A2).",
+    "key_findings": [
+      "Placeholder finding: droplets extinguish below a limiting O2 concentration.",
+      "Placeholder finding: cool flames can persist after visible extinction."
+    ],
+    "n_runs": 274,
+    "n_publications": 10,
+    "o2_range": [15.0, 30.0],
+    "pressure_range": [14.6, 14.7],
+    "airflow_range": null,
+    "test_scale": "orbital"
+  },
+  {
+    "psi_id": "PSI-902",
+    "name": "Demo Detection Study (fake)",
+    "doi": "10.0000/demo-detection",
+    "area": "detection",
+    "fuel_types": ["solid"],
+    "hardware": "Smoke aerosol hardware (demo)",
+    "platform": "ISS",
+    "summary_3line": "Demo entry for app development only. Smoke particle growth from overheated cabin materials at varying inlet velocity. Replace with real data from data/ai/investigations.json (task A2).",
+    "key_findings": [
+      "Placeholder finding: particle size grows with aging time.",
+      "Placeholder finding: small particles from some materials are hard to detect."
+    ],
+    "n_runs": 109,
+    "n_publications": 6,
+    "o2_range": null,
+    "pressure_range": null,
+    "airflow_range": [0.0, 8.1],
+    "test_scale": "orbital"
+  }
+]

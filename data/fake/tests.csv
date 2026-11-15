@@ -1,0 +1,11 @@
+psi_id,run_id,fuel,fuel_phase,fuel_class,o2_pct,pressure_psi,ppo2_psi,diluent,airflow_cms,sample_size_mm,outcome,metric_name,metric_value,metric_unit,mapping_confidence
+PSI-99,2-1,PMMA,solid,cabin_material,21.5,,,,20,290,burned,spread_rate,2.6,mm/s,hand
+PSI-25,B1,PMMA,solid,cabin_material,22.2,,,,,,burned,,,,hand
+PSI-69,20CAL08,Heptane,liquid,idealized,21.0,14.65,3.08,N2,,1.69,extinguished,burning_rate,0.52,mm2/s,hand
+PSI-69,30HE05,Heptane,liquid,idealized,30.0,14.70,4.41,He,,2.06,burned,burning_rate,0.60,mm2/s,hand
+PSI-101,51,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.38,ratio,hand
+PSI-107,S12,Ethylene,gas,idealized,21.0,14.70,3.09,N2,0,,burned,soot_volume_fraction,5.2,ppm,llm_checked
+PSI-20,BRE-3,Methane,gas,idealized,19.0,10.20,1.94,CO2,5.0,,no_ignition,,,,llm_unchecked
+PSI-98,1-1,Nomex,solid,cabin_material,34.0,8.20,2.79,mixed,25.0,410,burned,spread_rate,1.1,mm/s,hand
+PSI-39,CFI-07,Heptane,liquid,idealized,15.0,14.70,2.21,N2,,3.0,extinguished,extinction_time,12.0,s,llm_checked
+PSI-10,FD-02,Methane,gas,idealized,21.0,14.70,3.09,N2,,,unknown,,,,llm_unchecked

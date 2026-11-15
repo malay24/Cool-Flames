@@ -1,0 +1,528 @@
+psi_id,run_id,fuel,fuel_phase,fuel_class,o2_pct,pressure_psi,ppo2_psi,diluent,airflow_cms,sample_size_mm,outcome,metric_name,metric_value,metric_unit,mapping_confidence
+PSI-101,51,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.38,ratio,hand
+PSI-101,51a,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.38,ratio,hand
+PSI-101,61,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.38,ratio,hand
+PSI-101,61a,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.38,ratio,hand
+PSI-101,62,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.48,ratio,hand
+PSI-101,62a,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.48,ratio,hand
+PSI-101,70,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.48,ratio,hand
+PSI-101,73,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.38,ratio,hand
+PSI-101,73a,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.38,ratio,hand
+PSI-101,75,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.43,ratio,hand
+PSI-101,75a,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.43,ratio,hand
+PSI-101,77,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.48,ratio,hand
+PSI-101,77a,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.48,ratio,hand
+PSI-101,85,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.43,ratio,hand
+PSI-101,85a,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.43,ratio,hand
+PSI-101,90,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.43,ratio,hand
+PSI-101,90a,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.43,ratio,hand
+PSI-101,92,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.38,ratio,hand
+PSI-101,93,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.43,ratio,hand
+PSI-101,93a,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.43,ratio,hand
+PSI-101,94,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.45,ratio,hand
+PSI-101,94a,Kapton,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.45,ratio,hand
+PSI-101,101,Kapton,solid,cabin_material,,,,,0.0,,unknown,particle_size_ratio,1.48,ratio,hand
+PSI-101,101a,Kapton,solid,cabin_material,,,,,0.0,,unknown,particle_size_ratio,1.48,ratio,hand
+PSI-101,102,Kapton,solid,cabin_material,,,,,0.0,,unknown,particle_size_ratio,1.48,ratio,hand
+PSI-101,102a,Kapton,solid,cabin_material,,,,,0.0,,unknown,particle_size_ratio,1.48,ratio,hand
+PSI-101,108,Kapton,solid,cabin_material,,,,,1.0,,unknown,particle_size_ratio,1.48,ratio,hand
+PSI-101,108a,Kapton,solid,cabin_material,,,,,1.0,,unknown,particle_size_ratio,1.48,ratio,hand
+PSI-101,114,Kapton,solid,cabin_material,,,,,2.0,,unknown,particle_size_ratio,1.43,ratio,hand
+PSI-101,48,Silicone,solid,cabin_material,,,,,8.0,,unknown,particle_size_ratio,1.304,ratio,hand
+PSI-101,53,Silicone,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.35,ratio,hand
+PSI-101,59,Silicone,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.327,ratio,hand
+PSI-101,59a,Silicone,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.327,ratio,hand
+PSI-101,60,Silicone,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.35,ratio,hand
+PSI-101,60a,Silicone,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.35,ratio,hand
+PSI-101,65,Silicone,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.327,ratio,hand
+PSI-101,65a,Silicone,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.327,ratio,hand
+PSI-101,66,Silicone,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.36,ratio,hand
+PSI-101,66a,Silicone,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.36,ratio,hand
+PSI-101,67,Silicone,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.35,ratio,hand
+PSI-101,72,Silicone,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.327,ratio,hand
+PSI-101,86,Silicone,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.345,ratio,hand
+PSI-101,86a,Silicone,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.345,ratio,hand
+PSI-101,91,Silicone,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.327,ratio,hand
+PSI-101,99,Silicone,solid,cabin_material,,,,,0.0,,unknown,particle_size_ratio,1.35,ratio,hand
+PSI-101,99a,Silicone,solid,cabin_material,,,,,0.0,,unknown,particle_size_ratio,1.35,ratio,hand
+PSI-101,103,Silicone,solid,cabin_material,,,,,1.0,,unknown,particle_size_ratio,1.35,ratio,hand
+PSI-101,103a,Silicone,solid,cabin_material,,,,,1.0,,unknown,particle_size_ratio,1.35,ratio,hand
+PSI-101,104,Silicone,solid,cabin_material,,,,,0.0,,unknown,particle_size_ratio,1.35,ratio,hand
+PSI-101,104a,Silicone,solid,cabin_material,,,,,0.0,,unknown,particle_size_ratio,1.35,ratio,hand
+PSI-101,109,Silicone,solid,cabin_material,,,,,2.0,,unknown,particle_size_ratio,1.35,ratio,hand
+PSI-101,49,Lampwick,solid,cabin_material,,,,,8.0,,unknown,particle_size_ratio,1.251,ratio,hand
+PSI-101,54,Lampwick,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.245,ratio,hand
+PSI-101,55,Lampwick,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.245,ratio,hand
+PSI-101,55a,Lampwick,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.245,ratio,hand
+PSI-101,57,Lampwick,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.253,ratio,hand
+PSI-101,68,Lampwick,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.28,ratio,hand
+PSI-101,78,Lampwick,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.245,ratio,hand
+PSI-101,78a,Lampwick,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.245,ratio,hand
+PSI-101,80,Lampwick,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.28,ratio,hand
+PSI-101,80a,Lampwick,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.28,ratio,hand
+PSI-101,82,Lampwick,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.265,ratio,hand
+PSI-101,82a,Lampwick,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.265,ratio,hand
+PSI-101,88,Lampwick,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.245,ratio,hand
+PSI-101,96,Lampwick,solid,cabin_material,,,,,0.0,,unknown,particle_size_ratio,1.245,ratio,hand
+PSI-101,96a,Lampwick,solid,cabin_material,,,,,0.0,,unknown,particle_size_ratio,1.245,ratio,hand
+PSI-101,98,Lampwick,solid,cabin_material,,,,,0.0,,unknown,particle_size_ratio,1.28,ratio,hand
+PSI-101,98a,Lampwick,solid,cabin_material,,,,,0.0,,unknown,particle_size_ratio,1.28,ratio,hand
+PSI-101,106,Lampwick,solid,cabin_material,,,,,0.0,,unknown,particle_size_ratio,1.28,ratio,hand
+PSI-101,106a,Lampwick,solid,cabin_material,,,,,0.0,,unknown,particle_size_ratio,1.28,ratio,hand
+PSI-101,110,Lampwick,solid,cabin_material,,,,,2.0,,unknown,particle_size_ratio,1.28,ratio,hand
+PSI-101,50,Teflon,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.452,ratio,hand
+PSI-101,56,Teflon,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.445,ratio,hand
+PSI-101,57,Teflon,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.253,ratio,hand
+PSI-101,58,Teflon,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.445,ratio,hand
+PSI-101,58a,Teflon,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.445,ratio,hand
+PSI-101,69,Teflon,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.45,ratio,hand
+PSI-101,79,Teflon,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.445,ratio,hand
+PSI-101,79a,Teflon,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.445,ratio,hand
+PSI-101,81,Teflon,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.45,ratio,hand
+PSI-101,81a,Teflon,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.45,ratio,hand
+PSI-101,83,Teflon,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.448,ratio,hand
+PSI-101,83a,Teflon,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.448,ratio,hand
+PSI-101,89,Teflon,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.445,ratio,hand
+PSI-101,100,Teflon,solid,cabin_material,,,,,0.0,,unknown,particle_size_ratio,1.45,ratio,hand
+PSI-101,100a,Teflon,solid,cabin_material,,,,,0.0,,unknown,particle_size_ratio,1.45,ratio,hand
+PSI-101,105,Teflon,solid,cabin_material,,,,,0.0,,unknown,particle_size_ratio,1.45,ratio,hand
+PSI-101,105a,Teflon,solid,cabin_material,,,,,0.0,,unknown,particle_size_ratio,1.45,ratio,hand
+PSI-101,111,Teflon,solid,cabin_material,,,,,2.0,,unknown,particle_size_ratio,1.45,ratio,hand
+PSI-101,52,Pyrell,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.22,ratio,hand
+PSI-101,63,Pyrell,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.22,ratio,hand
+PSI-101,63a,Pyrell,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.22,ratio,hand
+PSI-101,64,Pyrell,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.23,ratio,hand
+PSI-101,64a,Pyrell,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.23,ratio,hand
+PSI-101,71,Pyrell,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.23,ratio,hand
+PSI-101,74,Pyrell,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.22,ratio,hand
+PSI-101,74a,Pyrell,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.22,ratio,hand
+PSI-101,76,Pyrell,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.23,ratio,hand
+PSI-101,76a,Pyrell,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.23,ratio,hand
+PSI-101,84,Pyrell,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.225,ratio,hand
+PSI-101,84a,Pyrell,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.225,ratio,hand
+PSI-101,87,Pyrell,solid,cabin_material,,,,,8.1,,unknown,particle_size_ratio,1.22,ratio,hand
+PSI-101,95,Pyrell,solid,cabin_material,,,,,0.0,,unknown,particle_size_ratio,1.22,ratio,hand
+PSI-101,95a,Pyrell,solid,cabin_material,,,,,0.0,,unknown,particle_size_ratio,1.22,ratio,hand
+PSI-101,97,Pyrell,solid,cabin_material,,,,,0.0,,unknown,particle_size_ratio,1.23,ratio,hand
+PSI-101,97a,Pyrell,solid,cabin_material,,,,,0.0,,unknown,particle_size_ratio,1.23,ratio,hand
+PSI-101,107,Pyrell,solid,cabin_material,,,,,1.0,,unknown,particle_size_ratio,1.23,ratio,hand
+PSI-101,107a,Pyrell,solid,cabin_material,,,,,1.0,,unknown,particle_size_ratio,1.23,ratio,hand
+PSI-101,113,Pyrell,solid,cabin_material,,,,,2.0,,unknown,particle_size_ratio,1.23,ratio,hand
+PSI-25,B1,100 micron PMMA film   2 cm wide,solid,cabin_material,22.2,,,,,,,,,,hand
+PSI-25,B2,200 micron PMMA film   2 cm wide,solid,cabin_material,22.2,,,,,,,,,,hand
+PSI-25,B3,100 micron film   2 cm wide,solid,cabin_material,22.2,,,,,,,,,,hand
+PSI-25,B4,300 micron PMMA film   2 cm wide,solid,cabin_material,22.2,,,,,,,,,,hand
+PSI-25,B5,200 micron  2 cm wide,solid,cabin_material,22.2,,,,,,,,,,hand
+PSI-25,B6,2 cm 0.1 mm PMMA film,solid,cabin_material,21.0,,,,,,,,,,hand
+PSI-25,B7,400 micron film   2 cm wide,solid,cabin_material,22.2,,,,,,,,,,hand
+PSI-25,B8,2 cm   0.2 mm PMMA film,solid,cabin_material,21.0,,,,,,,,,,hand
+PSI-25,B9,2 cm   0.1 mm PMMA film,solid,cabin_material,21.0,,,,,,,,,,hand
+PSI-25,B10,1 cm   0.2 mm PMMA film,solid,cabin_material,21.0,,,,,,,,,,hand
+PSI-25,B11,2 cm   0.2 mm PMMA film,solid,cabin_material,21.0,,,,,,,,,,hand
+PSI-25,B12,300 micron film   2 cm wide,solid,cabin_material,22.2,,,,,,,,,,hand
+PSI-25,B13,2 cm   0.4 mm thick film,solid,cabin_material,21.0,,,,,,,,,,hand
+PSI-25,B14,1 cm wide 200 micron thick PMMA,solid,cabin_material,15.0,,,,,,,,,,hand
+PSI-25,B15,2 cm   0.1 mm PMMA film,solid,cabin_material,21.0,,,,,,,,,,hand
+PSI-25,B16,2 cm 100 micron thick PMMA,solid,cabin_material,17.3,,,,,,,,,,hand
+PSI-25,B17,1 cm wide 200 micron thick PMMA,solid,cabin_material,17.5,,,,,,,,,,hand
+PSI-25,B18,1 cm wide 200 micron thick PMMA,solid,cabin_material,17.4,,,,,,,,,,hand
+PSI-25,B19,2 cm 100 micron thick PMMA,solid,cabin_material,17.3,,,,,,,,,,hand
+PSI-25,B20,2 cm 100 micron thick PMMA,solid,cabin_material,17.4,,,,,,,,,,hand
+PSI-25,B21,1 cm wide 200 micron thick PMMA,solid,cabin_material,20.8,,,,,,,,,,hand
+PSI-25,B22,1 cm wide 200 micron thick PMMA,solid,cabin_material,20.7,,,,,,,,,,hand
+PSI-25,F1,Nomex natural (nomex III),solid,cabin_material,22.2,,,,,,,,,,hand
+PSI-25,F2,Nomex natural (nomex III),solid,cabin_material,21.0,,,,,,,,,,hand
+PSI-25,F3,Nomex natural (nomex III),solid,cabin_material,21.7,,,,,,,,,,hand
+PSI-25,F4,Japan Wax candle,solid,cabin_material,17.4,,,,,,,,,,hand
+PSI-25,M1,1 mm thick PMMA   1 sided   2 cm,solid,cabin_material,22.2,,,,,,,,,,hand
+PSI-25,M2,3 mm thick PMMA 1 sided    2 cm wide,solid,cabin_material,22.2,,,,,,,,,,hand
+PSI-25,M3,2 cm wide   5 mm thick 1 sided PMMA,solid,cabin_material,20.8,,,,,,,,,,hand
+PSI-25,M4,5 mm thick PMMA   2 cm wide,solid,cabin_material,21.8,,,,,,,,,,hand
+PSI-25,M5,3 mm thick PMMA   2 sided   2 cm thick,solid,cabin_material,22.2,,,,,,,,,,hand
+PSI-25,M6,1 mm thick PMMA   2 cm wide,solid,cabin_material,21.8,,,,,,,,,,hand
+PSI-25,M7,1 cm wide PMMA 1 mm thick,solid,cabin_material,18.9,,,,,,,,,,hand
+PSI-25,M8,1 cm wide PMMA 2 mm thick,solid,cabin_material,19.1,,,,,,,,,,hand
+PSI-25,M9,1 cm wide PMMA 3 mm thick,solid,cabin_material,18.0,,,,,,,,,,hand
+PSI-25,M10,4 mm thick   1 cm wide PMMA slab,solid,cabin_material,20.1,,,,,,,,,,hand
+PSI-25,M11,1 cm wide PMMA 5 mm thick,solid,cabin_material,20.0,,,,,,,,,,hand
+PSI-25,M12,2 mm thick PMMA   2 cm wide,solid,cabin_material,21.7,,,,,,,,,,hand
+PSI-25,M13,4 mm thick PMMA   2 cm wide,solid,cabin_material,20.8,,,,,,,,,,hand
+PSI-25,M14,2mm thick PMMA   1 sided   2 cm wide,solid,cabin_material,22.2,,,,,,,,,,hand
+PSI-25,M15,2 cm   4 mm 1 sided PMMA slab,solid,cabin_material,21.0,,,,,,,,,,hand
+PSI-25,M16,1 mm thick PMMA   2 cm wide,solid,cabin_material,19.2,,,,,,,,,,hand
+PSI-25,M17,2 cm wide PMMA 2 mm thick,solid,cabin_material,18.8,,,,,,,,,,hand
+PSI-25,M18,2 cm wide PMMA 3 mm thick,solid,cabin_material,17.9,,,,,,,,,,hand
+PSI-25,M19,4 mm thick   2 cm 2ide PMMA slab,solid,cabin_material,19.0,,,,,,,,,,hand
+PSI-25,M20,5 mm thick PMMA   2 cm wide,solid,cabin_material,18.0,,,,,,,,,,hand
+PSI-25,O1,"1/4"" clear rod",solid,cabin_material,22.2,,,,,,,,,,hand
+PSI-25,O2,"1/4"" clear rod",solid,cabin_material,22.2,,,,,,,,,,hand
+PSI-25,O3a,"1/4"" clear rod",solid,cabin_material,18.0,,,,,,,,,,hand
+PSI-25,O3b,"1/4"" clear rod",solid,cabin_material,18.0,,,,,,,,,,hand
+PSI-25,O4,"3/8""clear rod",solid,cabin_material,14.8,,,,,,,,,,hand
+PSI-25,O5a,"1/2"" clear PMMA rod",solid,cabin_material,15.1,,,,,,,,,,hand
+PSI-25,O5b,"1/2"" clear PMMA rod",solid,cabin_material,14.2,,,,,,,,,,hand
+PSI-25,O6,"1/4"" clear rod",solid,cabin_material,16.7,,,,,,,,,,hand
+PSI-25,O7,"1/4"" clear rod",solid,cabin_material,16.0,,,,,,,,,,hand
+PSI-25,O8a,"1/4"" clear rod",solid,cabin_material,15.7,,,,,,,,,,hand
+PSI-25,O8b,"1/4"" clear rod",solid,cabin_material,15.5,,,,,,,,,,hand
+PSI-25,O9,"1/4"" clear rod",solid,cabin_material,15.0,,,,,,,,,,hand
+PSI-25,O10,"1/4"" clear rod",solid,cabin_material,16.7,,,,,,,,,,hand
+PSI-25,O11,"1/4"" black rod",solid,cabin_material,15.4,,,,,,,,,,hand
+PSI-25,O12,"3/8"" clear rod",solid,cabin_material,13.6,,,,,,,,,,hand
+PSI-25,O13a,"1/2"" clear PMMA rod",solid,cabin_material,15.9,,,,,,,,,,hand
+PSI-25,O13b,"1/2"" clear PMMA rod",solid,cabin_material,14.6,,,,,,,,,,hand
+PSI-25,O14,"1/4"" black rod",solid,cabin_material,16.3,,,,,,,,,,hand
+PSI-25,O15a,"3/8"" clear rod",solid,cabin_material,17.1,,,,,,,,,,hand
+PSI-25,O15b,"3/8"" clear rod",solid,cabin_material,16.7,,,,,,,,,,hand
+PSI-25,O16,"3/8""clear rod",solid,cabin_material,14.5,,,,,,,,,,hand
+PSI-25,O17,"1/4"" clear rod",solid,cabin_material,15.1,,,,,,,,,,hand
+PSI-25,O18,"1/4"" clear rod",solid,cabin_material,15.2,,,,,,,,,,hand
+PSI-25,O19,"1/4"" clear rod",solid,cabin_material,15.3,,,,,,,,,,hand
+PSI-25,O20,"1/4"" clear rod",solid,cabin_material,16.5,,,,,,,,,,hand
+PSI-25,O21,"3/8"" clear rod",solid,cabin_material,15.9,,,,,,,,,,hand
+PSI-25,O22,"1/2"" clear rod",solid,cabin_material,15.4,,,,,,,,,,hand
+PSI-25,P1,"1/4"" black rod",solid,cabin_material,17.7,,,,,,,,,,hand
+PSI-25,P2,"1/4"" black rod",solid,cabin_material,17.4,,,,,,,,,,hand
+PSI-25,P3a,"1/4"" clear rod",solid,cabin_material,17.7,,,,,,,,,,hand
+PSI-25,P3b,1/4 clear rod,solid,cabin_material,17.4,,,,,,,,,,hand
+PSI-25,P4,"3/8"" black rod",solid,cabin_material,18.5,,,,,,,,,,hand
+PSI-25,P5,"0.5"" black rod",solid,cabin_material,19.3,,,,,,,,,,hand
+PSI-25,P6,"1/4"" black rod",solid,cabin_material,18.9,,,,,,,,,,hand
+PSI-25,P8,"3/8"" black rod",solid,cabin_material,16.4,,,,,,,,,,hand
+PSI-25,P9,"0.5"" black rod",solid,cabin_material,17.6,,,,,,,,,,hand
+PSI-25,P10,"1/4"" black rod",solid,cabin_material,17.0,,,,,,,,,,hand
+PSI-25,P12,"3/8"" black rod",solid,cabin_material,17.5,,,,,,,,,,hand
+PSI-25,P13a,"0.5"" black rod",solid,cabin_material,20.7,,,,,,,,,,hand
+PSI-25,P13b,"0.5"" black rod",solid,cabin_material,20.6,,,,,,,,,,hand
+PSI-25,P14,1/4 blac rod,solid,cabin_material,18.4,,,,,,,,,,hand
+PSI-25,P15,1/4 black rod,solid,cabin_material,18.0,,,,,,,,,,hand
+PSI-25,P16,"1/4"" black rod",solid,cabin_material,18.2,,,,,,,,,,hand
+PSI-25,P17,"1/4""  black rod",solid,cabin_material,16.8,,,,,,,,,,hand
+PSI-25,P18,"1/4"" black rod",solid,cabin_material,20.0,,,,,,,,,,hand
+PSI-25,P19,"1/4"" black rod",solid,cabin_material,17.5,,,,,,,,,,hand
+PSI-25,P20,"1/4"" black rod",solid,cabin_material,19.0,,,,,,,,,,hand
+PSI-25,P21a,1/4 black rod,solid,cabin_material,16.3,,,,,,,,,,hand
+PSI-25,P21b,"1/4"" black rod",solid,cabin_material,16.3,,,,,,,,,,hand
+PSI-25,P22a,"3/8"" black rod",solid,cabin_material,20.8,,,,,,,,,,hand
+PSI-25,P22b,"3/8"" black rod",solid,cabin_material,20.0,,,,,,,,,,hand
+PSI-25,P23,"3/8"" black rod",solid,cabin_material,18.2,,,,,,,,,,hand
+PSI-25,P24,"3/8"" black rod",solid,cabin_material,19.0,,,,,,,,,,hand
+PSI-25,P25,"3/8"" clear rod",solid,cabin_material,20.9,,,,,,,,,,hand
+PSI-25,T1,2 cm SIBAL,solid,cabin_material,18.5,,,,,,,,,,hand
+PSI-25,T2,2 cm SIBAL,solid,cabin_material,18.5,,,,,,,,,,hand
+PSI-25,T3,4 cm spherical section,solid,cabin_material,17.2,,,,,,,,,,hand
+PSI-25,T4,2 cm SIBAL,solid,cabin_material,18.7,,,,,,,,,,hand
+PSI-25,T5,2 cm SIBAL,solid,cabin_material,18.8,,,,,,,,,,hand
+PSI-25,T6,2 cm SIBAL,solid,cabin_material,18.8,,,,,,,,,,hand
+PSI-25,T7,4 cm spherical section,solid,cabin_material,17.3,,,,,,,,,,hand
+PSI-25,T9,2 cm SIBAL,solid,cabin_material,16.4,,,,,,,,,,hand
+PSI-25,T10,2 cm SIBAL,solid,cabin_material,16.4,,,,,,,,,,hand
+PSI-25,T11,2 cm SIBAL,solid,cabin_material,17.1,,,,,,,,,,hand
+PSI-25,T12,2 cm SIBAL,solid,cabin_material,16.8,,,,,,,,,,hand
+PSI-25,T13,2 cm SIBAL,solid,cabin_material,17.5,,,,,,,,,,hand
+PSI-25,T14,2 cm SIBAL,solid,cabin_material,16.9,,,,,,,,,,hand
+PSI-25,T15,2 cm SIBAL,solid,cabin_material,18.7,,,,,,,,,,hand
+PSI-25,T16,2 cm SIBAL,solid,cabin_material,17.6,,,,,,,,,,hand
+PSI-25,T17,2 cm SIBAL,solid,cabin_material,16.9,,,,,,,,,,hand
+PSI-25,T18,2 cm SIBAL,solid,cabin_material,17.4,,,,,,,,,,hand
+PSI-25,T19,1 cm SIBAL,solid,cabin_material,17.2,,,,,,,,,,hand
+PSI-25,T20,1 cm SIBAL,solid,cabin_material,17.2,,,,,,,,,,hand
+PSI-25,T21,1 cm SIBAL,solid,cabin_material,17.2,,,,,,,,,,hand
+PSI-25,T22,1 cm SIBAL,solid,cabin_material,17.1,,,,,,,,,,hand
+PSI-25,T23,2 cm Sibal   moved igniter,solid,cabin_material,17.2,,,,,,,,,,hand
+PSI-25,T24,1 cm SIBAL   top side ign,solid,cabin_material,18.2,,,,,,,,,,hand
+PSI-25,T25,2 cm SIBAL,solid,cabin_material,20.8,,,,,,,,,,hand
+PSI-25,T26,2 cm SIBAL,solid,cabin_material,20.8,,,,,,,,,,hand
+PSI-25,T27,1 cm SIBAL,solid,cabin_material,20.7,,,,,,,,,,hand
+PSI-25,T28a,1 cm SIBAL,solid,cabin_material,20.7,,,,,,,,,,hand
+PSI-25,T28b,1 cm SIBAL,solid,cabin_material,20.7,,,,,,,,,,hand
+PSI-25,T29,1 cm SIBAL,solid,cabin_material,20.7,,,,,,,,,,hand
+PSI-69,20CAL08,Methanol,liquid,idealized,21.0,14.65,3.08,N2,,1.69,unknown,burning_rate,0.52,mm2/s,hand
+PSI-69,20CAL10,Methanol,liquid,idealized,21.0,14.73,3.09,N2,,1.86,extinguished,burning_rate,0.6,mm2/s,hand
+PSI-69,20CAL12,Methanol,liquid,idealized,21.0,14.78,3.1,N2,,1.61,extinguished,burning_rate,0.58,mm2/s,hand
+PSI-69,30CAL02,Methanol,liquid,idealized,21.0,14.7,3.09,N2,,2.06,extinguished,burning_rate,0.6,mm2/s,hand
+PSI-69,30CAL03,Methanol,liquid,idealized,21.0,14.7,3.09,N2,,1.92,extinguished,burning_rate,0.48,mm2/s,hand
+PSI-69,40CAL01,Methanol,liquid,idealized,21.0,14.7,3.09,N2,,2.54,extinguished,burning_rate,0.51,mm2/s,hand
+PSI-69,20CAL13,Heptane,liquid,idealized,21.0,14.72,3.09,N2,,1.87,unknown,burning_rate,0.67,mm2/s,hand
+PSI-69,30CAL06,Heptane,liquid,idealized,21.0,14.74,3.1,N2,,2.95,unknown,burning_rate,0.79,mm2/s,hand
+PSI-69,30CAL07,Heptane,liquid,idealized,21.0,14.7,3.09,N2,,,unknown,,,,hand
+PSI-69,256F002,Methanol,liquid,idealized,21.0,44.86,9.42,CO2,,3.86,extinguished,burning_rate,0.37,mm2/s,hand
+PSI-69,256R001,Methanol,liquid,idealized,21.0,44.84,9.42,CO2,,3.03,extinguished,burning_rate,0.4,mm2/s,hand
+PSI-69,264F003,Heptane,liquid,idealized,21.0,44.86,9.42,CO2,,2.74,unknown,,,,hand
+PSI-69,256R002,Methanol,liquid,idealized,21.0,40.11,8.42,CO2,,2.59,extinguished,burning_rate,0.49,mm2/s,hand
+PSI-69,256F007,Methanol,liquid,idealized,21.0,39.75,8.35,CO2,,3.7,extinguished,,,,hand
+PSI-69,256F008,Methanol,liquid,idealized,21.0,39.96,8.39,CO2,,4.42,extinguished,,,,hand
+PSI-69,256F009,Methanol,liquid,idealized,21.0,40.07,8.41,CO2,,1.66,extinguished,burning_rate,0.53,mm2/s,hand
+PSI-69,240R003,Methanol,liquid,idealized,21.0,29.89,6.28,CO2,,2.67,unknown,,,,hand
+PSI-69,248F001,Heptane,liquid,idealized,21.0,30.05,6.31,CO2,,2.74,extinguished,burning_rate,0.61,mm2/s,hand
+PSI-69,196F001,Heptane,liquid,idealized,34.0,10.42,3.54,N2,,3.39,unknown,burning_rate,0.9,mm2/s,hand
+PSI-69,192F001,Methanol,liquid,idealized,34.0,10.43,3.55,N2,,3.4,burned,burning_rate,0.53,mm2/s,hand
+PSI-69,192F002,Methanol,liquid,idealized,34.0,10.45,3.55,N2,,3.49,unknown,burning_rate,0.66,mm2/s,hand
+PSI-69,192F003,Methanol,liquid,idealized,34.0,10.45,3.55,N2,,3.5,unknown,burning_rate,0.65,mm2/s,hand
+PSI-69,196F002,Heptane,liquid,idealized,34.0,10.48,3.56,N2,,3.01,unknown,burning_rate,0.73,mm2/s,hand
+PSI-69,196F003,Heptane,liquid,idealized,34.0,10.5,3.57,N2,,,unknown,,,,hand
+PSI-69,191R001,Methanol,liquid,idealized,30.0,10.39,3.12,N2,,2.6,burned,burning_rate,0.65,mm2/s,hand
+PSI-69,191F001,Methanol,liquid,idealized,30.0,10.41,3.12,N2,,3.63,unknown,burning_rate,0.62,mm2/s,hand
+PSI-69,195F001,Heptane,liquid,idealized,30.0,10.46,3.14,N2,,3.87,unknown,burning_rate,0.64,mm2/s,hand
+PSI-69,195F002,Heptane,liquid,idealized,30.0,10.44,3.13,N2,,3.36,unknown,burning_rate,0.64,mm2/s,hand
+PSI-69,178R001,Methanol,liquid,idealized,30.0,14.83,4.45,N2,,2.57,burned,burning_rate,0.74,mm2/s,hand
+PSI-69,178F001,Methanol,liquid,idealized,30.0,14.87,4.46,N2,,3.26,extinguished,burning_rate,0.59,mm2/s,hand
+PSI-69,182F001,Heptane,liquid,idealized,30.0,14.9,4.47,N2,,3.39,unknown,burning_rate,0.85,mm2/s,hand
+PSI-69,182F002,Heptane,liquid,idealized,30.0,14.91,4.47,N2,,3.07,burned,burning_rate,0.68,mm2/s,hand
+PSI-69,177R002,Methanol,liquid,idealized,21.0,14.78,3.1,N2,,2.62,extinguished,burning_rate,0.48,mm2/s,hand
+PSI-69,177F001,Methanol,liquid,idealized,21.0,14.85,3.12,N2,,3.89,extinguished,burning_rate,0.44,mm2/s,hand
+PSI-69,181F001,Heptane,liquid,idealized,21.0,14.85,3.12,N2,,3.85,extinguished,burning_rate,0.43,mm2/s,hand
+PSI-69,190R002,Methanol,liquid,idealized,20.0,10.42,2.08,N2,,2.4,extinguished,burning_rate,0.45,mm2/s,hand
+PSI-69,220R001,Methanol,liquid,idealized,34.0,10.33,3.51,N2,,3.31,unknown,burning_rate,0.72,mm2/s,hand
+PSI-69,220R002,Methanol,liquid,idealized,34.0,10.33,3.51,N2,,3.59,unknown,burning_rate,0.71,mm2/s,hand
+PSI-69,224F001,Heptane,liquid,idealized,34.0,10.34,3.52,N2,,2.91,unknown,burning_rate,0.8,mm2/s,hand
+PSI-69,219R001,Methanol,liquid,idealized,30.0,10.35,3.1,N2,,3.77,unknown,burning_rate,0.62,mm2/s,hand
+PSI-69,219F001,Methanol,liquid,idealized,30.0,10.33,3.1,N2,,3.35,unknown,burning_rate,0.65,mm2/s,hand
+PSI-69,223F001,Heptane,liquid,idealized,30.0,10.35,3.1,N2,,2.92,unknown,burning_rate,0.58,mm2/s,hand
+PSI-69,223F002,Heptane,liquid,idealized,30.0,10.34,3.1,N2,,2.97,unknown,burning_rate,0.78,mm2/s,hand
+PSI-69,206F001,Methanol,liquid,idealized,30.0,14.83,4.45,N2,,3.49,unknown,burning_rate,0.63,mm2/s,hand
+PSI-69,206R001,Methanol,liquid,idealized,30.0,14.86,4.46,N2,,2.42,extinguished,burning_rate,0.73,mm2/s,hand
+PSI-69,205R001,Methanol,liquid,idealized,21.0,14.88,3.12,N2,,2.78,unknown,burning_rate,0.54,mm2/s,hand
+PSI-69,209F001,Heptane,liquid,idealized,21.0,14.89,3.13,N2,,3.36,burned,burning_rate,0.5,mm2/s,hand
+PSI-69,205F001,Methanol,liquid,idealized,21.0,14.86,3.12,N2,,3.66,unknown,burning_rate,0.27,mm2/s,hand
+PSI-69,209F003,Heptane,liquid,idealized,21.0,14.79,3.11,N2,,3.46,extinguished,burning_rate,0.59,mm2/s,hand
+PSI-69,209F004,Heptane,liquid,idealized,21.0,14.89,3.13,N2,,3.57,extinguished,burning_rate,0.52,mm2/s,hand
+PSI-69,209F005,Heptane,liquid,idealized,21.0,14.92,3.13,N2,,2.41,burned,burning_rate,0.65,mm2/s,hand
+PSI-69,210F002,Heptane,liquid,idealized,30.0,14.91,4.47,N2,,3.53,unknown,burning_rate,0.7,mm2/s,hand
+PSI-69,209F002,Heptane,liquid,idealized,21.0,14.89,3.13,N2,,,unknown,,,,hand
+PSI-69,190F003,Methanol,liquid,idealized,20.0,10.47,2.09,N2,,3.56,extinguished,burning_rate,0.41,mm2/s,hand
+PSI-69,218F001,Methanol,liquid,idealized,20.0,10.49,2.1,N2,,3.37,unknown,burning_rate,0.46,mm2/s,hand
+PSI-69,194F001,Heptane,liquid,idealized,20.0,10.52,2.1,N2,,3.56,burned,burning_rate,0.44,mm2/s,hand
+PSI-69,303F001,Heptane,liquid,idealized,20.0,10.53,2.11,N2,,3.1,extinguished,burning_rate,0.54,mm2/s,hand
+PSI-69,176F001,Methanol,liquid,idealized,18.0,14.95,2.69,N2,,3.69,extinguished,burning_rate,0.42,mm2/s,hand
+PSI-69,176R001,Methanol,liquid,idealized,18.0,14.87,2.68,N2,,2.93,extinguished,burning_rate,0.43,mm2/s,hand
+PSI-69,204F001,Methanol,liquid,idealized,18.0,14.96,2.69,N2,,3.43,extinguished,burning_rate,0.45,mm2/s,hand
+PSI-69,204R001,Methanol,liquid,idealized,18.0,14.97,2.69,N2,,3.68,extinguished,burning_rate,0.41,mm2/s,hand
+PSI-69,301F001,Heptane,liquid,idealized,18.0,14.73,2.65,N2,,3.43,extinguished,burning_rate,0.39,mm2/s,hand
+PSI-69,301F002,Heptane,liquid,idealized,18.0,14.84,2.67,N2,,2.15,burned,burning_rate,0.51,mm2/s,hand
+PSI-69,302F001,Heptane,liquid,idealized,18.0,14.79,2.66,N2,,2.69,extinguished,burning_rate,0.6,mm2/s,hand
+PSI-69,189R001,Methanol,liquid,idealized,15.0,14.81,2.22,N2,,3.37,extinguished,burning_rate,0.4,mm2/s,hand
+PSI-69,189F001,Methanol,liquid,idealized,15.0,14.83,2.22,N2,,2.52,extinguished,burning_rate,0.38,mm2/s,hand
+PSI-69,189F002,Methanol,liquid,idealized,15.0,14.85,2.23,N2,,3.97,extinguished,burning_rate,0.36,mm2/s,hand
+PSI-69,189R003,Methanol,liquid,idealized,15.0,14.87,2.23,N2,,2.38,extinguished,burning_rate,0.39,mm2/s,hand
+PSI-69,193R002,Heptane,liquid,idealized,14.0,14.83,2.08,N2,,1.1,burned,burning_rate,0.94,mm2/s,hand
+PSI-69,193F001,Heptane,liquid,idealized,15.0,14.72,2.21,N2,,4.67,extinguished,burning_rate,0.41,mm2/s,hand
+PSI-69,189R002,Methanol,liquid,idealized,15.0,14.86,2.23,N2,,2.25,extinguished,burning_rate,0.4,mm2/s,hand
+PSI-69,193R001,Heptane,liquid,idealized,15.0,14.8,2.22,N2,,1.13,burned,burning_rate,0.52,mm2/s,hand
+PSI-69,193F001,Heptane,liquid,idealized,15.0,14.72,2.21,N2,,4.64,extinguished,burning_rate,0.56,mm2/s,hand
+PSI-69,221F001,Heptane,liquid,idealized,15.0,14.81,2.22,N2,,1.33,burned,burning_rate,0.77,mm2/s,hand
+PSI-69,203R002,Methanol,liquid,idealized,13.0,14.9,1.94,N2,,2.54,extinguished,burning_rate,0.37,mm2/s,hand
+PSI-69,203F001,Methanol,liquid,idealized,13.0,14.88,1.93,N2,,3.21,extinguished,burning_rate,0.37,mm2/s,hand
+PSI-69,175R001,Methanol,liquid,idealized,14.0,14.86,2.08,N2,,3.33,extinguished,burning_rate,0.34,mm2/s,hand
+PSI-69,175F001,Methanol,liquid,idealized,14.0,14.81,2.07,N2,,2.66,extinguished,burning_rate,0.35,mm2/s,hand
+PSI-69,179F001,Heptane,liquid,idealized,13.0,14.85,1.93,N2,,2.92,extinguished,burning_rate,0.25,mm2/s,hand
+PSI-69,207F001,Heptane,liquid,idealized,13.0,14.89,1.94,N2,,,extinguished,,,,hand
+PSI-69,207F002,Heptane,liquid,idealized,13.0,14.89,1.94,N2,,,extinguished,,,,hand
+PSI-69,304F001,Methanol,liquid,idealized,13.0,14.79,1.92,N2,,2.84,extinguished,burning_rate,0.35,mm2/s,hand
+PSI-69,304F002,Methanol,liquid,idealized,12.0,14.93,1.79,N2,,,extinguished,,,,hand
+PSI-69,304R001,Methanol,liquid,idealized,12.0,14.84,1.78,N2,,2.35,extinguished,burning_rate,0.35,mm2/s,hand
+PSI-69,304R002,Methanol,liquid,idealized,12.0,14.91,1.79,N2,,2.4,extinguished,burning_rate,0.35,mm2/s,hand
+PSI-69,305F002,Methanol,liquid,idealized,12.0,14.89,1.79,N2,,3.07,extinguished,burning_rate,0.35,mm2/s,hand
+PSI-69,305F003,Methanol,liquid,idealized,12.0,14.91,1.79,N2,,2.64,extinguished,burning_rate,0.38,mm2/s,hand
+PSI-69,053R001,Methanol,liquid,idealized,25.0,10.39,2.6,N2,,3.01,unknown,burning_rate,0.53,mm2/s,hand
+PSI-69,053F001,Methanol,liquid,idealized,25.0,10.39,2.6,N2,,3.7,unknown,burning_rate,0.51,mm2/s,hand
+PSI-69,141R001,Methanol,liquid,idealized,25.0,10.43,2.61,N2,,3.62,unknown,burning_rate,0.53,mm2/s,hand
+PSI-69,141F001,Methanol,liquid,idealized,25.0,10.41,2.6,N2,,3.51,unknown,burning_rate,0.51,mm2/s,hand
+PSI-69,061F002,Heptane,liquid,idealized,25.0,10.37,2.59,N2,,3.41,unknown,burning_rate,0.55,mm2/s,hand
+PSI-69,149F001,Heptane,liquid,idealized,25.0,10.39,2.6,N2,,2.48,unknown,burning_rate,0.71,mm2/s,hand
+PSI-69,C08H101,Heptane,liquid,idealized,24.0,10.32,2.48,N2,,3.53,extinguished,burning_rate,0.51,mm2/s,hand
+PSI-69,C08H201,Heptane,liquid,idealized,24.0,10.33,2.48,N2,,3.6,extinguished,burning_rate,0.58,mm2/s,hand
+PSI-69,C08H301,Heptane,liquid,idealized,24.0,10.33,2.48,N2,,,unknown,,,,hand
+PSI-69,C08M101,Methanol,liquid,idealized,23.0,10.33,2.38,N2,,4.25,burned,burning_rate,0.45,mm2/s,hand
+PSI-69,C09M201,Methanol,liquid,idealized,23.0,10.39,2.39,N2,,3.64,extinguished,burning_rate,0.47,mm2/s,hand
+PSI-69,C09M101,Methanol,liquid,idealized,23.0,10.35,2.38,N2,,4.28,extinguished,burning_rate,0.42,mm2/s,hand
+PSI-69,C09H101,Heptane,liquid,idealized,23.0,10.38,2.39,N2,,4.14,extinguished,burning_rate,0.34,mm2/s,hand
+PSI-69,C09H201,Heptane,liquid,idealized,23.0,10.42,2.4,N2,,3.88,extinguished,burning_rate,0.5,mm2/s,hand
+PSI-69,C10H101,Heptane,liquid,idealized,21.0,10.33,2.17,N2,,3.57,extinguished,burning_rate,0.33,mm2/s,hand
+PSI-69,C10H201,Heptane,liquid,idealized,21.0,10.33,2.17,N2,,4.0,extinguished,burning_rate,0.35,mm2/s,hand
+PSI-69,C08M201,Methanol,liquid,idealized,23.0,10.33,2.38,N2,,3.6,extinguished,burning_rate,0.49,mm2/s,hand
+PSI-69,C08M301,Methanol,liquid,idealized,23.0,10.34,2.38,N2,,4.17,unknown,burning_rate,0.47,mm2/s,hand
+PSI-69,C09M401,Methanol,liquid,idealized,23.0,10.41,2.39,N2,,3.08,unknown,burning_rate,0.51,mm2/s,hand
+PSI-69,C08M401,Methanol,liquid,idealized,23.0,10.35,2.38,N2,,3.18,unknown,burning_rate,0.52,mm2/s,hand
+PSI-69,C09M301,Methanol,liquid,idealized,23.0,10.41,2.39,N2,,3.75,burned,burning_rate,0.47,mm2/s,hand
+PSI-69,C10M102,Methanol,liquid,idealized,21.0,10.37,2.18,N2,,3.56,extinguished,burning_rate,0.42,mm2/s,hand
+PSI-69,C10M201,Methanol,liquid,idealized,21.0,10.38,2.18,N2,,2.83,extinguished,burning_rate,0.45,mm2/s,hand
+PSI-69,C10M303,Methanol,liquid,idealized,21.0,10.38,2.18,N2,,3.37,burned,burning_rate,0.45,mm2/s,hand
+PSI-69,C10M401,Methanol,liquid,idealized,21.0,10.26,2.15,N2,,3.99,burned,burning_rate,0.43,mm2/s,hand
+PSI-69,C11M101,Methanol,liquid,idealized,20.0,10.34,2.07,N2,,4.2,extinguished,burning_rate,0.49,mm2/s,hand
+PSI-69,C11M201,Methanol,liquid,idealized,20.0,,,N2,,3.23,extinguished,burning_rate,0.42,mm2/s,hand
+PSI-69,C11M301,Methanol,liquid,idealized,20.0,10.36,2.07,N2,,3.97,extinguished,burning_rate,0.41,mm2/s,hand
+PSI-69,C11M401,Methanol,liquid,idealized,20.0,10.37,2.07,N2,,3.16,extinguished,burning_rate,0.46,mm2/s,hand
+PSI-69,C11H101,Heptane,liquid,idealized,20.0,10.27,2.05,N2,,3.84,extinguished,burning_rate,0.25,mm2/s,hand
+PSI-69,C11H201,Heptane,liquid,idealized,20.0,10.3,2.06,N2,,3.03,extinguished,burning_rate,0.38,mm2/s,hand
+PSI-69,C12H103,Heptane,liquid,idealized,18.0,10.3,1.85,N2,,2.6,extinguished,burning_rate,0.37,mm2/s,hand
+PSI-69,C12H201,Heptane,liquid,idealized,18.0,10.3,1.85,N2,,2.45,extinguished,burning_rate,0.38,mm2/s,hand
+PSI-69,C12M101,Methanol,liquid,idealized,18.0,10.18,1.83,N2,,4.25,extinguished,burning_rate,0.34,mm2/s,hand
+PSI-69,C12M201,Methanol,liquid,idealized,18.0,10.27,1.85,N2,,3.46,extinguished,burning_rate,0.41,mm2/s,hand
+PSI-69,C12M301,Methanol,liquid,idealized,18.0,10.29,1.85,N2,,4.13,extinguished,burning_rate,0.35,mm2/s,hand
+PSI-69,C12M401,Methanol,liquid,idealized,18.0,10.3,1.85,N2,,2.87,extinguished,burning_rate,0.3,mm2/s,hand
+PSI-69,C13M103,Methanol,liquid,idealized,17.0,10.39,1.77,CO2,,3.63,extinguished,burning_rate,0.35,mm2/s,hand
+PSI-69,C13M201,Methanol,liquid,idealized,17.0,10.37,1.76,CO2,,2.8,extinguished,burning_rate,0.4,mm2/s,hand
+PSI-69,C13M301,Methanol,liquid,idealized,17.0,10.38,1.76,CO2,,3.22,extinguished,burning_rate,0.38,mm2/s,hand
+PSI-69,C13M401,Methanol,liquid,idealized,17.0,10.39,1.77,CO2,,2.91,extinguished,burning_rate,0.39,mm2/s,hand
+PSI-69,C13H102,Heptane,liquid,idealized,17.0,10.37,1.76,CO2,,3.33,extinguished,burning_rate,0.33,mm2/s,hand
+PSI-69,C13H201,Heptane,liquid,idealized,17.0,10.39,1.77,CO2,,2.91,extinguished,burning_rate,0.05,mm2/s,hand
+PSI-69,C21H101,Heptane,liquid,idealized,24.0,14.77,3.54,N2,,1.72,unknown,burning_rate,0.61,mm2/s,hand
+PSI-69,C21H201,Heptane,liquid,idealized,24.0,14.8,3.55,N2,,2.63,unknown,burning_rate,0.6,mm2/s,hand
+PSI-69,C21H301,Heptane,liquid,idealized,24.0,14.83,3.56,N2,,3.25,unknown,burning_rate,0.56,mm2/s,hand
+PSI-69,C21H401,Heptane,liquid,idealized,24.0,14.84,3.56,N2,,3.66,extinguished,burning_rate,0.56,mm2/s,hand
+PSI-69,C21H501,Heptane,liquid,idealized,24.0,14.85,3.56,N2,,2.78,burned,burning_rate,0.59,mm2/s,hand
+PSI-69,C21H302,Heptane,liquid,idealized,24.0,14.85,3.56,N2,,3.08,burned,burning_rate,0.51,mm2/s,hand
+PSI-69,C21H303,Heptane,liquid,idealized,24.0,14.85,3.56,N2,,3.13,unknown,burning_rate,0.55,mm2/s,hand
+PSI-69,C21H304,Heptane,liquid,idealized,24.0,14.86,3.57,N2,,,unknown,,,,hand
+PSI-69,C21H305,Heptane,liquid,idealized,24.0,14.85,3.56,N2,,1.75,unknown,burning_rate,0.63,mm2/s,hand
+PSI-69,C14M101,Methanol,liquid,idealized,15.0,10.32,1.55,CO2,,3.98,extinguished,burning_rate,0.2,mm2/s,hand
+PSI-69,C14M201,Methanol,liquid,idealized,15.0,10.33,1.55,CO2,,2.86,extinguished,burning_rate,0.3,mm2/s,hand
+PSI-69,C14M301,Methanol,liquid,idealized,15.0,10.34,1.55,CO2,,1.86,extinguished,burning_rate,0.39,mm2/s,hand
+PSI-69,C14M302,Methanol,liquid,idealized,15.0,10.34,1.55,CO2,,2.25,extinguished,burning_rate,0.36,mm2/s,hand
+PSI-69,C01M101,Methanol,liquid,idealized,20.0,14.73,2.95,N2,,3.53,extinguished,burning_rate,0.45,mm2/s,hand
+PSI-69,C01M201,Methanol,liquid,idealized,20.0,14.76,2.95,N2,,3.33,extinguished,burning_rate,0.45,mm2/s,hand
+PSI-69,C01M301,Methanol,liquid,idealized,20.0,14.8,2.96,N2,,4.35,extinguished,burning_rate,0.41,mm2/s,hand
+PSI-69,C13M102,Methanol,liquid,idealized,17.0,10.36,1.76,CO2,,3.02,extinguished,burning_rate,0.4,mm2/s,hand
+PSI-69,C01H101,Heptane,liquid,idealized,20.0,14.78,2.96,N2,,2.58,unknown,burning_rate,0.54,mm2/s,hand
+PSI-69,C01H201,Heptane,liquid,idealized,20.0,14.82,2.96,N2,,2.21,unknown,burning_rate,0.53,mm2/s,hand
+PSI-69,C01H302,Heptane,liquid,idealized,20.0,14.84,2.97,N2,,3.18,extinguished,burning_rate,0.46,mm2/s,hand
+PSI-69,C03M101,Methanol,liquid,idealized,18.0,14.74,2.65,N2,,3.86,burned,burning_rate,0.36,mm2/s,hand
+PSI-69,C03M201,Methanol,liquid,idealized,18.0,14.79,2.66,N2,,3.33,extinguished,burning_rate,0.43,mm2/s,hand
+PSI-69,C03M301,Methanol,liquid,idealized,18.0,14.8,2.66,N2,,2.78,extinguished,burning_rate,0.42,mm2/s,hand
+PSI-69,C03H101,Heptane,liquid,idealized,18.0,14.74,2.65,N2,,3.7,extinguished,burning_rate,0.34,mm2/s,hand
+PSI-69,C03H201,Heptane,liquid,idealized,18.0,14.79,2.66,N2,,2.73,extinguished,burning_rate,0.39,mm2/s,hand
+PSI-69,C03H401,Heptane,liquid,idealized,18.0,14.81,2.67,N2,,1.34,burned,burning_rate,0.48,mm2/s,hand
+PSI-69,C05M101,Methanol,liquid,idealized,16.0,14.74,2.36,N2,,4.24,extinguished,burning_rate,0.3,mm2/s,hand
+PSI-69,C05M201,Methanol,liquid,idealized,16.0,14.78,2.36,N2,,3.7,extinguished,burning_rate,0.37,mm2/s,hand
+PSI-69,C05M301,Methanol,liquid,idealized,16.0,14.8,2.37,N2,,2.71,extinguished,burning_rate,0.38,mm2/s,hand
+PSI-69,C05M401,Methanol,liquid,idealized,16.0,14.84,2.37,N2,,2.77,extinguished,burning_rate,0.38,mm2/s,hand
+PSI-69,C06M101,Methanol,liquid,idealized,15.0,14.76,2.21,N2,,3.72,extinguished,burning_rate,0.28,mm2/s,hand
+PSI-69,C06M201,Methanol,liquid,idealized,15.0,14.78,2.22,N2,,3.05,extinguished,burning_rate,0.37,mm2/s,hand
+PSI-69,C06M301,Methanol,liquid,idealized,15.0,14.81,2.22,N2,,2.59,extinguished,burning_rate,0.37,mm2/s,hand
+PSI-69,C06M401,Methanol,liquid,idealized,15.0,14.81,2.22,N2,,2.59,extinguished,burning_rate,0.42,mm2/s,hand
+PSI-69,C03H302,Heptane,liquid,idealized,18.0,14.8,2.66,N2,,1.96,extinguished,burning_rate,0.54,mm2/s,hand
+PSI-69,C07M101,Methanol,liquid,idealized,14.0,14.71,2.06,N2,,3.22,extinguished,burning_rate,0.28,mm2/s,hand
+PSI-69,C07M201,Methanol,liquid,idealized,14.0,14.73,2.06,N2,,2.32,extinguished,burning_rate,0.37,mm2/s,hand
+PSI-69,C15M101,Methanol,liquid,idealized,21.0,14.76,3.1,N2,,3.03,unknown,burning_rate,0.48,mm2/s,hand
+PSI-69,C15M201,Methanol,liquid,idealized,21.0,14.81,3.11,N2,,3.05,extinguished,burning_rate,0.51,mm2/s,hand
+PSI-69,C15M301,Methanol,liquid,idealized,21.0,14.83,3.11,N2,,3.53,extinguished,burning_rate,0.46,mm2/s,hand
+PSI-69,C03H501,Heptane,liquid,idealized,18.0,14.69,2.64,N2,,3.74,extinguished,burning_rate,0.35,mm2/s,hand
+PSI-69,C03H601,Heptane,liquid,idealized,18.0,14.73,2.65,N2,,2.4,extinguished,burning_rate,0.46,mm2/s,hand
+PSI-69,C03H701,Heptane,liquid,idealized,18.0,14.74,2.65,N2,,1.35,unknown,burning_rate,0.5,mm2/s,hand
+PSI-69,C08H502,Heptane,liquid,idealized,24.0,10.28,2.47,N2,,2.5,unknown,burning_rate,0.56,mm2/s,hand
+PSI-69,C08H601,Heptane,liquid,idealized,24.0,10.29,2.47,N2,,2.88,unknown,burning_rate,0.55,mm2/s,hand
+PSI-69,C08M501,Methanol,liquid,idealized,24.0,10.38,2.49,N2,,4.53,extinguished,burning_rate,0.46,mm2/s,hand
+PSI-69,C08M601,Methanol,liquid,idealized,24.0,10.38,2.49,N2,,3.02,extinguished,burning_rate,0.52,mm2/s,hand
+PSI-69,C09H501,Heptane,liquid,idealized,23.0,10.32,2.37,N2,,3.32,extinguished,burning_rate,0.5,mm2/s,hand
+PSI-69,C09H601,Heptane,liquid,idealized,23.0,10.33,2.38,N2,,2.07,unknown,burning_rate,0.57,mm2/s,hand
+PSI-69,C02H101,Heptane,liquid,idealized,19.0,14.67,2.79,N2,,3.4,extinguished,burning_rate,0.41,mm2/s,hand
+PSI-69,C02H201,Heptane,liquid,idealized,19.0,14.68,2.79,N2,,2.48,extinguished,burning_rate,0.49,mm2/s,hand
+PSI-69,C02H202,Heptane,liquid,idealized,19.0,14.68,2.79,N2,,1.64,unknown,burning_rate,0.54,mm2/s,hand
+PSI-69,C09M501,Methanol,liquid,idealized,23.0,10.33,2.38,N2,,3.72,extinguished,burning_rate,0.53,mm2/s,hand
+PSI-69,C09M502,Methanol,liquid,idealized,23.0,10.35,2.38,N2,,3.42,extinguished,burning_rate,0.51,mm2/s,hand
+PSI-69,C09M601,Methanol,liquid,idealized,23.0,10.35,2.38,N2,,2.8,extinguished,burning_rate,0.51,mm2/s,hand
+PSI-69,C09M701,Methanol,liquid,idealized,23.0,10.37,2.39,N2,,2.47,extinguished,burning_rate,0.52,mm2/s,hand
+PSI-69,C02M101,Methanol,liquid,idealized,19.0,14.66,2.79,N2,,3.38,extinguished,burning_rate,0.47,mm2/s,hand
+PSI-69,C02M201,Methanol,liquid,idealized,19.0,14.66,2.79,N2,,2.47,extinguished,burning_rate,0.46,mm2/s,hand
+PSI-69,C03M501,Methanol,liquid,idealized,18.0,14.72,2.65,N2,,3.77,extinguished,burning_rate,0.42,mm2/s,hand
+PSI-69,C03M601,Methanol,liquid,idealized,18.0,14.79,2.66,N2,,2.74,extinguished,burning_rate,0.5,mm2/s,hand
+PSI-69,C03M701,Methanol,liquid,idealized,18.0,14.8,2.66,N2,,1.76,extinguished,burning_rate,0.46,mm2/s,hand
+PSI-69,C04M101,Methanol,liquid,idealized,17.0,14.69,2.5,N2,,3.46,extinguished,burning_rate,0.39,mm2/s,hand
+PSI-69,C04M201,Methanol,liquid,idealized,17.0,14.68,2.5,N2,,2.77,extinguished,burning_rate,0.4,mm2/s,hand
+PSI-69,C04H101,Heptane,liquid,idealized,17.0,14.54,2.47,N2,,3.76,extinguished,burning_rate,0.29,mm2/s,hand
+PSI-69,C04H201,Heptane,liquid,idealized,17.0,14.55,2.47,N2,,2.9,extinguished,burning_rate,0.36,mm2/s,hand
+PSI-69,C01H501,Heptane,liquid,idealized,20.0,14.67,2.93,N2,,3.06,extinguished,burning_rate,0.52,mm2/s,hand
+PSI-69,C01H601,Heptane,liquid,idealized,20.0,14.69,2.94,N2,,3.04,extinguished,burning_rate,0.49,mm2/s,hand
+PSI-69,C01H701,Heptane,liquid,idealized,20.0,14.7,2.94,N2,,2.12,unknown,burning_rate,0.53,mm2/s,hand
+PSI-69,C01M501,Methanol,liquid,idealized,20.0,14.58,2.92,N2,,3.37,extinguished,burning_rate,0.49,mm2/s,hand
+PSI-69,C01M602,Methanol,liquid,idealized,20.0,14.62,2.92,N2,,2.57,extinguished,burning_rate,0.47,mm2/s,hand
+PSI-69,C01M603,Methanol,liquid,idealized,20.0,14.64,2.93,N2,,2.4,extinguished,burning_rate,0.48,mm2/s,hand
+PSI-69,N01M101,Methanol,liquid,idealized,21.0,14.7,3.09,N2,,3.3,extinguished,burning_rate,0.47,mm2/s,hand
+PSI-69,N01M201,Methanol,liquid,idealized,21.0,14.73,3.09,N2,,2.75,extinguished,burning_rate,0.52,mm2/s,hand
+PSI-69,N01H101,Heptane,liquid,idealized,21.0,14.63,3.07,N2,,3.56,unknown,burning_rate,0.43,mm2/s,hand
+PSI-69,N01H102,Heptane,liquid,idealized,21.0,14.64,3.07,N2,,3.58,unknown,burning_rate,0.42,mm2/s,hand
+PSI-69,N01H201,Heptane,liquid,idealized,21.0,14.7,3.09,N2,,2.96,unknown,burning_rate,0.5,mm2/s,hand
+PSI-69,N01H202,Heptane,liquid,idealized,21.0,14.75,3.1,N2,,2.72,burned,burning_rate,0.54,mm2/s,hand
+PSI-69,N01H301,Heptane,liquid,idealized,21.0,14.75,3.1,N2,,2.92,burned,burning_rate,0.69,mm2/s,hand
+PSI-69,N02H101,Heptane,liquid,idealized,16.0,14.69,2.35,N2,,3.34,extinguished,burning_rate,0.34,mm2/s,hand
+PSI-69,N02H201,Heptane,liquid,idealized,16.0,14.69,2.35,N2,,,extinguished,,,,hand
+PSI-69,N02H203,Heptane,liquid,idealized,16.0,14.69,2.35,N2,,2.52,extinguished,burning_rate,0.42,mm2/s,hand
+PSI-69,N03H101,Heptane,liquid,idealized,15.0,14.77,2.22,N2,,2.55,extinguished,burning_rate,0.37,mm2/s,hand
+PSI-69,N04H101,Heptane,liquid,idealized,14.0,14.69,2.06,N2,,4.16,extinguished,burning_rate,0.24,mm2/s,hand
+PSI-69,N04H201,Heptane,liquid,idealized,14.0,14.69,2.06,N2,,1.83,extinguished,burning_rate,0.39,mm2/s,hand
+PSI-69,N04M101,Methanol,liquid,idealized,14.0,14.65,2.05,N2,,3.5,extinguished,burning_rate,0.3,mm2/s,hand
+PSI-69,N04M201,Methanol,liquid,idealized,14.0,14.66,2.05,N2,,2.67,extinguished,burning_rate,0.38,mm2/s,hand
+PSI-69,N05M101,Methanol,liquid,idealized,13.0,14.68,1.91,N2,,3.46,extinguished,burning_rate,0.36,mm2/s,hand
+PSI-69,N05M201,Methanol,liquid,idealized,13.0,14.71,1.91,N2,,2.75,extinguished,burning_rate,0.35,mm2/s,hand
+PSI-69,N06M101,Methanol,liquid,idealized,12.0,14.73,1.77,N2,,2.6,extinguished,burning_rate,0.36,mm2/s,hand
+PSI-69,N06M201,Methanol,liquid,idealized,12.0,14.73,1.77,N2,,1.94,extinguished,burning_rate,0.35,mm2/s,hand
+PSI-69,N06M202,Methanol,liquid,idealized,12.0,14.77,1.77,N2,,1.84,extinguished,burning_rate,0.38,mm2/s,hand
+PSI-69,H01M102,Methanol,liquid,idealized,20.0,14.68,2.94,N2,,2.91,extinguished,burning_rate,0.51,mm2/s,hand
+PSI-69,H01M104,Methanol,liquid,idealized,20.0,14.69,2.94,N2,,,extinguished,,,,hand
+PSI-69,H01H102,Heptane,liquid,idealized,20.0,14.61,2.92,N2,,2.25,burned,burning_rate,0.57,mm2/s,hand
+PSI-69,H02M101,Methanol,liquid,idealized,19.0,14.57,2.77,N2,,2.78,extinguished,burning_rate,0.57,mm2/s,hand
+PSI-69,H03M101,Methanol,liquid,idealized,18.0,14.68,2.64,N2,,2.79,extinguished,burning_rate,0.51,mm2/s,hand
+PSI-69,H03M201,Methanol,liquid,idealized,18.0,14.7,2.65,N2,,2.95,extinguished,burning_rate,0.53,mm2/s,hand
+PSI-69,N01H401,Heptane,liquid,idealized,21.0,14.84,3.12,N2,,3.32,extinguished,burning_rate,0.52,mm2/s,hand
+PSI-69,N01H502,Heptane,liquid,idealized,21.0,14.85,3.12,N2,,2.39,unknown,burning_rate,0.57,mm2/s,hand
+PSI-69,N01H601,Heptane,liquid,idealized,21.0,14.87,3.12,N2,,3.65,extinguished,burning_rate,0.57,mm2/s,hand
+PSI-69,H02H101,Heptane,liquid,idealized,19.0,14.67,2.79,N2,,2.59,unknown,burning_rate,0.54,mm2/s,hand
+PSI-69,H03H101,Heptane,liquid,idealized,18.0,14.77,2.66,N2,,3.52,extinguished,burning_rate,0.41,mm2/s,hand
+PSI-69,H03H201,Heptane,liquid,idealized,18.0,14.81,2.67,N2,,2.3,burned,burning_rate,0.49,mm2/s,hand
+PSI-69,H03H202,Heptane,liquid,idealized,18.0,14.82,2.67,N2,,2.27,burned,burning_rate,0.51,mm2/s,hand
+PSI-69,H04H101,Heptane,liquid,idealized,17.0,14.68,2.5,N2,,2.85,extinguished,burning_rate,0.46,mm2/s,hand
+PSI-69,H04H201,Heptane,liquid,idealized,17.0,14.68,2.5,N2,,2.12,extinguished,burning_rate,0.59,mm2/s,hand
+PSI-69,H04H302,Heptane,liquid,idealized,17.0,14.69,2.5,N2,,,unknown,,,,hand
+PSI-69,H04H303,Heptane,liquid,idealized,17.0,14.69,2.5,N2,,1.61,burned,burning_rate,0.91,mm2/s,hand
+PSI-69,H04M101,Methanol,liquid,idealized,17.0,14.58,2.48,N2,,2.99,extinguished,burning_rate,0.49,mm2/s,hand
+PSI-69,H04M202,Methanol,liquid,idealized,17.0,14.64,2.49,N2,,2.9,extinguished,burning_rate,0.51,mm2/s,hand
+PSI-69,H05M102,Methanol,liquid,idealized,16.0,14.69,2.35,N2,,3.4,extinguished,burning_rate,0.51,mm2/s,hand
+PSI-69,H05M202,Methanol,liquid,idealized,16.0,14.72,2.36,N2,,,extinguished,,,,hand
+PSI-69,H05H103,Heptane,liquid,idealized,16.0,14.66,2.35,N2,,1.49,extinguished,burning_rate,0.6,mm2/s,hand
+PSI-69,H06M102,Methanol,liquid,idealized,15.0,14.61,2.19,N2,,3.67,extinguished,burning_rate,0.43,mm2/s,hand
+PSI-69,H06M201,Methanol,liquid,idealized,15.0,14.63,2.19,N2,,2.52,extinguished,burning_rate,0.56,mm2/s,hand
+PSI-69,H07M101,Methanol,liquid,idealized,14.0,14.68,2.06,N2,,2.44,extinguished,burning_rate,0.56,mm2/s,hand
+PSI-69,H07M202,Methanol,liquid,idealized,14.0,14.69,2.06,N2,,1.88,extinguished,burning_rate,0.58,mm2/s,hand
+PSI-69,H08M101,Methanol,liquid,idealized,13.0,14.76,1.92,N2,,3.56,extinguished,burning_rate,0.51,mm2/s,hand
+PSI-69,H10H101,Heptane,liquid,idealized,24.0,10.33,2.48,N2,,3.78,extinguished,burning_rate,0.72,mm2/s,hand
+PSI-69,H11H101,Heptane,liquid,idealized,23.0,10.29,2.37,N2,,2.8,burned,burning_rate,0.71,mm2/s,hand
+PSI-69,H10M101,Methanol,liquid,idealized,24.0,10.33,2.48,N2,,2.82,extinguished,burning_rate,0.62,mm2/s,hand
+PSI-69,H10M102,Methanol,liquid,idealized,24.0,10.34,2.48,N2,,2.79,unknown,burning_rate,0.7,mm2/s,hand
+PSI-69,H11M101,Methanol,liquid,idealized,23.0,10.28,2.36,N2,,2.45,extinguished,burning_rate,0.6,mm2/s,hand
+PSI-69,H11M102,Methanol,liquid,idealized,23.0,10.28,2.36,N2,,2.61,unknown,burning_rate,0.73,mm2/s,hand
+PSI-69,H12M101,Methanol,liquid,idealized,21.0,10.29,2.16,N2,,3.22,extinguished,burning_rate,0.56,mm2/s,hand
+PSI-69,H12M102,Methanol,liquid,idealized,21.0,10.27,2.16,N2,,3.25,extinguished,burning_rate,0.65,mm2/s,hand
+PSI-69,H12M201,Methanol,liquid,idealized,21.0,10.27,2.16,N2,,2.67,extinguished,burning_rate,0.7,mm2/s,hand
+PSI-69,H12H101,Heptane,liquid,idealized,21.0,10.24,2.15,N2,,3.23,extinguished,burning_rate,0.67,mm2/s,hand
+PSI-69,H12H201,Heptane,liquid,idealized,21.0,10.23,2.15,N2,,2.86,extinguished,burning_rate,0.7,mm2/s,hand
+PSI-69,H13H101,Heptane,liquid,idealized,20.0,10.3,2.06,N2,,3.69,extinguished,burning_rate,0.61,mm2/s,hand
+PSI-69,H13H201,Heptane,liquid,idealized,20.0,10.29,2.06,N2,,3.08,extinguished,burning_rate,0.67,mm2/s,hand
+PSI-69,H13M102,Methanol,liquid,idealized,20.0,10.2,2.04,N2,,3.87,extinguished,burning_rate,0.6,mm2/s,hand
+PSI-69,H13M201,Methanol,liquid,idealized,20.0,10.21,2.04,N2,,2.95,extinguished,burning_rate,0.63,mm2/s,hand
+PSI-69,H14M101,Methanol,liquid,idealized,18.0,10.3,1.85,N2,,3.5,extinguished,burning_rate,0.59,mm2/s,hand
+PSI-69,H14M201,Methanol,liquid,idealized,18.0,10.3,1.85,N2,,2.7,extinguished,burning_rate,0.63,mm2/s,hand
+PSI-69,H14M202,Methanol,liquid,idealized,18.0,10.31,1.86,N2,,1.84,extinguished,burning_rate,0.62,mm2/s,hand
+PSI-69,H14H101,Heptane,liquid,idealized,18.0,10.21,1.84,N2,,2.27,extinguished,burning_rate,0.71,mm2/s,hand
+PSI-69,H14H201,Heptane,liquid,idealized,18.0,10.25,1.84,N2,,1.86,extinguished,burning_rate,0.77,mm2/s,hand
+PSI-69,H15H101,Heptane,liquid,idealized,17.0,10.29,1.75,He,,2.22,extinguished,burning_rate,0.76,mm2/s,hand
+PSI-69,H15H201,Heptane,liquid,idealized,17.0,10.3,1.75,He,,1.61,burned,burning_rate,1.06,mm2/s,hand
+PSI-69,H15M102,Methanol,liquid,idealized,17.0,10.26,1.74,He,,2.79,extinguished,burning_rate,0.63,mm2/s,hand
+PSI-69,H15M201,Methanol,liquid,idealized,17.0,10.28,1.75,He,,2.68,extinguished,burning_rate,0.66,mm2/s,hand
+PSI-69,H19H101,Heptane,liquid,idealized,21.0,14.79,3.11,N2,,3.54,extinguished,burning_rate,0.55,mm2/s,hand
+PSI-69,H19H201,Heptane,liquid,idealized,21.0,14.82,3.11,N2,,2.82,extinguished,burning_rate,0.65,mm2/s,hand
+PSI-99,2-1,Silicone,solid,cabin_material,21.5,,,,20.0,290.0,no_ignition,,,,hand
+PSI-99,2-2,Silicone,solid,cabin_material,22.1,,,,20.0,290.0,no_ignition,,,,hand
+PSI-99,2-3,Silicone,solid,cabin_material,22.1,,,,20.0,290.0,no_ignition,,,,hand
+PSI-99,2-4,Silicone,solid,cabin_material,22.1,,,,20.0,290.0,no_ignition,,,,hand
+PSI-99,2-5,Cotton-Fiberglass (SIBAL),solid,cabin_material,22.1,,,,20.0,290.0,burned,spread_rate,2.1,mm/s,hand
+PSI-99,2-6,,solid,cabin_material,22.1,,,,20.0,290.0,burned,spread_rate,2.6,mm/s,hand
+PSI-99,2-7,PMMA & Nomex,solid,cabin_material,22.1,,,,20.0,240.0,burned,,,,hand
+PSI-99,2-8,PMMA,solid,cabin_material,22.05,,,,20.0,290.0,burned,spread_rate,4.0,mm/s,hand
+PSI-99,2-9,,solid,cabin_material,21.95,,,,20.0,290.0,burned,spread_rate,4.0,mm/s,hand
+PSI-99,F1C1/F1C2,Pre-test flow visulation data for sample 2-1,solid,cabin_material,,,,,,,,,,,hand
+PSI-99,F2C1/F2C2,Pre-test flow visulation data for sample 2-2,solid,cabin_material,,,,,,,,,,,hand
+PSI-99,Note 1 Derived from measured CO2 production and referenced to initial O2 concentration reported by ISS.,,solid,cabin_material,,,,,,,,,,,hand
+PSI-99,Note 2 The PMMA portion was completely consumed but the Nomex was not ignited.,,solid,cabin_material,,,,,,,,,,,hand
+PSI-99,Note 3 This is the length of fuel with significant visible damage.,,solid,cabin_material,,,,,,,,,,,hand
+PSI-99,Note 4 The flames remain anchored at the base of the sample which has a very slow regression rate (0.01 to 0.04 mm/s),,solid,cabin_material,,,,,,,,,,,hand
