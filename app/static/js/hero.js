@@ -23,8 +23,8 @@ export default function (component) {
     root.style.setProperty("--muted", d.colors.muted);
     root.style.setProperty("--accent", d.colors.accent);
     root.style.setProperty("--border", d.colors.border);
-    root.style.setProperty("--bg1", d.dark ? "#111a2e" : "#fffaf3");
-    root.style.setProperty("--bg2", d.dark ? "#0d1220" : "#f6f1e8");
+    root.style.setProperty("--bg1", d.colors.paper2 || d.colors.panel);
+    root.style.setProperty("--bg2", d.colors.bg);
     root.querySelector(".cf-h-tag").textContent = d.tag;
   };
   applyText(data);
@@ -32,6 +32,23 @@ export default function (component) {
   const S = { data };
   parentElement.__cfState = S;
   let stop = false, cleanup = () => {};
+
+  // Typewriter reveal of the headline, once per mount (the full text is already in the
+  // HTML, so it reads without JS; skipped when motion is reduced).
+  let typing = 0;
+  const h1 = root.querySelector("h1");
+  if (h1 && !(data.reduced || REDUCED())) {
+    const full = h1.textContent.trim();
+    const caret = document.createElement("span"); caret.className = "cf-caret";
+    const text = document.createTextNode("");
+    h1.textContent = ""; h1.append(text, caret); h1.setAttribute("aria-label", full);
+    let i = 0;
+    typing = setInterval(() => {
+      i = Math.min(full.length, i + 1 + (Math.random() < 0.25 ? 1 : 0));
+      text.data = full.slice(0, i);
+      if (i >= full.length) { clearInterval(typing); typing = 0; }
+    }, 34);
+  }
 
   import(THREE_URL).then((THREE) => {
     if (stop) return;
@@ -84,7 +101,7 @@ export default function (component) {
       const light = !d.dark;
       const wantBlend = light ? THREE.NormalBlending : THREE.AdditiveBlending;
       if (fm.blending !== wantBlend) { fm.blending = wantBlend; fm.opacity = light ? 0.85 : 1; fm.needsUpdate = true; }
-      sm.color.set(light ? 0x8a8f99 : 0xffffff);
+      sm.color.set(light ? 0x8a8170 : 0xece2cb);  // dust specks on the film
       const bright = Math.min(1.25, 0.45 + o2 / 60);
       const stretch = 1 + 1.6 * Math.sqrt(g);      // sphere in 0 g, teardrop under gravity
       const rise = 0.9 * Math.sqrt(g);
@@ -116,5 +133,5 @@ export default function (component) {
     cleanup = () => { cancelAnimationFrame(raf); ro.disconnect(); io.disconnect(); renderer.dispose(); fg.dispose(); sg.dispose(); tex.dispose(); };
   }).catch(() => { /* static hero text stays */ });
 
-  return () => { stop = true; cleanup(); delete parentElement.__cfState; };
+  return () => { stop = true; if (typing) clearInterval(typing); cleanup(); delete parentElement.__cfState; };
 }

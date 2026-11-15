@@ -58,7 +58,7 @@ export default function (component) {
       p.setup = () => {
         const c = p.createCanvas(W(), H);
         c.elt.style.visibility = "visible";  // p5 un-hides canvases via document; we live in a shadow root
-        p.textFont("Inter");
+        p.textFont("Courier Prime");
         if (state.data.reduced || REDUCED()) p.noLoop();
       };
 
@@ -68,8 +68,10 @@ export default function (component) {
         p.background(C.panel);
         // grid + axes
         p.stroke(C.grid); p.strokeWeight(1);
+        p.drawingContext.setLineDash([2, 4]);  // graph paper
         for (let v = 0; v <= XMAX; v += 5) p.line(X(v), Y(0), X(v), Y(YMAX));
         for (let v = 0; v <= YMAX; v += 20) p.line(X(0), Y(v), X(XMAX), Y(v));
+        p.drawingContext.setLineDash([]);
         p.noStroke(); p.fill(C.muted); p.textSize(11);
         p.textAlign(p.CENTER, p.TOP);
         for (let v = 0; v <= XMAX; v += 5) p.text(v, X(v), Y(0) + 6);
@@ -90,7 +92,7 @@ export default function (component) {
         }
         // legend for the curves (bottom-right, clear of the data)
         p.noStroke(); p.fill(C.muted); p.textSize(10); p.textAlign(p.RIGHT, p.BOTTOM);
-        p.text("dashed curves: equal O₂ partial pressure 2.8 · 3.1 · 4.3 psi", X(XMAX) - 4, Y(0) - 6);
+        p.text("dashed: equal ppO₂ 2.8 · 3.1 · 4.3 psi", X(XMAX) - 4, Y(0) - 6);
 
         // real test runs
         p.noStroke();
@@ -124,7 +126,7 @@ export default function (component) {
         if (!state.dragging) {
           p.fill(C.muted); p.textSize(11); p.textAlign(p.LEFT, p.TOP);
           p.textAlign(p.LEFT, p.BOTTOM);
-          p.text("Drag the orange point, or click a preset star", M.l + 8, Y(0) - 6);
+          p.text("Drag the orange point, or click a preset star", M.l + 8, Y(0) - 22);  // own line, above the curve legend
         }
       };
 

@@ -126,9 +126,9 @@ Not standardized on purpose: BASS (run log, no conditions), DAFT (dust sampling,
 | Q&A retrieval | `sentence-transformers` (`all-MiniLM-L6-v2`) + FAISS, **hybrid with keyword scoring** (70/30); falls back to NumPy, then keyword-only |
 | Q&A answers | Optional Google Gemini via a free **AI Studio** key (`GEMINI_API_KEY`, `GEMINI_MODEL`); without a key the Ask page shows the source passages with DOIs |
 | Ranking | plain Python, transparent weighted score |
-| Charts | Plotly (palette from the dataviz reference palette, validated light + dark) |
+| Charts | Plotly, styled by `components.style_figure()` (typewriter text, dotted graph-paper grid); series from `components.series_colors()` (ink blue, rust, verdigris, ochre; checked with the dataviz `validate_palette.js` on the dark background) |
 | Animations | Streamlit **Custom Components v2** (`st.components.v2.component`) with **p5.js 1.11.1** and **three.js 0.170.0** from cdn.jsdelivr.net; static fallback offline; honours `prefers-reduced-motion` |
-| App | Streamlit 1.67 with `st.navigation` router, theme in `.streamlit/config.toml` |
+| App | Streamlit 1.67 with `st.navigation(position="top")` router; theme colours/fonts in `.streamlit/config.toml`, the look in `app/static/css/archive.css` |
 | Hosting | Streamlit Community Cloud (fallback: Hugging Face Spaces) |
 
 **Hard rule (kept):** all AI outputs are generated once, saved to files and committed. The deployed app runs with **no API key**; only the Ask page can use one.
@@ -147,12 +147,12 @@ cool-flames/
   README.md               what it is, how to run, data rules, all 24 DOIs, AI-use note
   requirements.txt        pinned deploy deps;  requirements-dev.txt adds pytest
   .env.example            GEMINI_API_KEY=, GEMINI_MODEL=   (Ask page only)
-  .streamlit/config.toml  theme (dark-first + light), fonts, toolbarMode=minimal
+  .streamlit/config.toml  theme (forced dark "microfiche"), fonts, toolbarMode=minimal
   docs/
     DEMO_SCRIPT.md        under-2-minute demo, real numbers
     SUBMISSION.md         submission form text (links still placeholders)
   app/                    Streamlit (Ramneek)
-    Home.py               ENTRY POINT + router: page config, logo, CSS, sidebar habitat picker, st.navigation
+    Home.py               ENTRY POINT + router: page config, logo, CSS, sidebar habitat picker, top folder-tab st.navigation
     views/                one file per page (moved from app/pages/)
       home.py             hero (three.js), stats, "Start here", habitat insight
       scenario.py         habitat designer (p5.js, two-way) + ranking tabs, weights, warnings
@@ -167,7 +167,7 @@ cool-flames/
       __init__.py         theme tokens, CSS, page_header, stat_row, cards, warning_card, sidebar
       data.py             st.cache_data wrappers around core.loaders; habitats() incl. custom
       interactive.py      registers the 3 v2 components (hero, flame_lab, habitat_designer)
-    static/               logo.svg, icon.svg, js/ (hero.js, flame_lab.js, habitat_designer.js, interactive.css)
+    static/               logo.svg, icon.svg (seal), css/archive.css (mission-archive look), js/ (hero.js, flame_lab.js, habitat_designer.js, interactive.css)
   core/                   pure logic, no Streamlit imports
     scenarios.py          HABITATS (+gravity_g), resolve_habitat(), SCENARIOS (+short, icon), PHASE_AREA/ICONS/LABELS, HISTORY
     ranking.py            rank(); accepts a habitat key or dict
@@ -195,7 +195,7 @@ cool-flames/
     ai/                   investigations.json, ai_fields.json, batch_input.jsonl, index/
     manual/               earth_vs_space.csv (8 sourced rows)
     fake/                 stub data for app development
-  tests/                  pytest (129): units, schema, build_tests parsing, ranking, warnings, Q&A, dossier, every app page
+  tests/                  pytest (149): units, schema, build_tests parsing, ranking, warnings, Q&A, dossier, archive theme, every app page
 ```
 
 `core/` must not import Streamlit. `app/` imports from `core/` and reads files from `data/`. The app never calls the PSI endpoint.
@@ -303,9 +303,11 @@ Five rules as specified (detector blind spot, hidden hazard, no data yet for par
 
 ## 9. App (as built, `app/`)
 
-**Shell (`app/Home.py`):** logo, theme CSS, **sidebar habitat picker + atmosphere card** (O2, psi, ppO2, gravity, partial-gravity note) on every page, grouped navigation. Footer on every page: research tool disclaimer, NASA PSI (CC0), every claim links its DOI. Theme: "mission control", dark-first navy with flame-orange accent plus a matching light theme (Space Grotesk headings, Inter body).
+**Shell (`app/Home.py`):** seal logo, archive CSS, **sidebar habitat picker + "mission card"** (O2, psi, ppO2, gravity, partial-gravity stamp) on every page, **folder-tab navigation across the top** (one flat page list; folds into the sidebar menu on phones). Footer on every page: "ARCHIVE COPY" stamp, research tool disclaimer, NASA PSI (CC0), every claim links its DOI.
 
-| Nav group | Page (file) | Content |
+**Theme: "mission archive", dark microfiche** (1960s case files on film), forced dark for every visitor (Malay's decision kept). Special Elite (typewriter) headings, Courier Prime body, Jost caps for tabs/labels/numerals; film grain, scan lines and vignette as inline SVG/CSS. Index cards (Investigations), case slips with circled rank numerals (Scenario), case-file folder with tab and paper clip (dossier), film-frame hero with sprocket holes and a typewriter headline. Rubber stamps via `components.stamp()` from a fixed allow-list (NO DATA, UNTESTED, PARTIAL GRAVITY · NO DATA, ILLUSTRATIVE, AI-WRITTEN, VERBATIM, ARCHIVE COPY, 0 RUNS NEARBY, DEMO DATA, FILE PSI-xx); any other word raises, so "safe"/"approved" can never be stamped. Containers get the look through `st.container(key="cfcard_…" / "cfslip_…" / "cfsheet_…" / "cffile_…")`. No NASA logos or insignia.
+
+| Nav group (old grouping; now one row of tabs) | Page (file) | Content |
 |---|---|---|
 | — | Home (`views/home.py`) | three.js animated hero that follows the selected habitat, stat tiles, "Start here" cards, habitat ppO2 insight, Apollo/Mir history |
 | Explore | Scenario Explorer (`views/scenario.py`) | **Habitat designer** (drag a point on O2-vs-pressure; on release Python re-ranks for a "Custom atmosphere"; presets clickable; Orbit/Moon/Mars; exact inputs), scenario pills, phase tabs, weight sliders (sidebar), stacked score chart, result cards, warning cards |
@@ -335,7 +337,7 @@ Five rules as specified (detector blind spot, hidden hazard, no data yet for par
 - Pure functions in `core/`; side effects only in `pipeline/`, `ai/` and `app/`.
 - Cache data loading in the app with `st.cache_data`.
 - Small commits to `main`, messages `area: what changed`, plus the Co-Authored-By line when Claude writes them.
-- `pytest` must pass (129 tests) before every commit.
+- `pytest` must pass (149 tests) before every commit.
 - **Restart `streamlit run app/Home.py` after changing `core/`, `pipeline/`, `.streamlit/config.toml` or `app/static/js/`.** Streamlit only hot-reloads files under `app/`; a stale server raises errors like `TypeError: unhashable type: 'dict'` in `rank()`.
 - Never commit `.env`, `.streamlit/secrets.toml` or API keys.
 - Do not add packages without need; keep the deploy small.
@@ -423,7 +425,7 @@ Links: PSI repository `https://psi.nasa.gov/physci/repo`; NTRS API `https://ntrs
 
 ## 16. Current status and what remains (Sun 15 Nov 2026, ~04:30)
 
-**Built and tested (129 tests pass; all pages load on real and fake data; animations checked in headless Chrome in dark/light, desktop/phone, reduced motion):**
+**Built and tested (149 tests pass; all pages load on real and fake data; animations checked in headless Chrome in dark/light, desktop/phone, reduced motion):**
 - Full data pipeline: 19 tables standardized, spot-checked, ranges built.
 - All 24 investigations summarized and tagged; Earth-vs-space table with verified sources.
 - Ranking, warnings, custom-atmosphere support in `core/`.

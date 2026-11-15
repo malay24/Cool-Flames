@@ -1,5 +1,7 @@
-/* Shared styles for Freefall Fire Atlas interactive components (rendered in a shadow root). */
+/* Shared styles for Freefall Fire Atlas interactive components (rendered in a shadow root).
+   Mission-archive look: square film frame, ink rule, offset shadow, typewriter fallback text. */
 .cf-wrap { position: relative; width: 100%; }
-.cf-wrap canvas { display: block; border-radius: 0.6rem; touch-action: none; }
-.cf-fallback { font-family: Inter, system-ui, sans-serif; font-size: 0.9rem; opacity: 0.75;
-  padding: 1rem; border: 1px dashed currentColor; border-radius: 0.6rem; }
+.cf-wrap canvas { display: block; border-radius: .15rem; touch-action: none;
+  border: 1px solid rgba(169, 157, 133, .35); box-shadow: 3px 3px 0 rgba(0, 0, 0, .4); }
+.cf-fallback { font-family: 'Courier Prime', 'Courier New', monospace; font-size: 0.9rem; opacity: 0.8;
+  padding: 1rem; border: 1px dashed currentColor; border-radius: .15rem; }

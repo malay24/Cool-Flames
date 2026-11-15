@@ -44,7 +44,7 @@ CARDS = [
      "All 24 studies summarized, with fuels, tested conditions, DOIs and Earth-vs-space findings."),
 ]
 for col, page, icon, title, text in CARDS:
-    with col.container(border=True, height="stretch"):
+    with col.container(border=True, height="stretch", key=f"cfsheet_start_{title.replace(' ', '_')}"):
         st.markdown(f"#### {icon} {title}")
         st.markdown(text)
         st.page_link(page, label=f"Open {title}", icon=":material/arrow_forward:")

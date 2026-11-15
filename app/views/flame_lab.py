@@ -12,7 +12,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # app/, for `compo
 import streamlit as st  # noqa: E402
 
 from components import (area_badge, current_habitat, doi_link, footer, page_header,  # noqa: E402
-                        warning_card)
+                        stamp, warning_card)
 from components.data import habitats, load_earth_vs_space, load_investigations  # noqa: E402
 from components.interactive import flame_lab  # noqa: E402
 from core.warnings import get_warnings  # noqa: E402
@@ -61,6 +61,7 @@ page_header("Explore · Flame Lab", "How does a fire behave without gravity?",
             "Change gravity, oxygen and airflow and watch the flame respond. This is an "
             "<b>illustrative model, not a simulation</b>: each rule comes from a cited NASA "
             "result, and the list below shows which experiments actually tested these conditions.")
+stamp("ILLUSTRATIVE")
 
 st.pills("Try this", list(TRIES), key="fl_try", on_change=_apply_try, selection_mode="single")
 

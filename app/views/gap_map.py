@@ -11,8 +11,8 @@ import pandas as pd  # noqa: E402
 import plotly.graph_objects as go  # noqa: E402
 import streamlit as st  # noqa: E402
 
-from components import (current_habitat, demo_badge, footer, is_dark, page_header,  # noqa: E402
-                        stat_row, tokens)
+from components import (SERIES_OTHER, current_habitat, demo_badge, footer,  # noqa: E402
+                        page_header, series_colors, stamp, stat_row, style_figure, tokens)
 from components.data import habitats, load_investigations, load_tests  # noqa: E402
 from core import loaders  # noqa: E402
 
@@ -27,18 +27,18 @@ demo_badge(tests_demo or inv_demo)
 inv_by_id = {i["psi_id"]: i for i in invs}
 HABS = habitats()
 
-# ---- palette (dataviz reference palette; validated light + dark) ----
-DARK = is_dark()
+# ---- palette (components.series_colors: validated, fixed order) ----
 T = tokens()  # page theme (see .streamlit/config.toml)
-INK = {"primary": T["text"], "secondary": T["muted"], "muted": "#8a93a6" if DARK else "#7b7f87",
+INK = {"primary": T["text"], "secondary": T["muted"], "muted": T["muted"],
        "grid": T["grid"], "axis": T["axis"], "surface": T["bg"]}
+S1, S2, S3, S4 = series_colors()
 # Fixed area -> style, so a colour always means the same area (never by rank).
 AREA_STYLE = {
-    "suppression": ("#3987e5" if DARK else "#2a78d6", "circle"),
-    "basic": ("#199e70" if DARK else "#1baf7a", "square"),
-    "prevention": ("#d95926" if DARK else "#eb6834", "diamond"),
-    "detection": ("#9085e9" if DARK else "#6250d6", "triangle-up"),
-    "modelling": ("#898781", "x"),
+    "suppression": (S1, "circle"),
+    "basic": (S3, "square"),
+    "prevention": (S2, "diamond"),
+    "detection": (S4, "triangle-up"),
+    "modelling": (SERIES_OTHER, "x"),
 }
 # psi: exploration habitat, ISS / Moon brief, spacesuit (CLAUDE.md section 9)
 PPO2_LINES = [(2.8, "dot"), (3.1, "dash"), (4.3, "longdash")]
@@ -66,6 +66,8 @@ stat_row([
     (f"Runs near {h['label'].split(' /')[0]}", len(near),
      "Within 0.1 in normalized distance: about 10 O₂ points or 1.5 psi."),
 ])
+if len(near) == 0:
+    stamp("0 RUNS NEARBY")
 
 # ---- figure ----
 fig = go.Figure()
@@ -111,22 +113,17 @@ for key, hab in HABS.items():
         x=hab["pressure_psi"], y=hab["o2_pct"], ax=ax, ay=ay,
         text=f"<b>{hab['label']}</b>" if sel else hab["label"],
         showarrow=True, arrowhead=0, arrowwidth=1, arrowcolor=INK["secondary"],
-        bgcolor=INK["surface"], opacity=0.92, borderpad=3,
+        bgcolor=T["paper2"], bordercolor=T["border"], borderwidth=1, opacity=0.95, borderpad=4,
         font=dict(color=INK["primary"] if sel else INK["secondary"], size=13 if sel else 12),
     )
 
-axis = dict(gridcolor=INK["grid"], linecolor=INK["axis"], zeroline=False, automargin=True,
-            tickfont=dict(color=INK["secondary"]), title_font=dict(color=INK["secondary"]))
 fig.update_layout(
     height=600, margin=dict(l=70, r=20, t=50, b=60),
-    paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
-    font=dict(family="Inter, system-ui, -apple-system, Segoe UI, sans-serif", color=INK["primary"]),
-    xaxis=dict(title="Total pressure (psi)", range=[0, 76], **axis),
-    yaxis=dict(title="O₂ (% by volume)", range=[0, 105], **axis),
-    legend=dict(orientation="h", yanchor="bottom", y=1.01, x=0, title_text="",
-                font=dict(color=INK["secondary"])),
-    hoverlabel=dict(bgcolor=T["panel"], font_color=INK["primary"]),
+    xaxis=dict(title="Total pressure (psi)", range=[0, 76], automargin=True),
+    yaxis=dict(title="O₂ (% by volume)", range=[0, 105], automargin=True),
+    legend=dict(orientation="h", yanchor="bottom", y=1.01, x=0, title_text=""),
 )
+style_figure(fig)
 st.plotly_chart(fig, width="stretch", theme=None)
 
 # ---- reading notes ----

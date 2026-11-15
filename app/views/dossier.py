@@ -15,8 +15,9 @@ import plotly.graph_objects as go  # noqa: E402
 import streamlit as st  # noqa: E402
 
 from ai.dossier import ATTR_WEIGHTS, TEXT_WEIGHT, instruments, people, record_sections  # noqa: E402
-from components import (area_badge, chips, current_habitat, demo_badge, doi_link,  # noqa: E402
-                        dossier_link, fmt_range, footer, is_dark, page_header, stat_row, tokens)
+from components import (SERIES_OTHER, area_badge, chips, current_habitat,  # noqa: E402
+                        demo_badge, doi_link, dossier_link, fmt_range, footer, page_header,
+                        series_colors, stamp, stamp_html, stat_row, style_figure, tokens)
 from components.data import (habitats, load_investigations, load_raw_tables,  # noqa: E402
                              load_record, load_similar, load_table_profile, load_tests)
 from core.ranking import condition_overlap  # noqa: E402
@@ -52,9 +53,11 @@ habs = habitats()
 hab = habs[current_habitat()]
 
 # ---- identity ----
-with st.container(border=True):
+with st.container(border=True, key="cffile_identity"):
+    file_mark = stamp_html(f"FILE {pid}") if re.fullmatch(r"PSI-\d+", pid) else ""
+    st.html(f'<div class="cf-filehead">{file_mark}</div>')
     st.markdown(f"### {inv['name']}")
-    st.markdown(f"{area_badge(inv['area'])} &nbsp; `{pid}` &nbsp; {doi_link(inv.get('doi', ''))}")
+    st.markdown(f"{area_badge(inv['area'])} &nbsp; {doi_link(inv.get('doi', ''))}")
     if inv.get("title") and inv.get("title") != inv.get("name"):
         st.caption(inv["title"])
     dates = " – ".join(d for d in (inv.get("start_date"), inv.get("end_date")) if d)
@@ -81,7 +84,8 @@ stat_row([("Test runs (NASA table)", f"{n_runs:,}" if n_runs else "text only"),
 left, right = st.columns([3, 2], gap="large")
 with left:
     st.subheader("Summary", anchor=False)
-    st.caption("AI-written from this record's own text; check it against the quotes below.")
+    st.html(stamp_html("AI-WRITTEN", "ochre")
+            + '<span class="cf-stamp-note">from this record\'s own text; check it against the quotes below</span>')
     if inv.get("summary_3line"):
         st.markdown(inv["summary_3line"].replace("\n", "  \n"))
     for kf in inv.get("key_findings") or []:
@@ -110,7 +114,7 @@ with right:
 sections = record_sections(record)
 if sections:
     st.subheader("From the NASA record", anchor=False)
-    st.caption("Quoted as written in the PSI record.")
+    st.html(stamp_html("VERBATIM", "ink") + '<span class="cf-stamp-note">quoted as written in the PSI record</span>')
     for tab, (label, text) in zip(st.tabs([s[0] for s in sections]), sections):
         tab.markdown(f"> {text}")
 
@@ -212,11 +216,10 @@ if len(avail) >= 2:
                     index=x_opts.index(x_pref[0]) if x_pref and x_pref[0] in x_opts else 0)
     pts = runs.dropna(subset=[x, y]).copy()
 
-    DARK, T = is_dark(), tokens()
+    T = tokens()
     INK = {"primary": T["text"], "secondary": T["muted"], "grid": T["grid"], "axis": T["axis"],
            "surface": T["bg"]}
-    SLOTS = (["#3987e5", "#d95926", "#199e70", "#c98500"] if DARK
-             else ["#2a78d6", "#eb6834", "#1baf7a", "#eda100"])
+    SLOTS = series_colors()
     SYMBOLS = ["circle", "diamond", "square", "triangle-up", "x"]
     fuel = pts["fuel"].fillna("fuel not reported").astype(str)  # blank stays visible, not "Other"
     top = list(fuel.value_counts().index[:4])
@@ -228,7 +231,7 @@ if len(avail) >= 2:
         sub = pts[pts["group"] == g]
         fig.add_trace(go.Scatter(
             x=sub[x], y=sub[y], mode="markers", name=g,
-            marker=dict(color=SLOTS[n] if n < 4 else "#898781", symbol=SYMBOLS[n], size=9,
+            marker=dict(color=SLOTS[n] if n < 4 else SERIES_OTHER, symbol=SYMBOLS[n], size=9,
                         opacity=0.85, line=dict(color=INK["surface"], width=2)),
             customdata=sub[["run_id", "outcome"]].astype(str).values,
             hovertemplate=(f"<b>{g}</b> · run %{{customdata[0]}}<br>{FIELDS[x]}: %{{x:.3g}}<br>"
@@ -241,15 +244,11 @@ if len(avail) >= 2:
                                  marker=dict(symbol="star", size=18, color=INK["primary"],
                                              line=dict(color=INK["surface"], width=2)),
                                  hovertemplate=f"<b>{hab['label']}</b><extra></extra>"))
-    axis = dict(gridcolor=INK["grid"], linecolor=INK["axis"], zeroline=False, automargin=True,
-                tickfont=dict(color=INK["secondary"]), title_font=dict(color=INK["secondary"]))
     fig.update_layout(
         height=420, margin=dict(l=10, r=10, t=36, b=10), showlegend=len(fig.data) > 1,
-        paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
-        font=dict(family="Inter, system-ui, -apple-system, Segoe UI, sans-serif", color=INK["primary"]),
-        legend=dict(orientation="h", yanchor="bottom", y=1.02, x=0, font=dict(color=INK["secondary"])),
-        hoverlabel=dict(bgcolor=T["panel"], font_color=INK["primary"]),
-        xaxis=dict(title=FIELDS[x], **axis), yaxis=dict(title=FIELDS[y], **axis))
+        legend=dict(orientation="h", yanchor="bottom", y=1.02, x=0),
+        xaxis=dict(title=FIELDS[x], automargin=True), yaxis=dict(title=FIELDS[y], automargin=True))
+    style_figure(fig)
     st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
     st.caption(f"{len(pts)} of {len(runs)} standardized runs have both values. Blank cells are "
                "left out, never set to 0. Colour and shape mark the fuel; the table below has every value.")
@@ -263,7 +262,7 @@ st.caption(f"Score = {TEXT_WEIGHT:.0%} similarity of the record text (MiniLM emb
 similar = load_similar(pid)
 if similar:
     for col, s in zip(st.columns(len(similar)), similar):
-        with col.container(border=True):
+        with col.container(border=True, key=f"cfsheet_sim_{s['psi_id']}"):
             st.markdown(f"**{s['name']}**  \n{area_badge(s['area'])} &nbsp; `{s['psi_id']}`")
             st.progress(min(1.0, s["score"]), text=f"Similarity {s['score']:.2f}")
             reasons = s["reasons"] + [f"text similarity {s['text_similarity']:.2f}"]

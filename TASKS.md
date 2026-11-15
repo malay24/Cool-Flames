@@ -33,6 +33,16 @@ This repo is built by two people, each driving their own Claude Code, committing
 
 ## Change log (approach changes & decisions — newest first)
 
+### Sun 15 Nov 2026, ~21:30 — Ramneek session 8: vintage "mission archive" redesign (Claude Code, uncommitted)
+
+- **Why:** Ramneek wanted a vintage, distinctive UI. Chosen: **1960s mission archive on dark "microfiche"**, keeping Malay's forced-dark decision (one fixed look for every visitor). Built as a later improvement, **not committed or pushed** (Ramneek commits manually; the submitted app is unchanged until then).
+- **Theme:** `.streamlit/config.toml` (film colours, Special Elite / Courier Prime, `baseRadius` 0.15rem); `THEMES` in `app/components/__init__.py` mirrors it; the look is the new **`app/static/css/archive.css`** (loaded by `inject_css()`, `:root --cf-*` variables appended after its `@import`).
+- **Components:** folder-tab top navigation (`st.navigation(position="top")`, flat page list, icons hidden on tabs); index cards, case slips, case-file folder, archive sheets via keyed containers; mission card in the sidebar; file-reference page headers; typed chips; circled rank numerals; `stamp()` with an allow-list (test: banned words raise).
+- **Charts:** `style_figure()` (typewriter text, dotted graph-paper grid, ink axes) on the Scenario, Gap map and dossier charts; `series_colors()` replaces four copies of the palette. Dark series `#4f8bd0, #d8673f, #3f9c74, #bb8316` **pass all `validate_palette.js` checks** on `#1c1a16` (first try `#6f9fd0,…,#d4a63c` failed lightness/chroma/normal-vision; ochre darkened until it passed).
+- **Animations:** hero is a film frame with sprocket holes, sepia-toned three.js flame, dust-speck stars, typewriter headline (skipped with reduced motion; checked: full text, no caret); hero 300 → 330 px so the habitat tag line fits. p5 sketches: Courier Prime labels, dotted graph-paper grids; designer captions moved to separate lines (Courier is wider).
+- **Logo/icon:** seal with the flame and a typed wordmark (system Courier, since `st.logo` is an `<img>`).
+- **Tests: 149 pass** (+ `tests/test_archive_theme.py`). Checked in headless Chrome: every page at 1440 px, Home and Investigations at 390 px; no JS errors, no horizontal overflow; partial-gravity stamp appears for the Moon base.
+
 ### Sun 15 Nov 2026, ~14:20 — Ramneek session 7: app renamed to "Freefall Fire Atlas" (Claude Code)
 
 - **Why:** "Cool Flames" collides with NASA's own *Cool Flames Investigation* (CFI, PSI-39) and CFI-G (PSI-159), both listed in the app, so it could read as that experiment or as an official NASA product; it also suggested the tool covers only the cool-flame effect. The new name echoes the challenge title ("Flame in Freefall"); "atlas" fits the gap map and the dossiers. Subtitle "Fire Scenario Explorer" unchanged.

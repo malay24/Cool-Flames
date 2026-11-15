@@ -24,22 +24,19 @@ def view(file: str, title: str, icon: str, url: str | None = None, default: bool
     return st.Page(str(APP / "views" / file), title=title, icon=icon, url_path=url, default=default)
 
 
-PAGES = {
-    "": [view("home.py", "Home", ":material/rocket_launch:", default=True)],
-    "Explore": [
-        view("scenario.py", "Scenario Explorer", ":material/explore:", "scenario"),
-        view("gap_map.py", "Gap map", ":material/scatter_plot:", "gap-map"),
-        view("flame_lab.py", "Flame Lab", ":material/local_fire_department:", "flame-lab"),
-        view("overview.py", "Investigations", ":material/library_books:", "overview"),
-        view("dossier.py", "Study dossier", ":material/description:", "dossier"),
-    ],
-    "Tools": [
-        view("compare.py", "Compare", ":material/compare_arrows:", "compare"),
-        view("ask.py", "Ask", ":material/forum:", "ask"),
-    ],
-    "About": [view("earth_benefits.py", "Earth benefits", ":material/public:", "earth-benefits")],
-}
+# One flat list: rendered as manila folder tabs across the top (styled in archive.css).
+PAGES = [
+    view("home.py", "Home", ":material/rocket_launch:", default=True),
+    view("scenario.py", "Scenarios", ":material/explore:", "scenario"),
+    view("gap_map.py", "Gap map", ":material/scatter_plot:", "gap-map"),
+    view("flame_lab.py", "Flame Lab", ":material/local_fire_department:", "flame-lab"),
+    view("overview.py", "Investigations", ":material/library_books:", "overview"),
+    view("dossier.py", "Dossier", ":material/description:", "dossier"),
+    view("compare.py", "Compare", ":material/compare_arrows:", "compare"),
+    view("ask.py", "Ask", ":material/forum:", "ask"),
+    view("earth_benefits.py", "Earth", ":material/public:", "earth-benefits"),
+]
 
-nav = st.navigation(PAGES)
+nav = st.navigation(PAGES, position="top")
 habitat_sidebar()
 nav.run()

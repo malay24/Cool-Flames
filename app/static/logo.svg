@@ -1,11 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 64" width="430" height="64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 64" width="410" height="64">
+  <!-- Mission-archive seal + typed wordmark. System Courier only: st.logo renders an <img>,
+       which cannot load web fonts. -->
   <defs>
     <linearGradient id="g" x1="0" y1="1" x2="0" y2="0">
-      <stop offset="0" stop-color="#d9541e"/>
-      <stop offset="1" stop-color="#f7a35c"/>
+      <stop offset="0" stop-color="#c4542c"/>
+      <stop offset="1" stop-color="#e8a05e"/>
     </linearGradient>
   </defs>
-  <path d="M32 4c4 10 14 16 14 30a14 14 0 0 1-28 0c0-7 3-11 7-15 0 6 3 9 6 9-2-9 1-17 1-24z" fill="url(#g)"/>
-  <path d="M32 33c3 4 6 6 6 11a6 6 0 0 1-12 0c0-4 3-6 6-11z" fill="#6fb6ff" opacity="0.9"/>
-  <text x="58" y="42" font-family="Space Grotesk, Inter, system-ui, sans-serif" font-size="25" font-weight="700" letter-spacing="1.5" fill="#ef7436">FREEFALL FIRE ATLAS</text>
+  <circle cx="32" cy="32" r="30" fill="#1c1a16" stroke="#d8673f" stroke-width="2.5"/>
+  <circle cx="32" cy="32" r="25" fill="none" stroke="#a99d85" stroke-width="1" stroke-dasharray="2 3"/>
+  <g transform="translate(32 33) scale(0.72) translate(-32 -28)">
+    <path d="M32 4c4 10 14 16 14 30a14 14 0 0 1-28 0c0-7 3-11 7-15 0 6 3 9 6 9-2-9 1-17 1-24z" fill="url(#g)"/>
+    <path d="M32 33c3 4 6 6 6 11a6 6 0 0 1-12 0c0-4 3-6 6-11z" fill="#8fb4dc" opacity="0.9"/>
+  </g>
+  <text x="76" y="40" font-family="Courier New, Courier, monospace" font-size="25" font-weight="700"
+        letter-spacing="2" fill="#ece2cb">FREEFALL FIRE ATLAS</text>
+  <line x1="77" y1="50" x2="400" y2="50" stroke="#4a4336" stroke-width="1"/>
+  <line x1="77" y1="53" x2="400" y2="53" stroke="#4a4336" stroke-width="1"/>
 </svg>

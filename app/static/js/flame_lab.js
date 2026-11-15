@@ -75,7 +75,7 @@ export default function (component) {
       p.setup = () => {
         const c = p.createCanvas(W(), H);
         c.elt.style.visibility = "visible";
-        p.textFont("Inter");
+        p.textFont("Courier Prime");
         if (S.data.reduced || REDUCED()) p.frameRate(4);  // reduced motion: slow, near-static
       };
 
@@ -187,8 +187,10 @@ export default function (component) {
 
 function drawGrid(p, C) {
   p.stroke(C.grid); p.strokeWeight(1);
+  p.drawingContext.setLineDash([2, 4]);  // graph paper
   for (let x = 0; x < p.width; x += 40) p.line(x, 0, x, p.height);
   for (let y = 0; y < p.height; y += 40) p.line(0, y, p.width, y);
+  p.drawingContext.setLineDash([]);
 }
 
 function arrow(p, x, y, len, col) {

@@ -12,7 +12,8 @@ import plotly.graph_objects as go  # noqa: E402
 import streamlit as st  # noqa: E402
 
 from components import (current_habitat, demo_badge, footer, habitat_label,  # noqa: E402
-                        is_dark, page_header, result_card, tokens, warning_card)
+                        page_header, result_card, series_colors, style_figure, tokens,
+                        warning_card)
 from components.data import habitats, load_investigations, load_tests, scenarios  # noqa: E402
 from components.interactive import habitat_designer  # noqa: E402
 from core.ranking import COMPONENTS, DEFAULT_WEIGHTS, area_match, rank  # noqa: E402
@@ -32,11 +33,9 @@ COMP_HELP = {
     "fuel_realism": "Cabin materials score above idealized liquids, which score above gas burners.",
     "data_richness": "Test runs (log scale) and publications; large-scale tests get a bonus.",
 }
-DARK = is_dark()
 T = tokens()
-# Categorical slots 1-4 in validated adjacent order (dataviz reference palette).
-COMP_COLORS = dict(zip(COMPONENTS, ["#3987e5", "#d95926", "#199e70", "#c98500"] if DARK
-                       else ["#2a78d6", "#eb6834", "#1baf7a", "#eda100"]))
+# Categorical slots 1-4 in validated order (components.series_colors).
+COMP_COLORS = dict(zip(COMPONENTS, series_colors()))
 
 # ---- sidebar: weights ----
 
@@ -164,15 +163,13 @@ def breakdown_chart(results: list[dict]) -> go.Figure:
         ))
     fig.update_layout(
         barmode="stack", height=90 + 34 * len(results), margin=dict(l=10, r=10, t=30, b=50),
-        paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)", bargap=0.35,
-        font=dict(family="Inter, system-ui, -apple-system, Segoe UI, sans-serif", color=T["text"]),
-        xaxis=dict(title="Score (weighted sum of components)", range=[0, 1], gridcolor=T["grid"],
-                   zeroline=False, tickfont=dict(color=T["muted"]), title_font=dict(color=T["muted"])),
-        yaxis=dict(autorange="reversed", automargin=True, tickfont=dict(color=T["text"])),
-        legend=dict(orientation="h", yanchor="bottom", y=1.0, x=0, traceorder="normal",
-                    font=dict(color=T["muted"])),
-        hoverlabel=dict(bgcolor=T["panel"], font_color=T["text"]),
+        bargap=0.35,
+        xaxis=dict(title="Score (weighted sum of components)", range=[0, 1]),
+        yaxis=dict(autorange="reversed", automargin=True),
+        legend=dict(orientation="h", yanchor="bottom", y=1.0, x=0, traceorder="normal"),
     )
+    style_figure(fig)
+    fig.update_yaxes(showgrid=False, tickfont=dict(color=T["text"]))
     return fig
 
 
@@ -196,7 +193,7 @@ for phase, tab in zip(scenario["phases"], tabs):
         grid = st.columns(2)
         for n, r in enumerate(top):
             with grid[n % 2]:
-                result_card(r)
+                result_card(r, key=f"{scenario_key}_{phase}_{r['psi_id']}")
         if len(shown) > top_n:
             st.caption(f"{len(shown) - top_n} more not shown; raise 'Studies shown per phase'.")
 

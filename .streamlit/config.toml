@@ -1,27 +1,27 @@
-# Freefall Fire Atlas theme: "mission control". Forced dark for everyone, independent of
-# the viewer's OS setting (a single [theme] with no [theme.light]/[theme.dark]
-# split, so Streamlit does not OS-adapt). To restore OS-adaptive theming, move
-# these colours back under [theme.dark] and re-add the [theme.light] variant.
+# Freefall Fire Atlas theme: "mission archive", dark microfiche (1960s case files on film).
+# Forced dark for everyone, independent of the viewer's OS setting (a single [theme] with
+# no [theme.light]/[theme.dark] split, so Streamlit does not OS-adapt). Tokens are mirrored
+# in app/components/__init__.py THEMES; the look itself is app/static/css/archive.css.
 
 [client]
 toolbarMode = "minimal"
 
 [theme]
 base = "dark"
-font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-headingFont = "Space Grotesk:https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap"
-codeFont = "JetBrains Mono:https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
-baseRadius = "0.6rem"
-headingFontWeights = [700, 600, 600, 600, 600, 600]
-headingFontSizes = ["2.35rem", "1.6rem", "1.3rem", "1.1rem", "1rem", "0.9rem"]
-primaryColor = "#f07a3a"
-backgroundColor = "#0d1220"
-secondaryBackgroundColor = "#161d2e"
-textColor = "#e8eaf0"
-borderColor = "#24304a"
-linkColor = "#f59e5b"
+font = "Courier Prime:https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap"
+headingFont = "Special Elite:https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
+codeFont = "Courier Prime:https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap"
+baseRadius = "0.15rem"
+headingFontWeights = [400, 400, 400, 700, 700, 700]
+headingFontSizes = ["2.4rem", "1.65rem", "1.3rem", "1.08rem", "1rem", "0.9rem"]
+primaryColor = "#d8673f"
+backgroundColor = "#1c1a16"
+secondaryBackgroundColor = "#26231e"
+textColor = "#ece2cb"
+borderColor = "#4a4336"
+linkColor = "#8fb4dc"
 
 [theme.sidebar]
-backgroundColor = "#0a0f1a"
-secondaryBackgroundColor = "#141b2b"
-borderColor = "#1f2940"
+backgroundColor = "#171512"
+secondaryBackgroundColor = "#211e19"
+borderColor = "#3a352c"
