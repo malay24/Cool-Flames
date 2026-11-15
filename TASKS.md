@@ -4,7 +4,7 @@ Snapshot of the team task board for NASA Space Apps 2026 ("Flame in Freefall"). 
 
 Snapshot taken: Sun 15 Nov 2026, 00:45 Europe/Berlin. The live board (Claude Sheets) is the source of truth; if this file and the live board disagree, ask the human.
 
-Last updated by Claude Code: **Sun 15 Nov 2026, 03:00 (Ramneek session 2)** — see Change log.
+Last updated by Claude Code: **Sun 15 Nov 2026, ~03:30 (Ramneek session 3)** — see Change log.
 
 ## Working agreement for Claude Code (READ FIRST, both sessions)
 
@@ -29,9 +29,28 @@ This repo is built by two people, each driving their own Claude Code, committing
 
 ## Progress
 
-**23 of 39 done** (K1, K2, K5, D1–D8, R1, R2, R3, R5, P1–P7, P9), plus **K4 and A5 cut** (see Change log). `data/clean/tests.csv` has **1,864 rows from 19 tables** (1,009 with O₂ and pressure); `data/clean/ranges.csv` exists; `data/ai/investigations.json` has 24 entries with ranges (AI summaries pending, A2). Nothing from this session is pushed yet.
+**30 of 39 done**, plus **K4 and A5 cut**. Left: K3 (confirm deadline), S1 (deploy), S2 (test public link), S4/S6 (drafts in `docs/`, need a timing run and the final links), S5 (record video), S7 (submit). `data/clean/tests.csv`: **1,858 rows from 19 tables** (1,009 with O₂ and pressure); all 24 investigations have summaries; Ask index built. Nothing from these sessions is pushed yet.
 
 ## Change log (approach changes & decisions — newest first)
+
+### Sun 15 Nov 2026, ~03:30 — Ramneek session 3 (Claude Code)
+
+**A1/A2 — Done (no external batch run needed).** Summaries, `fuels`, `fuel_types` and key findings for all 24 investigations were written by Claude from each record's own text and publication titles (`data/ai/ai_fields.json`), then merged with `python ai/tag_summarize.py --import data/ai/ai_fields.json`. Validated: 3 lines each, 1–4 findings, no "safe/approved/will not burn" wording. **Someone on the team should still read every summary once** (plan requirement).
+
+**R4 — Done.** `data/manual/earth_vs_space.csv`, 8 rows, every number checked against the source text: Link et al. 2018 Sci Rep (PMMA 17% µg vs 18% 1 g; faster µg spread below 19% O₂), Olson 2004 NASA/TM-2004-213114 (cellulose 16.5% vs 14% at 5–20 cm/s; flames survive in a fraction of a cm/s; upwind spread), Nayagam et al. 2014 NTRS 20140006750 (n-decane cool flames 14–21% O₂), and the PSI-99 table (silicone burned in 1 g but not µg; SIBAL burned in both). **No FLEX CO₂-limit row:** the Dietrich 2014 numbers could not be verified from an accessible source, so they were left out. **Schema change (additive):** new `flag` column (short verdict shown in the app); `SCHEMA.md` updated. Shown on the Overview page.
+
+**D7 follow-up fix.** The Saffire-II mapping counted 4 footnote rows and 2 flow-visualisation rows as runs (15 → **9**). Fixed with `require`. `n_runs` in investigations.json now uses the standardized count when a table is mapped (raw rows otherwise); PSI-142's table lists paper figures, so its n_runs is 0. Total runs: **1,982**; standardized: **1,858**. Ranking sanity check unchanged (SAME-R 0.648, SAME 0.628).
+
+**A3/A4/P8 — Done.** `ai/build_index.py` → `data/ai/index/` (44 chunks, all-MiniLM-L6-v2, FAISS IndexFlatIP, `embeddings.npy` fallback). `ai/qa.py`: hybrid retrieval (70% embedding cosine + 30% keyword score; the small model alone missed "cool flames" questions), coverage check on raw cosine (off-topic questions are declined), Gemini answer with DOI citations if `GEMINI_API_KEY`/`GEMINI_MODEL` are set, otherwise the source passages. Falls back FAISS → NumPy → keyword-only. `app/pages/5_Ask.py` reads keys from Streamlit secrets; an import failure only disables this page. `tests/test_qa.py` (4 tests).
+
+**Deploy prep (S1).** `requirements.txt` pinned (Python 3.12): streamlit 1.67.0, pandas 3.1.1, numpy 2.5.4, plotly 7.1.0, requests 2.34.2, python-dotenv 1.2.4, google-genai 3.3.0, sentence-transformers 6.3.0, faiss-cpu 1.16.0, torch 2.15.0 (**CPU-only wheel on Linux** via the PyTorch CPU index and a platform marker). `pytest` moved to `requirements-dev.txt`. A fresh venv installs it cleanly and every page loads (AppTest). `.streamlit/secrets.toml` is git-ignored.
+- **Deploy settings:** share.streamlit.io → Create app → repo `malay24/Cool-Flames`, branch `main`, main file `app/Home.py`, Advanced settings → Python 3.12, secrets optional (`GEMINI_API_KEY`, `GEMINI_MODEL`).
+- **If the Cloud install fails** (e.g. the torch index line): fallback per CLAUDE.md §4 is Hugging Face Spaces, or remove the three Ask-only lines; the Ask page then uses keyword search.
+
+**S3 — Done.** README rewritten: pages, run steps, rebuild commands, data rules, ranking, all 24 DOIs, extra sources, AI-use note, licence.
+**S4/S6 — drafted.** `docs/DEMO_SCRIPT.md` (6 steps, under 2 min, real numbers) and `docs/SUBMISSION.md` (form text with all DOIs and AI use; links left as placeholders).
+
+**Tests:** 68 pass.
 
 ### Sun 15 Nov 2026, ~03:00 — Ramneek session 2 (Claude Code)
 
@@ -147,12 +166,11 @@ Cut order if behind: P9 Earth benefits, then P8 Ask, then P7 Compare.
 
 ## Ready now
 
-- **S1** First deploy (Ramneek) — *all MVP pages built; deploy with facts-only summaries, A2 text follows in a later push (auto-redeploy)*
-- **S4** Demo script (Both) — *P3 and P4 done*
-- **A2** Merge batch summaries (Ramneek) — *waiting for the external batch output*
-- **K3** Confirm deadline and team registration (Ramneek, 5 min)
-- **R4** earth_vs_space.csv (Malay, 40 min) — *needs sourced rows; not started*
-- **A3/A4/P8** Ask page (Ramneek, stretch)
+- **S1** First deploy (Ramneek): requirements pinned; settings below in the Change log (session 3).
+- **K3** Confirm deadline and team registration on the Space Apps site (Ramneek, 5 min).
+- **S4** Time the demo script in `docs/DEMO_SCRIPT.md` on the deployed app (Both).
+- **S6** Fill the form from `docs/SUBMISSION.md` once the app and video links exist (Ramneek).
+- After S1: **S2** (Malay), **S5** (Both), then **S7**.
 
 ## Summary table
 
@@ -174,12 +192,12 @@ Cut order if behind: P9 Earth benefits, then P8 Ask, then P7 Compare.
 | R1 | scenarios.py: 4 habitat presets, 6 scenarios with phases | Malay | Done | K2 | R2, R5 | 30 | Sat night |
 | R2 | ranking.py: 4 score parts, weights as args | Malay | Done | R1, K5 | R3, P3 | 60 | Sat night |
 | R3 | Sanity check: Moon Base + electrical overheat ranks SAME/SAME-R top | Malay | Done | R2, D5 | - | 20 | Sun morning |
-| R4 | earth_vs_space.csv: 5 to 10 hand rows with sources | Malay | To do | K1 | - | 40 | Sun morning |
+| R4 | earth_vs_space.csv: 5 to 10 hand rows with sources | Malay | Done | K1 | - | 40 | Sun morning |
 | R5 | Warning card rules (no data yet, hidden hazard, blind spot) | Malay | Done | R1 | P5 | 20 | Sun morning |
-| A1 | Prompt + JSON schema for tags and summaries, test on 3 | Ramneek | In progress | D1, K4 | A2, A5 | 30 | Sat night |
-| A2 | Run on all 24, save investigations.json, read each | Ramneek | To do | A1 | S1 | 45 | Sat night |
-| A3 | Q&A index: chunks, embeddings, FAISS | Ramneek | To do | D1 | A4 | 45 | Sun midday |
-| A4 | Q&A function with DOI citations + keyword fallback | Ramneek | To do | A3, K4 | P8 | 45 | Sun midday |
+| A1 | Prompt + JSON schema for tags and summaries, test on 3 | Ramneek | Done | D1, K4 | A2, A5 | 30 | Sat night |
+| A2 | Run on all 24, save investigations.json, read each | Ramneek | Done | A1 | S1 | 45 | Sat night |
+| A3 | Q&A index: chunks, embeddings, FAISS | Ramneek | Done | D1 | A4 | 45 | Sun midday |
+| A4 | Q&A function with DOI citations + keyword fallback | Ramneek | Done | A3, K4 | P8 | 45 | Sun midday |
 | A5 | Help with column-mapping prompt for D6 | Ramneek | Cut | A1 | D6 | 20 | Sun morning |
 | P1 | App skeleton: pages, sidebar habitat picker, disclaimer | Ramneek | Done | K1 | P2, P3, P4, P6, P8, P9 | 30 | Sat night |
 | P2 | Overview page: cards, filters, DOI links | Ramneek | Done | P1, K5 | P7, S1 | 60 | Sat night |
@@ -188,14 +206,14 @@ Cut order if behind: P9 Earth benefits, then P8 Ask, then P7 Compare.
 | P5 | Warning cards in Scenario Explorer | Ramneek | Done | P3, R5 | - | 30 | Sun midday |
 | P6 | CSV download button | Ramneek | Done | P1, D5 | - | 10 | Sun midday |
 | P7 | Compare page (stretch) | Malay | Done | P2, D8 | - | 60 | Sun afternoon |
-| P8 | Ask page (stretch) | Ramneek | To do | P1, A4 | - | 45 | Sun afternoon |
+| P8 | Ask page (stretch) | Ramneek | Done | P1, A4 | - | 45 | Sun afternoon |
 | P9 | Earth benefits panel (stretch) | Malay | Done | P1 | - | 20 | Sun afternoon |
 | S1 | First deploy to Streamlit Community Cloud | Ramneek | To do | P2, A2, D5 | S2, S3, S5 | 20 | Sun 12:30 |
 | S2 | Test public link in private window and on phone | Malay | To do | S1 | S7 | 10 | Sun afternoon |
-| S3 | README: run steps, data DOIs, AI-use note, disclaimer | Malay | To do | S1 | S6 | 40 | Sun 15:30 |
-| S4 | Final demo script | Both | To do | P3, P4 | S5 | 20 | Sun 15:30 |
+| S3 | README: run steps, data DOIs, AI-use note, disclaimer | Malay | Done | S1 | S6 | 40 | Sun 15:30 |
+| S4 | Final demo script | Both | In progress | P3, P4 | S5 | 20 | Sun 15:30 |
 | S5 | Record demo video | Both | To do | S4, S1 | S7 | 45 | Sun 15:30 |
-| S6 | Project summary on form, all DOIs, AI use declared | Ramneek | To do | S3 | S7 | 30 | Sun 18:00 |
+| S6 | Project summary on form, all DOIs, AI use declared | Ramneek | In progress | S3 | S7 | 30 | Sun 18:00 |
 | S7 | Final check and submit | Both | To do | S2, S5, S6 | - | 15 | Sun 18:00 |
 
 ## Tasks by workstream
@@ -296,8 +314,8 @@ Cut order if behind: P9 Earth benefits, then P8 Ask, then P7 Compare.
   - Depends on: R2, D5
   - Unlocks: nothing
   - Done when: Ranking looks right on real data
-- [ ] **R4: earth_vs_space.csv: 5 to 10 hand rows with sources**
-  - Owner: Malay | Status: To do | Estimate: 40 min | Slot: Sun morning
+- [x] **R4: earth_vs_space.csv: 5 to 10 hand rows with sources**
+  - Owner: Malay | Status: Done | Estimate: 40 min | Slot: Sun morning
   - Depends on: K1
   - Unlocks: nothing
   - Done when: Each row cites a paper
@@ -309,23 +327,23 @@ Cut order if behind: P9 Earth benefits, then P8 Ask, then P7 Compare.
 
 ### AI layer (Ramneek)
 
-- [ ] **A1: Prompt + JSON schema for tags and summaries, test on 3**
-  - Owner: Ramneek | Status: In progress | Estimate: 30 min | Slot: Sat night
+- [x] **A1: Prompt + JSON schema for tags and summaries, test on 3**
+  - Owner: Ramneek | Status: Done | Estimate: 30 min | Slot: Sat night
   - Depends on: D1, K4
   - Unlocks: A2, A5
   - Done when: 3 outputs look right
-- [ ] **A2: Run on all 24, save investigations.json, read each**
-  - Owner: Ramneek | Status: To do | Estimate: 45 min | Slot: Sat night
+- [x] **A2: Run on all 24, save investigations.json, read each**
+  - Owner: Ramneek | Status: Done | Estimate: 45 min | Slot: Sat night
   - Depends on: A1
   - Unlocks: S1
   - Done when: data/ai/investigations.json committed
-- [ ] **A3: Q&A index: chunks, embeddings, FAISS**
-  - Owner: Ramneek | Status: To do | Estimate: 45 min | Slot: Sun midday
+- [x] **A3: Q&A index: chunks, embeddings, FAISS**
+  - Owner: Ramneek | Status: Done | Estimate: 45 min | Slot: Sun midday
   - Depends on: D1
   - Unlocks: A4
   - Done when: Index saved in data/ai/index/
-- [ ] **A4: Q&A function with DOI citations + keyword fallback**
-  - Owner: Ramneek | Status: To do | Estimate: 45 min | Slot: Sun midday
+- [x] **A4: Q&A function with DOI citations + keyword fallback**
+  - Owner: Ramneek | Status: Done | Estimate: 45 min | Slot: Sun midday
   - Depends on: A3, K4
   - Unlocks: P8
   - Done when: Answers cite DOIs; works offline
@@ -375,8 +393,8 @@ Cut order if behind: P9 Earth benefits, then P8 Ask, then P7 Compare.
   - Depends on: P2, D8
   - Unlocks: nothing
   - Done when: 2 to 4 investigations side by side
-- [ ] **P8: Ask page (stretch)**
-  - Owner: Ramneek | Status: To do | Estimate: 45 min | Slot: Sun afternoon
+- [x] **P8: Ask page (stretch)**
+  - Owner: Ramneek | Status: Done | Estimate: 45 min | Slot: Sun afternoon
   - Depends on: P1, A4
   - Unlocks: nothing
   - Done when: Chat answers with DOI links
@@ -399,14 +417,14 @@ Cut order if behind: P9 Earth benefits, then P8 Ask, then P7 Compare.
   - Depends on: S1
   - Unlocks: S7
   - Done when: No errors on either
-- [ ] **S3: README: run steps, data DOIs, AI-use note, disclaimer**
-  - Owner: Malay | Status: To do | Estimate: 40 min | Slot: Sun 15:30
+- [x] **S3: README: run steps, data DOIs, AI-use note, disclaimer**
+  - Owner: Malay | Status: Done | Estimate: 40 min | Slot: Sun 15:30
   - Depends on: S1
   - Unlocks: S6
   - Done when: README complete
   - Note: must disclose the strict pressure policy (pressure-less runs omitted from the gap map).
 - [ ] **S4: Final demo script**
-  - Owner: Both | Status: To do | Estimate: 20 min | Slot: Sun 15:30
+  - Owner: Both | Status: In progress | Estimate: 20 min | Slot: Sun 15:30
   - Depends on: P3, P4
   - Unlocks: S5
   - Done when: Script timed under 2 min
@@ -416,7 +434,7 @@ Cut order if behind: P9 Earth benefits, then P8 Ask, then P7 Compare.
   - Unlocks: S7
   - Done when: Video uploaded
 - [ ] **S6: Project summary on form, all DOIs, AI use declared**
-  - Owner: Ramneek | Status: To do | Estimate: 30 min | Slot: Sun 18:00
+  - Owner: Ramneek | Status: In progress | Estimate: 30 min | Slot: Sun 18:00
   - Depends on: S3
   - Unlocks: S7
   - Done when: Form filled, not yet submitted
